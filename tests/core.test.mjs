@@ -136,3 +136,42 @@ test('deployed HTML references content-addressed scripts, styles and article dat
     }
   }
 });
+
+test('home and every interview expose a real 1200 by 630 JPEG social cover',async()=>{
+  await build();
+  const manifest=JSON.parse(await readFile(new URL('../data/covers.json',import.meta.url),'utf8'));
+  const data=JSON.parse(await readFile(new URL('../dist/data/interviews.json',import.meta.url),'utf8'));
+  const config=JSON.parse(await readFile(new URL('../data/site.json',import.meta.url),'utf8'));
+  assert.ok(manifest.interviews.length<=data.interviews.length);
+  assert.ok(data.interviews.every(item=>item.coverImage?.url));
+  function dimensions(bytes){
+    assert.equal(bytes.readUInt16BE(0),0xffd8);
+    let offset=2;
+    while(offset<bytes.length){
+      assert.equal(bytes[offset],0xff);const marker=bytes[offset+1];offset+=2;
+      const length=bytes.readUInt16BE(offset);
+      if([0xc0,0xc1,0xc2].includes(marker))return [bytes.readUInt16BE(offset+5),bytes.readUInt16BE(offset+3)];
+      offset+=length;
+    }
+    throw new Error('JPEG dimensions missing');
+  }
+  for(const cover of [manifest.home,...manifest.interviews]){
+    assert.deepEqual(dimensions(await readFile(new URL('../'+cover.file,import.meta.url))),[1200,630]);
+  }
+  const home=await readFile(new URL('../dist/index.html',import.meta.url),'utf8');
+  const body=home.slice(home.indexOf('<main'));
+  assert.ok(body.indexOf('class="hero wrap"')<body.indexOf('collection-statistics'));
+  assert.ok(body.indexOf('collection-statistics')<body.indexOf('id="ranking-panel"'));
+  const pages=[['index.html',data.homeCover],...data.interviews.map(item=>['interviews/'+item.slug+'/index.html',item.coverImage])];
+  for(const [path,cover] of pages){
+    const html=await readFile(new URL('../dist/'+path,import.meta.url),'utf8');
+    assert.ok(html.includes(`property="og:image" content="${new URL(cover.url,config.siteUrl).href}"`));
+    assert.ok(html.includes(`property="og:image:width" content="${cover.width}"`));
+    assert.ok(html.includes(`property="og:image:height" content="${cover.height}"`));
+    assert.ok(html.includes('name="twitter:card" content="summary_large_image"'));
+    if(path!=='index.html'){
+      assert.ok(html.includes('data-share-summary')&&html.includes('data-share-text='));
+      assert.ok(html.includes(`class="article-cover-image" src="${cover.url}"`));
+    }
+  }
+});

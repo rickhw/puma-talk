@@ -1,5 +1,5 @@
-import { categories, statusLabels, escapeHTML as esc, formatTime, filterInterviews, parseSubtitles, validateArchive, interviewPath, interviewSharePath, youtubeTimeURL, articleSummaryHTML } from './core.js';
-import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML, rankingHTML} from './insights.js';
+import { categories, statusLabels, escapeHTML as esc, formatTime, filterInterviews, parseSubtitles, validateArchive, interviewPath, interviewSharePath, interviewShareText, articleSummaryHTML } from './core.js';
+import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML, rankingHTML, photoHTML, homeHeroHTML} from './insights.js';
 
 const icons = {
   arrow: '<path d="M5 12h14m-5-5 5 5-5 5"/>',
@@ -30,6 +30,7 @@ if (!Array.isArray(saved)) saved = [];
 let localTranscripts = readStorage(transcriptKey, {});
 if (!localTranscripts || typeof localTranscripts !== 'object' || Array.isArray(localTranscripts)) localTranscripts = {};
 let archive, items = [], toastTimer, filters, activeItem, visibleCue = 0;
+let player=null,playerReady=false,playerCreating=false,playerTime=0,playerGeneration=0,youtubeAPIPromise=null;
 const dateLabel = date => date.replaceAll('-', '.');
 const detailURL = id => interviewPath(items.find(item => item.id === id)) + (location.protocol === 'file:' ? 'index.html' : '');
 const topicColors = ['plum', 'sage', 'peach', 'blue', 'pink'];
@@ -54,9 +55,8 @@ function updateSaved() {
     if (button.classList.contains('save-detail')) button.innerHTML = icon('bookmark') + (isSaved ? '已收藏' : '收藏專訪');
   });
 }
-function photo(item, large = false) {
-  return `<div class="photo-fallback theme-${topicColors[categories.indexOf(item.category)]}"><span class="fallback-channel">${esc(item.channel)}</span><span class="fallback-title">${esc(item.title)}</span><span class="fallback-brand">PUMA <b>TALKS</b> ↗</span><img ${large ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" src="https://i.ytimg.com/vi/${item.id}/hqdefault.jpg" alt="${esc(item.channel)}專訪影片縮圖" data-thumbnail></div>`;
-}
+function photo(item, large = false) { return photoHTML(item,large); }
+
 function status(item) {
   return `<span class="transcript-status ${item.transcript.length ? 'available' : ''}">${icon(item.transcript.length ? 'text' : 'clock')}${esc(localTranscripts[item.id] ? '本機匯入字幕' : item.aiReview ? (item.aiReview.method === 'ai-translated' ? 'AI 翻譯與校對' : 'AI 輔助校對') : statusLabels[item.transcriptStatus])}</span>`;
 }
@@ -96,10 +96,7 @@ function home() {
   const featured = items.find(i => i.featured) || items[0];
   activeItem = null;
   document.title = 'PUMA TALKS｜沈伯洋專訪資料庫';
-  main.innerHTML = `<div id="ranking-panel">${rankingHTML(items,filters.sort,archive.statisticsUpdatedAt)}</div>${collectionStatsHTML(items,archive.statisticsUpdatedAt)}<section class="hero wrap" aria-labelledby="hero-title">
-    <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> PUMA INTERVIEW ARCHIVE</div><h1 id="hero-title">從一場對話，<br>認識<span class="name-underline">沈伯洋<svg viewBox="0 0 270 20" aria-hidden="true"><path d="M4 13Q110 0 265 10"/></svg></span>。</h1><p class="hero-description">關於世界的思考，也關於生活的選擇。<br>把散落各處的專訪，整理成可以慢慢理解的脈絡。</p><a class="button button-dark" href="#archive">找一場，開始聽 ${icon('arrow')}</a><div class="hero-note"><span class="tiny-wave"><i></i><i></i><i></i><i></i><i></i></span>完整對話．正體中文逐字稿．AI 輔助校對</div></div>
-    <div class="hero-feature"><div class="feature-topline"><span>從這場對話開始</span><span class="feature-star" aria-hidden="true">✳</span></div><a class="feature-image" href="${detailURL(featured.id)}" aria-label="查看精選專訪">${photo(featured, true)}<span class="feature-play">${icon('play')}</span></a><div class="feature-caption"><span class="feature-label">本期選聽</span><a href="${detailURL(featured.id)}"><h2>${esc(featured.title)}</h2><span>${esc(featured.channel)} <span class="caption-dot">·</span> ${dateLabel(featured.date)}</span></a><a class="circle-arrow" href="${detailURL(featured.id)}" aria-label="查看精選專訪">${icon('upRight')}</a></div></div>
-  </section>
+  main.innerHTML = `${homeHeroHTML(items)}${collectionStatsHTML(items,archive.statisticsUpdatedAt)}<div id="ranking-panel">${rankingHTML(items,filters.sort,archive.statisticsUpdatedAt)}</div>
   <div class="archive-intro"><div class="wrap intro-inner"><span>留一點時間，聽完整的想法。</span><span>${items.length} 支訪談影片<span class="intro-dot">·</span>${categories.length} 個主題<span class="intro-dot">·</span>持續整理中 ${icon('headphones')}</span></div></div>
   <section class="keyword-section wrap" aria-labelledby="keywords-heading"><div class="keyword-section-header"><h2 id="keywords-heading">跟著關鍵字，找到想聽的對話。</h2><p>字越大，出現的專訪越多；數字為影片數。</p></div>${keywordCloudHTML(items,45)}</section>
   <section class="archive-section wrap" id="archive" aria-labelledby="archive-title"><div class="section-heading"><div><div class="eyebrow">THE COLLECTION</div><h2 id="archive-title">${filters.saved ? '我的收藏' : '每場對話，都有新的發現'}<span class="heading-dot">.</span></h2></div><a href="./index.html?view=topics" class="text-link">不知道從哪開始？探索主題 ${icon('upRight')}</a></div>
@@ -132,11 +129,12 @@ function updateResults(changeURL = true) {
   }
 }
 function detail(item) {
+  playerGeneration++;player?.destroy?.();player=null;playerReady=false;playerCreating=false;
   activeItem = item; visibleCue = 0;
   document.title = `${item.title}｜PUMA TALKS`;
   const params = new URLSearchParams(location.search);
   const start = Math.min(604800, Math.max(0, Number(params.get('t')) || 0));
-  main.innerHTML = `<div class="detail-page wrap"><a class="back-link" href="./index.html#archive">${icon('back')} 回到所有專訪</a><div class="detail-heading"><div><div class="eyebrow">THE CONVERSATION <span>／ ${esc(item.category)}</span></div><h1>${esc(item.title)}</h1><p class="detail-meta">${esc(item.channel)} <span>·</span> <time datetime="${item.date}">${dateLabel(item.date)}</time></p></div><button class="button button-outline save-detail" data-save="${item.id}" aria-pressed="false">${icon('bookmark')} 收藏專訪</button></div>${videoStatsHTML(item)}<div class="detail-layout"><aside class="video-column"><div id="video-player" class="video-player"><button class="player-cover" data-play="${start}" aria-label="在本站播放 YouTube 專訪">${photo(item, true)}<span class="big-play">${icon('play')}</span><span class="player-cover-note">點擊載入 YouTube 播放器</span></button></div><a class="source-button" href="${esc(item.sourceUrl)}${start ? '&t=' + start + 's' : ''}" target="_blank" rel="noopener noreferrer">在 YouTube 觀看完整專訪 ${icon('upRight')}</a><div class="detail-description"><span class="eyebrow">關於這場對話</span><p>${esc(item.description)}</p><div class="card-tags">${tagsHTML(item.tags)}</div></div><details class="source-details"><summary>原始標題與收錄來源</summary><p>${esc(item.originalTitle || item.title)}</p><p>${item.metadataStatus === 'listed' ? '日期與節目資料依公開專訪清單收錄，尚待向原頻道逐一核對。主題標籤為本站編輯分類，不代表受訪者原話。' : '影片資料由 YouTube 中繼資料匯入；主題標籤為本站編輯分類。'}</p><a href="${esc(item.referenceUrl || item.sourceUrl)}" target="_blank" rel="noopener noreferrer">查看資料來源 ↗</a></details></aside><div class="reading-column">${articleSummaryHTML(item)}<section class="transcript-panel" aria-labelledby="transcript-heading"><div class="transcript-header"><div><span class="eyebrow">READ THE CONVERSATION</span><h2 id="transcript-heading">逐字稿<span class="heading-dot">.</span></h2></div>${status(item)}</div><div class="transcript-search">${icon('search')}<input id="transcript-search" type="search" placeholder="在這場對話中尋找…" aria-label="搜尋本篇逐字稿" ${item.transcript.length ? '' : 'disabled'}><span id="cue-count">${item.transcript.length ? item.transcript.length + ' 段' : '尚無字幕'}</span></div><div id="transcript-body"></div><div class="transcript-tools"><button class="text-link" data-download ${item.transcript.length ? '' : 'disabled'}>${icon('download')} 下載逐字稿</button><button class="text-link" data-share>${icon('share')} 複製連結</button></div><details class="import-details"><summary>${icon('upload')} 匯入這場專訪的字幕</summary><p>選擇 SRT 或 VTT 字幕檔，就能試用時間碼閱讀與全文搜尋。匯入內容僅儲存在此瀏覽器。</p><label class="button button-outline file-button">${icon('upload')} 選擇字幕檔<input id="subtitle-file" type="file" accept=".srt,.vtt,text/vtt,application/x-subrip"></label><div class="import-actions"><button class="text-link" data-export ${localTranscripts[item.id] ? '' : 'hidden'}>匯出 JSON 資料</button><button class="text-link" data-reset-transcript ${localTranscripts[item.id] ? '' : 'hidden'}>移除本機字幕</button></div><p class="import-hint">${localTranscripts[item.id] ? '目前顯示本機匯入版本。需匯出 JSON 並加入專案資料，才會出現在公開網站。' : '本站不會上傳檔案。請只匯入你有權使用的字幕。'}</p></details></section></div></div><div class="related-section"><div class="section-heading"><div class="eyebrow">KEEP LISTENING</div><h2>下一場，聽聽這些</h2></div><div class="interview-grid">${items.filter(i => i.id !== item.id).sort((a,b) => Number(b.category === item.category) - Number(a.category === item.category)).slice(0,3).map(card).join('')}</div></div></div>`;
+  main.innerHTML = `<div class="detail-page wrap"><a class="back-link" href="./index.html#archive">${icon('back')} 回到所有專訪</a><div class="detail-heading"><div><div class="eyebrow">THE CONVERSATION <span>／ ${esc(item.category)}</span></div><h1>${esc(item.title)}</h1><p class="detail-meta">${esc(item.channel)} <span>·</span> <time datetime="${item.date}">${dateLabel(item.date)}</time></p></div><div class="detail-actions"><button class="button button-dark" data-share-summary>${icon('share')} 複製摘要與連結</button><button class="button button-outline save-detail" data-save="${item.id}" aria-pressed="false">${icon('bookmark')} 收藏專訪</button></div></div>${videoStatsHTML(item)}<div class="detail-layout"><aside class="video-column"><div id="video-player" class="video-player"><button class="player-cover" data-play="${start}" aria-label="在本站播放 YouTube 專訪">${photo(item, true)}<span class="big-play">${icon('play')}</span><span class="player-cover-note">點擊載入 YouTube 播放器</span></button></div><a class="source-button" href="${esc(item.sourceUrl)}${start ? '&t=' + start + 's' : ''}" target="_blank" rel="noopener noreferrer">在 YouTube 觀看完整專訪 ${icon('upRight')}</a><div class="detail-description"><span class="eyebrow">關於這場對話</span><p>${esc(item.description)}</p><div class="card-tags">${tagsHTML(item.tags)}</div></div><details class="source-details"><summary>原始標題與收錄來源</summary><p>${esc(item.originalTitle || item.title)}</p><p>${item.metadataStatus === 'listed' ? '日期與節目資料依公開專訪清單收錄，尚待向原頻道逐一核對。主題標籤為本站編輯分類，不代表受訪者原話。' : '影片資料由 YouTube 中繼資料匯入；主題標籤為本站編輯分類。'}</p><a href="${esc(item.referenceUrl || item.sourceUrl)}" target="_blank" rel="noopener noreferrer">查看資料來源 ↗</a></details></aside><div class="reading-column">${articleSummaryHTML(item)}<section class="transcript-panel" aria-labelledby="transcript-heading"><div class="transcript-header"><div><span class="eyebrow">READ THE CONVERSATION</span><h2 id="transcript-heading">逐字稿<span class="heading-dot">.</span></h2></div>${status(item)}</div><div class="transcript-search">${icon('search')}<input id="transcript-search" type="search" placeholder="在這場對話中尋找…" aria-label="搜尋本篇逐字稿" ${item.transcript.length ? '' : 'disabled'}><span id="cue-count">${item.transcript.length ? item.transcript.length + ' 段' : '尚無字幕'}</span></div><div id="transcript-body"></div><div class="transcript-tools"><button class="text-link" data-download ${item.transcript.length ? '' : 'disabled'}>${icon('download')} 下載逐字稿</button><button class="text-link" data-share>${icon('share')} 複製連結</button></div><details class="import-details"><summary>${icon('upload')} 匯入這場專訪的字幕</summary><p>選擇 SRT 或 VTT 字幕檔，就能試用時間碼閱讀與全文搜尋。匯入內容僅儲存在此瀏覽器。</p><label class="button button-outline file-button">${icon('upload')} 選擇字幕檔<input id="subtitle-file" type="file" accept=".srt,.vtt,text/vtt,application/x-subrip"></label><div class="import-actions"><button class="text-link" data-export ${localTranscripts[item.id] ? '' : 'hidden'}>匯出 JSON 資料</button><button class="text-link" data-reset-transcript ${localTranscripts[item.id] ? '' : 'hidden'}>移除本機字幕</button></div><p class="import-hint">${localTranscripts[item.id] ? '目前顯示本機匯入版本。需匯出 JSON 並加入專案資料，才會出現在公開網站。' : '本站不會上傳檔案。請只匯入你有權使用的字幕。'}</p></details></section></div></div><div class="related-section"><div class="section-heading"><div class="eyebrow">KEEP LISTENING</div><h2>下一場，聽聽這些</h2></div><div class="interview-grid">${items.filter(i => i.id !== item.id).sort((a,b) => Number(b.category === item.category) - Number(a.category === item.category)).slice(0,3).map(card).join('')}</div></div></div>`;
   renderCues(); updateSaved();
 }
 function renderCues(query = '') {
@@ -147,7 +145,7 @@ function renderCues(query = '') {
   }
   const cues = activeItem.transcript.map((cue, index) => ({ ...cue, index })).filter(cue => cue.text.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
   document.querySelector('#cue-count').textContent = query ? `${cues.length} 段符合` : `${cues.length} 段`;
-  body.innerHTML = `${provenanceHTML(activeItem)}<p class="transcript-notice">${localTranscripts[activeItem.id] ? '目前為此瀏覽器的匯入字幕。' : ''}${activeItem.aiReview ? '我們使用 AI 技術校對'+(activeItem.aiReview.method === 'ai-translated' ? '與翻譯' : '')+'逐字稿，統一使用正體中文。' : '本稿保留來源字幕內容。'}發言內容與語境以原始影片為準。點擊時間碼可跳至對應片段。</p><div class="cue-list">${cues.length ? cues.map(cue => `<div class="cue ${cue.index === visibleCue ? 'active-cue' : ''}" id="cue-${cue.index}"><button class="cue-time" data-cue="${cue.index}" aria-label="跳到影片 ${formatTime(cue.start)}">${formatTime(cue.start)}</button><p>${highlight(cue.text, query)}</p><div class="cue-actions"><button class="cue-share" data-share="${cue.start}" aria-label="複製 ${formatTime(cue.start)} 片段連結">${icon('share')}</button><a class="cue-youtube" href="${esc(youtubeTimeURL(activeItem.id,cue.start))}" target="_blank" rel="noopener noreferrer" aria-label="在 YouTube 觀看 ${formatTime(cue.start)}（另開分頁）" title="在 YouTube 觀看 ${formatTime(cue.start)}"><span>YouTube</span>${icon('upRight')}</a></div></div>`).join('') : '<div class="empty-state small"><h3>找不到這段文字</h3><p>試試較短的關鍵字。</p></div>'}</div>`;
+  body.innerHTML = `${provenanceHTML(activeItem)}<p class="transcript-notice">${localTranscripts[activeItem.id] ? '目前為此瀏覽器的匯入字幕。' : ''}${activeItem.aiReview ? '我們使用 AI 技術校對'+(activeItem.aiReview.method === 'ai-translated' ? '與翻譯' : '')+'逐字稿，統一使用正體中文。' : '本稿保留來源字幕內容。'}發言內容與語境以原始影片為準。點擊時間碼可跳至對應片段。</p><div class="cue-list">${cues.length ? cues.map(cue => `<div class="cue ${cue.index === visibleCue ? 'active-cue' : ''}" id="cue-${cue.index}"><button class="cue-time" data-cue="${cue.index}" aria-label="跳到影片 ${formatTime(cue.start)}">${formatTime(cue.start)}</button><p>${highlight(cue.text, query)}</p><div class="cue-actions"><button class="cue-share" data-share="${cue.start}" aria-label="複製 ${formatTime(cue.start)} 片段連結">${icon('share')}</button><button class="cue-seek" data-seek="${cue.index}" aria-label="在嵌入播放器跳到 ${formatTime(cue.start)}" title="跳到播放器 ${formatTime(cue.start)}"><span>跳轉</span>${icon('play')}</button></div></div>`).join('') : '<div class="empty-state small"><h3>找不到這段文字</h3><p>試試較短的關鍵字。</p></div>'}</div>`;
 }
 function highlight(text, query) {
   if (!query) return esc(text);
@@ -158,11 +156,43 @@ function highlight(text, query) {
   }
   return result + esc(text.slice(start));
 }
-function play(seconds) {
-  const time = Math.max(0, Math.floor(Number(seconds) || 0));
-  document.querySelector('#video-player').innerHTML = `<iframe title="${esc(activeItem.title)} YouTube 播放器" src="https://www.youtube-nocookie.com/embed/${activeItem.id}?start=${time}&autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-  // Clip links are created by Share; playback does not create another pageview URL.
+function loadYouTubeAPI() {
+  if(window.YT?.Player)return Promise.resolve(window.YT);
+  if(youtubeAPIPromise)return youtubeAPIPromise;
+  youtubeAPIPromise=new Promise((resolve,reject)=>{
+    const previous=window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady=()=>{try{previous?.();}finally{resolve(window.YT);}};
+    const script=document.createElement('script');script.src='https://www.youtube.com/iframe_api';script.async=true;
+    script.onerror=()=>{youtubeAPIPromise=null;reject(new Error('播放器載入失敗'));};
+    document.head.append(script);
+  });
+  return youtubeAPIPromise;
 }
+async function play(seconds) {
+  const value=Number(seconds);playerTime=Number.isFinite(value)?Math.max(0,Math.floor(value)):0;
+  if(playerReady&&player){player.seekTo(playerTime,true);player.playVideo();return;}
+  if(playerCreating)return;
+  playerCreating=true;
+  const generation=playerGeneration,videoId=activeItem.id;
+  const container=document.querySelector('#video-player');
+  container.innerHTML='<div class="player-loading" role="status">正在載入播放器…</div>';
+  try {
+    const api=await loadYouTubeAPI();
+    if(generation!==playerGeneration)return;
+    const origin=['http:','https:'].includes(location.protocol)?`&origin=${encodeURIComponent(location.origin)}`:'';
+    container.innerHTML=`<iframe id="youtube-player" title="${esc(activeItem.title)} YouTube 播放器" src="https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&start=${playerTime}&autoplay=1&rel=0${origin}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+    player=new api.Player('youtube-player',{events:{
+      onReady(event){if(generation!==playerGeneration)return;playerReady=true;event.target.seekTo(playerTime,true);event.target.playVideo();},
+      onError(){toast('播放器無法播放此影片，請使用原始影片連結。');}
+    }});
+  } catch(error) {
+    if(generation!==playerGeneration)return;
+    playerCreating=false;
+    container.innerHTML='<p class="player-loading">播放器暫時無法載入，請使用原始影片連結。</p>';
+  }
+  // Playback remains in the same iframe and does not change the article URL.
+}
+
 function topics() {
   activeItem = null;
   document.title = '主題探索｜PUMA TALKS';
@@ -206,7 +236,7 @@ document.addEventListener('click', async event => {
   }
   const summaryTime = event.target.closest('[data-summary-time]');
   if (summaryTime && activeItem && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
-    event.preventDefault(); play(Number(summaryTime.dataset.summaryTime));
+    event.preventDefault(); await play(Number(summaryTime.dataset.summaryTime));
     document.querySelector('#video-player').scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
     return;
   }
@@ -224,10 +254,16 @@ document.addEventListener('click', async event => {
     document.querySelector('#archive-search').value = ''; document.querySelector('#status-filter').value = ''; document.querySelector('#sort-filter').value = 'views';
     document.querySelector('#archive-title').innerHTML = '每場對話，都有新的發現<span class="heading-dot">.</span>'; updateResults();
   } else if (button?.hasAttribute('data-remove-filter')) { filters[button.dataset.removeFilter] = ''; if (button.dataset.removeFilter === 'status') document.querySelector('#status-filter').value = ''; if (button.dataset.removeFilter === 'saved') document.querySelector('#archive-title').innerHTML = '每場對話，都有新的發現<span class="heading-dot">.</span>'; updateResults(); }
-  else if (button?.hasAttribute('data-play') && activeItem) play(button.dataset.play);
-  else if (button?.hasAttribute('data-cue') && activeItem) {
-    visibleCue = Number(button.dataset.cue); play(activeItem.transcript[visibleCue].start);
+  else if (button?.hasAttribute('data-play') && activeItem) await play(button.dataset.play);
+  else if ((button?.hasAttribute('data-cue') || button?.hasAttribute('data-seek')) && activeItem) {
+    visibleCue = Number(button.dataset.cue ?? button.dataset.seek); await play(activeItem.transcript[visibleCue].start);
+    if(button.hasAttribute('data-seek'))document.querySelector('#video-player').scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
     document.querySelectorAll('.cue').forEach(cue => cue.classList.toggle('active-cue', cue.id === `cue-${visibleCue}`));
+  } else if (button?.hasAttribute('data-share-summary') && (activeItem || button.dataset.shareText)) {
+    const config=JSON.parse(document.querySelector('#site-config')?.textContent||'{}');
+    const text=activeItem?interviewShareText(activeItem,new URL(interviewPath(activeItem),config.siteUrl||document.baseURI).href):button.dataset.shareText;
+    try {await navigator.clipboard.writeText(text);toast('已複製摘要與專訪連結，可貼到社群網站。');}
+    catch {toast('無法使用剪貼簿，請允許剪貼簿權限後重試。');}
   } else if (button?.hasAttribute('data-share') && activeItem) {
     const url = new URL(interviewSharePath(activeItem, button.dataset.share === '' ? undefined : button.dataset.share), document.baseURI);
     try { await navigator.clipboard.writeText(url.href); toast('已複製對話連結'); }
@@ -241,6 +277,7 @@ document.addEventListener('click', async event => {
     delete exported.slug;
     delete exported.aiReview;
     delete exported.youtubeStats;
+    delete exported.coverImage;
     download(`${activeItem.id}.json`, JSON.stringify(exported, null, 2) + '\n', 'application/json');
     toast('已匯出此篇資料，加入專案後才會公開。');
   } else if (button?.hasAttribute('data-reset-transcript') && activeItem) {

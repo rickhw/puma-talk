@@ -129,3 +129,10 @@ export function youtubeTimeURL(videoId, seconds) {
   const start = Number.isFinite(value) ? Math.max(0, Math.floor(value)) : 0;
   return `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}&t=${start}s`;
 }
+
+export function interviewShareText(item,url) {
+  const lead=item.article?.lead||item.description||'';
+  const highlights=(item.article?.highlights||[]).map(point=>'• '+point.title);
+  return [item.title,`${item.channel}｜${item.date}`,'',lead,
+    ...(highlights.length?['','專訪重點',...highlights]:[]),'','完整專訪與逐字稿：',url].join('\n');
+}

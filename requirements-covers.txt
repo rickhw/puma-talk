@@ -1,0 +1,2 @@
+# Optional: regenerate the committed social-cover JPEGs.
+Pillow>=11

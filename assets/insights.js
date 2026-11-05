@@ -1,4 +1,4 @@
-import {escapeHTML, validateArchive, filterInterviews, interviewPath} from './core.js';
+import {escapeHTML, validateArchive, filterInterviews, interviewPath, categories} from './core.js';
 
 export const formatCount = value => Number.isSafeInteger(value) && value >= 0 ? value.toLocaleString('zh-TW') : '未提供';
 export function formatUpdate(value) {
@@ -71,4 +71,24 @@ export function rankingHTML(items, sort='views', updatedAt=null) {
   const sorted=filterInterviews(items,{sort:mode}).slice(0,10);
   const label=mode==='views'?'觀看次數':mode==='comments'?'留言則數':mode==='oldest'?'最早發布':'最新發布';
   return `<section class="ranking-section wrap" id="rankings" aria-labelledby="ranking-title"><div class="ranking-heading"><h2 id="ranking-title">專訪排行</h2><span>全站前 10 ${['newest','oldest'].includes(mode)?'支':'名'} · ${label}</span></div><nav class="ranking-tabs" aria-label="選擇專訪排行">${options.map(([value,title])=>`<a href="./index.html?sort=${value}#rankings" data-ranking="${value}" ${mode===value||(value==='newest'&&mode==='oldest')?'aria-current="true"':''}>${title}</a>`).join('')}</nav><ol class="ranking-list">${sorted.map((item,index)=>`<li><span class="ranking-position">${String(index+1).padStart(2,'0')}</span><a href="${escapeHTML(interviewPath(item))}"><strong>${escapeHTML(item.title)}</strong><small>${escapeHTML(item.channel)} · ${escapeHTML(item.date)}</small></a><span class="ranking-value">${['views','comments'].includes(mode)?formatCount(item.youtubeStats?.[mode]):escapeHTML(item.date)}</span></li>`).join('')||'<li class="ranking-empty">尚無符合的影片</li>'}</ol><p class="ranking-note">${['views','comments'].includes(mode)?`YouTube ${label} · ${escapeHTML(formatUpdate(updatedAt))} 更新；未提供的數值列於最後。`:'依影片發布日期排列；可於下方排序選擇最早優先。'}</p></section>`;
+}
+
+export function photoHTML(item,large=false) {
+  const themes=['plum','sage','peach','blue','pink'];
+  const src=large&&item.coverImage?item.coverImage.url:`https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`;
+  const alt=large&&item.coverImage?item.coverImage.alt:item.channel+'專訪影片縮圖';
+  return `<div class="photo-fallback theme-${themes[categories.indexOf(item.category)]}"><span class="fallback-channel">${escapeHTML(item.channel)}</span><span class="fallback-title">${escapeHTML(item.title)}</span><span class="fallback-brand">PUMA <b>TALKS</b> ↗</span><img ${large?'fetchpriority="high"':'loading="lazy"'} decoding="async" src="${escapeHTML(src)}" alt="${escapeHTML(alt)}" data-thumbnail></div>`;
+}
+export function homeHeroHTML(items) {
+  const featured=items.find(item=>item.featured)||items[0];
+  if(!featured)return '';
+  const esc=escapeHTML,dateLabel=date=>date.replaceAll('-','.');
+  const detailURL=id=>interviewPath(items.find(item=>item.id===id));
+  const photo=photoHTML;
+  const paths={arrow:'<path d="M5 12h14m-5-5 5 5-5 5"/>',play:'<path d="m9 5 11 7-11 7z"/>',upRight:'<path d="M6 18 18 6M6 6h12v12"/>'};
+  const icon=name=>`<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">${paths[name]}</svg>`;
+  return `<section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> PUMA INTERVIEW ARCHIVE</div><h1 id="hero-title">從一場對話，<br>認識<span class="name-underline">沈伯洋<svg viewBox="0 0 270 20" aria-hidden="true"><path d="M4 13Q110 0 265 10"/></svg></span>。</h1><p class="hero-description">關於世界的思考，也關於生活的選擇。<br>把散落各處的專訪，整理成可以慢慢理解的脈絡。</p><a class="button button-dark" href="#archive">找一場，開始聽 ${icon('arrow')}</a><div class="hero-note"><span class="tiny-wave"><i></i><i></i><i></i><i></i><i></i></span>完整對話．正體中文逐字稿．AI 輔助校對</div></div>
+    <div class="hero-feature"><div class="feature-topline"><span>從這場對話開始</span><span class="feature-star" aria-hidden="true">✳</span></div><a class="feature-image" href="${detailURL(featured.id)}" aria-label="查看精選專訪">${photo(featured, true)}<span class="feature-play">${icon('play')}</span></a><div class="feature-caption"><span class="feature-label">本期選聽</span><a href="${detailURL(featured.id)}"><h2>${esc(featured.title)}</h2><span>${esc(featured.channel)} <span class="caption-dot">·</span> ${dateLabel(featured.date)}</span></a><a class="circle-arrow" href="${detailURL(featured.id)}" aria-label="查看精選專訪">${icon('upRight')}</a></div></div>
+  </section>`;
 }

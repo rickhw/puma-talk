@@ -1,6 +1,6 @@
 # PUMA TALKS
 
-沈伯洋（Puma）的 YouTube 專訪與逐字稿資料庫，提供正體中文逐字稿、AI 摘要、獨立文章網址、關鍵字標籤雲，以及 YouTube 觀看／按讚／留言統計。首頁上方提供觀看排行榜、發布時間序列與留言排行榜；每段字幕可直接開啟 YouTube 對應時間點。
+沈伯洋（Puma）的 YouTube 專訪與逐字稿資料庫，提供正體中文逐字稿、AI 摘要、獨立文章網址、關鍵字標籤雲，以及 YouTube 觀看／按讚／留言統計。首頁上方提供觀看排行榜、發布時間序列與留言排行榜；每段字幕可直接跳至嵌入播放器的對應時間點。每篇提供封面與「複製摘要與連結」，方便轉貼社群。
 
 - 網站：https://puma-talk.gtcafe.com/
 - 儲存庫：https://github.com/rickhw/puma-talk
@@ -15,6 +15,7 @@
 | 完整測試、資料 CLI | Python 3.10 以上；CI 使用 Python 3.12 | 一般測試只用標準函式庫 |
 | YouTube 中繼資料、字幕、每日統計 | `requirements.txt` 中的 yt-dlp；依 yt-dlp 要求設定 JavaScript runtime | 需連線 YouTube，不需 YouTube API key |
 | 音訊處理及語音辨識 | FFmpeg（包含 ffprobe）、所選 ASR 引擎 | 首次下載語音模型需網路；音訊及模型需額外磁碟空間 |
+| 重新產生社群封面（選用） | Python、`requirements-covers.txt`、CJK 字型 | 需連線取得原影片縮圖；既有封面隨儲存庫提供 |
 | AI 摘要、文字校對、翻譯、關鍵字 | Apple Silicon macOS 14 以上、相容 Metal 環境、`requirements-editorial.txt` | 需自行取得相容 MLX 文字模型；記憶體需求取決於模型與上下文 |
 
 網站建置不需要 GPU、FFmpeg、yt-dlp、語音模型或文字模型。影片、縮圖與分析標籤仍需網路才能載入。
@@ -131,6 +132,10 @@ GitHub 排程可能延遲；結果以 Actions 紀錄為準。`data/sources.json`
 
 GitHub Pages 使用儲存庫的 **Settings → Pages → GitHub Actions**，再新增 repository variable `ENABLE_PAGES=true`，手動執行 `pages.yml`。自訂網域、DNS 與 HTTPS 說明見 [Pages 部署指南](docs/github-pages.md)。GitHub Actions 使用平台提供的 token，無須把個人 token 提交到程式碼。
 
+## 封面與社群轉貼
+
+首頁與專訪頁提供 Open Graph／Twitter 封面資訊；既有封面是 1200 × 630 JPEG，建置不需額外圖形工具。重新產生方式見 [封面說明](docs/covers.md)。轉貼按鈕複製標題、摘要、重點標題及該篇固定網址；字幕右側的「跳轉」與左側時間碼共用嵌入播放器。
+
 ## 資料與文件索引
 
 | 路徑 | 內容 |
@@ -140,6 +145,7 @@ GitHub Pages 使用儲存庫的 **Settings → Pages → GitHub Actions**，再�
 | `data/editorial.json` | AI 校對／翻譯的正體中文顯示稿及關鍵字 |
 | `data/statistics*.json` | 單片 YouTube 統計與每日快照 |
 | `data/catalog.json`、`data/pending-interviews.json` | 候選判定與尚待確認原片的訪談 |
+| `data/covers.json`、`assets/covers/` | 封面來源、尺寸、內容指紋及 JPEG 圖片 |
 | `assets/`、`scripts/`、`tests/` | 前端、建置／資料工具及測試 |
 | [處理進度](docs/processing-status.md)、[摘要進度](docs/articles-status.md) | 由已提交資料產生的覆蓋率、來源範圍與待辦 |
 

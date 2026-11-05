@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 import {mergeArticles, validateArticle, interviewPath, interviewSharePath, fallbackSlug,
-  articleSummaryHTML, transcriptFingerprintText, filterInterviews} from '../assets/core.js';
+  articleSummaryHTML, transcriptFingerprintText, filterInterviews, interviewShareText} from '../assets/core.js';
 
 function fixture() {
   const item={id:'AbCdEfGh_12',date:'2026-11-04',title:'功能測試訪談',channel:'測試頻道',category:'文化與閱讀',
@@ -112,4 +112,16 @@ test('legacy query links redirect to the slug and retain clip and campaign param
   });
   assert.equal(errors.length,0);
   assert.equal(destination,'https://example.test/repo/interviews/2026-11-04-test-reading/?t=45&utm_source=legacy');
+});
+
+test('social copy contains the summary, highlight titles and a clean article URL',()=>{
+  const {item,article}=fixture();
+  const url='https://example.test/interviews/'+article.slug+'/';
+  const text=interviewShareText({...item,article},url);
+  assert.ok(text.startsWith(item.title+'\n'));
+  assert.ok(text.includes(article.lead));
+  for(const point of article.highlights)assert.ok(text.includes('• '+point.title));
+  assert.ok(text.endsWith(url));
+  assert.ok(!text.includes('?t=')&&!text.includes('utm_'));
+  assert.ok(interviewShareText({...item,description:'影片介紹'},url).includes('影片介紹'));
 });

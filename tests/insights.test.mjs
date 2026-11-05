@@ -50,28 +50,30 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   const insights=(await readFile(new URL('../assets/insights.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'').replace(/^export /gm,'');
   const app=(await readFile(new URL('../assets/app.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'');
   merged.interviews[0].transcript.push({start:12.9,end:20,text:'第二句對話'});
+  merged.interviews[0].slug='test-reading';
+  merged.interviews[0].article={status:'draft',lead:'這是可轉貼的摘要。',highlights:[{title:'內容重點',text:'測試正文',start:0,end:10}],conclusion:'測試總結'};
   async function render(search='',detail=false){
-    const elements=new Map(),errors=[],listeners=new Map();
+    const elements=new Map(),errors=[],listeners=new Map(),players=[],copies=[];
     const document={title:'',baseURI:'https://example.test/',querySelector(selector){
       if(selector==='#archive-data')return {textContent:JSON.stringify(merged)};
-      if(selector==='#site-config')return {textContent:'{}'};
+      if(selector==='#site-config')return {textContent:JSON.stringify({siteUrl:'https://example.test/'})};
       if(detail&&selector==='meta[name="interview-id"]')return {content:merged.interviews[0].id};
       if(selector==='.skip-link'||selector.startsWith('meta['))return null;
-      if(!elements.has(selector))elements.set(selector,{innerHTML:'',textContent:'',value:'',hasAttribute(){return false;}});
+      if(!elements.has(selector))elements.set(selector,{innerHTML:'',textContent:'',value:'',scrollIntoView(){elements.scrolled=true;},classList:{add(){},remove(){}},hasAttribute(){return false;}});
       return elements.get(selector);
     },querySelectorAll(){return [];},addEventListener(type,listener){listeners.set(type,listener);}};
     await vm.runInNewContext(`(async()=>{${core}\n${insights}\nconst esc=escapeHTML;\n${app}})()`,{
-      document,window:{addEventListener(){}},localStorage:{getItem(){return null;}},structuredClone,URL,URLSearchParams,
+      document,window:{addEventListener(){},YT:{Player:function(id,options){this.seeks=[];this.plays=0;this.seekTo=(time,allow)=>this.seeks.push([time,allow]);this.playVideo=()=>this.plays++;this.ready=()=>options.events.onReady({target:this});players.push(this);}}},navigator:{clipboard:{async writeText(text){copies.push(text);}}},matchMedia(){return {matches:true};},setTimeout(){return 0;},clearTimeout(){},localStorage:{getItem(){return null;}},structuredClone,URL,URLSearchParams,
       history:{replaceState(_state,_title,url){elements.lastURL=url;}},
       location:new URL('https://example.test/'+search),console:{error(error){errors.push(error);}}
     });
     assert.equal(errors.length,0,errors.map(String).join(';'));
-    elements.listeners=listeners;
+    elements.listeners=listeners;elements.players=players;elements.copies=copies;
     return elements;
   }
   const home=await render(),html=home.get('#main').innerHTML;
-  assert.ok(html.indexOf('id="ranking-panel"')<html.indexOf('collection-statistics'));
-  assert.ok(html.indexOf('collection-statistics')<html.indexOf('class="hero wrap"'));
+  assert.ok(html.indexOf('class="hero wrap"')<html.indexOf('collection-statistics'));
+  assert.ok(html.indexOf('collection-statistics')<html.indexOf('id="ranking-panel"'));
   for(const label of ['觀看排行榜','時間序列','留言排行榜'])assert.ok(home.get('#ranking-panel').innerHTML.includes(label));
   assert.ok(html.includes('1,200')&&html.includes('keyword-cloud'));
   assert.ok(home.get('#interview-grid').innerHTML.includes('AI 輔助校對'));
@@ -86,10 +88,29 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   assert.ok(timeline.get('#ranking-panel').innerHTML.includes('最早發布'));
   const detail=await render('',true),cues=detail.get('#transcript-body');
   assert.ok(cues.innerHTML.includes('data-share="12.9"'));
-  assert.ok(cues.innerHTML.includes('href="https://www.youtube.com/watch?v=AbCdEfGh_12&amp;t=12s" target="_blank" rel="noopener noreferrer"'));
+  assert.ok(cues.innerHTML.includes('class="cue-seek" data-seek="1"'));
+  assert.ok(!cues.innerHTML.includes('class="cue-youtube"'));
+  const clickButton=async(dataset)=>detail.listeners.get('click')({target:{closest(selector){return selector==='button'?{dataset,hasAttribute(name){return Object.hasOwn(dataset,name.replace(/^data-/,'').replace(/-([a-z])/g,(_,c)=>c.toUpperCase()));}}:null;}},preventDefault(){}});
+  await clickButton({seek:'1'});
+  assert.equal(detail.players.length,1);
+  const frame=detail.get('#video-player').innerHTML;
+  assert.ok(frame.includes('enablejsapi=1&start=12'));
+  detail.players[0].ready();
+  assert.equal(detail.players[0].seeks[0][0],12);
+  await clickButton({seek:'0'});
+  assert.equal(detail.players.length,1);
+  assert.equal(detail.get('#video-player').innerHTML,frame);
+  assert.equal(detail.players[0].seeks.at(-1)[0],0);
+  assert.ok(detail.scrolled);
+  await clickButton({shareSummary:''});
+  assert.ok(detail.copies[0].includes('這是可轉貼的摘要。'));
+  assert.ok(detail.copies[0].includes('• 內容重點'));
+  assert.ok(detail.copies[0].endsWith('https://example.test/interviews/test-reading/'));
   await detail.listeners.get('input')({target:{id:'transcript-search',value:'第二句'}});
   assert.ok(cues.innerHTML.includes('data-cue="1"')&&!cues.innerHTML.includes('data-cue="0"'));
-  assert.ok(cues.innerHTML.includes('&amp;t=12s'));
+  assert.ok(cues.innerHTML.includes('data-seek="1"'));
+  await clickButton({seek:'1'});
+  assert.equal(detail.players[0].seeks.at(-1)[0],12);
   const about=(await render('?view=about')).get('#main').innerHTML;
   assert.ok(about.includes('我們使用 AI 技術校對逐字稿'));
   assert.ok(!about.includes('process-list')&&!about.includes('閱讀器現在就可以試')&&!about.includes('待校對'));
