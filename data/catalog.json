@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-05T02:18:05.249170+00:00",
+  "updatedAt": "2026-11-05T09:32:00.455127+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,28 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "nyVWWcKaiIk",
+      "title": "1102如何讓世界認識台北？沈伯洋不擔心被中國拒絕？「我蓋新房換你舊房」解都更難題？",
+      "channel": "The World TODAY",
+      "uploadDate": "20261105",
+      "duration": 2495,
+      "language": "zh-Hant",
+      "spokenLanguage": "zh",
+      "metadataFile": ".cache/nyVWWcKaiIk.info.json",
+      "sourceUrl": "https://www.youtube.com/watch?v=nyVWWcKaiIk",
+      "url": "https://www.youtube.com/watch?v=nyVWWcKaiIk",
+      "referenceUrl": "https://www.youtube.com/watch?v=nyVWWcKaiIk",
+      "decision": "include",
+      "reason": "使用者指定新增；The World TODAY 原頻道的沈伯洋市政專訪，2026-11-05 上線；原標題保留 1102 節目標示。",
+      "description": "《TODAY 看世界》專訪沈伯洋，討論台北國際定位、城市交流與都市更新。原標題標示 1102，YouTube 發布日期為 2026-11-05。",
+      "category": "政治與公共事務",
+      "tags": [
+        "台北市政",
+        "都市更新"
+      ],
+      "status": "metadata-fetched"
+    },
     {
       "id": "aoLUPKAgSgY",
       "listedTitle": "#沈伯洋 海、陸、空戰齊發！舉手投足背後全是洋蔥！#蔣萬安 登#沈春華 專訪被考倒？寧夏掃街人氣差很大？推#萬安警報 山寨式催票ing？遭酸變得像#習近平 ？｜#中午鏡來講 20261104",

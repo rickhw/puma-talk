@@ -1,5 +1,10 @@
 {
   "version": 1,
+  "generator": {
+    "engine": "Pillow",
+    "version": "13.0.0",
+    "fontSha256": "3ee160e5015106e3ec1a394301df54fa9bbbf8a251519984aec5c0abc50840c0"
+  },
   "home": {
     "file": "assets/covers/home.ca42cb2ac111.jpg",
     "width": 1200,
@@ -7,6 +12,16 @@
     "alt": "PUMA TALKS：從一場對話，認識沈伯洋。"
   },
   "interviews": [
+    {
+      "file": "assets/covers/nyVWWcKaiIk.594aae09fc34.jpg",
+      "width": 1200,
+      "height": 630,
+      "alt": "1102如何讓世界認識台北？沈伯洋不擔心被中國拒絕？「我蓋新房換你舊房」解都更難題？｜PUMA TALKS",
+      "videoId": "nyVWWcKaiIk",
+      "title": "1102如何讓世界認識台北？沈伯洋不擔心被中國拒絕？「我蓋新房換你舊房」解都更難題？",
+      "sourceUrl": "https://i.ytimg.com/vi/nyVWWcKaiIk/maxresdefault.jpg",
+      "sourceSha256": "bcbaaacfb84cc7773885550ae9304c263acf685de0fa3c6357881f84d89fcf63"
+    },
     {
       "file": "assets/covers/Fc7mNhTRS5o.69e081726d45.jpg",
       "width": 1200,
@@ -1157,10 +1172,5 @@
       "sourceUrl": "https://i.ytimg.com/vi/KcQlumnQHoE/maxresdefault.jpg",
       "sourceSha256": "ffb38c19e4e6eebcecc2e5db7ca5bb8fde97816315c32f81e395705fb2a086fa"
     }
-  ],
-  "generator": {
-    "engine": "Pillow",
-    "version": "13.0.0",
-    "fontSha256": "3ee160e5015106e3ec1a394301df54fa9bbbf8a251519984aec5c0abc50840c0"
-  }
+  ]
 }

@@ -1,9 +1,18 @@
 {
   "version": 1,
-  "attemptedAt": "2026-11-05T06:55:04.396844+00:00",
-  "completedAt": "2026-11-05T06:56:23.188903+00:00",
+  "attemptedAt": "2026-11-05T09:38:36.147256+00:00",
+  "completedAt": "2026-11-05T09:38:38.333162+00:00",
   "timezone": "Asia/Taipei",
   "videos": [
+    {
+      "videoId": "nyVWWcKaiIk",
+      "views": 2075,
+      "likes": 222,
+      "comments": 27,
+      "fetchedAt": "2026-11-05T09:38:38.332721+00:00",
+      "source": "youtube",
+      "status": "ok"
+    },
     {
       "videoId": "Fc7mNhTRS5o",
       "views": 147768,
@@ -1041,13 +1050,13 @@
     }
   ],
   "totals": {
-    "views": 42043952,
-    "likes": 1095790,
-    "comments": 137263,
-    "commentsAvailable": 115,
-    "videos": 115,
-    "viewsAvailable": 115,
-    "likesAvailable": 115,
-    "fresh": 115
+    "views": 42046027,
+    "likes": 1096012,
+    "comments": 137290,
+    "commentsAvailable": 116,
+    "videos": 116,
+    "viewsAvailable": 116,
+    "likesAvailable": 116,
+    "fresh": 116
   }
 }
