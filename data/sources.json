@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "description": "預設不啟用排程。填入經確認的 YouTube 頻道或播放清單 URL，並設定 enabled 為 true。只有標題包含 keywords 的影片會匯入。",
+  "urls": [],
+  "keywords": ["沈伯洋", "Puma Shen"],
+  "limit": 15
+}

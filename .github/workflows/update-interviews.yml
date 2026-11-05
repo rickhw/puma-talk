@@ -1,0 +1,56 @@
+name: Discover or import interviews
+on:
+  schedule:
+    - cron: '0 22 * * 0'
+  workflow_dispatch:
+    inputs:
+      youtube_url:
+        description: '指定 YouTube URL；留空時依 data/sources.json 掃描'
+        type: string
+        required: false
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: interview-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      YOUTUBE_URL: ${{ inputs.youtube_url }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: python -m pip install -U 'yt-dlp[default]'
+      - name: Import metadata (subtitles require explicit local opt-in)
+        shell: bash
+        run: |
+          if [ -n "$YOUTUBE_URL" ]; then
+            python scripts/import_youtube.py "$YOUTUBE_URL"
+          else
+            python scripts/import_youtube.py --refresh
+          fi
+      - run: npm test && npm run build
+      - name: Propose data update
+        shell: bash
+        run: |
+          if git diff --quiet -- data/interviews.json; then
+            echo 'No data changes.'
+            exit 0
+          fi
+          branch="data/interviews-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "$branch"
+          git add data/interviews.json
+          git commit -m 'data: import YouTube interviews for review'
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" --title '收錄新的 YouTube 專訪（待檢閱）' --body '自動匯入影片中繼資料。請核對日期、頻道與主題分類後合併；此流程不下載或公開完整字幕。'

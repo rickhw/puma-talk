@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "days": [
+    {
+      "date": "2026-11-04",
+      "views": 40841406,
+      "likes": 1066981,
+      "videos": 113,
+      "viewsAvailable": 113,
+      "likesAvailable": 113,
+      "fresh": 113,
+      "recordedAt": "2026-11-04T13:53:03.184074+00:00"
+    },
+    {
+      "date": "2026-11-05",
+      "views": 41081121,
+      "likes": 1070131,
+      "videos": 113,
+      "viewsAvailable": 113,
+      "likesAvailable": 113,
+      "fresh": 113,
+      "recordedAt": "2026-11-05T01:22:59.921583+00:00"
+    }
+  ]
+}

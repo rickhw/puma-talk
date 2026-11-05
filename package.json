@@ -1,0 +1,21 @@
+{
+  "name": "puma-interview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "沈伯洋 YouTube 專訪與逐字稿靜態資料庫",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs && python3 -m unittest discover -s tests -p 'test_*.py'",
+    "import": "python3 scripts/import_youtube.py",
+    "transcripts": "python3 scripts/transcripts.py",
+    "statistics": "python3 scripts/update_statistics.py",
+    "daily": "python3 scripts/daily_update.py"
+  },
+  "engines": {
+    "node": ">=22",
+    "python": ">=3.10"
+  }
+}

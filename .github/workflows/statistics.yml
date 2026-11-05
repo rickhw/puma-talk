@@ -1,0 +1,62 @@
+name: Refresh daily YouTube statistics
+on:
+  schedule:
+    - cron: '10 19 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: daily-statistics
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: python -m pip install 'yt-dlp[default]'
+      - id: refresh
+        continue-on-error: true
+        run: python scripts/update_statistics.py
+      - run: npm test && npm run build
+      - name: Save the daily snapshot
+        run: |
+          if git diff --quiet -- data/statistics.json data/statistics-history.json; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/statistics.json data/statistics-history.json
+          git commit -m 'data: refresh daily YouTube statistics'
+          git push
+      - name: Surface partial source failures
+        if: steps.refresh.outcome == 'failure'
+        run: |
+          echo '::warning::Some YouTube counts could not refresh. Prior values and their timestamps were preserved.'
+      - uses: actions/configure-pages@v5
+        if: vars.ENABLE_PAGES == 'true'
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist/
+  deploy:
+    if: vars.ENABLE_PAGES == 'true'
+    needs: refresh
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

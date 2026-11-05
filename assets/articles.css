@@ -1,0 +1,20 @@
+.reading-column{min-width:0}
+.article-summary{background:white;border:1px solid var(--line);border-radius:12px;padding:28px;margin-bottom:24px}
+.article-summary-header{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:21px}
+.article-summary-header h2{font-size:27px;line-height:1.4;margin:8px 0 0}
+.article-review-label{font-size:11px;white-space:nowrap;background:var(--lavender);color:var(--purple);padding:5px 9px;border-radius:5px}
+.article-source-scope{font-size:13px;line-height:1.9;background:var(--lavender);border-left:3px solid var(--purple);padding:12px 15px;margin:0 0 22px}
+.article-summary .article-lead{font-size:16px;line-height:2;color:var(--ink);margin:0 0 26px}
+.article-summary h3{font-size:18px;margin:0 0 17px}
+.article-highlights{list-style:none;padding:0;margin:0;counter-reset:highlight}
+.article-highlights li{counter-increment:highlight;border-top:1px solid var(--line);padding:19px 0 20px}
+.article-highlights h4{font-size:16px;line-height:1.7;margin:0 0 9px}
+.article-highlights h4:before{content:counter(highlight,decimal-leading-zero);font:11px var(--mono);color:var(--purple);margin-right:11px}
+.article-highlights p,.article-conclusion p{font-size:14px;line-height:2;margin:0 0 11px;color:var(--ink)}
+.article-time-link{font:11px var(--mono);color:var(--purple);text-decoration:underline;text-underline-offset:4px}
+.article-reference-note{font-size:10px;color:var(--muted);margin-left:7px}
+.article-conclusion{border-top:1px solid var(--line);padding-top:22px}
+.article-summary .article-summary-note{font-size:11px;line-height:1.9;color:var(--muted);margin:22px 0 0;padding-top:16px;border-top:1px dashed var(--line)}
+.static-source-link{margin:25px 0}
+@media(max-width:1000px){.article-summary{padding:21px}.article-summary-header{align-items:flex-start;flex-direction:column;gap:12px}.article-summary-header h2{font-size:25px}}
+@media(max-width:760px){.reading-column{width:100%}.article-summary{padding:21px}.article-summary .article-lead{font-size:15px}.article-summary-header{flex-direction:row;align-items:center}.article-summary-header h2{font-size:25px}.article-review-label{font-size:10px}.article-highlights p,.article-conclusion p{font-size:14px}}
