@@ -21,13 +21,13 @@
 
 等待 `build` 與 `deploy` 都顯示綠色勾勾。這次需啟動新的 workflow run；設定變數前的舊執行紀錄可能仍顯示 deploy skipped。
 
-預期網址：**https://rickhw.github.io/puma-talk/**。實際網址以成功部署紀錄及 Settings → Pages 顯示的網址為準。
+正式網域已設定為 **https://puma-talk.gtcafe.com/**。實際發布與 HTTPS 憑證狀態以 Settings → Pages 為準；原先預設網址為 https://rickhw.github.io/puma-talk/。
 
 ## 後續更新
 
 推送網站程式或資料至 `main` 後，自動測試、建置與部署。每日統計 workflow 在台灣時間 03:10 排程執行（GitHub 可能延遲），完成後直接部署；不依賴機器人 commit 觸發另一個 workflow。
 
-`data/site.json` 已設定此 Pages 網址，讓每篇獨立 slug 的 canonical URL 指向正確子目錄。GA4 Measurement ID 仍留空，無須為了開啟 Pages 填寫。
+`data/site.json` 已設定此 Pages 網址，讓每篇獨立 slug 的 canonical URL 指向正確子目錄。目前透過 GTM 容器 `GTM-WXCZ2WR7` 連結 GA4 `G-TRLVRQ877L`；詳見 [分析追蹤設定](articles.md#google-tag-manager-與-ga4)。
 
 若 `deploy` 顯示 skipped，先確認 repository variable 的名稱與值；若 `configure-pages` 回報找不到 Pages，確認第一步的 Source。若 environment 要求核准，至該次 run 完成 Review deployments，再查看結果。
 

@@ -21,7 +21,8 @@ const icon = (name, cls = '') => `<svg class="icon ${cls}" width="20" height="20
 const main = document.querySelector('#main');
 const skipLink = document.querySelector('.skip-link');
 if (skipLink) { const target = new URL(location.href); target.hash = 'main'; skipLink.href = target.href; }
-const analyticsEnabled = /^G-[A-Z0-9]+$/.test(JSON.parse(document.querySelector('#site-config')?.textContent || '{}').analytics?.measurementId || '');
+const analyticsConfig = JSON.parse(document.querySelector('#site-config')?.textContent || '{}').analytics || {};
+const analyticsEnabled = /^G-[A-Z0-9]+$/.test(analyticsConfig.measurementId || '') || /^GTM-[A-Z0-9]+$/.test(analyticsConfig.gtmContainerId || '');
 const storageKey = 'puma-talks:saved:v1', transcriptKey = 'puma-talks:transcripts:v1';
 function readStorage(key, fallback) { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } }
 let saved = readStorage(storageKey, []);

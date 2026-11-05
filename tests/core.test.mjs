@@ -57,6 +57,13 @@ test('static output serves correctly without dependencies or a backend', async (
   assert.match(html,/lang="zh-Hant"/);
   assert.match(html,/\.\/assets\/app.bundle.js/);
   assert.match(html,/id="archive-data"/);
+  const site=JSON.parse(await readFile(new URL('../data/site.json',import.meta.url),'utf8'));
+  if(site.analytics?.gtmContainerId) {
+    assert.ok(html.indexOf('id="site-config"')<html.indexOf('<body>'));
+    assert.ok(html.indexOf('event:\'gtm.js\'')<html.indexOf('<body>'));
+    assert.ok(html.includes(`<body>\n  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${site.analytics.gtmContainerId}"`));
+  }
+
   const embedded = html.match(/<script id="archive-data" type="application\/json">([\s\S]*?)<\/script>/)[1];
   assert.equal(validateArchive(JSON.parse(embedded)).interviews.length,archive.interviews.length);
   const bundle = String((await request('/assets/app.bundle.js')).body);

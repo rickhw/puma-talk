@@ -46,30 +46,30 @@ python scripts/summarize_articles.py --model /path/to/local-model \
 
 `--refresh-drafts` 保留既有 slug，不覆蓋 `reviewed` 文章。逐字稿內容更新後，若摘要的來源 hash 不符，建置會要求更新摘要，避免沿用過期結論。人工確認完畢後才能把文章 `status` 改為 `reviewed`。
 
-## 預留 GA4
+## Google Tag Manager 與 GA4
 
-`data/site.json` 預設：
-
-```json
-{
-  "siteUrl": "",
-  "analytics": { "measurementId": "" }
-}
-```
-
-空白 Measurement ID 時不載入 Google 程式、不送出統計資料。正式上線後，可填入真實網址與 GA4 ID，再重新建置，例如：
+正式設定在 `data/site.json`：
 
 ```json
 {
-  "siteUrl": "https://ACCOUNT.github.io/REPOSITORY/",
-  "analytics": { "measurementId": "G-XXXXXXXXXX" }
+  "siteUrl": "https://puma-talk.gtcafe.com/",
+  "analytics": {
+    "measurementId": "G-TRLVRQ877L",
+    "gtmContainerId": "GTM-WXCZ2WR7"
+  }
 }
 ```
 
-`siteUrl` 須以 `/` 結尾，包含 repository 子目錄；提供後會產生完整 canonical URL。沒有正式網址時保留相對 canonical，無需先設定虛構網域。
+已確認公開的 GTM 容器可下載，且已發布的容器包含 GA4 目的地 `G-TRLVRQ877L`。這只證明標籤已發布，不代表已登入 GA 後台確認收到事件。
 
-啟用後，每次載入頁面送出一個 `page_view`，包含 `page_title`、`page_location`；文章頁另附 `interview_id`、`article_slug`、`content_group: interview`。`page_location` 將 `index.html` 歸一為目錄網址、排除片段時間 `t` 與 fragment，保留 UTM 來源參數；舊連結轉向前不送出瀏覽事件。
+建置把 GTM 載入程式放在每頁 head，並在 body 開頭加入標準 noscript iframe。GTM 設定存在時優先使用容器，不另外載入獨立 gtag.js、不另外送一份 config 或 page_view。容器內的 Google 標籤負責收集事件；容器設定仍由 Google Tag Manager 管理。
 
-本站以 `send_page_view: false` 關閉標籤的預設 pageview，再自行送出單次事件。啟用 GA4 時，請在資料串流的「加強型評估／網頁瀏覽」設定中關閉「根據瀏覽器記錄事件變更的網頁」，避免與網站自己的事件重複；Google 說明見 [Measure pageviews](https://developers.google.com/analytics/devguides/collection/ga4/views)。
+載入容器前以全域參數與 dataLayer 提供 `page_title`、`page_location`；文章頁另提供 `interview_id`、`article_slug`、`content_group: interview`。`page_location` 歸一 `index.html`、排除片段時間 `t` 與 fragment，保留 UTM；舊 `?v=` 連結轉向前不啟動標籤。dataLayer 的 `puma_page_context` 用於容器擴充，不是額外 GA page_view。
 
-GA 報表可依文章 pathname 分辨各篇。如需以文章 ID 或 slug 製作自訂報表，可在 GA 管理介面新增事件範圍的 `interview_id` 與 `article_slug` 自訂維度。目前沒有設定真實 Measurement ID，也未驗證遠端 GA 收集結果。
+只有 Measurement ID 而沒有 GTM 時，才使用獨立 GA4 模式：以 `send_page_view:false` 關閉預設瀏覽，自行送出單次 page_view。兩個 ID 都空白時，不載入分析標籤。
+
+正式網址用於首頁與每篇文章的 canonical URL。啟用後可在 Google Analytics 的「報表 → 即時」確認來訪；如要用 ID／slug 製作自訂報表，可新增事件範圍的 `interview_id`、`article_slug` 自訂維度。需在 Tag Assistant／DebugView 確認實際事件參數後使用。
+
+公開容器目前開啟增強型評估的 history tracking；搜尋篩選改變網址時的事件行為由容器設定決定。若只要計算完整頁面載入，可在 GA 網頁瀏覽設定中關閉「根據瀏覽器記錄事件變更的網頁」。網站本身不重複送出 page_view。
+
+官方參考：[安裝 GTM](https://support.google.com/tagmanager/answer/14847097)、[設定 GA4 目的地](https://support.google.com/tagmanager/answer/9442095)、[dataLayer](https://developers.google.com/tag-platform/tag-manager/datalayer)。

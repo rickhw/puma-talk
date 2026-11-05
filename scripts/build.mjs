@@ -34,6 +34,7 @@ export async function build() {
   data=mergeEnhancements(data,editorial,statistics);
   const config = JSON.parse(await readFile(path.join(root, 'data/site.json'), 'utf8'));
   if (config.analytics?.measurementId && !/^G-[A-Z0-9]+$/.test(config.analytics.measurementId)) throw new Error('GA4 Measurement ID 格式錯誤');
+  if (config.analytics?.gtmContainerId && !/^GTM-[A-Z0-9]+$/.test(config.analytics.gtmContainerId)) throw new Error('GTM Container ID 格式錯誤');
   if (config.siteUrl && (!/^https?:\/\//.test(config.siteUrl) || !config.siteUrl.endsWith('/'))) throw new Error('siteUrl 需為以 / 結尾的完整 HTTP(S) 網址');
   const out = path.join(root, 'dist');
   await rm(out, { recursive: true, force: true });
@@ -45,11 +46,16 @@ export async function build() {
   const app = (await readFile(path.join(root, 'assets/app.js'), 'utf8')).replace(/^import .*;\n/gm, '');
   await writeFile(path.join(out, 'assets/app.bundle.js'), `(async () => {\n${core}\n${insights}\nconst esc = escapeHTML;\n${app}\n})();\n`);
   const jsonScript = value => JSON.stringify(value).replaceAll('<','\\u003c');
-  const analytics = `<script id="site-config" type="application/json">${jsonScript(config)}</script>\n  <script defer src="./assets/analytics.js"></script>`;
+  const analyticsSource = await readFile(path.join(root, 'assets/analytics.js'), 'utf8');
+  const analytics = `<script id="site-config" type="application/json">${jsonScript(config)}</script>\n  <script>${analyticsSource}</script>`;
+  const container = config.analytics?.gtmContainerId;
+  const noscript = container ? `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${escapeHTML(container)}" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>` : '';
+  const withAnalytics = page => page.replace('</title>', `</title>\n  ${analytics}`).replace('<body>', `<body>\n  ${noscript}`);
   const template = await readFile(path.join(root, 'index.html'), 'utf8');
-  const html = template.replace('<script type="module" src="./assets/app.js"></script>', `<script id="archive-data" type="application/json">${jsonScript(data)}</script>\n  <script defer src="./assets/app.bundle.js"></script>\n  ${analytics}`)
-    .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1">${collectionStatsHTML(data.interviews,data.statisticsUpdatedAt)}<div class="loading-state">正在載入專訪…</div></main>`);
-  await writeFile(path.join(out, 'index.html'), html);
+  const html = withAnalytics(template.replace('<script type="module" src="./assets/app.js"></script>', `<script id="archive-data" type="application/json">${jsonScript(data)}</script>\n  <script defer src="./assets/app.bundle.js"></script>`)
+    .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1">${collectionStatsHTML(data.interviews,data.statisticsUpdatedAt)}<div class="loading-state">正在載入專訪…</div></main>`));
+  const homeCanonical = config.siteUrl ? `<link rel="canonical" href="${escapeHTML(config.siteUrl)}">` : '';
+  await writeFile(path.join(out, 'index.html'), html.replace('<meta charset="utf-8">', `<meta charset="utf-8">\n  ${homeCanonical}`));
   for (const item of data.interviews) {
     const title = `${item.title}｜PUMA TALKS`;
     const description = item.article?.lead || item.description;
@@ -62,8 +68,9 @@ export async function build() {
       .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHTML(description)}">`)
       .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeHTML(title)}">`)
       .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeHTML(description)}">`)
-      .replace('<script type="module" src="./assets/app.js"></script>', `<script defer src="./assets/app.bundle.js"></script>\n  ${analytics}`)
+      .replace('<script type="module" src="./assets/app.js"></script>', `<script defer src="./assets/app.bundle.js"></script>`)
       .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>', `<main id="main" tabindex="-1" data-static-article="true">${staticContent}</main>`);
+    page = withAnalytics(page);
     const directory = path.join(out, 'interviews', item.slug);
     await mkdir(directory, {recursive:true});
     await writeFile(path.join(directory, 'index.html'), page);

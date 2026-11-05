@@ -50,29 +50,51 @@ test('summary content is searchable, rendered as an article, and escaped',()=>{
   assert.ok(html.includes('來源說明')&&html.includes('&lt;script&gt;標示&lt;/script&gt;'));
 });
 
-test('GA stays off without an ID and emits one article pageview when configured',async()=>{
+async function analyticsRuntime(analytics,search='?t=123&utm_source=test',path='') {
   const script=await readFile(new URL('../assets/analytics.js',import.meta.url),'utf8');
-  function run(id,search='?t=123&utm_source=test',path='') {
-    const appended=[],window={};
-    const metadata={'interview-id':'AbCdEfGh_12','article-slug':'test-slug'};
-    const document={title:'文章標題｜PUMA TALKS',querySelector(selector){
-      if(selector==='#site-config') return {textContent:JSON.stringify({analytics:{measurementId:id}})};
-      const key=selector.match(/meta\[name="([^"]+)"\]/)?.[1];return key?{content:metadata[key]}:null;
-    },createElement(){return {};},head:{append(node){appended.push(node);}}};
-    const location=new URL('https://example.test/repo/interviews/test-slug/'+path+search+'#fragment');
-    vm.runInNewContext(script,{document,location,URL,URLSearchParams,window,Date});
-    return {appended,window};
-  }
-  assert.equal(run('').appended.length,0);
-  const enabled=run('G-TEST123');
+  const appended=[],window={};
+  const metadata={'interview-id':'AbCdEfGh_12','article-slug':'test-slug'};
+  const document={title:'文章標題｜PUMA TALKS',querySelector(selector){
+    if(selector==='#site-config') return {textContent:JSON.stringify({analytics})};
+    const key=selector.match(/meta\[name="([^"]+)"\]/)?.[1];return key?{content:metadata[key]}:null;
+  },createElement(){return {};},head:{append(node){appended.push(node);}}};
+  const location=new URL('https://example.test/repo/interviews/test-slug/'+path+search+'#fragment');
+  const context={document,location,URL,URLSearchParams,window,Date};
+  vm.runInNewContext(script,context);
+  return {appended,window,rerun(){vm.runInNewContext(script,context);}};
+}
+
+test('GA stays off without an ID and emits one article pageview when configured',async()=>{
+  assert.equal((await analyticsRuntime({})).appended.length,0);
+  const enabled=await analyticsRuntime({measurementId:'G-TEST123'});
   const views=enabled.window.dataLayer.filter(args=>args[0]==='event'&&args[1]==='page_view');
   assert.equal(views.length,1);
   assert.equal(views[0][2].page_location,'https://example.test/repo/interviews/test-slug/?utm_source=test');
   assert.equal(views[0][2].article_slug,'test-slug');
   assert.equal(enabled.appended.length,1);
-  assert.equal(run('G-TEST123','?v=AbCdEfGh_12').appended.length,0);
-  const indexed=run('G-TEST123','?t=123','index.html').window.dataLayer.find(args=>args[0]==='event');
+  assert.equal((await analyticsRuntime({measurementId:'G-TEST123'},'?v=AbCdEfGh_12')).appended.length,0);
+  const indexed=(await analyticsRuntime({measurementId:'G-TEST123'},'?t=123','index.html')).window.dataLayer.find(args=>args[0]==='event');
   assert.equal(indexed[2].page_location,'https://example.test/repo/interviews/test-slug/');
+});
+
+test('GTM takes precedence over direct GA and queues article context before loading once',async()=>{
+  const enabled=await analyticsRuntime({measurementId:'G-TEST123',gtmContainerId:'GTM-TEST123'});
+  assert.equal(enabled.appended.length,1);
+  assert.equal(enabled.appended[0].src,'https://www.googletagmanager.com/gtm.js?id=GTM-TEST123');
+  const layer=enabled.window.dataLayer;
+  assert.equal(layer.filter(x=>x.event==='gtm.js').length,1);
+  assert.equal(layer.filter(x=>x[0]==='config'||x[0]==='event').length,0);
+  assert.equal(layer[0][0],'set');
+  assert.equal(layer[0][1].page_location,'https://example.test/repo/interviews/test-slug/?utm_source=test');
+  assert.equal(layer[0][1].article_slug,'test-slug');
+  assert.equal(layer[1].event,'puma_page_context');
+  assert.equal(layer[1].interview_id,'AbCdEfGh_12');
+  assert.equal(layer[1].content_group,'interview');
+  enabled.rerun();
+  assert.equal(enabled.appended.length,1);
+  assert.equal(layer.filter(x=>x.event==='gtm.js').length,1);
+  assert.equal((await analyticsRuntime({gtmContainerId:'GTM-TEST123'},'?v=AbCdEfGh_12')).appended.length,0);
+  assert.equal((await analyticsRuntime({gtmContainerId:'GTM-invalid?inject'})).appended.length,0);
 });
 
 test('legacy query links redirect to the slug and retain clip and campaign parameters',async()=>{

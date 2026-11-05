@@ -72,7 +72,7 @@ npm run preview
 
 **本批 113 頁已完成 AI 文章摘要，共 523 項重點。** 42 項測試與 113 頁 HTTP 檢查通過，原始逐字稿保持不變。其中 1 頁的現有逐字稿主要涵蓋蔡英文柏林演講，已另標來源範圍，沈伯洋評論部分仍待對照原片；詳見[文章處理進度](docs/articles-status.md)。
 
-`data/site.json` 預留正式網址與 GA4 Measurement ID；預設空白，不啟用追蹤。填入 ID 並建置後可按文章網址、ID、slug 統計瀏覽。設定、更新與來源核對方式見[文章與 GA 工作流程](docs/articles.md)。
+`data/site.json` 已設定正式網址 `https://puma-talk.gtcafe.com/`、GTM 容器 `GTM-WXCZ2WR7` 與 GA4 `G-TRLVRQ877L`。網站透過已發布的 GTM 容器載入 Google Analytics；不重複載入獨立 GA 標籤。設定、更新與來源核對方式見[文章與 GA 工作流程](docs/articles.md)。
 
 ### YouTube 統計、關鍵字與 AI 校對
 
@@ -80,7 +80,7 @@ npm run preview
 
 原始逐字稿保留，網站另使用 AI 輔助校對的正體中文版本。109 支中文影片已完成文字檢視，4 支英文影片已產生正體中文譯稿；網站改用 AI 校對文案，並移除關於計畫中的步驟說明。AI 處理不會把內部原稿標為人工 `reviewed`。
 
-本機每日 **03:10** 更新數字並重建網站，使用者 LaunchAgent 已安裝且實際試跑成功。YouTube 缺漏值不會當作零，失敗時保留上次成功值與時間。最新數字以 `data/statistics.json` 為準；GA 仍預設停用。完整操作及 GitHub 排程範本見[統計與 AI 文字處理說明](docs/statistics-and-editorial.md)。
+本機每日 **03:10** 更新數字並重建網站，使用者 LaunchAgent 已安裝且實際試跑成功。YouTube 缺漏值不會當作零，失敗時保留上次成功值與時間。最新數字以 `data/statistics.json` 為準；GA4 已透過 GTM 設定，實際收集狀態需以 GA 即時報表核對。完整操作及 GitHub 排程範本見[統計與 AI 文字處理說明](docs/statistics-and-editorial.md)。
 
 ### 新增一場專訪
 
