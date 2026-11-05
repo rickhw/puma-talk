@@ -45,13 +45,40 @@ export async function build() {
   const insights=(await readFile(path.join(root,'assets/insights.js'),'utf8')).replace(/^import .*;\n/gm,'').replace(/^export /gm,'');
   const app = (await readFile(path.join(root, 'assets/app.js'), 'utf8')).replace(/^import .*;\n/gm, '');
   await writeFile(path.join(out, 'assets/app.bundle.js'), `(async () => {\n${core}\n${insights}\nconst esc = escapeHTML;\n${app}\n})();\n`);
+  // HTML may revalidate before cached assets. Content addresses keep deployments consistent.
+  const assetVersions = {};
+  for (const name of ['app.bundle.js','style.css','articles.css','insights.css']) {
+    const content=await readFile(path.join(out,'assets',name));
+    const extension=path.extname(name),stem=name.slice(0,-extension.length);
+    const version=createHash('sha256').update(content).digest('hex').slice(0,12);
+    const versioned=`${stem}.${version}${extension}`;
+    await writeFile(path.join(out,'assets',versioned),content);
+    assetVersions[`./assets/${name}`]=`./assets/${versioned}`;
+  }
+  const publicJSON=JSON.stringify(data);
+  const dataVersion=createHash('sha256').update(publicJSON).digest('hex').slice(0,12);
+  const archiveURL=`./data/interviews.${dataVersion}.json`;
+  await mkdir(path.join(out,'data'),{recursive:true});
+  await writeFile(path.join(out,'data/interviews.json'),publicJSON);
+  await writeFile(path.join(out,archiveURL),publicJSON);
+  assetVersions['./data/interviews.json']=archiveURL;
+
   const jsonScript = value => JSON.stringify(value).replaceAll('<','\\u003c');
   const analyticsSource = await readFile(path.join(root, 'assets/analytics.js'), 'utf8');
   const analytics = `<script id="site-config" type="application/json">${jsonScript(config)}</script>\n  <script>${analyticsSource}</script>`;
   const container = config.analytics?.gtmContainerId;
   const noscript = container ? `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${escapeHTML(container)}" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>` : '';
-  const withAnalytics = page => page.replace('</title>', `</title>\n  ${analytics}`).replace('<body>', `<body>\n  ${noscript}`);
   const template = await readFile(path.join(root, 'index.html'), 'utf8');
+  const buildId=createHash('sha256').update(template+JSON.stringify(config)+JSON.stringify(assetVersions)).digest('hex').slice(0,12);
+  const manifest={buildId,assets:assetVersions};
+  await writeFile(path.join(out,'build.json'),JSON.stringify(manifest,null,2)+'\n');
+  const withAnalytics = source => {
+    let page=source.replace('</title>', `</title>\n  <meta name="build-version" content="${buildId}">\n  <meta name="archive-data-url" content="${archiveURL}">\n  ${analytics}`).replace('<body>', `<body>\n  ${noscript}`);
+    for(const [original,versioned] of Object.entries(assetVersions)) {
+      page=page.replaceAll(`src="${original}"`,`src="${versioned}"`).replaceAll(`href="${original}"`,`href="${versioned}"`);
+    }
+    return page;
+  };
   const html = withAnalytics(template.replace('<script type="module" src="./assets/app.js"></script>', `<script id="archive-data" type="application/json">${jsonScript(data)}</script>\n  <script defer src="./assets/app.bundle.js"></script>`)
     .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1"><div id="ranking-panel">${rankingHTML(data.interviews,'views',data.statisticsUpdatedAt)}</div>${collectionStatsHTML(data.interviews,data.statisticsUpdatedAt)}<div class="loading-state">正在載入專訪…</div></main>`));
   const homeCanonical = config.siteUrl ? `<link rel="canonical" href="${escapeHTML(config.siteUrl)}">` : '';
@@ -75,8 +102,6 @@ export async function build() {
     await mkdir(directory, {recursive:true});
     await writeFile(path.join(directory, 'index.html'), page);
   }
-  await mkdir(path.join(out, 'data'), { recursive: true });
-  await writeFile(path.join(out, 'data/interviews.json'), JSON.stringify(data));
   await mkdir(path.join(out, 'examples'), { recursive: true });
   await cp(path.join(root, 'docs/reader-demo.srt'), path.join(out, 'examples/reader-demo.srt'));
   await writeFile(path.join(out, '.nojekyll'), '');

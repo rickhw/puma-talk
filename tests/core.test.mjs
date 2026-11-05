@@ -55,7 +55,7 @@ test('static output serves correctly without dependencies or a backend', async (
   assert.equal((await request('/','HEAD')).body,undefined);
   const html = String((await request('/')).body);
   assert.match(html,/lang="zh-Hant"/);
-  assert.match(html,/\.\/assets\/app.bundle.js/);
+  assert.match(html,/\.\/assets\/app\.bundle\.[a-f0-9]{12}\.js/);
   assert.match(html,/id="archive-data"/);
   const site=JSON.parse(await readFile(new URL('../data/site.json',import.meta.url),'utf8'));
   if(site.analytics?.gtmContainerId) {
@@ -112,4 +112,27 @@ test('YouTube time links keep the source video and floor valid cue seconds',()=>
   assert.equal(youtubeTimeURL('AbCdEfGh_12',0),'https://www.youtube.com/watch?v=AbCdEfGh_12&t=0s');
   assert.equal(youtubeTimeURL('AbCdEfGh_12',-10),'https://www.youtube.com/watch?v=AbCdEfGh_12&t=0s');
   assert.throws(()=>youtubeTimeURL('invalid?x',10),/影片 ID/);
+});
+
+test('deployed HTML references content-addressed scripts, styles and article data',async()=>{
+  await build();
+  const {createHash}=await import('node:crypto');
+  const manifest=JSON.parse(await readFile(new URL('../dist/build.json',import.meta.url),'utf8'));
+  assert.match(manifest.buildId,/^[a-f0-9]{12}$/);
+  for(const [original,versioned] of Object.entries(manifest.assets)) {
+    const content=await readFile(new URL('../dist/'+versioned.slice(2),import.meta.url));
+    const hash=createHash('sha256').update(content).digest('hex').slice(0,12);
+    assert.ok(versioned.includes('.'+hash+'.'));
+    assert.deepEqual(content,await readFile(new URL('../dist/'+original.slice(2),import.meta.url)));
+  }
+  const merged=JSON.parse(await readFile(new URL('../dist/data/interviews.json',import.meta.url),'utf8'));
+  for(const relative of ['index.html',`interviews/${merged.interviews[0].slug}/index.html`]) {
+    const page=await readFile(new URL('../dist/'+relative,import.meta.url),'utf8');
+    assert.ok(page.includes(`name="build-version" content="${manifest.buildId}"`));
+    assert.ok(page.includes(`name="archive-data-url" content="${manifest.assets['./data/interviews.json']}"`));
+    for(const [original,versioned] of Object.entries(manifest.assets)) {
+      if(original.startsWith('./assets/'))assert.ok(page.includes(versioned));
+      assert.ok(!page.includes(`src="${original}"`)&&!page.includes(`href="${original}"`));
+    }
+  }
 });

@@ -283,7 +283,8 @@ try {
   const embedded = document.querySelector('#archive-data');
   if (embedded) archive = validateArchive(JSON.parse(embedded.textContent));
   else {
-    const response = await fetch('./data/interviews.json');
+    const archiveURL=document.querySelector('meta[name="archive-data-url"]')?.content || './data/interviews.json';
+    const response = await fetch(archiveURL);
     if (!response.ok) throw new Error('資料庫讀取失敗');
     archive = validateArchive(await response.json());
   }
