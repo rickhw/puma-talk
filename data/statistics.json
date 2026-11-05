@@ -1,54 +1,70 @@
 {
   "version": 1,
-  "attemptedAt": "2026-11-05T01:21:03.853395+00:00",
-  "completedAt": "2026-11-05T01:22:59.921583+00:00",
+  "attemptedAt": "2026-11-05T02:21:20.270305+00:00",
+  "completedAt": "2026-11-05T02:23:44.166445+00:00",
   "timezone": "Asia/Taipei",
   "videos": [
     {
+      "videoId": "Fc7mNhTRS5o",
+      "views": 127727,
+      "likes": 6012,
+      "fetchedAt": "2026-11-05T02:21:22.612524+00:00",
+      "source": "youtube",
+      "status": "ok"
+    },
+    {
+      "videoId": "9zRsNOYZ7U4",
+      "views": 671553,
+      "likes": 16774,
+      "fetchedAt": "2026-11-05T02:21:22.610868+00:00",
+      "source": "youtube",
+      "status": "ok"
+    },
+    {
       "videoId": "2GIRFjKUbLU",
-      "views": 92906,
-      "likes": 3214,
-      "fetchedAt": "2026-11-05T01:21:07.474771+00:00",
+      "views": 93819,
+      "likes": 3258,
+      "fetchedAt": "2026-11-05T02:21:22.771860+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "YCvJMzwV0Sw",
-      "views": 224588,
-      "likes": 6417,
-      "fetchedAt": "2026-11-05T01:21:07.185602+00:00",
+      "views": 227242,
+      "likes": 6505,
+      "fetchedAt": "2026-11-05T02:21:24.440631+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "6AoycCr8UiY",
-      "views": 2079314,
-      "likes": 67058,
-      "fetchedAt": "2026-11-05T01:21:07.184482+00:00",
+      "views": 2081841,
+      "likes": 67083,
+      "fetchedAt": "2026-11-05T02:21:24.831198+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "YlEaWM3NAKs",
-      "views": 174735,
-      "likes": 4288,
-      "fetchedAt": "2026-11-05T01:21:09.845125+00:00",
+      "views": 175068,
+      "likes": 4342,
+      "fetchedAt": "2026-11-05T02:21:24.863593+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "vPuFVXknL1w",
-      "views": 1397501,
-      "likes": 42500,
-      "fetchedAt": "2026-11-05T01:21:10.034613+00:00",
+      "views": 1400783,
+      "likes": 42552,
+      "fetchedAt": "2026-11-05T02:21:26.658826+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "Yewxcp4pPB0",
-      "views": 67813,
-      "likes": 945,
-      "fetchedAt": "2026-11-05T01:21:10.551828+00:00",
+      "views": 68034,
+      "likes": 951,
+      "fetchedAt": "2026-11-05T02:21:27.492894+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -56,7 +72,7 @@
       "videoId": "0O5y49gbQhY",
       "views": 106877,
       "likes": 2389,
-      "fetchedAt": "2026-11-05T01:21:12.622799+00:00",
+      "fetchedAt": "2026-11-05T02:21:27.647972+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -64,23 +80,23 @@
       "videoId": "I7His0HDPBU",
       "views": 186097,
       "likes": 5027,
-      "fetchedAt": "2026-11-05T01:21:12.694767+00:00",
+      "fetchedAt": "2026-11-05T02:21:28.582027+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "jbBdnbEkV2I",
-      "views": 578666,
-      "likes": 21735,
-      "fetchedAt": "2026-11-05T01:21:13.756636+00:00",
+      "views": 578778,
+      "likes": 21736,
+      "fetchedAt": "2026-11-05T02:21:29.579534+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "YjbsgHRLuJo",
-      "views": 815441,
-      "likes": 28406,
-      "fetchedAt": "2026-11-05T01:21:15.738921+00:00",
+      "views": 815831,
+      "likes": 28408,
+      "fetchedAt": "2026-11-05T02:21:30.233682+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -88,39 +104,39 @@
       "videoId": "165rdiKbNkg",
       "views": 360149,
       "likes": 8492,
-      "fetchedAt": "2026-11-05T01:21:15.875105+00:00",
+      "fetchedAt": "2026-11-05T02:21:31.239871+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "E8jBidIrouc",
-      "views": 362189,
-      "likes": 9642,
-      "fetchedAt": "2026-11-05T01:21:16.541490+00:00",
+      "views": 362339,
+      "likes": 9643,
+      "fetchedAt": "2026-11-05T02:21:32.111752+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "BaW2cA0BOlI",
-      "views": 512738,
-      "likes": 12985,
-      "fetchedAt": "2026-11-05T01:21:18.452098+00:00",
+      "views": 512844,
+      "likes": 12989,
+      "fetchedAt": "2026-11-05T02:21:33.136980+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "WvGbTmYP6Gc",
-      "views": 236559,
-      "likes": 3966,
-      "fetchedAt": "2026-11-05T01:21:18.756397+00:00",
+      "views": 236563,
+      "likes": 3967,
+      "fetchedAt": "2026-11-05T02:21:34.435395+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "SLJ-PuMcv-c",
-      "views": 263420,
-      "likes": 8913,
-      "fetchedAt": "2026-11-05T01:21:19.522791+00:00",
+      "views": 263431,
+      "likes": 8915,
+      "fetchedAt": "2026-11-05T02:21:35.279427+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -128,39 +144,39 @@
       "videoId": "55AhLL-nmP8",
       "views": 186922,
       "likes": 4399,
-      "fetchedAt": "2026-11-05T01:21:21.158983+00:00",
+      "fetchedAt": "2026-11-05T02:21:36.128020+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "tG4puJVsKN8",
-      "views": 806862,
-      "likes": 18855,
-      "fetchedAt": "2026-11-05T01:21:21.394171+00:00",
+      "views": 806920,
+      "likes": 18857,
+      "fetchedAt": "2026-11-05T02:21:37.259232+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "N8xyCixeEYw",
-      "views": 366998,
-      "likes": 6817,
-      "fetchedAt": "2026-11-05T01:21:22.365653+00:00",
+      "views": 367061,
+      "likes": 6818,
+      "fetchedAt": "2026-11-05T02:21:38.943121+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "IrcMhePLnww",
-      "views": 549025,
-      "likes": 12081,
-      "fetchedAt": "2026-11-05T01:21:24.013888+00:00",
+      "views": 549049,
+      "likes": 12082,
+      "fetchedAt": "2026-11-05T02:21:40.791157+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "IoKQa-btOyI",
-      "views": 678224,
-      "likes": 19739,
-      "fetchedAt": "2026-11-05T01:21:24.200875+00:00",
+      "views": 678276,
+      "likes": 19740,
+      "fetchedAt": "2026-11-05T02:21:41.942845+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -168,103 +184,103 @@
       "videoId": "hUEBw7CJ6dI",
       "views": 132388,
       "likes": 3834,
-      "fetchedAt": "2026-11-05T01:21:25.262391+00:00",
+      "fetchedAt": "2026-11-05T02:21:44.164325+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "BhR4Mx2_wa0",
-      "views": 983017,
-      "likes": 27591,
-      "fetchedAt": "2026-11-05T01:21:27.283905+00:00",
+      "views": 983156,
+      "likes": 27596,
+      "fetchedAt": "2026-11-05T02:21:45.759920+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "8hA_-SkaYGE",
-      "views": 1042235,
-      "likes": 25399,
-      "fetchedAt": "2026-11-05T01:21:27.265491+00:00",
+      "views": 1042268,
+      "likes": 25400,
+      "fetchedAt": "2026-11-05T02:21:47.352916+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "2iYahxnyQ3A",
-      "views": 181200,
+      "views": 181212,
       "likes": 3481,
-      "fetchedAt": "2026-11-05T01:21:28.122886+00:00",
+      "fetchedAt": "2026-11-05T02:21:49.787902+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "z-ozsSJbUhs",
-      "views": 289550,
-      "likes": 8565,
-      "fetchedAt": "2026-11-05T01:21:30.456092+00:00",
+      "views": 289594,
+      "likes": 8568,
+      "fetchedAt": "2026-11-05T02:21:50.879559+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "Y5P4EG5RkUA",
-      "views": 274242,
+      "views": 274243,
       "likes": 7465,
-      "fetchedAt": "2026-11-05T01:21:30.349437+00:00",
+      "fetchedAt": "2026-11-05T02:21:52.682349+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "G2P3S-4Dmkw",
-      "views": 1260830,
-      "likes": 29421,
-      "fetchedAt": "2026-11-05T01:21:30.962769+00:00",
+      "views": 1261048,
+      "likes": 29427,
+      "fetchedAt": "2026-11-05T02:21:55.202917+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "Fp1m81qlICg",
-      "views": 165864,
+      "views": 165868,
       "likes": 4656,
-      "fetchedAt": "2026-11-05T01:21:33.295515+00:00",
+      "fetchedAt": "2026-11-05T02:21:56.699788+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "g3MCFruxowQ",
-      "views": 73114,
+      "views": 73117,
       "likes": 3440,
-      "fetchedAt": "2026-11-05T01:21:33.311240+00:00",
+      "fetchedAt": "2026-11-05T02:21:59.099763+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "Cc7Fhc6egbw",
-      "views": 116176,
-      "likes": 1414,
-      "fetchedAt": "2026-11-05T01:21:34.071372+00:00",
+      "views": 116255,
+      "likes": 1415,
+      "fetchedAt": "2026-11-05T02:22:01.013109+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "54A9JJ1XYK8",
-      "views": 1206667,
-      "likes": 33501,
-      "fetchedAt": "2026-11-05T01:21:36.746649+00:00",
+      "views": 1206799,
+      "likes": 33507,
+      "fetchedAt": "2026-11-05T02:22:02.938479+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "xkf0pqZXd0A",
-      "views": 100468,
-      "likes": 3442,
-      "fetchedAt": "2026-11-05T01:21:35.998161+00:00",
+      "views": 100488,
+      "likes": 3443,
+      "fetchedAt": "2026-11-05T02:22:05.119650+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "RlX6GysJOfA",
-      "views": 459505,
-      "likes": 9204,
-      "fetchedAt": "2026-11-05T01:21:36.898575+00:00",
+      "views": 459530,
+      "likes": 9205,
+      "fetchedAt": "2026-11-05T02:22:07.008221+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -272,15 +288,15 @@
       "videoId": "OhWHKK0tmGg",
       "views": 267665,
       "likes": 11000,
-      "fetchedAt": "2026-11-05T01:21:39.406563+00:00",
+      "fetchedAt": "2026-11-05T02:22:08.207786+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "awX7tVlEWxU",
-      "views": 1938382,
-      "likes": 31888,
-      "fetchedAt": "2026-11-05T01:21:39.903036+00:00",
+      "views": 1938422,
+      "likes": 31891,
+      "fetchedAt": "2026-11-05T02:22:09.274689+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -288,15 +304,15 @@
       "videoId": "S9jBz2GuuK4",
       "views": 293875,
       "likes": 8349,
-      "fetchedAt": "2026-11-05T01:21:39.686182+00:00",
+      "fetchedAt": "2026-11-05T02:22:10.716225+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "P6ycCSQoEoE",
-      "views": 298597,
-      "likes": 10043,
-      "fetchedAt": "2026-11-05T01:21:42.161929+00:00",
+      "views": 298604,
+      "likes": 10042,
+      "fetchedAt": "2026-11-05T02:22:11.129994+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -304,31 +320,31 @@
       "videoId": "XHl6iwUY4Lg",
       "views": 56726,
       "likes": 1940,
-      "fetchedAt": "2026-11-05T01:21:42.926807+00:00",
+      "fetchedAt": "2026-11-05T02:22:12.471076+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "QJ8-y1L5YNM",
-      "views": 745344,
-      "likes": 22699,
-      "fetchedAt": "2026-11-05T01:21:42.977532+00:00",
+      "views": 745381,
+      "likes": 22701,
+      "fetchedAt": "2026-11-05T02:22:13.454259+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "zYtAGw_9Ee0",
-      "views": 1667618,
+      "views": 1667653,
       "likes": 50494,
-      "fetchedAt": "2026-11-05T01:21:45.156277+00:00",
+      "fetchedAt": "2026-11-05T02:22:13.943505+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "FoDPU1nQWYQ",
-      "views": 609349,
-      "likes": 15925,
-      "fetchedAt": "2026-11-05T01:21:46.125793+00:00",
+      "views": 609439,
+      "likes": 15931,
+      "fetchedAt": "2026-11-05T02:22:15.027053+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -336,7 +352,7 @@
       "videoId": "fJn4-G06gPE",
       "views": 277306,
       "likes": 8203,
-      "fetchedAt": "2026-11-05T01:21:46.087624+00:00",
+      "fetchedAt": "2026-11-05T02:22:16.162322+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -344,15 +360,15 @@
       "videoId": "KJpGtCQeEQ8",
       "views": 208409,
       "likes": 6106,
-      "fetchedAt": "2026-11-05T01:21:48.182266+00:00",
+      "fetchedAt": "2026-11-05T02:22:16.622583+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "X4l12N2cIcg",
-      "views": 169232,
-      "likes": 8087,
-      "fetchedAt": "2026-11-05T01:21:48.799430+00:00",
+      "views": 169233,
+      "likes": 8086,
+      "fetchedAt": "2026-11-05T02:22:17.837940+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -360,63 +376,63 @@
       "videoId": "D0CSPTdkIYc",
       "views": 8296,
       "likes": 253,
-      "fetchedAt": "2026-11-05T01:21:49.338121+00:00",
+      "fetchedAt": "2026-11-05T02:22:18.635225+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "ULWIruQR-Lc",
-      "views": 4798273,
-      "likes": 88808,
-      "fetchedAt": "2026-11-05T01:21:51.153301+00:00",
+      "views": 4798835,
+      "likes": 88814,
+      "fetchedAt": "2026-11-05T02:22:19.165939+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "Hv85MWC2wDQ",
-      "views": 409539,
-      "likes": 9012,
-      "fetchedAt": "2026-11-05T01:21:51.924348+00:00",
+      "views": 409561,
+      "likes": 9013,
+      "fetchedAt": "2026-11-05T02:22:20.430678+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "1OvkV6SPS8w",
-      "views": 72273,
+      "views": 72279,
       "likes": 1746,
-      "fetchedAt": "2026-11-05T01:21:52.377820+00:00",
+      "fetchedAt": "2026-11-05T02:22:21.320445+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "dmLF1wjt1CU",
-      "views": 211590,
-      "likes": 3600,
-      "fetchedAt": "2026-11-05T01:21:54.021773+00:00",
+      "views": 211717,
+      "likes": 3602,
+      "fetchedAt": "2026-11-05T02:22:21.782846+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "PTEoG2CSPAU",
-      "views": 259481,
-      "likes": 4350,
-      "fetchedAt": "2026-11-05T01:21:55.060934+00:00",
+      "views": 259628,
+      "likes": 4351,
+      "fetchedAt": "2026-11-05T02:22:23.113389+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "24dQWApmsFo",
-      "views": 439299,
-      "likes": 6851,
-      "fetchedAt": "2026-11-05T01:21:55.251899+00:00",
+      "views": 439303,
+      "likes": 6852,
+      "fetchedAt": "2026-11-05T02:22:23.965409+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "-LhSFTmQg6Q",
-      "views": 527459,
+      "views": 527458,
       "likes": 10505,
-      "fetchedAt": "2026-11-05T01:21:57.174102+00:00",
+      "fetchedAt": "2026-11-05T02:22:24.939314+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -424,23 +440,23 @@
       "videoId": "n5jJUrQq0oI",
       "views": 86851,
       "likes": 2826,
-      "fetchedAt": "2026-11-05T01:21:58.362536+00:00",
+      "fetchedAt": "2026-11-05T02:22:26.368218+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "1DwcvCIGZaw",
-      "views": 230558,
+      "views": 230564,
       "likes": 5384,
-      "fetchedAt": "2026-11-05T01:21:58.657620+00:00",
+      "fetchedAt": "2026-11-05T02:22:27.049034+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "-L-KGwS6gdY",
-      "views": 1207839,
-      "likes": 30341,
-      "fetchedAt": "2026-11-05T01:22:00.122137+00:00",
+      "views": 1207926,
+      "likes": 30343,
+      "fetchedAt": "2026-11-05T02:22:27.979952+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -448,15 +464,15 @@
       "videoId": "5Iv19PaXbz8",
       "views": 22313,
       "likes": 585,
-      "fetchedAt": "2026-11-05T01:22:01.266765+00:00",
+      "fetchedAt": "2026-11-05T02:22:29.006739+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "j95rbI8lbfA",
-      "views": 327358,
-      "likes": 12072,
-      "fetchedAt": "2026-11-05T01:22:01.901185+00:00",
+      "views": 327435,
+      "likes": 12074,
+      "fetchedAt": "2026-11-05T02:22:29.774784+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -464,15 +480,15 @@
       "videoId": "0E63S8F8KCU",
       "views": 2942,
       "likes": 214,
-      "fetchedAt": "2026-11-05T01:22:02.849258+00:00",
+      "fetchedAt": "2026-11-05T02:22:30.604226+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "03xTQR77r6Q",
-      "views": 70629,
+      "views": 70635,
       "likes": 2602,
-      "fetchedAt": "2026-11-05T01:22:04.006356+00:00",
+      "fetchedAt": "2026-11-05T02:22:31.734340+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -480,23 +496,23 @@
       "videoId": "fRJCHpGSml0",
       "views": 50025,
       "likes": 2279,
-      "fetchedAt": "2026-11-05T01:22:04.508360+00:00",
+      "fetchedAt": "2026-11-05T02:22:32.243091+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "eKKZun4J9-E",
-      "views": 35775,
-      "likes": 1315,
-      "fetchedAt": "2026-11-05T01:22:05.427267+00:00",
+      "views": 35789,
+      "likes": 1316,
+      "fetchedAt": "2026-11-05T02:22:33.136152+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "ATse26gVFs4",
-      "views": 36593,
+      "views": 36600,
       "likes": 1560,
-      "fetchedAt": "2026-11-05T01:22:06.591432+00:00",
+      "fetchedAt": "2026-11-05T02:22:34.390680+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -504,7 +520,7 @@
       "videoId": "rtwkMvFnLjM",
       "views": 90802,
       "likes": 3579,
-      "fetchedAt": "2026-11-05T01:22:07.434683+00:00",
+      "fetchedAt": "2026-11-05T02:22:35.372490+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -512,7 +528,7 @@
       "videoId": "ulFh3rsVjNI",
       "views": 857,
       "likes": 27,
-      "fetchedAt": "2026-11-05T01:22:08.177167+00:00",
+      "fetchedAt": "2026-11-05T02:22:37.022500+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -520,7 +536,7 @@
       "videoId": "NabOkqEFJJg",
       "views": 1363,
       "likes": 130,
-      "fetchedAt": "2026-11-05T01:22:09.549209+00:00",
+      "fetchedAt": "2026-11-05T02:22:38.494630+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -528,7 +544,7 @@
       "videoId": "I68LQAb0Qdo",
       "views": 158,
       "likes": 9,
-      "fetchedAt": "2026-11-05T01:22:10.094411+00:00",
+      "fetchedAt": "2026-11-05T02:22:39.812253+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -536,7 +552,7 @@
       "videoId": "APFhoqsNT5w",
       "views": 193,
       "likes": 10,
-      "fetchedAt": "2026-11-05T01:22:10.773114+00:00",
+      "fetchedAt": "2026-11-05T02:22:41.705279+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -544,7 +560,7 @@
       "videoId": "ugeAvyxLcD8",
       "views": 323,
       "likes": 31,
-      "fetchedAt": "2026-11-05T01:22:12.039154+00:00",
+      "fetchedAt": "2026-11-05T02:22:43.100315+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -552,7 +568,7 @@
       "videoId": "DRoojuCx4b8",
       "views": 10801,
       "likes": 705,
-      "fetchedAt": "2026-11-05T01:22:13.041103+00:00",
+      "fetchedAt": "2026-11-05T02:22:44.389313+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -560,39 +576,39 @@
       "videoId": "7mT7IfHkGRc",
       "views": 241,
       "likes": 27,
-      "fetchedAt": "2026-11-05T01:22:13.838548+00:00",
+      "fetchedAt": "2026-11-05T02:22:46.566088+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "Pc4hTERkA3E",
-      "views": 106663,
-      "likes": 4309,
-      "fetchedAt": "2026-11-05T01:22:14.881753+00:00",
+      "views": 106664,
+      "likes": 4308,
+      "fetchedAt": "2026-11-05T02:22:47.648969+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "PYSR-DYcXxI",
-      "views": 318550,
-      "likes": 8847,
-      "fetchedAt": "2026-11-05T01:22:16.534062+00:00",
+      "views": 318646,
+      "likes": 8852,
+      "fetchedAt": "2026-11-05T02:22:49.267407+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "0jOSng47e4I",
-      "views": 328439,
-      "likes": 10304,
-      "fetchedAt": "2026-11-05T01:22:17.124675+00:00",
+      "views": 328517,
+      "likes": 10308,
+      "fetchedAt": "2026-11-05T02:22:51.524622+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "PWGbn-9DS20",
-      "views": 112029,
-      "likes": 3889,
-      "fetchedAt": "2026-11-05T01:22:17.816865+00:00",
+      "views": 112067,
+      "likes": 3893,
+      "fetchedAt": "2026-11-05T02:22:52.749656+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -600,7 +616,7 @@
       "videoId": "7oUt-kVMj0c",
       "views": 223097,
       "likes": 7086,
-      "fetchedAt": "2026-11-05T01:22:20.731999+00:00",
+      "fetchedAt": "2026-11-05T02:22:54.509601+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -608,7 +624,7 @@
       "videoId": "HI7hZpxLxEI",
       "views": 181336,
       "likes": 5706,
-      "fetchedAt": "2026-11-05T01:22:20.337177+00:00",
+      "fetchedAt": "2026-11-05T02:22:56.244686+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -616,7 +632,7 @@
       "videoId": "sFJJ3nfFr8k",
       "views": 77812,
       "likes": 2879,
-      "fetchedAt": "2026-11-05T01:22:20.506881+00:00",
+      "fetchedAt": "2026-11-05T02:22:57.753804+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -624,7 +640,7 @@
       "videoId": "qhfD-s251Dk",
       "views": 15575,
       "likes": 688,
-      "fetchedAt": "2026-11-05T01:22:23.160852+00:00",
+      "fetchedAt": "2026-11-05T02:22:59.210547+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -632,15 +648,15 @@
       "videoId": "vcHJTgttPzw",
       "views": 342577,
       "likes": 15283,
-      "fetchedAt": "2026-11-05T01:22:23.657602+00:00",
+      "fetchedAt": "2026-11-05T02:23:01.240652+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "qpRmBIzLfzo",
-      "views": 164353,
-      "likes": 6168,
-      "fetchedAt": "2026-11-05T01:22:23.795448+00:00",
+      "views": 164358,
+      "likes": 6169,
+      "fetchedAt": "2026-11-05T02:23:02.796913+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -648,7 +664,7 @@
       "videoId": "5xiSvP6f5wE",
       "views": 589759,
       "likes": 14190,
-      "fetchedAt": "2026-11-05T01:22:26.025705+00:00",
+      "fetchedAt": "2026-11-05T02:23:04.337985+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -656,15 +672,15 @@
       "videoId": "FOYxprlbIIQ",
       "views": 230536,
       "likes": 9259,
-      "fetchedAt": "2026-11-05T01:22:26.296064+00:00",
+      "fetchedAt": "2026-11-05T02:23:06.699814+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "13RmUdmiO5M",
-      "views": 122915,
-      "likes": 4453,
-      "fetchedAt": "2026-11-05T01:22:26.689147+00:00",
+      "views": 122927,
+      "likes": 4454,
+      "fetchedAt": "2026-11-05T02:23:08.503717+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -672,7 +688,7 @@
       "videoId": "dtKbKSZnTxE",
       "views": 126078,
       "likes": 5118,
-      "fetchedAt": "2026-11-05T01:22:28.965974+00:00",
+      "fetchedAt": "2026-11-05T02:23:09.723106+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -680,23 +696,23 @@
       "videoId": "MVPhEcDwH5A",
       "views": 6941,
       "likes": 206,
-      "fetchedAt": "2026-11-05T01:22:29.004464+00:00",
+      "fetchedAt": "2026-11-05T02:23:12.156149+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "CDRvqjrq10A",
-      "views": 146938,
-      "likes": 5078,
-      "fetchedAt": "2026-11-05T01:22:29.537787+00:00",
+      "views": 146951,
+      "likes": 5077,
+      "fetchedAt": "2026-11-05T02:23:13.872025+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "ajnoGnVAmB0",
-      "views": 133692,
-      "likes": 3059,
-      "fetchedAt": "2026-11-05T01:22:32.474657+00:00",
+      "views": 133707,
+      "likes": 3060,
+      "fetchedAt": "2026-11-05T02:23:15.266376+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -704,7 +720,7 @@
       "videoId": "9lt6Onwh8mw",
       "views": 32383,
       "likes": 809,
-      "fetchedAt": "2026-11-05T01:22:32.085120+00:00",
+      "fetchedAt": "2026-11-05T02:23:17.112654+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -712,39 +728,39 @@
       "videoId": "4jrh2JsC0TA",
       "views": 29447,
       "likes": 1183,
-      "fetchedAt": "2026-11-05T01:22:32.874865+00:00",
+      "fetchedAt": "2026-11-05T02:23:17.886705+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "RRjr8a2B4Mc",
-      "views": 648508,
-      "likes": 16461,
-      "fetchedAt": "2026-11-05T01:22:35.220646+00:00",
+      "views": 648551,
+      "likes": 16463,
+      "fetchedAt": "2026-11-05T02:23:18.571722+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "2FLLswRnRWw",
-      "views": 208117,
-      "likes": 3849,
-      "fetchedAt": "2026-11-05T01:22:35.646971+00:00",
+      "views": 208204,
+      "likes": 3850,
+      "fetchedAt": "2026-11-05T02:23:19.428544+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "sVLPCOKwFYc",
-      "views": 204836,
-      "likes": 4438,
-      "fetchedAt": "2026-11-05T01:22:36.277645+00:00",
+      "views": 204860,
+      "likes": 4440,
+      "fetchedAt": "2026-11-05T02:23:19.992695+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "MOKJwCw-C-I",
-      "views": 10034,
+      "views": 10036,
       "likes": 830,
-      "fetchedAt": "2026-11-05T01:22:38.668734+00:00",
+      "fetchedAt": "2026-11-05T02:23:20.656737+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -752,7 +768,7 @@
       "videoId": "yODeqA0h_No",
       "views": 13951,
       "likes": 213,
-      "fetchedAt": "2026-11-05T01:22:39.124247+00:00",
+      "fetchedAt": "2026-11-05T02:23:21.364772+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -760,7 +776,7 @@
       "videoId": "NTzjoeA7k9I",
       "views": 22073,
       "likes": 638,
-      "fetchedAt": "2026-11-05T01:22:39.697349+00:00",
+      "fetchedAt": "2026-11-05T02:23:22.180586+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -768,7 +784,7 @@
       "videoId": "Y_vmH69hTXM",
       "views": 82047,
       "likes": 4612,
-      "fetchedAt": "2026-11-05T01:22:41.971942+00:00",
+      "fetchedAt": "2026-11-05T02:23:22.666503+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -776,23 +792,23 @@
       "videoId": "EjN9mEAeV-A",
       "views": 263,
       "likes": 15,
-      "fetchedAt": "2026-11-05T01:22:42.053238+00:00",
+      "fetchedAt": "2026-11-05T02:23:23.249081+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "k6Q9JMEIDv8",
-      "views": 147343,
+      "views": 147365,
       "likes": 2481,
-      "fetchedAt": "2026-11-05T01:22:43.262632+00:00",
+      "fetchedAt": "2026-11-05T02:23:24.383696+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "Z9vpvLNMuxM",
-      "views": 10329,
+      "views": 10332,
       "likes": 287,
-      "fetchedAt": "2026-11-05T01:22:44.798966+00:00",
+      "fetchedAt": "2026-11-05T02:23:25.032515+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -800,15 +816,15 @@
       "videoId": "1cVy3_rjUJ8",
       "views": 5674,
       "likes": 316,
-      "fetchedAt": "2026-11-05T01:22:45.582502+00:00",
+      "fetchedAt": "2026-11-05T02:23:25.879253+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "lkmwkRdM0mc",
-      "views": 78842,
+      "views": 78858,
       "likes": 1969,
-      "fetchedAt": "2026-11-05T01:22:46.235089+00:00",
+      "fetchedAt": "2026-11-05T02:23:27.823867+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -816,7 +832,7 @@
       "videoId": "SNnnEN_cx6o",
       "views": 82242,
       "likes": 3387,
-      "fetchedAt": "2026-11-05T01:22:47.818733+00:00",
+      "fetchedAt": "2026-11-05T02:23:28.896871+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -824,55 +840,55 @@
       "videoId": "oO5vFxO8rmE",
       "views": 45175,
       "likes": 2969,
-      "fetchedAt": "2026-11-05T01:22:49.031964+00:00",
+      "fetchedAt": "2026-11-05T02:23:30.221223+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "eiBJmdjTOwU",
-      "views": 1416445,
-      "likes": 30130,
-      "fetchedAt": "2026-11-05T01:22:49.352902+00:00",
+      "views": 1416488,
+      "likes": 30132,
+      "fetchedAt": "2026-11-05T02:23:32.891737+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "P1yNgO-hw9c",
-      "views": 682544,
-      "likes": 22790,
-      "fetchedAt": "2026-11-05T01:22:51.302177+00:00",
+      "views": 682639,
+      "likes": 22796,
+      "fetchedAt": "2026-11-05T02:23:34.417420+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "jSGuWCpbS90",
-      "views": 305897,
+      "views": 305941,
       "likes": 6439,
-      "fetchedAt": "2026-11-05T01:22:52.171966+00:00",
+      "fetchedAt": "2026-11-05T02:23:35.830534+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "Wkjht8rKW4w",
-      "views": 555313,
-      "likes": 9635,
-      "fetchedAt": "2026-11-05T01:22:52.671588+00:00",
+      "views": 555392,
+      "likes": 9636,
+      "fetchedAt": "2026-11-05T02:23:38.258665+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "Da2LDllZjHQ",
-      "views": 541395,
+      "views": 541412,
       "likes": 9597,
-      "fetchedAt": "2026-11-05T01:22:55.103626+00:00",
+      "fetchedAt": "2026-11-05T02:23:39.502754+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "OFmUeE9T6c8",
-      "views": 180611,
+      "views": 180726,
       "likes": 5632,
-      "fetchedAt": "2026-11-05T01:22:55.967671+00:00",
+      "fetchedAt": "2026-11-05T02:23:40.039754+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -880,15 +896,15 @@
       "videoId": "5IH6YTRpCSE",
       "views": 3704,
       "likes": 350,
-      "fetchedAt": "2026-11-05T01:22:56.149371+00:00",
+      "fetchedAt": "2026-11-05T02:23:41.441933+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "XCBjCtCNcSQ",
-      "views": 544055,
-      "likes": 11852,
-      "fetchedAt": "2026-11-05T01:22:58.911969+00:00",
+      "views": 544090,
+      "likes": 11854,
+      "fetchedAt": "2026-11-05T02:23:42.197077+00:00",
       "source": "youtube",
       "status": "ok"
     },
@@ -896,25 +912,25 @@
       "videoId": "8OE16jqy7DU",
       "views": 52730,
       "likes": 2575,
-      "fetchedAt": "2026-11-05T01:22:59.154856+00:00",
+      "fetchedAt": "2026-11-05T02:23:42.595975+00:00",
       "source": "youtube",
       "status": "ok"
     },
     {
       "videoId": "KcQlumnQHoE",
-      "views": 183259,
-      "likes": 7316,
-      "fetchedAt": "2026-11-05T01:22:59.920596+00:00",
+      "views": 183314,
+      "likes": 7319,
+      "fetchedAt": "2026-11-05T02:23:44.165882+00:00",
       "source": "youtube",
       "status": "ok"
     }
   ],
   "totals": {
-    "views": 41081121,
-    "likes": 1070131,
-    "videos": 113,
-    "viewsAvailable": 113,
-    "likesAvailable": 113,
-    "fresh": 113
+    "views": 41894223,
+    "likes": 1093284,
+    "videos": 115,
+    "viewsAvailable": 115,
+    "likesAvailable": 115,
+    "fresh": 115
   }
 }

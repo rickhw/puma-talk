@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T08:00:23.159342+00:00",
+  "updatedAt": "2026-11-05T02:18:05.249170+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
     "https://whoispuma.com/videos",
     "https://www.youtube.com/results?search_query=沈伯洋+專訪+2026"
   ],
-  "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。日期以原頻道 upload_date 優先。",
+  "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
     {
       "id": "aoLUPKAgSgY",
@@ -8125,6 +8125,56 @@
       "sourceUrl": "https://www.youtube.com/watch?v=tKnQp1mC2SU",
       "decision": "deferred",
       "reason": "相關影片目錄或搜尋候選；尚未確認是沈伯洋本人受訪的原版專訪"
+    },
+    {
+      "id": "9zRsNOYZ7U4",
+      "title": "沈伯洋撲馬來了！難得節目露出無奈表情？來紓壓反被老沈鬧騰 這才不舒壓！#11點熱吵店20261103(完整版)│#沈伯洋 #佳娜 #麥基 #甄莉 #陳天仁 #沈玉琳 #唐綺陽",
+      "displayTitle": "沈伯洋撲馬來了！《11點熱吵店》多人紓壓主題完整版",
+      "channel": "Chop Chop Show",
+      "uploadDate": "20261104",
+      "duration": 2693,
+      "language": "zh",
+      "spokenLanguage": "zh",
+      "metadataFile": ".cache/discovery-20261104-hot-show.json",
+      "sourceUrl": "https://www.youtube.com/watch?v=9zRsNOYZ7U4",
+      "url": "https://www.youtube.com/watch?v=9zRsNOYZ7U4",
+      "referenceUrl": "https://whoispuma.com/videos/9zRsNOYZ7U4",
+      "decision": "include",
+      "reason": "節目日期為 2026-11-03，台灣時間 11-04 凌晨上線。沈伯洋與多位來賓共同參與的綜藝節目完整版；摘要區分他的發言與其他來賓經驗。",
+      "description": "節目日期為 2026-11-03，台灣時間 11-04 凌晨上線。沈伯洋與多位來賓共同參與的綜藝節目完整版；摘要區分他的發言與其他來賓經驗。",
+      "category": "社會與生活",
+      "tags": [
+        "綜藝節目",
+        "生活"
+      ],
+      "status": "metadata-fetched",
+      "youtubeUploadDate": "20261103",
+      "publishedAt": "2026-11-04T00:00:20+08:00"
+    },
+    {
+      "id": "Fc7mNhTRS5o",
+      "title": "除了「你好棒」，還可以怎麼稱讚孩子？這次到黃瑽寧醫師的 Podcast《寧夏璐66號茶坊》聊育兒。猜猜哪一個問題是我問的 #3號沈伯洋 #台北順起來 #你的市長沈伯洋",
+      "displayTitle": "除了「你好棒」，還可以怎麼稱讚孩子？《寧夏璐66號茶坊》育兒訪談片段",
+      "channel": "沈伯洋Puma",
+      "uploadDate": "20261104",
+      "duration": 394,
+      "language": "zh",
+      "spokenLanguage": "zh",
+      "metadataFile": ".cache/discovery-20261104-puma-family.json",
+      "sourceUrl": "https://www.youtube.com/watch?v=Fc7mNhTRS5o",
+      "url": "https://www.youtube.com/watch?v=Fc7mNhTRS5o",
+      "referenceUrl": "https://whoispuma.com/videos/Fc7mNhTRS5o",
+      "decision": "include",
+      "reason": "沈伯洋官方頻道發布的育兒訪談片段，長 6 分 34 秒；並非完整節目或另一場獨立專訪。",
+      "description": "沈伯洋官方頻道發布的育兒訪談片段，長 6 分 34 秒；並非完整節目或另一場獨立專訪。",
+      "category": "社會與生活",
+      "tags": [
+        "親子教育",
+        "育兒"
+      ],
+      "status": "metadata-fetched",
+      "youtubeUploadDate": "20261104",
+      "publishedAt": "2026-11-04T17:18:06+08:00"
     }
   ]
 }

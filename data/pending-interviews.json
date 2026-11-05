@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-05T02:22:15.517424+00:00",
+  "interviews": [
+    {
+      "program": "TODAY 看世界",
+      "host": "范琪斐",
+      "guest": "沈伯洋",
+      "broadcastAt": "2026-11-04T20:00:00+08:00",
+      "status": "awaiting-original-video",
+      "sourceUrl": null,
+      "reason": "已確認播出，尚未取得可核實的完整版網址；不以新聞報導、花絮或二次剪輯代替原訪談。",
+      "references": [
+        "https://www.cna.com.tw/news/aipl/202611040248.aspx",
+        "https://www.cna.com.tw/news/aipl/202611040364.aspx"
+      ]
+    }
+  ]
+}

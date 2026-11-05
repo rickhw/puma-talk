@@ -48,7 +48,13 @@ npm run preview
 - GitHub Pages 建置部署及新增訪談 PR 的 GitHub Actions 範本。
 - 響應式版面、鍵盤操作、跳至主內容與減少動態效果支援。
 
-### 初始內容與目前範圍
+### 目前內容與初始範圍
+
+2026-11-05 補入 11 月 4 日在台灣上線的兩支影片，目前共 **115 支影片版本**。包含《11點熱吵店》多人綜藝完整版及《寧夏璐66號茶坊》育兒訪談片段；詳細來源與日期見 [11/04 新增紀錄](docs/discovery-2026-11-04.md)。范琪斐《TODAY 看世界》另列於 [待補原片清單](data/pending-interviews.json)，尚未計入已收錄數。
+
+新增兩支共 1,915 段本機轉錄，均完成 AI 正體中文顯示稿與文章摘要；目前全站共 530 項文章重點。
+
+以下為最初 113 支的處理紀錄：
 
 2026-11-04 從[公開專訪清單](https://vocus.cc/article/6ad8d562fd89780001e98adb)、[認識沈伯洋影片目錄](https://whoispuma.com/videos) 與 YouTube 搜尋交叉整理 509 個候選影片 ID，選出 113 支訪談版本，其中 87 支發布於 2026 年並優先處理。分段影片不等於獨立專訪場次，也不宣稱已涵蓋 YouTube 上所有專訪；重傳、剪輯、新聞評論、公開演說、記者會與待確認內容另列於 [候選目錄](data/catalog.json)。實際已匯入數與待辦以[處理進度](docs/processing-status.md)及 `data/interviews.json` 為準。
 
@@ -135,7 +141,7 @@ npm run build
 
 ### GitHub 儲存庫與 Pages
 
-專案儲存庫：[rickhw/puma-talk](https://github.com/rickhw/puma-talk)，預設分支為 `main`。包含網站原始碼、113 支影片的原始逐字稿與 AI 顯示稿、摘要、關鍵字、統計資料及操作文件；音訊、模型、虛擬環境、快取與 `dist/` 不提交。
+專案儲存庫：[rickhw/puma-talk](https://github.com/rickhw/puma-talk)，預設分支為 `main`。包含網站原始碼、115 支影片的原始逐字稿與 AI 顯示稿、摘要、關鍵字、統計資料及操作文件；音訊、模型、虛擬環境、快取與 `dist/` 不提交。
 
 推送 `main` 會執行測試、建置並保存網站 artifact。若要另行啟用 Pages：
 
@@ -144,6 +150,8 @@ npm run build
 3. 執行 `Build and deploy static site` workflow，即會測試、建置並發布 `dist/`。
 
 全站使用相對資源路徑與獨立 slug 文章連結，支援 `https://user.github.io/repository/` 的子目錄部署，無需伺服器路由設定。Pages 預設未啟用；僅推送儲存庫不會自動公開網站。
+
+逐步操作見 [GitHub Pages 設定指南](docs/github-pages.md)。
 
 ### 排程新增
 

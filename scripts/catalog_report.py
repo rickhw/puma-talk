@@ -21,7 +21,7 @@ def main():
     total_seconds=sum(items[row['id']].get('duration',0) for row in complete)
     lines=['# 專訪處理進度','',
            f'更新：{dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(timespec="seconds")}（台灣時間）','',
-           f'已匯入 **{len(complete)} / {len(included)} 支訪談影片**，優先處理 {catalog["priorityYear"]} 年。所有本次匯入稿件均待校對；分段影片不等於獨立專訪場次，亦不宣稱已涵蓋 YouTube 所有訪談。','',
+           f'已匯入 **{len(complete)} / {len(included)} 支訪談影片**，優先處理 {catalog["priorityYear"]} 年。網站另提供 AI 輔助校對稿，原始稿保留來源狀態；分段影片不等於獨立專訪場次，亦不宣稱已涵蓋 YouTube 所有訪談。','',
            f'共整理 {len(catalog["candidates"])} 個候選影片 ID：{decisions["include"]} 支納入、{decisions["duplicate"]} 支重複版本、{decisions["deferred"]} 支另列待確認或非專訪內容。原始清單與逐支理由見 [catalog.json](../data/catalog.json)。','',
            f'已匯入來源：原頻道字幕 {kinds["youtube-original"]} 支、YouTube 自動字幕 {kinds["youtube-auto"]} 支、本機 ASR {kinds["asr-local"]} 支。已收錄影片片長總和 {timestamp(total_seconds).split(",")[0]}（包含片頭、片尾與非專訪段落，並非人工驗證的語音覆蓋時數）。','',
            '| 發布年份 | 已匯入 | 納入清單 | 待處理 |','| --- | ---: | ---: | ---: |']
@@ -59,7 +59,7 @@ def main():
         title=item['title'].replace('|','／').replace('\n',' ')
         kind=item['transcriptProvenance']['kind']
         quality=quality_report(item['transcript'],item.get('duration'))
-        lines.append(f'| {item["date"]} | [{title}]({item["sourceUrl"]}) | {labels[kind]}・待校對 | {len(item["transcript"])} | {len(quality["warnings"])} |')
+        lines.append(f'| {item["date"]} | [{title}]({item["sourceUrl"]}) | {labels[kind]}（原始稿） | {len(item["transcript"])} | {len(quality["warnings"])} |')
     lines+=['','## 重跑與本機產物','',
             '```sh',
             'caffeinate -ims .venv/bin/python -u scripts/batch_transcripts.py --year 2026 --all-years',
@@ -68,7 +68,7 @@ def main():
             'npm run build','```','',
             '批次工具先處理指定年份，已匯入稿件直接跳過。下載最多同時兩支，本機 GPU 推論與網站資料寫入逐支進行。中繼資料不存在或超過四小時會重新取得，以更新過期的音訊／字幕 URL。','',
             '初始 10 場的產物保留在 `.cache/batch-20261104/`；擴充批次在 `.cache/catalog-transcripts-20261104/`，每支 `review/` 提供字幕、逐段校對索引與機械提示。模型快取在 `.models/huggingface/`。這些目錄不提交或部署，需另行備份。','',
-            '本次未執行人工校對指令，未推送或部署遠端。完整逐字稿公開前仍需確認原頻道授權。瀏覽器控制服務不可用；目前透過資料驗證、靜態建置與 HTTP 讀取驗證，未完成影片播放與瀏覽器畫面檢查。','',
+            '尚未逐篇完成人工聆聽校對。專案儲存庫為 https://github.com/rickhw/puma-talk；Pages 發布狀態請查看 Actions。完整逐字稿公開前仍需確認原頻道授權。瀏覽器控制服務不可用；目前透過資料驗證、靜態建置與 HTTP 讀取驗證，未完成影片播放與瀏覽器畫面檢查。','',
             '來源：[公開專訪清單](https://vocus.cc/article/6ad8d562fd89780001e98adb)、[認識沈伯洋影片目錄](https://whoispuma.com/videos)，以及原 YouTube 頻道的影片中繼資料。','']
     output=ROOT/'docs/processing-status.md'
     output.write_text('\n'.join(lines))
