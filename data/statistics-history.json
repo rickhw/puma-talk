@@ -13,13 +13,15 @@
     },
     {
       "date": "2026-11-05",
-      "views": 41894223,
-      "likes": 1093284,
+      "views": 42043952,
+      "likes": 1095790,
+      "comments": 137263,
+      "commentsAvailable": 115,
       "videos": 115,
       "viewsAvailable": 115,
       "likesAvailable": 115,
       "fresh": 115,
-      "recordedAt": "2026-11-05T02:23:44.166445+00:00"
+      "recordedAt": "2026-11-05T06:56:23.188903+00:00"
     }
   ]
 }

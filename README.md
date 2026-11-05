@@ -1,6 +1,6 @@
 # PUMA TALKS
 
-沈伯洋（Puma）的 YouTube 專訪與逐字稿資料庫，提供正體中文逐字稿、AI 摘要、獨立文章網址、關鍵字標籤雲，以及 YouTube 觀看／按讚統計。
+沈伯洋（Puma）的 YouTube 專訪與逐字稿資料庫，提供正體中文逐字稿、AI 摘要、獨立文章網址、關鍵字標籤雲，以及 YouTube 觀看／按讚／留言統計。首頁上方提供觀看排行榜、發布時間序列與留言排行榜；每段字幕可直接開啟 YouTube 對應時間點。
 
 - 網站：https://puma-talk.gtcafe.com/
 - 儲存庫：https://github.com/rickhw/puma-talk
@@ -101,7 +101,7 @@ npm run statistics  # 更新 YouTube 數字與每日快照
 npm run build       # 將更新後的資料建置成網站
 ```
 
-數字缺漏保留 `null`；更新失敗保留上次成功值與時間。YouTube 累計觀看／按讚數與 GA 的網站流量是不同統計。
+數字缺漏保留 `null`；更新失敗保留上次成功值與時間。YouTube 累計觀看／按讚／留言數與 GA 的網站流量是不同統計。
 
 | GitHub Actions | 觸發與用途 |
 | --- | --- |

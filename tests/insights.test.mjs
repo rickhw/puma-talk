@@ -2,12 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
-import {mergeEnhancements,collectionStats,collectionStatsHTML,keywordCounts,keywordCloudHTML,videoStatsHTML} from '../assets/insights.js';
+import {mergeEnhancements,collectionStats,collectionStatsHTML,keywordCounts,keywordCloudHTML,videoStatsHTML,rankingHTML} from '../assets/insights.js';
 
 function fixture(){
   const item={id:'AbCdEfGh_12',title:'測試',date:'2026-11-04',channel:'測試頻道',category:'文化與閱讀',tags:['舊標籤'],sourceUrl:'https://www.youtube.com/watch?v=AbCdEfGh_12',duration:120,transcriptStatus:'auto',transcript:[{start:0,end:10,text:'这是原文。'}]};
   const record={videoId:item.id,sourceSha256:'a'.repeat(64),keywords:['資訊作戰','民防教育','社會信任','媒體識讀','個資保護'],transcript:[{start:0,end:10,text:'這是原文。'}],review:{method:'ai-proofread',model:'test-model',checkedAt:'2026-11-04T00:00:00Z',displayLanguage:'zh-Hant-TW',coverage:'full-transcript',humanReviewed:false,keywordSelection:'article-grounded'}};
-  const statistics={version:1,completedAt:'2026-11-04T12:00:00Z',videos:[{videoId:item.id,views:1200,likes:0,fetchedAt:'2026-11-04T12:00:00Z',status:'ok'}]};
+  const statistics={version:1,completedAt:'2026-11-04T12:00:00Z',videos:[{videoId:item.id,views:1200,likes:0,comments:23,fetchedAt:'2026-11-04T12:00:00Z',status:'ok'}]};
   return {item,record,statistics,archive:{version:1,interviews:[item]}};
 }
 test('display corrections preserve raw records and keyword/source constraints',()=>{
@@ -25,6 +25,7 @@ test('totals distinguish zero, missing and stale counts and count each video onc
   const {archive,record,statistics}=fixture();
   const data=mergeEnhancements(archive,{version:1,records:[record]},statistics);
   assert.deepEqual(collectionStats(data.interviews),{videos:1,views:1200,likes:0,viewsAvailable:1,likesAvailable:1,fresh:1,duration:120,completedAt:null});
+  assert.match(videoStatsHTML(data.interviews[0]),/留言 <strong>23<\/strong>/);
   assert.match(videoStatsHTML(data.interviews[0]),/按讚 <strong>0<\/strong>/);
   const missing={...data.interviews[0],youtubeStats:{views:null,likes:null,status:'unavailable'}};
   assert.match(videoStatsHTML(missing),/未提供/);
@@ -48,27 +49,57 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   const core=(await readFile(new URL('../assets/core.js',import.meta.url),'utf8')).replace(/^export /gm,'');
   const insights=(await readFile(new URL('../assets/insights.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'').replace(/^export /gm,'');
   const app=(await readFile(new URL('../assets/app.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'');
-  async function render(search=''){
-    const elements=new Map(),errors=[];
+  merged.interviews[0].transcript.push({start:12.9,end:20,text:'第二句對話'});
+  async function render(search='',detail=false){
+    const elements=new Map(),errors=[],listeners=new Map();
     const document={title:'',baseURI:'https://example.test/',querySelector(selector){
       if(selector==='#archive-data')return {textContent:JSON.stringify(merged)};
       if(selector==='#site-config')return {textContent:'{}'};
+      if(detail&&selector==='meta[name="interview-id"]')return {content:merged.interviews[0].id};
       if(selector==='.skip-link'||selector.startsWith('meta['))return null;
       if(!elements.has(selector))elements.set(selector,{innerHTML:'',textContent:'',value:'',hasAttribute(){return false;}});
       return elements.get(selector);
-    },querySelectorAll(){return [];},addEventListener(){}};
+    },querySelectorAll(){return [];},addEventListener(type,listener){listeners.set(type,listener);}};
     await vm.runInNewContext(`(async()=>{${core}\n${insights}\nconst esc=escapeHTML;\n${app}})()`,{
       document,window:{addEventListener(){}},localStorage:{getItem(){return null;}},structuredClone,URL,URLSearchParams,
+      history:{replaceState(_state,_title,url){elements.lastURL=url;}},
       location:new URL('https://example.test/'+search),console:{error(error){errors.push(error);}}
     });
     assert.equal(errors.length,0,errors.map(String).join(';'));
+    elements.listeners=listeners;
     return elements;
   }
   const home=await render(),html=home.get('#main').innerHTML;
+  assert.ok(html.indexOf('id="ranking-panel"')<html.indexOf('collection-statistics'));
   assert.ok(html.indexOf('collection-statistics')<html.indexOf('class="hero wrap"'));
+  for(const label of ['觀看排行榜','時間序列','留言排行榜'])assert.ok(home.get('#ranking-panel').innerHTML.includes(label));
   assert.ok(html.includes('1,200')&&html.includes('keyword-cloud'));
   assert.ok(home.get('#interview-grid').innerHTML.includes('AI 輔助校對'));
+  let prevented=false;
+  await home.listeners.get('click')({target:{closest(selector){return selector==='[data-ranking]'?{dataset:{ranking:'comments'}}:null;}},preventDefault(){prevented=true;}});
+  assert.ok(prevented);
+  assert.equal(home.get('#sort-filter').value,'comments');
+  assert.ok(home.lastURL.includes('sort=comments'));
+  assert.match(home.get('#ranking-panel').innerHTML,/data-ranking="comments" aria-current="true"/);
+  const timeline=await render('?sort=oldest');
+  assert.equal(timeline.get('#sort-filter').value,'oldest');
+  assert.ok(timeline.get('#ranking-panel').innerHTML.includes('最早發布'));
+  const detail=await render('',true),cues=detail.get('#transcript-body');
+  assert.ok(cues.innerHTML.includes('data-share="12.9"'));
+  assert.ok(cues.innerHTML.includes('href="https://www.youtube.com/watch?v=AbCdEfGh_12&amp;t=12s" target="_blank" rel="noopener noreferrer"'));
+  await detail.listeners.get('input')({target:{id:'transcript-search',value:'第二句'}});
+  assert.ok(cues.innerHTML.includes('data-cue="1"')&&!cues.innerHTML.includes('data-cue="0"'));
+  assert.ok(cues.innerHTML.includes('&amp;t=12s'));
   const about=(await render('?view=about')).get('#main').innerHTML;
   assert.ok(about.includes('我們使用 AI 技術校對逐字稿'));
   assert.ok(!about.includes('process-list')&&!about.includes('閱讀器現在就可以試')&&!about.includes('待校對'));
+});
+
+test('ranking links use article slugs, preserve missing comments and escape titles',()=>{
+  const {item}=fixture();
+  const html=rankingHTML([{...item,slug:'reading-test',title:'<script>測試',youtubeStats:{views:5,comments:null}}],'comments');
+  assert.ok(html.includes('href="./interviews/reading-test/"'));
+  assert.ok(html.includes('&lt;script&gt;測試')&&!html.includes('<script>'));
+  assert.ok(html.includes('未提供')&&html.includes('aria-current="true"'));
+  assert.ok(html.includes('data-ranking="views"')&&html.includes('data-ranking="newest"'));
 });

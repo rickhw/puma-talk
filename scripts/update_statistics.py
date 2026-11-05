@@ -16,7 +16,7 @@ def count(value):
 
 
 def sample(info, timestamp):
-    return dict(videoId=info['id'],views=count(info.get('view_count')),likes=count(info.get('like_count')),
+    return dict(videoId=info['id'],views=count(info.get('view_count')),likes=count(info.get('like_count')),comments=count(info.get('comment_count')),
                 fetchedAt=timestamp,source='youtube',status='ok')
 
 
@@ -35,6 +35,8 @@ def refresh_item(item):
 def totals(records):
     return dict(views=sum(x['views'] for x in records if x.get('views') is not None),
         likes=sum(x['likes'] for x in records if x.get('likes') is not None),
+        comments=sum(x['comments'] for x in records if x.get('comments') is not None),
+        commentsAvailable=sum(x.get('comments') is not None for x in records),
         videos=len(records),viewsAvailable=sum(x.get('views') is not None for x in records),
         likesAvailable=sum(x.get('likes') is not None for x in records),
         fresh=sum(x.get('status')=='ok' for x in records))
@@ -57,11 +59,11 @@ def main():
             item=futures[future]
             try:record=future.result();print('UPDATED',item['id'],record['views'],record['likes'],flush=True)
             except Exception as error:
-                record=dict(known.get(item['id'],dict(videoId=item['id'],views=None,likes=None,fetchedAt=None,source='youtube')),
+                record=dict(known.get(item['id'],dict(videoId=item['id'],views=None,likes=None,comments=None,fetchedAt=None,source='youtube')),
                     status='stale' if known.get(item['id'],{}).get('fetchedAt') else 'unavailable',lastError=str(error),attemptedAt=attempted)
                 print('FAILED',item['id'],str(error)[:180],flush=True)
             known[item['id']]=record
-    records=[known.get(item['id'],dict(videoId=item['id'],views=None,likes=None,fetchedAt=None,status='unavailable',source='youtube')) for item in archive]
+    records=[known.get(item['id'],dict(videoId=item['id'],views=None,likes=None,comments=None,fetchedAt=None,status='unavailable',source='youtube')) for item in archive]
     aggregate=totals(records)
     output=dict(version=1,attemptedAt=attempted,completedAt=dt.datetime.now(dt.timezone.utc).isoformat(),
         timezone='Asia/Taipei',videos=records,totals=aggregate)

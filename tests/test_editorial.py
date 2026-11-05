@@ -60,6 +60,14 @@ class EditorialTests(unittest.TestCase):
             self.assertEqual(record['status'],'stale')
             self.assertEqual(record['fetchedAt'],'2026-11-01T00:00:00Z')
 
+    def test_comment_counts_preserve_zero_missing_and_legacy_snapshots(self):
+        row=update_statistics.sample(dict(id='AbCdEfGh_12',view_count=10,like_count=2,comment_count=0),'2026-11-05T00:00:00Z')
+        self.assertEqual(row['comments'],0)
+        self.assertIsNone(update_statistics.sample(dict(id='AbCdEfGh_12'),'2026-11-05T00:00:00Z')['comments'])
+        total=update_statistics.totals([row,dict(videoId='legacy',views=None,likes=None,status='stale')])
+        self.assertEqual(total['comments'],0)
+        self.assertEqual(total['commentsAvailable'],1)
+
     def test_launch_agent_is_a_daily_user_job_with_scoped_arguments(self):
         job=configuration()
         self.assertEqual(job['StartCalendarInterval'],dict(Hour=3,Minute=10))

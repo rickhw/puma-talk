@@ -84,10 +84,21 @@ export function filterInterviews(items, filters = {}, saved = []) {
     if (filters.status === "ai" && !item.aiReview) return false;
     if (filters.status === "reviewed" && item.transcriptStatus !== "reviewed") return false;
     if (filters.status === "pending" && item.transcript?.length) return false;
+    if (!words.length) return true;
     const haystack = [item.title, item.originalTitle, item.channel, item.description, item.article?.lead, item.article?.conclusion,
       ...(item.article?.highlights || []).flatMap(point => [point.title, point.text]), ...item.tags, ...item.transcript.map(c => c.text)].join(" ").toLocaleLowerCase();
     return words.every(word => haystack.includes(word));
-  }).sort((a, b) => filters.sort === "oldest" ? a.date.localeCompare(b.date) : a.date === b.date ? a.id.localeCompare(b.id) : b.date.localeCompare(a.date));
+  }).sort((a, b) => {
+    const tie = b.date.localeCompare(a.date) || a.id.localeCompare(b.id);
+    if (filters.sort === 'oldest') return a.date.localeCompare(b.date) || a.id.localeCompare(b.id);
+    if (['views','comments'].includes(filters.sort)) {
+      const count = item => Number.isSafeInteger(item.youtubeStats?.[filters.sort]) && item.youtubeStats[filters.sort] >= 0 ? item.youtubeStats[filters.sort] : null;
+      const av = count(a), bv = count(b);
+      if (av === null || bv === null) return av === bv ? tie : av === null ? 1 : -1;
+      return bv - av || tie;
+    }
+    return tie;
+  });
 }
 export function validateArchive(data) {
   if (data.version !== 1 || !Array.isArray(data.interviews)) throw new Error("資料庫格式錯誤");
@@ -110,4 +121,11 @@ export function validateArchive(data) {
     }
   }
   return data;
+}
+
+export function youtubeTimeURL(videoId, seconds) {
+  if (!/^[A-Za-z0-9_-]{11}$/.test(videoId)) throw new Error('YouTube 影片 ID 格式錯誤');
+  const value = Number(seconds);
+  const start = Number.isFinite(value) ? Math.max(0, Math.floor(value)) : 0;
+  return `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}&t=${start}s`;
 }

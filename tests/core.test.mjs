@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
-import { parseSubtitles, filterInterviews, validateArchive, escapeHTML, formatTime, interviewPath } from '../assets/core.js';
+import { parseSubtitles, filterInterviews, validateArchive, escapeHTML, formatTime, interviewPath, youtubeTimeURL } from '../assets/core.js';
 import { build } from '../scripts/build.mjs';
 import { handleRequest } from '../scripts/serve.mjs';
 
@@ -91,4 +91,25 @@ test('static output serves correctly without dependencies or a backend', async (
   const directory=interviewPath(publicData.interviews[0]).slice(1,-1);
   const redirected=await request(directory+'?t=12');
   assert.equal(redirected.status,301);assert.equal(redirected.headers.Location,directory+'/?t=12');
+});
+
+test('rankings sort known counts before missing values and use deterministic date ties',()=>{
+  const base=archive.interviews[0];
+  const rows=[
+    {...base,id:'AAAAAAA0001',date:'2026-11-04',youtubeStats:{views:0,comments:null}},
+    {...base,id:'AAAAAAA0002',date:'2026-11-03',youtubeStats:{views:20,comments:2}},
+    {...base,id:'AAAAAAA0003',date:'2026-11-05',youtubeStats:{views:null,comments:0}},
+    {...base,id:'AAAAAAA0004',date:'2026-11-04',youtubeStats:{views:20,comments:5}}
+  ];
+  assert.deepEqual(filterInterviews(rows,{sort:'views'}).map(i=>i.id),['AAAAAAA0004','AAAAAAA0002','AAAAAAA0001','AAAAAAA0003']);
+  assert.deepEqual(filterInterviews(rows,{sort:'comments'}).map(i=>i.id),['AAAAAAA0004','AAAAAAA0002','AAAAAAA0003','AAAAAAA0001']);
+  assert.equal(filterInterviews(rows,{sort:'newest'})[0].id,'AAAAAAA0003');
+  assert.equal(filterInterviews(rows,{sort:'oldest'})[0].id,'AAAAAAA0002');
+  assert.equal(rows[0].id,'AAAAAAA0001');
+});
+test('YouTube time links keep the source video and floor valid cue seconds',()=>{
+  assert.equal(youtubeTimeURL('AbCdEfGh_12',123.9),'https://www.youtube.com/watch?v=AbCdEfGh_12&t=123s');
+  assert.equal(youtubeTimeURL('AbCdEfGh_12',0),'https://www.youtube.com/watch?v=AbCdEfGh_12&t=0s');
+  assert.equal(youtubeTimeURL('AbCdEfGh_12',-10),'https://www.youtube.com/watch?v=AbCdEfGh_12&t=0s');
+  assert.throws(()=>youtubeTimeURL('invalid?x',10),/影片 ID/);
 });

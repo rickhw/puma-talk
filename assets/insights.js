@@ -1,4 +1,4 @@
-import {escapeHTML, validateArchive} from './core.js';
+import {escapeHTML, validateArchive, filterInterviews, interviewPath} from './core.js';
 
 export const formatCount = value => Number.isSafeInteger(value) && value >= 0 ? value.toLocaleString('zh-TW') : '未提供';
 export function formatUpdate(value) {
@@ -19,7 +19,7 @@ export function keywordCloudHTML(items,limit=50) {
 }
 export function videoStatsHTML(item,compact=false) {
   const stats=item.youtubeStats||{};
-  return `<div class="video-statistics ${compact?'compact':''}" aria-label="YouTube 影片統計"><span>YouTube 觀看 <strong>${formatCount(stats.views)}</strong></span><span>按讚 <strong>${formatCount(stats.likes)}</strong></span>${compact?'':`<small>統計截至 ${escapeHTML(formatUpdate(stats.fetchedAt))}${stats.status==='stale'?' · 沿用上次取得的數值':''}</small>`}</div>`;
+  return `<div class="video-statistics ${compact?'compact':''}" aria-label="YouTube 影片統計"><span>YouTube 觀看 <strong>${formatCount(stats.views)}</strong></span><span>按讚 <strong>${formatCount(stats.likes)}</strong></span><span>留言 <strong>${formatCount(stats.comments)}</strong></span>${compact?'':`<small>統計截至 ${escapeHTML(formatUpdate(stats.fetchedAt))}${stats.status==='stale'?' · 沿用上次取得的數值':''}</small>`}</div>`;
 }
 export function collectionStats(items,completedAt=null) {
   const total={videos:items.length,views:0,likes:0,viewsAvailable:0,likesAvailable:0,fresh:0,duration:0,completedAt};
@@ -52,13 +52,23 @@ export function mergeEnhancements(archive,editorial,statistics) {
   for(const row of statistics.videos) {
     if(!ids.has(row.videoId)||counts.has(row.videoId)||!['ok','stale','unavailable'].includes(row.status))throw new Error('統計來源不明或重複');
     if(['views','likes'].some(field=>row[field]!==null&&(!Number.isSafeInteger(row[field])||row[field]<0)))throw new Error('統計數值無效');
-    counts.set(row.videoId,{views:row.views,likes:row.likes,fetchedAt:row.fetchedAt,status:row.status});
+    const comments=row.comments??null;
+    if(comments!==null&&(!Number.isSafeInteger(comments)||comments<0))throw new Error('留言數值無效');
+    counts.set(row.videoId,{views:row.views,likes:row.likes,comments,fetchedAt:row.fetchedAt,status:row.status});
   }
   const data={...archive,statisticsUpdatedAt:statistics.completedAt||null,interviews:archive.interviews.map(item=>{
     const row=reviews.get(item.id);
     const treatment=row?(row.review.method==='ai-translated'?'使用 AI 翻譯與校對':'使用 AI 輔助校對'):'整理中';
     const description=(item.description||'').replace(/逐字稿(?:為待校對工作稿|待校對)/g,'逐字稿'+treatment).replace('未自動判定說話者','多人發言請搭配原片理解');
-    return {...item,description,...(row?{tags:row.review.keywordSelection==='article-grounded'?row.keywords:item.tags,transcript:row.transcript,aiReview:row.review}:{}),youtubeStats:counts.get(item.id)||{views:null,likes:null,fetchedAt:null,status:'unavailable'}};
+    return {...item,description,...(row?{tags:row.review.keywordSelection==='article-grounded'?row.keywords:item.tags,transcript:row.transcript,aiReview:row.review}:{}),youtubeStats:counts.get(item.id)||{views:null,likes:null,comments:null,fetchedAt:null,status:'unavailable'}};
   })};
   return validateArchive(data);
+}
+
+export function rankingHTML(items, sort='views', updatedAt=null) {
+  const mode=['views','comments','newest','oldest'].includes(sort)?sort:'views';
+  const options=[['views','觀看排行榜'],['newest','時間序列'],['comments','留言排行榜']];
+  const sorted=filterInterviews(items,{sort:mode}).slice(0,10);
+  const label=mode==='views'?'觀看次數':mode==='comments'?'留言則數':mode==='oldest'?'最早發布':'最新發布';
+  return `<section class="ranking-section wrap" id="rankings" aria-labelledby="ranking-title"><div class="ranking-heading"><h2 id="ranking-title">專訪排行</h2><span>全站前 10 ${['newest','oldest'].includes(mode)?'支':'名'} · ${label}</span></div><nav class="ranking-tabs" aria-label="選擇專訪排行">${options.map(([value,title])=>`<a href="./index.html?sort=${value}#rankings" data-ranking="${value}" ${mode===value||(value==='newest'&&mode==='oldest')?'aria-current="true"':''}>${title}</a>`).join('')}</nav><ol class="ranking-list">${sorted.map((item,index)=>`<li><span class="ranking-position">${String(index+1).padStart(2,'0')}</span><a href="${escapeHTML(interviewPath(item))}"><strong>${escapeHTML(item.title)}</strong><small>${escapeHTML(item.channel)} · ${escapeHTML(item.date)}</small></a><span class="ranking-value">${['views','comments'].includes(mode)?formatCount(item.youtubeStats?.[mode]):escapeHTML(item.date)}</span></li>`).join('')||'<li class="ranking-empty">尚無符合的影片</li>'}</ol><p class="ranking-note">${['views','comments'].includes(mode)?`YouTube ${label} · ${escapeHTML(formatUpdate(updatedAt))} 更新；未提供的數值列於最後。`:'依影片發布日期排列；可於下方排序選擇最早優先。'}</p></section>`;
 }

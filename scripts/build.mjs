@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { validateArchive, mergeArticles, interviewPath, articleSummaryHTML, escapeHTML, transcriptFingerprintText } from '../assets/core.js';
-import { mergeEnhancements, collectionStatsHTML, videoStatsHTML } from '../assets/insights.js';
+import { mergeEnhancements, collectionStatsHTML, videoStatsHTML, rankingHTML } from '../assets/insights.js';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export async function build() {
@@ -53,7 +53,7 @@ export async function build() {
   const withAnalytics = page => page.replace('</title>', `</title>\n  ${analytics}`).replace('<body>', `<body>\n  ${noscript}`);
   const template = await readFile(path.join(root, 'index.html'), 'utf8');
   const html = withAnalytics(template.replace('<script type="module" src="./assets/app.js"></script>', `<script id="archive-data" type="application/json">${jsonScript(data)}</script>\n  <script defer src="./assets/app.bundle.js"></script>`)
-    .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1">${collectionStatsHTML(data.interviews,data.statisticsUpdatedAt)}<div class="loading-state">正在載入專訪…</div></main>`));
+    .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1"><div id="ranking-panel">${rankingHTML(data.interviews,'views',data.statisticsUpdatedAt)}</div>${collectionStatsHTML(data.interviews,data.statisticsUpdatedAt)}<div class="loading-state">正在載入專訪…</div></main>`));
   const homeCanonical = config.siteUrl ? `<link rel="canonical" href="${escapeHTML(config.siteUrl)}">` : '';
   await writeFile(path.join(out, 'index.html'), html.replace('<meta charset="utf-8">', `<meta charset="utf-8">\n  ${homeCanonical}`));
   for (const item of data.interviews) {

@@ -16,3 +16,25 @@
 .keyword-cloud a:hover{text-decoration-color:var(--purple);color:var(--purple)}.keyword-cloud small{font:10px var(--mono);color:var(--muted);font-weight:400}
 .keyword-cloud a:nth-child(5n+2){color:#476334}.keyword-cloud a:nth-child(5n+3){color:var(--ink)}.keyword-more{margin-top:10px}
 @media(max-width:760px){.collection-statistics{padding-top:23px;padding-bottom:20px}.statistics-caption{display:block;margin-bottom:17px}.statistics-caption>span{display:block;margin-top:8px}.statistics-grid{grid-template-columns:1fr 1fr;gap:20px}.statistics-grid>div{padding-left:14px}.statistics-grid>div:nth-child(3){padding-left:0;border:0}.statistics-grid dd{font-size:clamp(23px,5.9vw,38px);letter-spacing:-1px}.statistics-grid dt{font-size:11px}.statistics-note{font-size:10px}.keyword-section{padding-top:25px;padding-bottom:25px}.keyword-section-header{display:block}.keyword-section-header p{margin-top:7px}.keyword-cloud{gap:5px 15px}.video-statistics{font-size:11px}}
+/* Rankings share the archive's purple, green and numeric type. */
+.ranking-section{padding-top:25px;padding-bottom:22px;border-bottom:1px solid var(--line);scroll-margin-top:90px}
+.ranking-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:14px}
+.ranking-heading h2{font-size:20px;font-weight:650}.ranking-heading>span{color:var(--muted);font-size:11px}
+.ranking-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+.ranking-tabs a{padding:9px 18px;border:1px solid var(--line);border-radius:6px;font-size:12px;color:var(--muted);background:var(--paper)}
+.ranking-tabs a[aria-current]{color:var(--purple-deep);background:var(--green);border-color:var(--green);font-weight:650}
+.ranking-tabs a:hover{color:var(--purple-deep);border-color:var(--purple)}
+.ranking-list{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(5,auto);grid-auto-flow:column;column-gap:36px;padding:0;margin:0}
+.ranking-list li{display:grid;grid-template-columns:25px minmax(0,1fr) auto;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid var(--line);min-height:73px}
+.ranking-position{font:13px var(--mono);color:var(--muted)}.ranking-list li:first-child .ranking-position{color:var(--purple-deep);font-weight:bold}
+.ranking-list a{min-width:0}.ranking-list strong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:12px;line-height:1.6;font-weight:550}
+.ranking-list a:hover strong{color:var(--purple)}.ranking-list small{display:block;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:9px;color:var(--muted);margin-top:3px}
+.ranking-value{font:12px var(--mono);color:var(--purple-deep);white-space:nowrap}.ranking-note{font-size:10px;color:var(--muted);line-height:1.8;margin-top:12px}
+.cue{grid-template-columns:47px minmax(0,1fr) 112px}.cue-actions{display:flex;gap:4px;justify-content:flex-end;align-items:center}
+.cue-actions .cue-share,.cue-youtube{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:6px;border-radius:5px;color:var(--muted);background:transparent;opacity:.7}
+.cue-actions .icon{width:16px;height:16px}.cue-actions .cue-share:hover,.cue-youtube:hover{opacity:1;color:var(--purple-deep);background:var(--lavender)}
+.ranking-tabs a:focus-visible,.ranking-list a:focus-visible,.cue-actions>*:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+@media(max-width:760px){.ranking-section{padding-top:20px;padding-bottom:18px}.ranking-heading{align-items:center}.ranking-heading h2{font-size:18px}.ranking-heading>span{font-size:9px}.ranking-tabs{gap:6px}.ranking-tabs a{flex:1;text-align:center;font-size:11px;padding:10px 7px}.ranking-list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}.ranking-list li{min-height:68px;gap:9px}.ranking-list strong{font-size:12px}.ranking-value{font-size:11px}.cue{grid-template-columns:42px minmax(0,1fr);gap:7px 9px}.cue-actions{grid-column:2;justify-self:end;margin-top:-4px}.cue-actions .cue-share,.cue-youtube{width:44px;height:44px}.cue p{min-width:0}}
+
+.cue-youtube{width:74px;gap:4px;font-size:10px}.cue-youtube .icon{width:12px;height:12px}
+@media(max-width:760px){.cue-youtube{width:88px;font-size:11px}}

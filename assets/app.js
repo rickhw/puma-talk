@@ -1,5 +1,5 @@
-import { categories, statusLabels, escapeHTML as esc, formatTime, filterInterviews, parseSubtitles, validateArchive, interviewPath, interviewSharePath, articleSummaryHTML } from './core.js';
-import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML} from './insights.js';
+import { categories, statusLabels, escapeHTML as esc, formatTime, filterInterviews, parseSubtitles, validateArchive, interviewPath, interviewSharePath, youtubeTimeURL, articleSummaryHTML } from './core.js';
+import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML, rankingHTML} from './insights.js';
 
 const icons = {
   arrow: '<path d="M5 12h14m-5-5 5 5-5 5"/>',
@@ -92,10 +92,11 @@ function home() {
   const params = new URLSearchParams(location.search);
   filters = Object.fromEntries(['q', 'category', 'tag', 'status', 'sort'].map(k => [k, params.get(k) || '']));
   filters.saved = params.get('saved') === '1';
+  filters.sort = ['views','comments','newest','oldest'].includes(filters.sort) ? filters.sort : 'views';
   const featured = items.find(i => i.featured) || items[0];
   activeItem = null;
   document.title = 'PUMA TALKS｜沈伯洋專訪資料庫';
-  main.innerHTML = `${collectionStatsHTML(items,archive.statisticsUpdatedAt)}<section class="hero wrap" aria-labelledby="hero-title">
+  main.innerHTML = `<div id="ranking-panel">${rankingHTML(items,filters.sort,archive.statisticsUpdatedAt)}</div>${collectionStatsHTML(items,archive.statisticsUpdatedAt)}<section class="hero wrap" aria-labelledby="hero-title">
     <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> PUMA INTERVIEW ARCHIVE</div><h1 id="hero-title">從一場對話，<br>認識<span class="name-underline">沈伯洋<svg viewBox="0 0 270 20" aria-hidden="true"><path d="M4 13Q110 0 265 10"/></svg></span>。</h1><p class="hero-description">關於世界的思考，也關於生活的選擇。<br>把散落各處的專訪，整理成可以慢慢理解的脈絡。</p><a class="button button-dark" href="#archive">找一場，開始聽 ${icon('arrow')}</a><div class="hero-note"><span class="tiny-wave"><i></i><i></i><i></i><i></i><i></i></span>完整對話．正體中文逐字稿．AI 輔助校對</div></div>
     <div class="hero-feature"><div class="feature-topline"><span>從這場對話開始</span><span class="feature-star" aria-hidden="true">✳</span></div><a class="feature-image" href="${detailURL(featured.id)}" aria-label="查看精選專訪">${photo(featured, true)}<span class="feature-play">${icon('play')}</span></a><div class="feature-caption"><span class="feature-label">本期選聽</span><a href="${detailURL(featured.id)}"><h2>${esc(featured.title)}</h2><span>${esc(featured.channel)} <span class="caption-dot">·</span> ${dateLabel(featured.date)}</span></a><a class="circle-arrow" href="${detailURL(featured.id)}" aria-label="查看精選專訪">${icon('upRight')}</a></div></div>
   </section>
@@ -104,16 +105,17 @@ function home() {
   <section class="archive-section wrap" id="archive" aria-labelledby="archive-title"><div class="section-heading"><div><div class="eyebrow">THE COLLECTION</div><h2 id="archive-title">${filters.saved ? '我的收藏' : '每場對話，都有新的發現'}<span class="heading-dot">.</span></h2></div><a href="./index.html?view=topics" class="text-link">不知道從哪開始？探索主題 ${icon('upRight')}</a></div>
     <div class="search-bar"><label class="search-input">${icon('search')}<input id="archive-search" type="search" placeholder="搜尋專訪、節目、標籤或逐字稿內容…" value="${esc(filters.q)}" aria-label="搜尋專訪與逐字稿" autocomplete="off"><kbd aria-hidden="true">/</kbd></label><label class="select-wrap"><span>逐字稿</span><select id="status-filter" aria-label="逐字稿狀態"><option value="">全部狀態</option value="available">有逐字稿</option><option value="ai">AI 校對</option><option value="pending">整理中</option></select></label></div>
     <div class="category-tabs" role="group" aria-label="依主題分類"><button class="category-tab" data-category="">全部專訪 <span>${items.length}</span></button>${categories.map(c => `<button class="category-tab" data-category="${c}">${c}</button>`).join('')}</div>
-    <div class="results-toolbar"><p id="results-count" role="status" aria-live="polite"></p><label class="sort-label">排序<select id="sort-filter" aria-label="專訪排序"><option value="newest">最新優先</option><option value="oldest">最早優先</option></select></label></div>
+    <div class="results-toolbar"><p id="results-count" role="status" aria-live="polite"></p><label class="sort-label">排序<select id="sort-filter" aria-label="專訪排序"><option value="views">觀看次數最多</option><option value="newest">最新優先</option><option value="oldest">最早優先</option><option value="comments">留言最多</option></select></label></div>
     <div id="active-filters" class="active-filters"></div><div id="interview-grid" class="interview-grid"></div>
     <div class="collection-note">${icon('text')}<p>每一份逐字稿，都從保留脈絡開始。<span>我們使用 AI 技術校對逐字稿，統一以正體中文呈現；點擊時間碼即可對照原始影片。</span></p><a href="./index.html?view=about">關於計畫 ${icon('arrow')}</a></div>
   </section>`;
   document.querySelector('#status-filter').value = filters.status;
-  document.querySelector('#sort-filter').value = filters.sort === 'oldest' ? 'oldest' : 'newest';
+  document.querySelector('#sort-filter').value = filters.sort;
   updateResults(false);
 }
 function updateResults(changeURL = true) {
   const results = filterInterviews(items, filters, saved);
+  document.querySelector('#ranking-panel').innerHTML = rankingHTML(items,filters.sort,archive.statisticsUpdatedAt);
   document.querySelector('#results-count').innerHTML = `共 <strong>${results.length}</strong> 支訪談影片${filters.q ? `，搜尋「${esc(filters.q)}」` : ''}`;
   document.querySelector('#interview-grid').innerHTML = results.length ? results.map(card).join('') : `<div class="empty-state">${icon(filters.saved ? 'bookmark' : 'search')}<h3>${filters.saved && !saved.length ? '把想慢慢聽的對話，留在這裡。' : '這個條件下，還沒有找到專訪。'}</h3><p>${filters.saved && !saved.length ? '點擊專訪卡片上的書籤，就能在這裡找到它。收藏儲存在目前的瀏覽器。' : '試試其他關鍵字，或清除篩選條件後重新探索。'}</p><button class="button button-dark" data-clear>瀏覽所有專訪 ${icon('arrow')}</button></div>`;
   document.querySelectorAll('[data-category]').forEach(button => { const active = button.dataset.category === filters.category; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); });
@@ -145,7 +147,7 @@ function renderCues(query = '') {
   }
   const cues = activeItem.transcript.map((cue, index) => ({ ...cue, index })).filter(cue => cue.text.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
   document.querySelector('#cue-count').textContent = query ? `${cues.length} 段符合` : `${cues.length} 段`;
-  body.innerHTML = `${provenanceHTML(activeItem)}<p class="transcript-notice">${localTranscripts[activeItem.id] ? '目前為此瀏覽器的匯入字幕。' : ''}${activeItem.aiReview ? '我們使用 AI 技術校對'+(activeItem.aiReview.method === 'ai-translated' ? '與翻譯' : '')+'逐字稿，統一使用正體中文。' : '本稿保留來源字幕內容。'}發言內容與語境以原始影片為準。點擊時間碼可跳至對應片段。</p><div class="cue-list">${cues.length ? cues.map(cue => `<div class="cue ${cue.index === visibleCue ? 'active-cue' : ''}" id="cue-${cue.index}"><button class="cue-time" data-cue="${cue.index}" aria-label="跳到影片 ${formatTime(cue.start)}">${formatTime(cue.start)}</button><p>${highlight(cue.text, query)}</p><button class="cue-share" data-share="${cue.start}" aria-label="複製 ${formatTime(cue.start)} 片段連結">${icon('share')}</button></div>`).join('') : '<div class="empty-state small"><h3>找不到這段文字</h3><p>試試較短的關鍵字。</p></div>'}</div>`;
+  body.innerHTML = `${provenanceHTML(activeItem)}<p class="transcript-notice">${localTranscripts[activeItem.id] ? '目前為此瀏覽器的匯入字幕。' : ''}${activeItem.aiReview ? '我們使用 AI 技術校對'+(activeItem.aiReview.method === 'ai-translated' ? '與翻譯' : '')+'逐字稿，統一使用正體中文。' : '本稿保留來源字幕內容。'}發言內容與語境以原始影片為準。點擊時間碼可跳至對應片段。</p><div class="cue-list">${cues.length ? cues.map(cue => `<div class="cue ${cue.index === visibleCue ? 'active-cue' : ''}" id="cue-${cue.index}"><button class="cue-time" data-cue="${cue.index}" aria-label="跳到影片 ${formatTime(cue.start)}">${formatTime(cue.start)}</button><p>${highlight(cue.text, query)}</p><div class="cue-actions"><button class="cue-share" data-share="${cue.start}" aria-label="複製 ${formatTime(cue.start)} 片段連結">${icon('share')}</button><a class="cue-youtube" href="${esc(youtubeTimeURL(activeItem.id,cue.start))}" target="_blank" rel="noopener noreferrer" aria-label="在 YouTube 觀看 ${formatTime(cue.start)}（另開分頁）" title="在 YouTube 觀看 ${formatTime(cue.start)}"><span>YouTube</span>${icon('upRight')}</a></div></div>`).join('') : '<div class="empty-state small"><h3>找不到這段文字</h3><p>試試較短的關鍵字。</p></div>'}</div>`;
 }
 function highlight(text, query) {
   if (!query) return esc(text);
@@ -197,6 +199,11 @@ function download(filename, content, type = 'text/plain;charset=utf-8') {
 }
 document.addEventListener('error', event => { if (event.target.matches?.('[data-thumbnail]')) event.target.style.display = 'none'; }, true);
 document.addEventListener('click', async event => {
+  const ranking = event.target.closest('[data-ranking]');
+  if(ranking && !activeItem && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+    event.preventDefault(); filters.sort=ranking.dataset.ranking;
+    document.querySelector('#sort-filter').value=filters.sort; updateResults(); return;
+  }
   const summaryTime = event.target.closest('[data-summary-time]');
   if (summaryTime && activeItem && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
     event.preventDefault(); play(Number(summaryTime.dataset.summaryTime));
@@ -213,8 +220,8 @@ document.addEventListener('click', async event => {
   } else if (button?.hasAttribute('data-category')) { filters.category = button.dataset.category; updateResults(); }
   else if (button?.hasAttribute('data-tag')) { location.href = new URL(`./index.html?tag=${encodeURIComponent(button.dataset.tag)}#archive`, document.baseURI).href; }
   else if (button?.hasAttribute('data-clear')) {
-    filters = { q:'', category:'', tag:'', status:'', sort:'', saved:false };
-    document.querySelector('#archive-search').value = ''; document.querySelector('#status-filter').value = ''; document.querySelector('#sort-filter').value = 'newest';
+    filters = { q:'', category:'', tag:'', status:'', sort:'views', saved:false };
+    document.querySelector('#archive-search').value = ''; document.querySelector('#status-filter').value = ''; document.querySelector('#sort-filter').value = 'views';
     document.querySelector('#archive-title').innerHTML = '每場對話，都有新的發現<span class="heading-dot">.</span>'; updateResults();
   } else if (button?.hasAttribute('data-remove-filter')) { filters[button.dataset.removeFilter] = ''; if (button.dataset.removeFilter === 'status') document.querySelector('#status-filter').value = ''; if (button.dataset.removeFilter === 'saved') document.querySelector('#archive-title').innerHTML = '每場對話，都有新的發現<span class="heading-dot">.</span>'; updateResults(); }
   else if (button?.hasAttribute('data-play') && activeItem) play(button.dataset.play);
