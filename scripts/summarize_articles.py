@@ -10,7 +10,6 @@ import math
 import os
 from pathlib import Path
 import re
-import subprocess
 import time
 
 from import_youtube import ROOT, atomic_write, read_archive
@@ -134,7 +133,7 @@ def make_slug(item, topic, occupied, previous=None):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--model',required=True,help='已安裝的本機 MLX 語言模型路徑')
+    parser.add_argument('--model',required=True,help='已下載的 MLX 文字模型目錄')
     parser.add_argument('--output',type=Path,default=ROOT/'data/articles.json')
     parser.add_argument('--limit',type=int)
     parser.add_argument('--video-id')
@@ -143,11 +142,11 @@ def main():
     args=parser.parse_args()
     os.environ['HF_HUB_OFFLINE']='1'
     os.environ['TOKENIZERS_PARALLELISM']='false'
+    (ROOT/'.cache').mkdir(exist_ok=True)
     (ROOT/'.cache/article-generation.pid').write_text(str(os.getpid()))
     import mlx.core as mx
     from mlx_lm import load, stream_generate
     from mlx_lm.sample_utils import make_sampler
-    print('MEMORY',subprocess.check_output(['sysctl','-n','hw.memsize'],text=True).strip(),flush=True)
     print('LOADING',Path(args.model).name,flush=True)
     model,tokenizer=load(args.model)
     archive=read_archive(ROOT/'data/interviews.json')

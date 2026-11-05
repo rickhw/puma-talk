@@ -9,7 +9,6 @@ import json
 import os
 from pathlib import Path
 import re
-import sys
 import time
 from import_youtube import ROOT,atomic_write,read_archive
 from summarize_articles import transcript_fingerprint,transcript_blocks
@@ -119,7 +118,6 @@ def main():
         from extract_keywords import run
         return run(args)
     os.environ['HF_HUB_OFFLINE']='1';os.environ['TOKENIZERS_PARALLELISM']='false'
-    sys.path.insert(0,str(ROOT/'.cache/editorial-deps'))
     converter=TraditionalNormalizer()
     import mlx.core as mx
     from mlx_lm import load,stream_generate
@@ -149,8 +147,6 @@ def main():
         return json_response(output) if json_output else output.strip()
 
     failures=[]
-    overrides_path=ROOT/'.cache/editorial-keyword-overrides.json'
-    overrides=json.loads(overrides_path.read_text()) if overrides_path.exists() else {}
     for position,item in enumerate(queue,1):
         started=time.monotonic();fingerprint=transcript_fingerprint(item['transcript'])
         folder=ROOT/'.cache/editorial'/item['id']/(VERSION+'-'+fingerprint[:16]);folder.mkdir(parents=True,exist_ok=True)
@@ -162,7 +158,7 @@ def main():
             for attempt in range(3):
                 try:
                     response=generate(REVIEW_SYSTEM,f'影片：{item["originalTitle"]}\n以下是全部有效逐字稿：\n{normalized}',folder,f'review-{attempt}',1400)
-                    tags=keywords(overrides.get(item['id'],response.get('keywords')),converter);break
+                    tags=keywords(response.get('keywords'),converter);break
                 except (ValueError,KeyError,TypeError) as error:print('RETRY',item['id'],str(error),flush=True)
             else:raise ValueError('校對輸出無法解析')
             accepted,rejected=safe_corrections(response.get('corrections'),normalized,converter)

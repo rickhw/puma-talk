@@ -5,7 +5,6 @@ import hashlib
 import json
 import os
 import re
-import sys
 from import_youtube import ROOT,atomic_write
 from traditional import TraditionalNormalizer
 
@@ -38,7 +37,6 @@ def parse_keywords(text,context,converter):
 
 def run(args):
     os.environ['HF_HUB_OFFLINE']='1';os.environ['TOKENIZERS_PARALLELISM']='false'
-    sys.path.insert(0,str(ROOT/'.cache/editorial-deps'))
     converter=TraditionalNormalizer()
     import mlx.core as mx
     from mlx_lm import load,stream_generate

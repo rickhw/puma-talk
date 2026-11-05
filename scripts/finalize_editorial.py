@@ -5,7 +5,6 @@ import datetime as dt
 import hashlib
 import json
 import re
-import sys
 from import_youtube import ROOT,atomic_write,read_archive
 from summarize_articles import transcript_fingerprint
 from refine_transcripts import safe_corrections,replace_phrase
@@ -17,7 +16,6 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--mark-unclear',action='append',default=[],help='VIDEO_ID:起始秒數；需經來源檢視後明確指定')
     args=parser.parse_args()
-    sys.path.insert(0,str(ROOT/'.cache/editorial-deps'))
     converter=TraditionalNormalizer()
     source={x['id']:x for x in read_archive(ROOT/'data/interviews.json')['interviews']}
     articles={x['videoId']:x for x in json.loads((ROOT/'data/articles.json').read_text())['articles']}

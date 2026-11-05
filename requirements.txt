@@ -1,0 +1,4 @@
+# Optional: YouTube metadata, subtitles, downloads and statistics.
+# Core site builds and tests use no third-party Python packages.
+# YouTube changes frequently; update this tool when extraction stops working.
+yt-dlp[default]

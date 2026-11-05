@@ -6,6 +6,7 @@ from pathlib import Path
 import plistlib
 import shutil
 import subprocess
+import sys
 from import_youtube import ROOT
 
 LABEL='tw.pumatalks.daily-statistics'
@@ -14,9 +15,9 @@ LABEL='tw.pumatalks.daily-statistics'
 def configuration(hour=3,minute=10):
     node=shutil.which('node')
     if not node:raise RuntimeError('找不到 Node.js，請在可執行 npm 的環境安裝排程')
-    return dict(Label=LABEL,ProgramArguments=['/usr/bin/caffeinate','-ims',str(ROOT/'.venv/bin/python'),str(ROOT/'scripts/daily_update.py')],
+    return dict(Label=LABEL,ProgramArguments=['/usr/bin/caffeinate','-ims',sys.executable,str(ROOT/'scripts/daily_update.py')],
         WorkingDirectory=str(ROOT),StartCalendarInterval=dict(Hour=hour,Minute=minute),
-        EnvironmentVariables=dict(PATH=str(Path(node).parent)+':'+str(ROOT/'.venv/bin')+':/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin',PUMA_NODE_BIN=node),
+        EnvironmentVariables=dict(PATH=os.pathsep.join(dict.fromkeys([str(Path(sys.executable).parent),str(Path(node).parent),*os.defpath.split(os.pathsep)])),PUMA_NODE_BIN=node),
         StandardOutPath=str(ROOT/'.cache/daily-statistics.log'),StandardErrorPath=str(ROOT/'.cache/daily-statistics-error.log'),
         ProcessType='Background')
 
@@ -27,6 +28,7 @@ def main():
     parser.add_argument('--hour',type=int,default=3)
     parser.add_argument('--minute',type=int,default=10)
     args=parser.parse_args()
+    if sys.platform != 'darwin':raise RuntimeError('此排程安裝工具僅支援 macOS；其他平台請使用作業系統排程器')
     if not 0<=args.hour<24 or not 0<=args.minute<60:raise ValueError('排程時間錯誤')
     (ROOT/'.cache').mkdir(exist_ok=True)
     payload=plistlib.dumps(configuration(args.hour,args.minute),sort_keys=False)

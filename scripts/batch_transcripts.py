@@ -182,7 +182,7 @@ def main(argv=None):
     parser.add_argument('--all-years',action='store_true',help='指定年份優先，再處理其他年份')
     parser.add_argument('--workers',type=int,default=2)
     parser.add_argument('--model',default='mlx-community/whisper-large-v3-turbo')
-    parser.add_argument('--work-dir',type=Path,default=ROOT/'.cache/catalog-transcripts-20261104')
+    parser.add_argument('--work-dir',type=Path,default=ROOT/'.cache/catalog-transcripts')
     args=parser.parse_args(argv)
     os.environ.setdefault('HF_HOME',str(ROOT/'.models/huggingface'))
     args.work_dir.mkdir(parents=True,exist_ok=True)

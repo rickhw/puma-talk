@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 import sys
 import tempfile
@@ -63,6 +64,8 @@ class EditorialTests(unittest.TestCase):
         job=configuration()
         self.assertEqual(job['StartCalendarInterval'],dict(Hour=3,Minute=10))
         self.assertEqual(job['ProgramArguments'][:2],['/usr/bin/caffeinate','-ims'])
+        self.assertEqual(job['ProgramArguments'][2],sys.executable)
+        self.assertIn(str(Path(sys.executable).parent),job['EnvironmentVariables']['PATH'].split(os.pathsep))
         self.assertTrue(job['ProgramArguments'][-1].endswith('/scripts/daily_update.py'))
         self.assertNotIn('KeepAlive',job)
 

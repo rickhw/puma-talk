@@ -3,6 +3,7 @@
 from collections import Counter
 import datetime as dt
 import json
+from urllib.parse import urljoin
 
 from import_youtube import ROOT,read_archive
 from summarize_articles import transcript_fingerprint
@@ -22,19 +23,23 @@ def main():
     references=sum(point.get('citationStatus')=='needs-review' for item in valid for point in articles[item['id']]['highlights'])
     stale=[item['id'] for item in valid if articles[item['id']]['provenance']['transcriptSha256']!=transcript_fingerprint(item['transcript'])]
     scope_notes=[(item,articles[item['id']]['sourceScopeNote']) for item in valid if articles[item['id']].get('sourceScopeNote')]
+    site_path=ROOT/'data/site.json'
+    site=json.loads(site_path.read_text()) if site_path.exists() else {}
+    site_url=site.get('siteUrl','')
     lines=['# 文章摘要處理進度','',
         f'更新：{dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(timespec="seconds")}（台灣時間）','',
         f'已產生 **{len(valid)} / {len(archive["interviews"])} 篇 AI 文章摘要**。每篇包含導讀、3–5 項重點、總結與固定 slug。正體中文 AI 校對／翻譯版本已完成 {ai_count} 篇；人工覆核紀錄 {states["reviewed"]} 篇，AI 處理不冒充人工覆核。','',
         f'共有 {references} 項時間連結採參考位置；原文由程式直接擷取，未把模型改字後的引文當作原話。其餘引證有精確文字對應；發言語意與立場仍應搭配原始影片理解。','',
         '每篇文章使用 `/interviews/SLUG/`；舊 query-string 連結仍可轉向並保留時間碼。完整設定與更新方式見[文章、網址與 GA 說明](articles.md)。','',
-        'GA4 設定在 `data/site.json`，預設 Measurement ID 空白，目前沒有啟用 GA。首頁與單篇的觀看／按讚數來自 YouTube 每日統計。網址、靜態文章、首頁程式與事件設定已有程式及 HTTP 檢查；完整桌機／手機視覺檢查未完成（瀏覽器控制連線受限，原生操作亦遭目前的瀏覽器操作中斷）。','',
+        '網站網址與 GTM／GA4 設定由 `data/site.json` 提供，啟用狀態依該設定及容器發布狀態而定。YouTube 每日統計與本站流量分開計算。此報告僅依儲存庫資料產生，不代表已在分析後台確認收到事件。','',
         ]
     if scope_notes:lines += [f'另有 **{len(scope_notes)} 篇來源範圍說明**，詳見下方專節；文章頁已醒目標示，辨識不清部分保留時間範圍並註記。','']
     lines += ['| 日期 | 訪談 | 固定 slug | 重點數 |','| --- | --- | --- | ---: |']
     for item in valid:
         article=articles[item['id']]
         title=item['title'].replace('|','／').replace('\n',' ')
-        lines.append(f'| {item["date"]} | [{title}](../dist/interviews/{article["slug"]}/index.html) | `{article["slug"]}` | {len(article["highlights"])} |')
+        url=urljoin(site_url,'interviews/'+article['slug']+'/') if site_url else item['sourceUrl']
+        lines.append(f'| {item["date"]} | [{title}]({url}) | `{article["slug"]}` | {len(article["highlights"])} |')
     pending=[item['id'] for item in archive['interviews'] if item['id'] not in articles]
     if scope_notes:
         lines+=['','## 來源範圍說明','']

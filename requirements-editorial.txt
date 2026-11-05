@@ -1,0 +1,4 @@
+# Optional: MLX text generation on Apple Silicon macOS 14+.
+# Model weights must be obtained separately.
+mlx-lm==0.31.3
+opencc-python-reimplemented==0.1.7

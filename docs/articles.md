@@ -4,7 +4,7 @@
 
 已知來源範圍問題另存 `sourceScopeNote`，頁面會醒目標示。重跑摘要會保留此註記，需人工對照來源確認後才移除。
 
-摘要由本機已安裝的 `Qwen3.6-27B-MLX-4bit` 讀取各篇現有逐字稿的所有有效區段產生，不只依標題或抽樣段落撰寫。已標示的辨識異常不作為摘要來源；英文訪談仍保留英文逐字稿，文章以繁體中文整理。模型產物仍可能誤解語氣、人物或立場，請對照原片校對。若逐字稿只涵蓋節目中的演講等片段，會在文章導讀及處理進度另列來源範圍，不將其他講者的內容歸給沈伯洋。
+現有摘要的模型與版本保留於各篇 `provenance`；生成工具讀取逐字稿的所有有效區段，不只依標題或抽樣段落撰寫。已標示的辨識異常不作為摘要來源；英文訪談仍保留英文逐字稿，文章以繁體中文整理。模型產物仍可能誤解語氣、人物或立場，請對照原片校對。若逐字稿只涵蓋節目中的演講等片段，會在文章導讀及處理進度另列來源範圍，不將其他講者的內容歸給沈伯洋。
 
 來源引證優先以精確文字比對，不接受近似字、翻譯或改寫充作原文。模型若把區塊編號寫錯，只有在原文能明確定位時才修正引用位置；若摘錄省略中段，保存實際原文的完整範圍，包括其中的否定與限制條件。無法精確定位時，會捨棄模型的引文、改由程式擷取它指定的真實來源區塊，並在時間連結標示「時間位置供參考」；不將改字後的模型文字當作原話。這些是格式與來源檢查，不等於人工事實或立場核對。
 
@@ -28,19 +28,18 @@
 
 ## 產生與更新摘要
 
-摘要工具需另外安裝 `mlx-lm` 及本機語言模型；網站建置與一般測試不依賴它。這次使用既有 uv tool 環境與模型，沒有下載新權重或呼叫付費 API：
+摘要工具需 Apple Silicon macOS 14 以上、相容 Metal 環境及已下載的 MLX 文字模型。先在所選 Python 虛擬環境安裝選用依賴；網站建置與一般測試不依賴這些套件：
 
 ```sh
-caffeinate -ims /Users/rickhwang/.local/share/uv/tools/mlx-lm/bin/python \
-  scripts/summarize_articles.py \
-  --model /Users/rickhwang/.lmstudio/models/lmstudio-community/Qwen3.6-27B-MLX-4bit
+python -m pip install -r requirements-editorial.txt
+python scripts/summarize_articles.py --model ./.models/text-model
 ```
 
-工具會略過來源 hash 未變的文章與已校對文章，逐篇保存結果，可中斷後續跑。原始模型回覆及效能資料在 `.cache/articles/VIDEO_ID/時間戳/`，不提交版本控制。若只需重新整理某篇待校對稿：
+模型權重需自行取得；此目錄為專案相對範例，不代表儲存庫包含模型。工具會略過來源 hash 未變的文章與已校對文章，逐篇保存結果，可中斷後續跑。原始模型回覆及效能資料在 `.cache/articles/VIDEO_ID/時間戳/`，不提交版本控制。若只需重新整理某篇待校對稿：
 
 ```sh
 # 使用裝有 mlx-lm 的 Python 執行
-python scripts/summarize_articles.py --model /path/to/local-model \
+python scripts/summarize_articles.py --model ./.models/text-model \
   --video-id VIDEO_ID --refresh-drafts
 ```
 
@@ -60,7 +59,7 @@ python scripts/summarize_articles.py --model /path/to/local-model \
 }
 ```
 
-已確認公開的 GTM 容器可下載，且已發布的容器包含 GA4 目的地 `G-TRLVRQ877L`。這只證明標籤已發布，不代表已登入 GA 後台確認收到事件。
+這兩個 ID 為本站公開的分析設定。複製專案另作網站時應換成自己的 ID，或將兩欄設空以停用分析。容器內需設定並發布 GA4 目的地；是否實際收到事件應在分析後台核對。
 
 建置把 GTM 載入程式放在每頁 head，並在 body 開頭加入標準 noscript iframe。GTM 設定存在時優先使用容器，不另外載入獨立 gtag.js、不另外送一份 config 或 page_view。容器內的 Google 標籤負責收集事件；容器設定仍由 Google Tag Manager 管理。
 
@@ -70,6 +69,6 @@ python scripts/summarize_articles.py --model /path/to/local-model \
 
 正式網址用於首頁與每篇文章的 canonical URL。啟用後可在 Google Analytics 的「報表 → 即時」確認來訪；如要用 ID／slug 製作自訂報表，可新增事件範圍的 `interview_id`、`article_slug` 自訂維度。需在 Tag Assistant／DebugView 確認實際事件參數後使用。
 
-公開容器目前開啟增強型評估的 history tracking；搜尋篩選改變網址時的事件行為由容器設定決定。若只要計算完整頁面載入，可在 GA 網頁瀏覽設定中關閉「根據瀏覽器記錄事件變更的網頁」。網站本身不重複送出 page_view。
+搜尋篩選改變網址時，是否額外記錄瀏覽事件由容器的增強型評估與 history tracking 設定決定。若只要計算完整頁面載入，可在 GA 網頁瀏覽設定中關閉「根據瀏覽器記錄事件變更的網頁」。網站本身不重複送出 page_view。
 
 官方參考：[安裝 GTM](https://support.google.com/tagmanager/answer/14847097)、[設定 GA4 目的地](https://support.google.com/tagmanager/answer/9442095)、[dataLayer](https://developers.google.com/tag-platform/tag-manager/datalayer)。

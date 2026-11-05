@@ -9,3 +9,10 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# Credentials and machine-specific runtime files
+.aws/
+*.pem
+*.key
+*cookies*.txt
+*.log
