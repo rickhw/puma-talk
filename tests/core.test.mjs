@@ -56,7 +56,11 @@ test('static output serves correctly without dependencies or a backend', async (
   const html = String((await request('/')).body);
   assert.match(html,/lang="zh-Hant"/);
   assert.match(html,/\.\/assets\/app\.bundle\.[a-f0-9]{12}\.js/);
-  assert.match(html,/id="archive-data"/);
+  assert.ok(!html.includes('id="archive-data"'),'home shares the archive JSON rather than embedding transcripts in its head');
+  assert.ok(Buffer.byteLength(html)<100_000,'social crawlers receive a lightweight homepage');
+  assert.ok(Buffer.byteLength(html.slice(0,html.indexOf('</head>')))<32_000,'social metadata and the complete head fit in a small response');
+  const brand=html.match(/class="brand" href="([^"]+)"/)[1];
+  assert.equal(new URL(brand,'https://example.test/').href,'https://example.test/');
   const site=JSON.parse(await readFile(new URL('../data/site.json',import.meta.url),'utf8'));
   if(site.analytics?.gtmContainerId) {
     assert.ok(html.indexOf('id="site-config"')<html.indexOf('<body>'));
@@ -64,8 +68,10 @@ test('static output serves correctly without dependencies or a backend', async (
     assert.ok(html.includes(`<body>\n  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${site.analytics.gtmContainerId}"`));
   }
 
-  const embedded = html.match(/<script id="archive-data" type="application\/json">([\s\S]*?)<\/script>/)[1];
-  assert.equal(validateArchive(JSON.parse(embedded)).interviews.length,archive.interviews.length);
+  const dataURL = html.match(/name="archive-data-url" content="([^"]+)"/)[1];
+  const shared=await request(new URL(dataURL,'https://example.test/').pathname);
+  assert.equal(shared.status,200);
+  assert.equal(validateArchive(JSON.parse(String(shared.body))).interviews.length,archive.interviews.length);
   const bundle = String((await request('/assets/app.bundle.js')).body);
   assert.doesNotThrow(() => new vm.Script(bundle, {filename:'app.bundle.js'}));
   const publicData=JSON.parse(String((await request('/data/interviews.json')).body));
@@ -77,6 +83,7 @@ test('static output serves correctly without dependencies or a backend', async (
     assert.equal(response.status,200,pathname);
     const page=String(response.body);
     assert.ok(page.includes('<base href="../../">'));
+    assert.ok(page.includes('class="brand" href="./"'));
     assert.ok(page.includes(`href="${interviewPath(item)}#main"`));
     assert.ok(page.includes(`name="interview-id" content="${item.id}"`));
     const canonical=config.siteUrl?new URL(interviewPath(item),config.siteUrl).href:interviewPath(item);

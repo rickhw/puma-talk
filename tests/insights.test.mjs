@@ -55,7 +55,9 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   async function render(search='',detail=false){
     const elements=new Map(),errors=[],listeners=new Map(),players=[],copies=[];
     const document={title:'',baseURI:'https://example.test/',querySelector(selector){
-      if(selector==='#archive-data')return {textContent:JSON.stringify(merged)};
+      if(selector==='#archive-data')return null;
+      if(selector==='meta[name="archive-data-url"]')return {content:'./data/interviews.fingerprint.json'};
+      if(selector==='#status-filter')throw new Error('Removed transcript status control must not be accessed');
       if(selector==='#site-config')return {textContent:JSON.stringify({siteUrl:'https://example.test/'})};
       if(detail&&selector==='meta[name="interview-id"]')return {content:merged.interviews[0].id};
       if(selector==='.skip-link'||selector.startsWith('meta['))return null;
@@ -64,6 +66,7 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
     },querySelectorAll(){return [];},addEventListener(type,listener){listeners.set(type,listener);}};
     await vm.runInNewContext(`(async()=>{${core}\n${insights}\nconst esc=escapeHTML;\n${app}})()`,{
       document,window:{addEventListener(){},YT:{Player:function(id,options){this.seeks=[];this.plays=0;this.seekTo=(time,allow)=>this.seeks.push([time,allow]);this.playVideo=()=>this.plays++;this.ready=()=>options.events.onReady({target:this});players.push(this);}}},navigator:{clipboard:{async writeText(text){copies.push(text);}}},matchMedia(){return {matches:true};},setTimeout(){return 0;},clearTimeout(){},localStorage:{getItem(){return null;}},structuredClone,URL,URLSearchParams,
+      fetch:async url=>{assert.equal(url,'./data/interviews.fingerprint.json');return {ok:true,json:async()=>structuredClone(merged)};},
       history:{replaceState(_state,_title,url){elements.lastURL=url;}},
       location:new URL('https://example.test/'+search),console:{error(error){errors.push(error);}}
     });
@@ -76,6 +79,8 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   assert.ok(html.indexOf('collection-statistics')<html.indexOf('id="ranking-panel"'));
   for(const label of ['觀看排行榜','時間序列','留言排行榜'])assert.ok(home.get('#ranking-panel').innerHTML.includes(label));
   assert.ok(html.includes('1,200')&&html.includes('keyword-cloud'));
+  assert.equal(home.get('#sort-filter').value,'newest');
+  assert.ok(!html.includes('id="status-filter"')&&!html.includes('逐字稿狀態'));
   assert.ok(home.get('#interview-grid').innerHTML.includes('AI 輔助校對'));
   let prevented=false;
   await home.listeners.get('click')({target:{closest(selector){return selector==='[data-ranking]'?{dataset:{ranking:'comments'}}:null;}},preventDefault(){prevented=true;}});
@@ -83,6 +88,13 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   assert.equal(home.get('#sort-filter').value,'comments');
   assert.ok(home.lastURL.includes('sort=comments'));
   assert.match(home.get('#ranking-panel').innerHTML,/data-ranking="comments" aria-current="true"/);
+  await home.listeners.get('click')({target:{closest(selector){return selector==='button'?{dataset:{clear:''},hasAttribute(name){return name==='data-clear';}}:null;}},preventDefault(){}});
+  assert.equal(home.get('#sort-filter').value,'newest');
+  assert.ok(home.lastURL.includes('sort=newest'));
+  assert.equal((await render('?sort=invalid')).get('#sort-filter').value,'newest');
+  const legacy=await render('?status=available');
+  await legacy.listeners.get('click')({target:{closest(selector){return selector==='button'?{dataset:{removeFilter:'status'},hasAttribute(name){return name==='data-remove-filter';}}:null;}},preventDefault(){}});
+  assert.ok(!legacy.lastURL.includes('status='));
   const timeline=await render('?sort=oldest');
   assert.equal(timeline.get('#sort-filter').value,'oldest');
   assert.ok(timeline.get('#ranking-panel').innerHTML.includes('最早發布'));

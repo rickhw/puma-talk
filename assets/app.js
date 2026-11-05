@@ -92,21 +92,19 @@ function home() {
   const params = new URLSearchParams(location.search);
   filters = Object.fromEntries(['q', 'category', 'tag', 'status', 'sort'].map(k => [k, params.get(k) || '']));
   filters.saved = params.get('saved') === '1';
-  filters.sort = ['views','comments','newest','oldest'].includes(filters.sort) ? filters.sort : 'views';
-  const featured = items.find(i => i.featured) || items[0];
+  filters.sort = ['views','comments','newest','oldest'].includes(filters.sort) ? filters.sort : 'newest';
   activeItem = null;
   document.title = 'PUMA TALKS｜沈伯洋專訪資料庫';
   main.innerHTML = `${homeHeroHTML(items)}${collectionStatsHTML(items,archive.statisticsUpdatedAt)}<div id="ranking-panel">${rankingHTML(items,filters.sort,archive.statisticsUpdatedAt)}</div>
   <div class="archive-intro"><div class="wrap intro-inner"><span>留一點時間，聽完整的想法。</span><span>${items.length} 支訪談影片<span class="intro-dot">·</span>${categories.length} 個主題<span class="intro-dot">·</span>持續整理中 ${icon('headphones')}</span></div></div>
   <section class="keyword-section wrap" aria-labelledby="keywords-heading"><div class="keyword-section-header"><h2 id="keywords-heading">跟著關鍵字，找到想聽的對話。</h2><p>字越大，出現的專訪越多；數字為影片數。</p></div>${keywordCloudHTML(items,45)}</section>
   <section class="archive-section wrap" id="archive" aria-labelledby="archive-title"><div class="section-heading"><div><div class="eyebrow">THE COLLECTION</div><h2 id="archive-title">${filters.saved ? '我的收藏' : '每場對話，都有新的發現'}<span class="heading-dot">.</span></h2></div><a href="./index.html?view=topics" class="text-link">不知道從哪開始？探索主題 ${icon('upRight')}</a></div>
-    <div class="search-bar"><label class="search-input">${icon('search')}<input id="archive-search" type="search" placeholder="搜尋專訪、節目、標籤或逐字稿內容…" value="${esc(filters.q)}" aria-label="搜尋專訪與逐字稿" autocomplete="off"><kbd aria-hidden="true">/</kbd></label><label class="select-wrap"><span>逐字稿</span><select id="status-filter" aria-label="逐字稿狀態"><option value="">全部狀態</option value="available">有逐字稿</option><option value="ai">AI 校對</option><option value="pending">整理中</option></select></label></div>
+    <div class="search-bar"><label class="search-input">${icon('search')}<input id="archive-search" type="search" placeholder="搜尋專訪、節目、標籤或逐字稿內容…" value="${esc(filters.q)}" aria-label="搜尋專訪與逐字稿" autocomplete="off"><kbd aria-hidden="true">/</kbd></label></div>
     <div class="category-tabs" role="group" aria-label="依主題分類"><button class="category-tab" data-category="">全部專訪 <span>${items.length}</span></button>${categories.map(c => `<button class="category-tab" data-category="${c}">${c}</button>`).join('')}</div>
-    <div class="results-toolbar"><p id="results-count" role="status" aria-live="polite"></p><label class="sort-label">排序<select id="sort-filter" aria-label="專訪排序"><option value="views">觀看次數最多</option><option value="newest">最新優先</option><option value="oldest">最早優先</option><option value="comments">留言最多</option></select></label></div>
+    <div class="results-toolbar"><p id="results-count" role="status" aria-live="polite"></p><label class="sort-label">排序<select id="sort-filter" aria-label="專訪排序"><option value="newest">最新優先</option><option value="views">觀看次數最多</option><option value="oldest">最早優先</option><option value="comments">留言最多</option></select></label></div>
     <div id="active-filters" class="active-filters"></div><div id="interview-grid" class="interview-grid"></div>
     <div class="collection-note">${icon('text')}<p>每一份逐字稿，都從保留脈絡開始。<span>我們使用 AI 技術校對逐字稿，統一以正體中文呈現；點擊時間碼即可對照原始影片。</span></p><a href="./index.html?view=about">關於計畫 ${icon('arrow')}</a></div>
   </section>`;
-  document.querySelector('#status-filter').value = filters.status;
   document.querySelector('#sort-filter').value = filters.sort;
   updateResults(false);
 }
@@ -250,10 +248,10 @@ document.addEventListener('click', async event => {
   } else if (button?.hasAttribute('data-category')) { filters.category = button.dataset.category; updateResults(); }
   else if (button?.hasAttribute('data-tag')) { location.href = new URL(`./index.html?tag=${encodeURIComponent(button.dataset.tag)}#archive`, document.baseURI).href; }
   else if (button?.hasAttribute('data-clear')) {
-    filters = { q:'', category:'', tag:'', status:'', sort:'views', saved:false };
-    document.querySelector('#archive-search').value = ''; document.querySelector('#status-filter').value = ''; document.querySelector('#sort-filter').value = 'views';
+    filters = { q:'', category:'', tag:'', status:'', sort:'newest', saved:false };
+    document.querySelector('#archive-search').value = ''; document.querySelector('#sort-filter').value = 'newest';
     document.querySelector('#archive-title').innerHTML = '每場對話，都有新的發現<span class="heading-dot">.</span>'; updateResults();
-  } else if (button?.hasAttribute('data-remove-filter')) { filters[button.dataset.removeFilter] = ''; if (button.dataset.removeFilter === 'status') document.querySelector('#status-filter').value = ''; if (button.dataset.removeFilter === 'saved') document.querySelector('#archive-title').innerHTML = '每場對話，都有新的發現<span class="heading-dot">.</span>'; updateResults(); }
+  } else if (button?.hasAttribute('data-remove-filter')) { filters[button.dataset.removeFilter] = ''; if (button.dataset.removeFilter === 'saved') document.querySelector('#archive-title').innerHTML = '每場對話，都有新的發現<span class="heading-dot">.</span>'; updateResults(); }
   else if (button?.hasAttribute('data-play') && activeItem) await play(button.dataset.play);
   else if ((button?.hasAttribute('data-cue') || button?.hasAttribute('data-seek')) && activeItem) {
     visibleCue = Number(button.dataset.cue ?? button.dataset.seek); await play(activeItem.transcript[visibleCue].start);
@@ -292,7 +290,6 @@ document.addEventListener('input', event => {
 });
 document.addEventListener('change', async event => {
   if (event.target.id === 'sort-filter') { filters.sort = event.target.value; updateResults(); }
-  if (event.target.id === 'status-filter') { filters.status = event.target.value; updateResults(); }
   if (event.target.id === 'subtitle-file') {
     const file = event.target.files[0]; if (!file || !activeItem) return;
     try {

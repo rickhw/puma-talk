@@ -56,7 +56,7 @@ export async function build() {
   await rm(out, { recursive: true, force: true });
   await mkdir(out, { recursive: true });
   for (const name of ['index.html', 'assets']) await cp(path.join(root, name), path.join(out, name), { recursive: true });
-  // Small, dependency-free bundle also works when index.html is opened via file://.
+  // Dependency-free bundle; archive data is shared across the home and article pages.
   const core = (await readFile(path.join(root, 'assets/core.js'), 'utf8')).replace(/^export /gm, '');
   const insights=(await readFile(path.join(root,'assets/insights.js'),'utf8')).replace(/^import .*;\n/gm,'').replace(/^export /gm,'');
   const app = (await readFile(path.join(root, 'assets/app.js'), 'utf8')).replace(/^import .*;\n/gm, '');
@@ -100,8 +100,8 @@ export async function build() {
     const imageURL=image&&(config.siteUrl?new URL(image.url,config.siteUrl).href:/^https:\/\//.test(image.url)?image.url:null);
     return `<meta property="og:type" content="${type}"><meta property="og:site_name" content="PUMA TALKS"><meta property="og:locale" content="zh_TW">${config.siteUrl?`<meta property="og:url" content="${escapeHTML(url)}">`:''}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHTML(title)}"><meta name="twitter:description" content="${escapeHTML(description)}">${imageURL?`<meta property="og:image" content="${escapeHTML(imageURL)}"><meta property="og:image:secure_url" content="${escapeHTML(imageURL)}"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="${image.width}"><meta property="og:image:height" content="${image.height}"><meta property="og:image:alt" content="${escapeHTML(image.alt)}"><meta name="twitter:image" content="${escapeHTML(imageURL)}"><meta name="twitter:image:alt" content="${escapeHTML(image.alt)}">`:''}`;
   };
-  const html = withAnalytics(template.replace('<script type="module" src="./assets/app.js"></script>', `<script id="archive-data" type="application/json">${jsonScript(data)}</script>\n  <script defer src="./assets/app.bundle.js"></script>`)
-    .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1">${homeHeroHTML(data.interviews)}${collectionStatsHTML(data.interviews,data.statisticsUpdatedAt)}<div id="ranking-panel">${rankingHTML(data.interviews,'views',data.statisticsUpdatedAt)}</div><div class="loading-state">正在載入專訪…</div></main>`));
+  const html = withAnalytics(template.replace('<script type="module" src="./assets/app.js"></script>', `<script defer src="./assets/app.bundle.js"></script>`)
+    .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1">${homeHeroHTML(data.interviews)}${collectionStatsHTML(data.interviews,data.statisticsUpdatedAt)}<div id="ranking-panel">${rankingHTML(data.interviews,'newest',data.statisticsUpdatedAt)}</div><div class="loading-state">正在載入專訪…</div></main>`));
   const homeCanonical = config.siteUrl ? `<link rel="canonical" href="${escapeHTML(config.siteUrl)}">` : '';
   await writeFile(path.join(out, 'index.html'), html.replace('<meta charset="utf-8">', `<meta charset="utf-8">\n  ${homeCanonical}\n  ${socialHead(data.homeCover,'PUMA TALKS｜沈伯洋專訪資料庫','從一場對話，認識沈伯洋。專訪、摘要與正體中文逐字稿。',config.siteUrl,'website')}`));
   for (const item of data.interviews) {

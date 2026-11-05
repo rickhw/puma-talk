@@ -7,6 +7,8 @@
 - 建置將封面加入社群 Open Graph／Twitter metadata，並用於專訪播放器的播放前畫面。分享平台可直接讀取 HTML，不需執行本站 JavaScript。
 - `data/site.json` 的 `siteUrl` 需為正確的正式網址，才能產生完整社群圖片 URL。
 
+首頁與專訪頁的 `<head>` 直接提供完整封面資訊，逐字稿另外載入共用的內容指紋 JSON，避免大型資料佔用爬蟲讀取 HTML 的範圍。若 Facebook 仍顯示舊預覽，可在 [Sharing Debugger](https://developers.facebook.com/tools/debug/) 輸入正式網址並選擇重新擷取；HTTP 與圖片可讀取的檢查不等於 Facebook 已更新其快取。
+
 ## 重新產生（選用）
 
 使用已啟用的 Python 虛擬環境：
