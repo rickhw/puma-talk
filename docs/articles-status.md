@@ -1,8 +1,8 @@
 # 文章摘要處理進度
 
-更新：2026-11-05T17:50:17+08:00（台灣時間）
+更新：2026-11-06T08:22:12+08:00（台灣時間）
 
-已產生 **116 / 116 篇 AI 文章摘要**。每篇包含導讀、3–5 項重點、總結與固定 slug。正體中文 AI 校對／翻譯版本已完成 116 篇；人工覆核紀錄 0 篇，AI 處理不冒充人工覆核。
+已產生 **117 / 117 篇 AI 文章摘要**。每篇包含導讀、3–5 項重點、總結與固定 slug。正體中文 AI 校對／翻譯版本已完成 117 篇；人工覆核紀錄 0 篇，AI 處理不冒充人工覆核。
 
 共有 111 項時間連結採參考位置；原文由程式直接擷取，未把模型改字後的引文當作原話。其餘引證有精確文字對應；發言語意與立場仍應搭配原始影片理解。
 
@@ -10,11 +10,12 @@
 
 網站網址與 GTM／GA4 設定由 `data/site.json` 提供，啟用狀態依該設定及容器發布狀態而定。YouTube 每日統計與本站流量分開計算。此報告僅依儲存庫資料產生，不代表已在分析後台確認收到事件。
 
-另有 **3 篇來源範圍說明**，詳見下方專節；文章頁已醒目標示，辨識不清部分保留時間範圍並註記。
+另有 **4 篇來源範圍說明**，詳見下方專節；文章頁已醒目標示，辨識不清部分保留時間範圍並註記。
 
 | 日期 | 訪談 | 固定 slug | 重點數 |
 | --- | --- | --- | ---: |
 | 2026-11-05 | [1102如何讓世界認識台北？沈伯洋不擔心被中國拒絕？「我蓋新房換你舊房」解都更難題？](https://puma-talk.gtcafe.com/interviews/2026-11-05-taipei-internationalization-urban-renewal-democracy/) | `2026-11-05-taipei-internationalization-urban-renewal-democracy` | 5 |
+| 2026-11-05 | [沈伯洋、蘇巧慧同台《女人我最大》：候選人拚腦力、體力與美力](https://puma-talk.gtcafe.com/interviews/2026-11-05-shen-boyang-su-qiaohui-tvbs-interview/) | `2026-11-05-shen-boyang-su-qiaohui-tvbs-interview` | 5 |
 | 2026-11-04 | [除了「你好棒」，還可以怎麼稱讚孩子？《寧夏璐66號茶坊》育兒訪談片段](https://puma-talk.gtcafe.com/interviews/2026-11-04-parenting-praise-and-reading/) | `2026-11-04-parenting-praise-and-reading` | 3 |
 | 2026-11-04 | [沈伯洋撲馬來了！《11點熱吵店》多人紓壓主題完整版](https://puma-talk.gtcafe.com/interviews/2026-11-04-stress-relief-family-and-daily-life/) | `2026-11-04-stress-relief-family-and-daily-life` | 4 |
 | 2026-11-03 | [回應執行力質疑！沈伯洋談台北市政改革，如何讓政策真正落地？ ft. 沈伯洋 台北市長參選人、立法委員｜遠見On Air](https://puma-talk.gtcafe.com/interviews/2026-11-03-shen-boyang-taipei-municipal-reform/) | `2026-11-03-shen-boyang-taipei-municipal-reform` | 5 |
@@ -133,6 +134,7 @@
 
 ## 來源範圍說明
 
+- `64ckQX3l4Ao`：多人綜藝節目完整版，包含沈伯洋、蘇巧慧、主持人、教練及其他來賓發言與示範，非沈伯洋單人政策專訪。節目日期與 YouTube 發布日期均為 2026-11-05。
 - `Fc7mNhTRS5o`：沈伯洋官方頻道發布的 6 分 34 秒片段，並非完整 Podcast；片頭說明問題來自辦公室同仁，其中一題是他自己的問題。
 - `9zRsNOYZ7U4`：多人綜藝節目完整版；節目日期為 2026-11-03，台灣時間 2026-11-04 凌晨上線。
 - `4jrh2JsC0TA`：現有英文逐字稿以蔡英文柏林演講為主，標題提及的沈伯洋評論待對照原片確認。

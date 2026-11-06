@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-05T09:32:00.455127+00:00",
+  "updatedAt": "2026-11-06T00:14:44.202285+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,29 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "64ckQX3l4Ao",
+      "title": "平常拚選票！今天拚這些？ 候選人拚腦力×拚體力×拚美力 #女人我最大 20261105(完整版)｜楷教練、卞慶華、沈伯洋、蘇巧慧、宋哥、何妤玟、Amanda、甄莉",
+      "displayTitle": "沈伯洋、蘇巧慧同台《女人我最大》：候選人拚腦力、體力與美力",
+      "channel": "TVBS Queen",
+      "uploadDate": "20261105",
+      "duration": 2856,
+      "language": null,
+      "spokenLanguage": "zh",
+      "metadataFile": ".cache/woman-64ckQX3l4Ao.info.json",
+      "sourceUrl": "https://www.youtube.com/watch?v=64ckQX3l4Ao",
+      "url": "https://www.youtube.com/watch?v=64ckQX3l4Ao",
+      "referenceUrl": "https://www.youtube.com/watch?v=64ckQX3l4Ao",
+      "decision": "include",
+      "reason": "原頻道於2026-11-05 22:00上線的多人綜藝節目完整版；沈伯洋與蘇巧慧共同受訪及參與活動。",
+      "description": "藍心湄主持《女人我最大》，沈伯洋、蘇巧慧與多位來賓一起參與腦力、體力及造型主題。這是多人綜藝節目完整版，請搭配原片區分各人發言與示範。",
+      "category": "社會與生活",
+      "tags": [
+        "綜藝節目",
+        "生活"
+      ],
+      "status": "metadata-fetched"
+    },
     {
       "id": "nyVWWcKaiIk",
       "title": "1102如何讓世界認識台北？沈伯洋不擔心被中國拒絕？「我蓋新房換你舊房」解都更難題？",
