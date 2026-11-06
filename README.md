@@ -60,6 +60,30 @@ python scripts/transcripts.py report
 
 `doctor` 檢查工具是否可用，不會下載模型或啟動推論。Python 環境、下載工具、模型權重及媒體快取均不隨儲存庫提供。
 
+## 本機模型與用途（Local LLM / ASR）
+
+模型用於資料整理階段，產物保存為 JSON，再建置成靜態網站。瀏覽網站、執行測試與 GitHub Pages 部署均不需要載入模型；這些資料工具也不需要 LLM API key。
+
+| 實際使用的模型 | 類型與執行引擎 | 用途 |
+| --- | --- | --- |
+| [Qwen3.6-27B-MLX-4bit](https://huggingface.co/lmstudio-community/Qwen3.6-27B-MLX-4bit) | 27B、4-bit MLX 權重；本專案透過 `mlx-lm==0.31.3` 執行文字推論 | 文章摘要、保守文字校對、英文逐字稿的正體中文翻譯，以及文章關鍵字選取 |
+| [mlx-community/whisper-large-v3-turbo](https://huggingface.co/mlx-community/whisper-large-v3-turbo) | 語音辨識模型（ASR）；透過 `mlx-whisper==0.4.3` 執行 | 沒有合適原音字幕時，將下載的音訊轉成帶時間碼的原語言逐字稿；正體化、翻譯與摘要接續由文字流程處理 |
+
+目前 117 支影片中，85 支原始逐字稿來自上述 Whisper 模型，其餘 32 支來自 YouTube 字幕。117 篇文章摘要及 AI 顯示稿的文字模型紀錄均為上述 Qwen；顯示稿包含 113 篇中文校對與 4 篇英文翻譯。這些數字依已提交資料統計，最新覆蓋率見[處理進度](docs/processing-status.md)與[摘要進度](docs/articles-status.md)。
+
+| 處理階段 | 程式 | 輸入與產物 |
+| --- | --- | --- |
+| 音訊轉錄 · Whisper | `scripts/batch_transcripts.py`、`scripts/transcripts.py transcribe` | 音訊 → 原始逐字稿與時間碼；套用後存入 `data/interviews.json`，保留輸入 hash、模型及引擎版本 |
+| 文章摘要 · Qwen | `scripts/summarize_articles.py` | 完整逐字稿的有效區段 → 導讀、3–5 項重點、總結、固定 slug 與原文引證，存入 `data/articles.json` |
+| 校對／翻譯 · Qwen | `scripts/refine_transcripts.py` | 原始逐字稿 → 保守用字修正或正體中文譯稿，存入 `data/editorial.json`；原稿與來源時間範圍另行保留 |
+| 關鍵字 · Qwen | `scripts/refine_transcripts.py --keywords-only`，內部呼叫 `scripts/extract_keywords.py` | 已完成的文章摘要 → 5–10 個可對應文章文字的關鍵字，存入 `data/editorial.json`，供卡片與 tag cloud 使用 |
+
+文字模型以 Apple Silicon、Metal 與已取得的 MLX 權重執行。文字工具會設定 `HF_HUB_OFFLINE=1`；請先從模型來源取得權重，再以 `--model` 指定模型目錄。批次 ASR 預設使用上述 Whisper 模型，首次使用遠端模型名稱時會下載權重。模型、音訊與快取需自行準備磁碟空間；推論記憶體需求取決於模型及逐字稿長度。
+
+正體字形統一使用 `opencc-python-reimplemented==0.1.7`（`t2s → s2tw`），`scripts/finalize_editorial.py` 負責關鍵字來源及顯示稿規則檢查；兩者不執行 LLM 推論。封面使用 Pillow 將原影片縮圖與文字排版，詳見[封面說明](docs/covers.md)。
+
+模型紀錄可從 `data/interviews.json` 的 `transcriptProvenance`、`data/articles.json` 的 `provenance` 與 `data/editorial.json` 的 `review` 追查。關鍵字工具目前將模型類別記為 `keywordsModel: "Model"`；實際權重由執行時的 `--model` 指定，現有資料使用同一個 Qwen 模型。
+
 ## 新增或更新專訪
 
 只匯入影片中繼資料：
@@ -84,10 +108,11 @@ AI 內容工具另行安裝：
 
 ```sh
 python -m pip install -r requirements-editorial.txt
-# 先將相容的 MLX 文字模型放到指定目錄
-python scripts/summarize_articles.py --model ./.models/text-model
-python scripts/refine_transcripts.py --model ./.models/text-model
-python scripts/refine_transcripts.py --model ./.models/text-model --keywords-only
+# 先取得上表的 Qwen MLX 權重；以下為專案相對的模型目錄範例
+PUMA_TEXT_MODEL=./.models/Qwen3.6-27B-MLX-4bit
+python scripts/summarize_articles.py --model "$PUMA_TEXT_MODEL"
+python scripts/refine_transcripts.py --model "$PUMA_TEXT_MODEL"
+python scripts/refine_transcripts.py --model "$PUMA_TEXT_MODEL" --keywords-only
 python scripts/finalize_editorial.py
 ```
 
