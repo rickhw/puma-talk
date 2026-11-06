@@ -29,7 +29,7 @@ let saved = readStorage(storageKey, []);
 if (!Array.isArray(saved)) saved = [];
 let localTranscripts = readStorage(transcriptKey, {});
 if (!localTranscripts || typeof localTranscripts !== 'object' || Array.isArray(localTranscripts)) localTranscripts = {};
-let archive, items = [], toastTimer, filters, activeItem, visibleCue = 0;
+let archive, items = [], toastTimer, filters, activeItem, visibleCue = 0, rankingSort = 'views';
 let player=null,playerReady=false,playerCreating=false,playerTime=0,playerGeneration=0,youtubeAPIPromise=null;
 const dateLabel = date => date.replaceAll('-', '.');
 const detailURL = id => interviewPath(items.find(item => item.id === id)) + (location.protocol === 'file:' ? 'index.html' : '');
@@ -93,9 +93,10 @@ function home() {
   filters = Object.fromEntries(['q', 'category', 'tag', 'status', 'sort'].map(k => [k, params.get(k) || '']));
   filters.saved = params.get('saved') === '1';
   filters.sort = ['views','comments','newest','oldest'].includes(filters.sort) ? filters.sort : 'newest';
+  rankingSort = ['views','comments','newest','oldest'].includes(params.get('ranking')) ? params.get('ranking') : 'views';
   activeItem = null;
   document.title = 'PUMA TALKS｜沈伯洋專訪資料庫';
-  main.innerHTML = `${homeHeroHTML(items)}${collectionStatsHTML(items,archive.statisticsUpdatedAt)}<div id="ranking-panel">${rankingHTML(items,filters.sort,archive.statisticsUpdatedAt)}</div>
+  main.innerHTML = `${homeHeroHTML(items)}${collectionStatsHTML(items,archive.statisticsUpdatedAt)}<div id="ranking-panel">${rankingHTML(items,rankingSort,archive.statisticsUpdatedAt)}</div>
   <div class="archive-intro"><div class="wrap intro-inner"><span>留一點時間，聽完整的想法。</span><span>${items.length} 支訪談影片<span class="intro-dot">·</span>${categories.length} 個主題<span class="intro-dot">·</span>持續整理中 ${icon('headphones')}</span></div></div>
   <section class="keyword-section wrap" aria-labelledby="keywords-heading"><div class="keyword-section-header"><h2 id="keywords-heading">跟著關鍵字，找到想聽的對話。</h2><p>字越大，出現的專訪越多；數字為影片數。</p></div>${keywordCloudHTML(items,45)}</section>
   <section class="archive-section wrap" id="archive" aria-labelledby="archive-title"><div class="section-heading"><div><div class="eyebrow">THE COLLECTION</div><h2 id="archive-title">${filters.saved ? '我的收藏' : '每場對話，都有新的發現'}<span class="heading-dot">.</span></h2></div><a href="./index.html?view=topics" class="text-link">不知道從哪開始？探索主題 ${icon('upRight')}</a></div>
@@ -109,8 +110,11 @@ function home() {
   updateResults(false);
 }
 function updateResults(changeURL = true) {
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(filters)) if (value) params.set(key, value === true ? '1' : value);
+  params.set('ranking', rankingSort);
   const results = filterInterviews(items, filters, saved);
-  document.querySelector('#ranking-panel').innerHTML = rankingHTML(items,filters.sort,archive.statisticsUpdatedAt);
+  document.querySelector('#ranking-panel').innerHTML = rankingHTML(items,rankingSort,archive.statisticsUpdatedAt,params);
   document.querySelector('#results-count').innerHTML = `共 <strong>${results.length}</strong> 支訪談影片${filters.q ? `，搜尋「${esc(filters.q)}」` : ''}`;
   document.querySelector('#interview-grid').innerHTML = results.length ? results.map(card).join('') : `<div class="empty-state">${icon(filters.saved ? 'bookmark' : 'search')}<h3>${filters.saved && !saved.length ? '把想慢慢聽的對話，留在這裡。' : '這個條件下，還沒有找到專訪。'}</h3><p>${filters.saved && !saved.length ? '點擊專訪卡片上的書籤，就能在這裡找到它。收藏儲存在目前的瀏覽器。' : '試試其他關鍵字，或清除篩選條件後重新探索。'}</p><button class="button button-dark" data-clear>瀏覽所有專訪 ${icon('arrow')}</button></div>`;
   document.querySelectorAll('[data-category]').forEach(button => { const active = button.dataset.category === filters.category; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); });
@@ -121,8 +125,6 @@ function updateResults(changeURL = true) {
   document.querySelector('#active-filters').innerHTML = chips.join('');
   updateSaved();
   if (changeURL) {
-    const params = new URLSearchParams();
-    for (const [key, value] of Object.entries(filters)) if (value) params.set(key, value === true ? '1' : value);
     history.replaceState(null, '', `./index.html${params.size ? '?' + params : ''}${location.hash}`);
   }
 }
@@ -229,8 +231,8 @@ document.addEventListener('error', event => { if (event.target.matches?.('[data-
 document.addEventListener('click', async event => {
   const ranking = event.target.closest('[data-ranking]');
   if(ranking && !activeItem && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
-    event.preventDefault(); filters.sort=ranking.dataset.ranking;
-    document.querySelector('#sort-filter').value=filters.sort; updateResults(); return;
+    event.preventDefault(); rankingSort=ranking.dataset.ranking;
+    updateResults(); return;
   }
   const summaryTime = event.target.closest('[data-summary-time]');
   if (summaryTime && activeItem && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {

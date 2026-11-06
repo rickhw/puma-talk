@@ -169,6 +169,7 @@ test('home and every interview expose a real 1200 by 630 JPEG social cover',asyn
   const body=home.slice(home.indexOf('<main'));
   assert.ok(body.indexOf('class="hero wrap"')<body.indexOf('collection-statistics'));
   assert.ok(body.indexOf('collection-statistics')<body.indexOf('id="ranking-panel"'));
+  assert.match(body,/data-ranking="views" aria-current="true"/);
   const pages=[['index.html',data.homeCover],...data.interviews.map(item=>['interviews/'+item.slug+'/index.html',item.coverImage])];
   for(const [path,cover] of pages){
     const html=await readFile(new URL('../dist/'+path,import.meta.url),'utf8');
