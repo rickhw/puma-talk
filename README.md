@@ -5,7 +5,7 @@
 - 網站：https://puma-talk.gtcafe.com/
 - 儲存庫：https://github.com/rickhw/puma-talk
 - 純靜態網站，使用原生 HTML、CSS、JavaScript，沒有應用程式後端或 npm 套件依賴。
-- 現有資料包含 117 支影片版本及其摘要；分段、完整版與綜藝節目均按影片 ID 計數，不等於獨立專訪場次，也不代表已涵蓋全部專訪。
+- 現有資料包含 121 支影片版本及其摘要；分段、完整版、綜藝節目、活動直播與音樂作品均按影片 ID 計數，不等於獨立專訪場次，也不代表已涵蓋全部專訪。
 
 ## 執行需求
 
@@ -69,12 +69,13 @@ python scripts/transcripts.py report
 | [Qwen3.6-27B-MLX-4bit](https://huggingface.co/lmstudio-community/Qwen3.6-27B-MLX-4bit) | 27B、4-bit MLX 權重；本專案透過 `mlx-lm==0.31.3` 執行文字推論 | 文章摘要、保守文字校對、英文逐字稿的正體中文翻譯，以及文章關鍵字選取 |
 | [mlx-community/whisper-large-v3-turbo](https://huggingface.co/mlx-community/whisper-large-v3-turbo) | 語音辨識模型（ASR）；透過 `mlx-whisper==0.4.3` 執行 | 沒有合適原音字幕時，將下載的音訊轉成帶時間碼的原語言逐字稿；正體化、翻譯與摘要接續由文字流程處理 |
 
-目前 117 支影片中，85 支原始逐字稿來自上述 Whisper 模型，其餘 32 支來自 YouTube 字幕。117 篇文章摘要及 AI 顯示稿的文字模型紀錄均為上述 Qwen；顯示稿包含 113 篇中文校對與 4 篇英文翻譯。這些數字依已提交資料統計，最新覆蓋率見[處理進度](docs/processing-status.md)與[摘要進度](docs/articles-status.md)。
+目前 121 支影片中，88 支原始逐字稿來自上述 Whisper 模型，32 支來自 YouTube 字幕，另 1 支音樂影片依原頻道製作資訊收錄。121 篇文章摘要的文字模型紀錄均為上述 Qwen；文字顯示稿包含 115 篇中文校對與 5 篇英文翻譯，另有 1 篇作品資訊，沒有製造歌詞逐字稿。這些數字依已提交資料統計，最新覆蓋率見[處理進度](docs/processing-status.md)與[摘要進度](docs/articles-status.md)。
 
 | 處理階段 | 程式 | 輸入與產物 |
 | --- | --- | --- |
 | 音訊轉錄 · Whisper | `scripts/batch_transcripts.py`、`scripts/transcripts.py transcribe` | 音訊 → 原始逐字稿與時間碼；套用後存入 `data/interviews.json`，保留輸入 hash、模型及引擎版本 |
 | 文章摘要 · Qwen | `scripts/summarize_articles.py` | 完整逐字稿的有效區段 → 導讀、3–5 項重點、總結、固定 slug 與原文引證，存入 `data/articles.json` |
+| 音樂作品資訊 · Qwen | `scripts/summarize_media.py` | 音樂影片標題與原頻道製作資訊 → 作品摘要與原文引證；不產生歌詞，來源以 metadata hash 驗證 |
 | 校對／翻譯 · Qwen | `scripts/refine_transcripts.py` | 原始逐字稿 → 保守用字修正或正體中文譯稿，存入 `data/editorial.json`；原稿與來源時間範圍另行保留 |
 | 關鍵字 · Qwen | `scripts/refine_transcripts.py --keywords-only`，內部呼叫 `scripts/extract_keywords.py` | 已完成的文章摘要 → 5–10 個可對應文章文字的關鍵字，存入 `data/editorial.json`，供卡片與 tag cloud 使用 |
 
@@ -115,6 +116,8 @@ python scripts/refine_transcripts.py --model "$PUMA_TEXT_MODEL"
 python scripts/refine_transcripts.py --model "$PUMA_TEXT_MODEL" --keywords-only
 python scripts/finalize_editorial.py
 ```
+
+音樂影片需先保留 `contentType: "music"`、`originalTitle` 與 `originalDescription`，以 `python scripts/summarize_media.py --model "$PUMA_TEXT_MODEL" --video-id VIDEO_ID` 產生作品資訊，再執行關鍵字選取與驗證。這類頁面顯示作品資訊，不顯示逐字稿工具。
 
 文字工具以離線模式讀取已取得的權重，不會附帶下載模型。摘要、校對與關鍵字分開產生；原稿改變後必須更新衍生資料，否則建置會拒絕過期 hash。詳見 [文章與分析追蹤](docs/articles.md)及 [統計與 AI 文字處理](docs/statistics-and-editorial.md)。
 

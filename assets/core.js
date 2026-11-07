@@ -9,7 +9,10 @@ export function interviewSharePath(item, seconds) {
 export function transcriptFingerprintText(cues) {
   return cues.map(c => `${Math.round(c.start * 1000)}:${Math.round(c.end * 1000)}:${c.text}`).join('\n');
 }
+export const metadataFingerprintText = item => [item.originalTitle || item.title, item.originalDescription || ''].join('\n');
 export function validateArticle(article, item) {
+  const metadata = article?.provenance?.coverage === 'video-metadata';
+  if (metadata && (item.contentType !== 'music' || item.transcript.length || !item.originalDescription?.trim() || !/^[a-f0-9]{64}$/.test(article.provenance.metadataSha256 || ''))) throw new Error(`${item.id} 作品資訊來源無效`);
   if (!article || article.videoId !== item.id || !['draft','reviewed'].includes(article.status)
       || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(article.slug) || article.slug.length > 130) throw new Error(`${item.id} 文章識別或 slug 無效`);
   for (const key of ['lead','conclusion']) if (typeof article[key] !== 'string' || !article[key].trim()) throw new Error(`${item.id} 摘要缺少 ${key}`);
@@ -19,7 +22,7 @@ export function validateArticle(article, item) {
     if (['title','text','evidence'].some(key => typeof point[key] !== 'string' || !point[key].trim())
         || !Number.isFinite(point.start) || !Number.isFinite(point.end) || point.start < 0 || point.end <= point.start) throw new Error(`${item.id} 摘要重點格式無效`);
     if (point.citationStatus && !['matched','needs-review'].includes(point.citationStatus)) throw new Error(`${item.id} 摘要引證狀態無效`);
-    const source = item.transcript.filter(c => c.start >= point.start - 0.001 && c.start <= point.end).map(c => c.text).join('').replace(/\s+/g, '');
+    const source = (metadata ? item.originalDescription : item.transcript.filter(c => c.start >= point.start - 0.001 && c.start <= point.end).map(c => c.text).join('')).replace(/\s+/g, '');
     if (!source.includes(point.evidence.replace(/\s+/g, ''))) throw new Error(`${item.id} 摘要引證與逐字稿不符`);
   }
   if (!/^[a-f0-9]{64}$/.test(article.provenance?.transcriptSha256 || '')) throw new Error(`${item.id} 摘要缺少逐字稿 hash`);
@@ -39,7 +42,7 @@ export function mergeArticles(archive, manifest) {
 export function articleSummaryHTML(item) {
   const article = item.article;
   if (!article) return '<section class="article-summary"><h2>文章摘要</h2><p>摘要整理中。</p></section>';
-  return `<article class="article-summary" aria-labelledby="article-summary-heading"><div class="article-summary-header"><div><span class="eyebrow">IN THIS CONVERSATION</span><h2 id="article-summary-heading">文章摘要<span class="heading-dot">.</span></h2></div><span class="article-review-label">${article.status === 'reviewed' ? '摘要已校對' : 'AI 摘要'}</span></div>${article.sourceScopeNote ? `<p class="article-source-scope"><strong>來源說明：</strong>${escapeHTML(article.sourceScopeNote)}</p>` : ''}<p class="article-lead">${escapeHTML(article.lead)}</p><h3>專訪重點</h3><ol class="article-highlights">${article.highlights.map(point => `<li><h4>${escapeHTML(point.title)}</h4><p>${escapeHTML(point.text)}</p><a class="article-time-link" href="${escapeHTML(item.sourceUrl)}&amp;t=${Math.floor(point.start)}s" target="_blank" rel="noopener noreferrer" data-summary-time="${point.start}">回看原片 ${formatTime(point.start)} ↗</a>${point.citationStatus === 'needs-review' ? '<span class="article-reference-note">（時間位置供參考）</span>' : ''}</li>`).join('')}</ol><section class="article-conclusion"><h3>總結</h3><p>${escapeHTML(article.conclusion)}</p></section><p class="article-summary-note">${article.status === 'reviewed' ? '本篇摘要已校對。' : '摘要由 AI 技術整理與輔助校對。'}發言內容與語境請以原始影片為準。</p></article>`;
+  return `<article class="article-summary" aria-labelledby="article-summary-heading"><div class="article-summary-header"><div><span class="eyebrow">IN THIS CONVERSATION</span><h2 id="article-summary-heading">文章摘要<span class="heading-dot">.</span></h2></div><span class="article-review-label">${article.status === 'reviewed' ? '摘要已校對' : 'AI 摘要'}</span></div>${article.sourceScopeNote ? `<p class="article-source-scope"><strong>來源說明：</strong>${escapeHTML(article.sourceScopeNote)}</p>` : ''}<p class="article-lead">${escapeHTML(article.lead)}</p><h3>${item.contentType==='music'?'作品資訊':'專訪重點'}</h3><ol class="article-highlights">${article.highlights.map(point => `<li><h4>${escapeHTML(point.title)}</h4><p>${escapeHTML(point.text)}</p>${article.provenance?.coverage==='video-metadata'?`<a class="article-time-link" href="${escapeHTML(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">查看原片製作資訊 ↗</a>`:`<a class="article-time-link" href="${escapeHTML(item.sourceUrl)}&amp;t=${Math.floor(point.start)}s" target="_blank" rel="noopener noreferrer" data-summary-time="${point.start}">回看原片 ${formatTime(point.start)} ↗</a>`}${point.citationStatus === 'needs-review' ? '<span class="article-reference-note">（時間位置供參考）</span>' : ''}</li>`).join('')}</ol><section class="article-conclusion"><h3>總結</h3><p>${escapeHTML(article.conclusion)}</p></section><p class="article-summary-note">${article.status === 'reviewed' ? '本篇摘要已校對。' : '摘要由 AI 技術整理與輔助校對。'}發言內容與語境請以原始影片為準。</p></article>`;
 }
 export function formatTime(seconds = 0) {
   const value = Math.max(0, Math.floor(Number(seconds) || 0));
@@ -134,5 +137,5 @@ export function interviewShareText(item,url) {
   const lead=item.article?.lead||item.description||'';
   const highlights=(item.article?.highlights||[]).map(point=>'• '+point.title);
   return [item.title,`${item.channel}｜${item.date}`,'',lead,
-    ...(highlights.length?['','專訪重點',...highlights]:[]),'','完整專訪與逐字稿：',url].join('\n');
+    ...(highlights.length?['',item.contentType==='music'?'作品資訊':'專訪重點',...highlights]:[]),'',item.contentType==='music'?'音樂影片與作品介紹：':'完整專訪與逐字稿：',url].join('\n');
 }

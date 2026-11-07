@@ -21,6 +21,18 @@ test('display corrections preserve raw records and keyword/source constraints',(
   assert.throws(()=>mergeEnhancements(archive,{version:1,records:[{...record,keywords:['少於五個']}]},statistics),/關鍵字/);
   assert.throws(()=>mergeEnhancements(archive,{version:1,records:[record,record]},statistics),/重複/);
 });
+
+test('metadata-only editorial records require a music video and no transcript',()=>{
+  const {archive,record,statistics}=fixture();
+  Object.assign(archive.interviews[0],{contentType:'music',transcript:[],transcriptStatus:'pending'});
+  record.transcript=[];Object.assign(record.review,{method:'metadata-only',coverage:'video-metadata'});
+  const data=mergeEnhancements(archive,{version:1,records:[record]},statistics);
+  assert.deepEqual(data.interviews[0].transcript,[]);
+  const spoken=structuredClone(archive);delete spoken.interviews[0].contentType;
+  assert.throws(()=>mergeEnhancements(spoken,{version:1,records:[record]},statistics),/校對/);
+  const fake=structuredClone(record);fake.transcript=[{start:0,end:1,text:'不可偽造的演唱稿'}];
+  assert.throws(()=>mergeEnhancements(archive,{version:1,records:[fake]},statistics),/偽造/);
+});
 test('totals distinguish zero, missing and stale counts and count each video once',()=>{
   const {archive,record,statistics}=fixture();
   const data=mergeEnhancements(archive,{version:1,records:[record]},statistics);
@@ -40,7 +52,7 @@ test('keyword weights count videos rather than repeated tags and links are escap
   const cloud=keywordCloudHTML(items);
   assert.match(cloud,/tag=%E8%B3%87%E8%A8%8A%E4%BD%9C%E6%88%B0/);
   assert.ok(cloud.includes('&lt;script&gt;')&&!cloud.includes('<script>'));
-  assert.match(cloud,/資訊作戰，2 支專訪/);
+  assert.match(cloud,/資訊作戰，2 支影片/);
 });
 
 test('actual homepage shows entry statistics, keyword links and AI copy; about has no transcript steps',async()=>{
@@ -142,6 +154,13 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   const about=(await render('?view=about')).get('#main').innerHTML;
   assert.ok(about.includes('我們使用 AI 技術校對逐字稿'));
   assert.ok(!about.includes('process-list')&&!about.includes('閱讀器現在就可以試')&&!about.includes('待校對'));
+  Object.assign(merged.interviews[0],{contentType:'music',transcript:[],transcriptStatus:'pending'});
+  merged.interviews[0].article.provenance={coverage:'video-metadata'};
+  const music=await render('',true);
+  assert.ok(music.get('.transcript-panel').innerHTML.includes('作品資訊'));
+  assert.ok(music.get('.transcript-panel').innerHTML.includes('音樂影片'));
+  assert.ok(!music.has('#transcript-body'));
+  assert.ok(music.get('.source-button').innerHTML.includes('觀看音樂影片'));
 });
 
 test('ranking links use article slugs, preserve missing comments and escape titles',()=>{

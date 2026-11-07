@@ -2,7 +2,7 @@ import { readFile, mkdir, rm, cp, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
-import { validateArchive, mergeArticles, interviewPath, articleSummaryHTML, escapeHTML, transcriptFingerprintText, interviewShareText } from '../assets/core.js';
+import { validateArchive, mergeArticles, interviewPath, articleSummaryHTML, escapeHTML, transcriptFingerprintText, metadataFingerprintText, interviewShareText } from '../assets/core.js';
 import { mergeEnhancements, collectionStatsHTML, videoStatsHTML, rankingHTML, homeHeroHTML } from '../assets/insights.js';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
@@ -15,6 +15,7 @@ export async function build() {
   for (const item of data.interviews) if (item.article) {
     const fingerprint = createHash('sha256').update(transcriptFingerprintText(item.transcript)).digest('hex');
     if (fingerprint !== item.article.provenance.transcriptSha256) throw new Error(`${item.id} 逐字稿已更新，請先重新整理摘要`);
+    if(item.article.provenance.coverage==='video-metadata'&&createHash('sha256').update(metadataFingerprintText(item)).digest('hex')!==item.article.provenance.metadataSha256)throw new Error(`${item.id} 作品資訊已更新，請先重新整理摘要`);
   }
   async function optionalJSON(name,fallback) {
     try{return JSON.parse(await readFile(path.join(root,'data',name),'utf8'));}
@@ -25,6 +26,7 @@ export async function build() {
   for(const record of editorial.records) {
     const source=archive.interviews.find(item=>item.id===record.videoId);
     if(!source||createHash('sha256').update(transcriptFingerprintText(source.transcript)).digest('hex')!==record.sourceSha256)throw new Error(`${record.videoId} 校對版本來源已更新，請重新處理`);
+    if(record.review.method==='metadata-only'&&createHash('sha256').update(metadataFingerprintText(source)).digest('hex')!==record.review.metadataSha256)throw new Error(`${record.videoId} 作品資訊來源已更新，請重新處理`);
     if(record.review.keywordSelection==='article-grounded') {
       const article=articles.articles.find(row=>row.videoId===record.videoId);
       const context=article&&[article.lead,...article.highlights.flatMap(point=>[point.title,point.text]),article.conclusion].join('\n');

@@ -72,3 +72,7 @@ python scripts/summarize_articles.py --model ./.models/text-model \
 搜尋篩選改變網址時，是否額外記錄瀏覽事件由容器的增強型評估與 history tracking 設定決定。若只要計算完整頁面載入，可在 GA 網頁瀏覽設定中關閉「根據瀏覽器記錄事件變更的網頁」。網站本身不重複送出 page_view。
 
 官方參考：[安裝 GTM](https://support.google.com/tagmanager/answer/14847097)、[設定 GA4 目的地](https://support.google.com/tagmanager/answer/9442095)、[dataLayer](https://developers.google.com/tag-platform/tag-manager/datalayer)。
+
+## 音樂作品資訊
+
+`contentType: "music"` 且沒有逐字稿的影片，可由 `scripts/summarize_media.py --model MODEL --video-id VIDEO_ID` 依原頻道標題及製作資訊產生摘要。文章使用 `coverage: "video-metadata"`、`metadataSha256` 與製作資訊逐字引證；更動來源資料後，建置會拒絕過期摘要。作品頁不提供虛構逐字稿或時間跳轉引證，重點連回原片製作資訊。編輯紀錄使用 `method: "metadata-only"`，不列為中文逐字稿校對或翻譯。

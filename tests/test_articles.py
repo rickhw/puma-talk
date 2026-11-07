@@ -26,6 +26,19 @@ class ArticleTests(unittest.TestCase):
         changed=copy.deepcopy(cues);changed[1]['text']='更新後的來源'
         self.assertNotEqual(transcript_fingerprint(cues),transcript_fingerprint(changed))
 
+    def test_music_markers_are_excluded_and_short_credits_require_explicit_mode(self):
+        cues=[dict(start=0,end=10,text='實際對談內容。'),
+              dict(start=10,end=20,text='［音樂演出或活動收尾，請在原片觀看］'),
+              dict(start=20,end=30,text='演出之後的實際發言。')]
+        self.assertEqual([b['start'] for b in transcript_blocks(cues)],[0,20])
+        value=self.response()
+        for point in value['highlights']:
+            point.update(sourceBlock=0,evidence='詞曲：翁宇君')
+        blocks=[dict(index=0,start=0,end=120,text='詞曲：翁宇君')]
+        with self.assertRaisesRegex(ValueError,'evidence'):parse_response(json.dumps(value),blocks)
+        result=parse_response(json.dumps(value),blocks,minimum_evidence=5)
+        self.assertTrue(all(p['citationStatus']=='matched' for p in result['highlights']))
+
     def test_exact_evidence_can_repair_only_unambiguous_block_number(self):
         data=self.response();data['highlights'][2]['sourceBlock']=1
         result=parse_response(json.dumps(data,ensure_ascii=False),self.blocks())

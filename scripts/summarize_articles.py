@@ -38,7 +38,7 @@ def transcript_blocks(cues, seconds=60):
     blocks=[]
     split_next=False
     for cue in cues:
-        if cue['text'].startswith(('［本段辨識','［靜音區段','［片頭靜音','［片尾辨識')):
+        if cue['text'].startswith(('［本段辨識','［靜音區段','［片頭靜音','［片尾辨識','［音樂演出')):
             split_next=True
             continue
         if split_next or not blocks or cue['start']-blocks[-1]['start']>=seconds:
@@ -84,7 +84,7 @@ def locate_evidence(evidence, index, blocks):
     return dict(start=blocks[match['first']]['start'],end=blocks[match['last']]['end'],evidence=match['evidence'])
 
 
-def parse_response(text, blocks):
+def parse_response(text, blocks, minimum_evidence=8, minimum_text=25):
     value=json.loads(text[text.index('{'):text.rindex('}')+1])
     for key, minimum, maximum in [('lead',35,300),('conclusion',35,300)]:
         if not isinstance(value.get(key),str) or not minimum<=len(value[key].strip())<=maximum:
@@ -98,7 +98,7 @@ def parse_response(text, blocks):
     cleaned=[]
     for point in points:
         # English evidence takes more characters than the same short Chinese quote.
-        for key, minimum, maximum in [('title',3,60),('text',25,260),('evidence',8,600)]:
+        for key, minimum, maximum in [('title',3,60),('text',minimum_text,260),('evidence',minimum_evidence,600)]:
             if not isinstance(point.get(key),str) or not minimum<=len(point[key].strip())<=maximum:
                 raise ValueError(f'重點的 {key} 長度需介於 {minimum}–{maximum} 字元')
         index=point.get('sourceBlock')

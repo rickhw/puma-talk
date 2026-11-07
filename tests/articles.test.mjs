@@ -39,6 +39,22 @@ test('duplicate slugs, orphaned articles, and invented evidence are rejected',()
   assert.throws(()=>validateArticle({...article,slug:'../escape'},item),/slug/);
 });
 
+test('music articles cite video credits without inventing a spoken transcript',()=>{
+  const {item,article}=fixture();
+  const credits=['演唱：功能測試歌手。','詞曲：功能測試作者。','動畫：功能測試團隊。'];
+  Object.assign(item,{contentType:'music',transcript:[],transcriptStatus:'pending',originalDescription:credits.join('\n')});
+  article.provenance={coverage:'video-metadata',transcriptSha256:createHash('sha256').update('').digest('hex'),metadataSha256:'a'.repeat(64)};
+  article.highlights=article.highlights.map((p,i)=>({...p,start:0,end:120,evidence:credits[i]}));
+  validateArticle(article,item);
+  const html=articleSummaryHTML({...item,article});
+  assert.ok(html.includes('作品資訊')&&html.includes('查看原片製作資訊'));
+  assert.ok(!html.includes('data-summary-time')&&!html.includes('回看原片'));
+  const invented=structuredClone(article);invented.highlights[0].evidence='來源中不存在的歌手';
+  assert.throws(()=>validateArticle(invented,item),/引證/);
+  assert.throws(()=>validateArticle(article,{...item,contentType:'interview'}),/作品資訊/);
+  assert.throws(()=>validateArticle({...article,provenance:{...article.provenance,metadataSha256:''}},item),/作品資訊/);
+});
+
 test('summary content is searchable, rendered as an article, and escaped',()=>{
   const {item,article,archive}=fixture();article.lead+='摘要專屬搜尋詞';article.highlights[0].title='<script>測試</script>';
   article.sourceScopeNote='功能測試：來源的 <script>標示</script> 不可執行。';

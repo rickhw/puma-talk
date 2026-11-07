@@ -12,9 +12,9 @@ export function keywordCounts(items) {
 }
 export function keywordCloudHTML(items,limit=50) {
   const all=keywordCounts(items),words=all.slice(0,limit),max=words[0]?.count||1;
-  return `<div class="keyword-cloud" aria-label="依出現專訪數排列的關鍵字">${words.map(({tag,count})=>{
+  return `<div class="keyword-cloud" aria-label="依出現影片數排列的關鍵字">${words.map(({tag,count})=>{
     const size=max===1?16:Math.round(14+13*Math.log2(count+1)/Math.log2(max+1));
-    return `<a href="./index.html?tag=${encodeURIComponent(tag)}#archive" style="--keyword-size:${size}px" aria-label="${escapeHTML(tag)}，${count} 支專訪"><span>${escapeHTML(tag)}</span><small>${count}</small></a>`;
+    return `<a href="./index.html?tag=${encodeURIComponent(tag)}#archive" style="--keyword-size:${size}px" aria-label="${escapeHTML(tag)}，${count} 支影片"><span>${escapeHTML(tag)}</span><small>${count}</small></a>`;
   }).join('')}</div>${all.length>limit?`<p class="keyword-more"><a class="text-link" href="./index.html?view=topics#keyword-cloud">查看全部 ${all.length} 個關鍵字 ↗</a></p>`:''}`;
 }
 export function videoStatsHTML(item,compact=false) {
@@ -33,7 +33,7 @@ export function collectionStats(items,completedAt=null) {
 }
 export function collectionStatsHTML(items,completedAt=null) {
   const total=collectionStats(items,completedAt);
-  return `<section class="collection-statistics wrap" aria-labelledby="collection-statistics-title"><div class="statistics-caption"><h2 id="collection-statistics-title">每一場對話，都持續被看見。</h2><span>YOUTUBE ／ 收錄影片累計</span></div><dl class="statistics-grid"><div><dt>YouTube 總觀看</dt><dd>${total.viewsAvailable?formatCount(total.views):'—'}</dd></div><div><dt>YouTube 總按讚</dt><dd>${total.likesAvailable?formatCount(total.likes):'—'}</dd></div><div><dt>專訪影片</dt><dd>${formatCount(total.videos)}<small> 支</small></dd></div><div><dt>對話總時數</dt><dd>${(total.duration/3600).toLocaleString('zh-TW',{maximumFractionDigits:1})}<small> 小時</small></dd></div></dl><p class="statistics-note">${escapeHTML(formatUpdate(completedAt))} 更新 · 每日統計 · 觀看數 ${total.viewsAvailable}/${total.videos} 支、按讚數 ${total.likesAvailable}/${total.videos} 支${total.fresh<total.videos?` · ${total.videos-total.fresh} 支未能更新，保留可用資料`:''}。分段影片各自計算，非本站流量。</p></section>`;
+  return `<section class="collection-statistics wrap" aria-labelledby="collection-statistics-title"><div class="statistics-caption"><h2 id="collection-statistics-title">每一場對話，都持續被看見。</h2><span>YOUTUBE ／ 收錄影片累計</span></div><dl class="statistics-grid"><div><dt>YouTube 總觀看</dt><dd>${total.viewsAvailable?formatCount(total.views):'—'}</dd></div><div><dt>YouTube 總按讚</dt><dd>${total.likesAvailable?formatCount(total.likes):'—'}</dd></div><div><dt>收錄影片</dt><dd>${formatCount(total.videos)}<small> 支</small></dd></div><div><dt>影片總時數</dt><dd>${(total.duration/3600).toLocaleString('zh-TW',{maximumFractionDigits:1})}<small> 小時</small></dd></div></dl><p class="statistics-note">${escapeHTML(formatUpdate(completedAt))} 更新 · 每日統計 · 觀看數 ${total.viewsAvailable}/${total.videos} 支、按讚數 ${total.likesAvailable}/${total.videos} 支${total.fresh<total.videos?` · ${total.videos-total.fresh} 支未能更新，保留可用資料`:''}。分段影片各自計算，非本站流量。</p></section>`;
 }
 
 export function mergeEnhancements(archive,editorial,statistics) {
@@ -43,10 +43,12 @@ export function mergeEnhancements(archive,editorial,statistics) {
   for(const row of editorial.records) {
     if(!ids.has(row.videoId)||reviews.has(row.videoId)||!/^[a-f0-9]{64}$/.test(row.sourceSha256||''))throw new Error('AI 校對來源不明或重複');
     if(!Array.isArray(row.keywords)||row.keywords.length<5||row.keywords.length>10||new Set(row.keywords).size!==row.keywords.length||row.keywords.some(tag=>typeof tag!=='string'||!tag.trim()||tag.length>24))throw new Error(`${row.videoId} 需有5至10個關鍵字`);
-    if(!Array.isArray(row.transcript)||!row.transcript.length||!['ai-proofread','ai-translated'].includes(row.review?.method)||row.review.displayLanguage!=='zh-Hant-TW'||row.review.coverage!=='full-transcript'||typeof row.review.model!=='string'||!row.review.model||!Number.isFinite(Date.parse(row.review.checkedAt))||typeof row.review.humanReviewed!=='boolean')throw new Error(`${row.videoId} AI 校對紀錄無效`);
+    const music=archive.interviews.find(x=>x.id===row.videoId).contentType==='music'&&row.review?.method==='metadata-only';
+    if(!Array.isArray(row.transcript)||(!row.transcript.length&&!music)||!(music||['ai-proofread','ai-translated'].includes(row.review?.method))||row.review.displayLanguage!=='zh-Hant-TW'||row.review.coverage!==(music?'video-metadata':'full-transcript')||typeof row.review.model!=='string'||!row.review.model||!Number.isFinite(Date.parse(row.review.checkedAt))||typeof row.review.humanReviewed!=='boolean')throw new Error(`${row.videoId} AI 校對紀錄無效`);
     const source=archive.interviews.find(x=>x.id===row.videoId).transcript;
     if(row.review.method==='ai-proofread'&&(source.length!==row.transcript.length||source.some((cue,i)=>cue.start!==row.transcript[i].start||cue.end!==row.transcript[i].end)))throw new Error(`${row.videoId} 校對不可改變原時間碼`);
-    if(row.transcript[0].start<source[0].start||row.transcript.at(-1).end>source.at(-1).end+0.01)throw new Error(`${row.videoId} 譯稿超出原片範圍`);
+    if(music&&(source.length||row.transcript.length))throw new Error(`${row.videoId} 音樂作品資訊不可偽造逐字稿`);
+    if(!music&&(row.transcript[0].start<source[0].start||row.transcript.at(-1).end>source.at(-1).end+0.01))throw new Error(`${row.videoId} 譯稿超出原片範圍`);
     reviews.set(row.videoId,row);
   }
   for(const row of statistics.videos) {

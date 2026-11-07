@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-06T00:14:44.202285+00:00",
+  "updatedAt": "2026-11-06T23:17:58.738174+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,92 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "fbXCUgPZMdY",
+      "title": "《台北順起來 R&B 版》 by 史茵茵",
+      "channel": "沈伯洋Puma",
+      "uploadDate": "20261106",
+      "duration": 167,
+      "sourceUrl": "https://www.youtube.com/watch?v=fbXCUgPZMdY",
+      "url": "https://www.youtube.com/watch?v=fbXCUgPZMdY",
+      "referenceUrl": "https://www.youtube.com/watch?v=fbXCUgPZMdY",
+      "decision": "include",
+      "reason": "使用者指定收錄的官方音樂影片；以作品製作資訊收錄，不生成歌詞逐字稿。",
+      "contentType": "music",
+      "metadataFile": ".cache/scan-20261106-fbXCUgPZMdY.info.json",
+      "status": "metadata-fetched"
+    },
+    {
+      "id": "Cx-p-VdFu60",
+      "title": "【台灣最前線｜選戰倒數沈伯洋獨家專訪】11/6(五) 20:55 準時登場｜民視讚夯",
+      "displayTitle": "《台灣最前線》沈伯洋專訪：市政規劃與選戰對談（直播回放）",
+      "channel": "民視讚夯 Formosa TV Thumbs Up",
+      "uploadDate": "20261106",
+      "duration": 7345,
+      "language": null,
+      "spokenLanguage": "zh",
+      "metadataFile": ".cache/scan-20261106-Cx-p-VdFu60.info.json",
+      "sourceUrl": "https://www.youtube.com/watch?v=Cx-p-VdFu60",
+      "url": "https://www.youtube.com/watch?v=Cx-p-VdFu60",
+      "referenceUrl": "https://www.youtube.com/watch?v=Cx-p-VdFu60",
+      "decision": "include",
+      "reason": "使用者指定收錄的2026-11-06新上架影片；按影片ID計數，保留原內容類型。",
+      "description": "《台灣最前線》節目直播回放，包含主持人與多位來賓發言，可能穿插廣告及其他節目段落。",
+      "category": "政治與公共事務",
+      "tags": [
+        "市政政策",
+        "政治對談"
+      ],
+      "status": "metadata-fetched"
+    },
+    {
+      "id": "U0N4WZl0_Gk",
+      "title": "發燒新聞／路透社專訪談市長選戰　沈伯洋全英回應畫面曝｜民視新聞｜",
+      "displayTitle": "路透英文專訪沈伯洋：民視整理的市長選戰訪談影音",
+      "channel": "民視新聞網 Formosa TV News network",
+      "uploadDate": "20261106",
+      "duration": 665,
+      "language": "zh-Hant",
+      "spokenLanguage": "en",
+      "metadataFile": ".cache/scan-20261106-U0N4WZl0_Gk.info.json",
+      "sourceUrl": "https://www.youtube.com/watch?v=U0N4WZl0_Gk",
+      "url": "https://www.youtube.com/watch?v=U0N4WZl0_Gk",
+      "referenceUrl": "https://www.youtube.com/watch?v=U0N4WZl0_Gk",
+      "decision": "include",
+      "reason": "使用者指定收錄。民視整理的路透英文受訪與中文訪談剪輯；原音標籤為 zh-Hant，發言語言分段為英文及中文，排除自動配音與其字幕，不視為路透完整專訪。",
+      "description": "民視整理的路透英文受訪片段與後續中文訪談影音，並非路透完整原片。前段英文提供 AI 正體中文譯稿，後段中文依原音辨識整理；重複剪輯、問題與答覆請搭配原片理解。",
+      "category": "政治與公共事務",
+      "tags": [
+        "城市交流",
+        "民主制度"
+      ],
+      "status": "metadata-fetched",
+      "audioLanguage": "zh-Hant",
+      "skipSubtitles": true
+    },
+    {
+      "id": "H-uziOFi3Ug",
+      "title": "「沈麼啦！這慧贏！」戒慎恐懼之夜✨",
+      "displayTitle": "「沈麼啦！這慧贏！」戒慎恐懼之夜：Puma 官方活動直播",
+      "channel": "沈伯洋Puma",
+      "uploadDate": "20261106",
+      "duration": 10341,
+      "language": null,
+      "spokenLanguage": "zh",
+      "metadataFile": ".cache/scan-20261106-H-uziOFi3Ug.info.json",
+      "sourceUrl": "https://www.youtube.com/watch?v=H-uziOFi3Ug",
+      "url": "https://www.youtube.com/watch?v=H-uziOFi3Ug",
+      "referenceUrl": "https://www.youtube.com/watch?v=H-uziOFi3Ug",
+      "decision": "include",
+      "reason": "使用者指定收錄的2026-11-06新上架影片；按影片ID計數，保留原內容類型。",
+      "description": "官方活動直播，含不同講者與表演，並非沈伯洋單人專訪。",
+      "category": "政治與公共事務",
+      "tags": [
+        "活動直播",
+        "雙北交流"
+      ],
+      "status": "metadata-fetched"
+    },
     {
       "id": "64ckQX3l4Ao",
       "title": "平常拚選票！今天拚這些？ 候選人拚腦力×拚體力×拚美力 #女人我最大 20261105(完整版)｜楷教練、卞慶華、沈伯洋、蘇巧慧、宋哥、何妤玟、Amanda、甄莉",

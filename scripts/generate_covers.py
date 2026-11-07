@@ -87,12 +87,13 @@ def main():
             title=item['title'].replace('#','')
             for index,line in enumerate(wrapped(title,fonts[48],602,5,draw)):
                 draw.text((54,174+index*66),line,font=fonts[48],fill=INK)
-            draw.text((56,556),item['date']+'  /  專訪重點與完整逐字稿',font=fonts[22],fill=PURPLE)
+            caption='音樂影片與作品資訊' if item.get('contentType')=='music' else '專訪重點與完整逐字稿'
+            draw.text((56,556),item['date']+'  /  '+caption,font=fonts[22],fill=PURPLE)
             panel=(710,118,1150,482);draw.rounded_rectangle(panel,radius=16,fill=PURPLE)
             with Image.open(BytesIO(content)) as source:
                 thumb=ImageOps.contain(source.convert('RGB'),(440,364),Image.Resampling.LANCZOS)
                 image.paste(thumb,(710+(440-thumb.width)//2,118+(364-thumb.height)//2))
-            draw.text((710,516),'聽完整的想法。',font=fonts[30],fill=PURPLE)
+            draw.text((710,516),'在原片聽完整演出。' if item.get('contentType')=='music' else '聽完整的想法。',font=fonts[30],fill=PURPLE)
             record=save_cover(image,item['id'],item['title']+'｜PUMA TALKS',output)
             record.update(videoId=item['id'],title=item['title'],sourceUrl=url,sourceSha256=hashlib.sha256(content).hexdigest())
             records.append(record);print('COVER',item['id'],flush=True)

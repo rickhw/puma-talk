@@ -92,7 +92,7 @@ test('static output serves correctly without dependencies or a backend', async (
     if (item.article) {
       assert.ok(page.includes(escapeHTML(item.article.lead)));
       const label=item.article.status==='reviewed'?'摘要已校對':'AI 摘要';
-      assert.ok(page.includes('專訪重點')&&page.includes('總結')&&page.includes(label));
+      assert.ok(page.includes(item.contentType==='music'?'作品資訊':'專訪重點')&&page.includes('總結')&&page.includes(label));
     }
   }
   const directory=interviewPath(publicData.interviews[0]).slice(1,-1);

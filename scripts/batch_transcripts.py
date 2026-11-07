@@ -42,7 +42,7 @@ def fetch_media(row, work):
     # Catalog overrides are explicit editorial decisions, e.g. an English
     # interview whose upload metadata incorrectly says zh-Hant.
     selection_info = dict(info, language=language)
-    choice = importer.choose_language(selection_info)
+    choice = None if row.get('skipSubtitles') else importer.choose_language(selection_info)
     subtitle_error = None
     if choice:
         subtitle_language, status, automatic = choice
@@ -65,7 +65,9 @@ def fetch_media(row, work):
 
     audio_formats = [f for f in info.get('formats', []) if f.get('vcodec') == 'none' and f.get('acodec') not in (None, 'none')]
     languages = {f.get('language') for f in audio_formats if f.get('language')}
-    base_language = language.split('-')[0]
+    # Audio labels can describe the upload language even when people speak
+    # another language. Select the original track separately from ASR language.
+    base_language = (row.get('audioLanguage') or language).split('-')[0]
     if languages and not any(value.split('-')[0] == base_language for value in languages):
         raise ValueError(f'找不到原音 {language} 音軌；可用語言：{sorted(languages)}')
     selector = f'bestaudio[language^={base_language}]' if languages else 'bestaudio'
@@ -187,11 +189,11 @@ def main(argv=None):
     os.environ.setdefault('HF_HOME',str(ROOT/'.models/huggingface'))
     args.work_dir.mkdir(parents=True,exist_ok=True)
     catalog=json.loads(args.catalog.read_text())
-    rows=[row for row in catalog['candidates'] if row.get('decision')=='include'
+    rows=[row for row in catalog['candidates'] if row.get('decision')=='include' and row.get('contentType')!='music'
           and (args.all_years or row.get('uploadDate','').startswith(str(args.year)))]
     rows.sort(key=lambda row:(row.get('uploadDate','').startswith(str(args.year)),row.get('uploadDate','')),reverse=True)
     data=importer.read_archive(args.db)
-    existing={item['id'] for item in data['interviews'] if item['transcript']}
+    existing={item['id'] for item in data['interviews'] if item['transcript'] or item.get('contentType')=='music'}
     rows=[row for row in rows if row['id'] not in existing]
     results=[]
     print(f'QUEUE {len(rows)} interviews; priority year {args.year}',flush=True)

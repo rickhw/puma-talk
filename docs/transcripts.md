@@ -80,6 +80,10 @@ python scripts/catalog_report.py
 
 批次工具目前的缺字幕 ASR 路徑使用 MLX，需符合 Apple Silicon macOS 條件。最多兩支並行準備媒體，推論及資料寫入逐支進行。缺少或過期的中繼資料會重新取得，不需複製他人的快取；下載後以 ffprobe 核對片長與音訊串流。
 
+候選資料可用 `spokenLanguage` 指定 ASR 的實際發言語言；若 YouTube 音軌標示與發言語言不一致，可另外設定 `audioLanguage` 選擇已確認的原音音軌。確認字幕來自自動配音、不能用於原音時，可設 `skipSubtitles: true` 強制由原音 ASR。這些是逐片檢查後的明確設定，不能只憑上傳語言推定。
+
+音樂影片以作品資訊處理，不交給逐字稿批次。活動中的已確認音樂演出可保留省略時間標記，並記錄 `transcriptProvenance.omittedRanges`；摘要跳過這些標記，不將演唱歸為談話。
+
 長時間工作應依執行平台設定暫時防睡眠。macOS 可在命令前加上 `caffeinate -ims`，保護隨該程序結束而解除；其他平台使用其系統電源或工作排程設定。
 
 批次預設產物位於 `.cache/catalog-transcripts/`；Hugging Face 快取預設為 `.models/huggingface/`，亦可透過 `HF_HOME` 指定其他位置。這些均為可重建或另行備份的執行產物，不提交／部署。YouTube info JSON 可能包含短效媒體 URL，也不應公開提交。

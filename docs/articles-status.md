@@ -1,19 +1,23 @@
 # 文章摘要處理進度
 
-更新：2026-11-06T08:22:12+08:00（台灣時間）
+更新：2026-11-07T08:20:01+08:00（台灣時間）
 
-已產生 **117 / 117 篇 AI 文章摘要**。每篇包含導讀、3–5 項重點、總結與固定 slug。正體中文 AI 校對／翻譯版本已完成 117 篇；人工覆核紀錄 0 篇，AI 處理不冒充人工覆核。
+已產生 **121 / 121 篇 AI 文章摘要**。每篇包含導讀、3–5 項重點、總結與固定 slug。正體中文 AI 校對／翻譯版本已完成 120 篇、作品資訊 1 篇；人工覆核紀錄 0 篇，AI 處理不冒充人工覆核。
 
-共有 111 項時間連結採參考位置；原文由程式直接擷取，未把模型改字後的引文當作原話。其餘引證有精確文字對應；發言語意與立場仍應搭配原始影片理解。
+共有 113 項時間連結採參考位置；原文由程式直接擷取，未把模型改字後的引文當作原話。其餘引證有精確文字對應；發言語意與立場仍應搭配原始影片理解。
 
 每篇文章使用 `/interviews/SLUG/`；舊 query-string 連結仍可轉向並保留時間碼。完整設定與更新方式見[文章、網址與 GA 說明](articles.md)。
 
 網站網址與 GTM／GA4 設定由 `data/site.json` 提供，啟用狀態依該設定及容器發布狀態而定。YouTube 每日統計與本站流量分開計算。此報告僅依儲存庫資料產生，不代表已在分析後台確認收到事件。
 
-另有 **4 篇來源範圍說明**，詳見下方專節；文章頁已醒目標示，辨識不清部分保留時間範圍並註記。
+另有 **8 篇來源範圍說明**，詳見下方專節；文章頁已醒目標示，辨識不清部分保留時間範圍並註記。
 
 | 日期 | 訪談 | 固定 slug | 重點數 |
 | --- | --- | --- | ---: |
+| 2026-11-06 | [《台北順起來 R&B 版》 by 史茵茵](https://puma-talk.gtcafe.com/interviews/2026-11-06-taipei-shun-qi-lai-rnb-version/) | `2026-11-06-taipei-shun-qi-lai-rnb-version` | 4 |
+| 2026-11-06 | [路透英文專訪沈伯洋：民視整理的市長選戰訪談影音](https://puma-talk.gtcafe.com/interviews/2026-11-06-shen-boyang-mayoral-election-democracy-china/) | `2026-11-06-shen-boyang-mayoral-election-democracy-china` | 3 |
+| 2026-11-06 | [「沈麼啦！這慧贏！」戒慎恐懼之夜：Puma 官方活動直播](https://puma-talk.gtcafe.com/interviews/2026-11-06-shen-bo-yang-taipei-mayor-campaign/) | `2026-11-06-shen-bo-yang-taipei-mayor-campaign` | 4 |
+| 2026-11-06 | [《台灣最前線》沈伯洋專訪：市政規劃與選戰對談（直播回放）](https://puma-talk.gtcafe.com/interviews/2026-11-06-shen-boyang-municipal-planning-interview/) | `2026-11-06-shen-boyang-municipal-planning-interview` | 5 |
 | 2026-11-05 | [1102如何讓世界認識台北？沈伯洋不擔心被中國拒絕？「我蓋新房換你舊房」解都更難題？](https://puma-talk.gtcafe.com/interviews/2026-11-05-taipei-internationalization-urban-renewal-democracy/) | `2026-11-05-taipei-internationalization-urban-renewal-democracy` | 5 |
 | 2026-11-05 | [沈伯洋、蘇巧慧同台《女人我最大》：候選人拚腦力、體力與美力](https://puma-talk.gtcafe.com/interviews/2026-11-05-shen-boyang-su-qiaohui-tvbs-interview/) | `2026-11-05-shen-boyang-su-qiaohui-tvbs-interview` | 5 |
 | 2026-11-04 | [除了「你好棒」，還可以怎麼稱讚孩子？《寧夏璐66號茶坊》育兒訪談片段](https://puma-talk.gtcafe.com/interviews/2026-11-04-parenting-praise-and-reading/) | `2026-11-04-parenting-praise-and-reading` | 3 |
@@ -134,6 +138,10 @@
 
 ## 來源範圍說明
 
+- `fbXCUgPZMdY`：音樂影片，非訪談。作品介紹依原頻道標題與製作資訊整理；本頁不刊登完整歌詞，演唱內容請在原片收聽。
+- `U0N4WZl0_Gk`：這是民視整理的路透英文受訪片段及後續中文訪談剪輯，並非已核實的路透完整原片。原音前段為英文、後段為中文，已分段辨識並提供正體中文顯示稿；內容有重複剪輯與主持人模擬提問，語言切換處另作註記。
+- `H-uziOFi3Ug`：Puma 官方多人活動直播，包含主持、來賓談話、互動問答與音樂演出，非單一受訪者的專訪。音樂演出及末段收尾以時間標記保留；未逐句判定所有說話者，發言歸屬與玩笑請搭配原片理解。
+- `Cx-p-VdFu60`：《臺灣最前線》直播回放，含片頭、廣告、主持與其他來賓發言；摘要聚焦沈伯洋參與的市政對談。逐字稿未逐句判定所有說話者，應區分提問、評論與受訪者回應，政策構想不代表已經實施。
 - `64ckQX3l4Ao`：多人綜藝節目完整版，包含沈伯洋、蘇巧慧、主持人、教練及其他來賓發言與示範，非沈伯洋單人政策專訪。節目日期與 YouTube 發布日期均為 2026-11-05。
 - `Fc7mNhTRS5o`：沈伯洋官方頻道發布的 6 分 34 秒片段，並非完整 Podcast；片頭說明問題來自辦公室同仁，其中一題是他自己的問題。
 - `9zRsNOYZ7U4`：多人綜藝節目完整版；節目日期為 2026-11-03，台灣時間 2026-11-04 凌晨上線。

@@ -3,6 +3,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
 from unittest.mock import patch
 
 SCRIPTS = Path(__file__).resolve().parents[1]/'scripts'
@@ -13,6 +14,22 @@ import transcripts
 
 
 class BatchTests(unittest.TestCase):
+    def test_original_audio_language_is_independent_from_spoken_language(self):
+        with tempfile.TemporaryDirectory() as directory:
+            directory=Path(directory);info=directory/'info.json'
+            info.write_text(json.dumps(dict(id='AbCdEfGh_12',duration=120,formats=[
+                dict(vcodec='none',acodec='opus',language='en-US'),
+                dict(vcodec='none',acodec='opus',language='zh-Hant')])) )
+            row=dict(id='AbCdEfGh_12',metadataFile=str(info),spokenLanguage='en',audioLanguage='zh-Hant',skipSubtitles=True)
+            commands=[]
+            def download(arguments,*_args):
+                commands.append(arguments);(directory/row['id']/'audio.webm').write_bytes(b'original audio')
+            probe=SimpleNamespace(stdout=json.dumps(dict(format=dict(duration=120),streams=[dict(codec_type='audio')])))
+            with patch.object(batch.importer,'choose_language',side_effect=AssertionError('不得採用配音字幕')),patch.object(batch,'command',side_effect=download),patch.object(batch.subprocess,'run',return_value=probe):
+                media=batch.fetch_media(row,directory)
+            self.assertEqual(media['language'],'en')
+            self.assertEqual(commands[0][commands[0].index('-f')+1],'bestaudio[language^=zh]')
+
     def test_invalid_decoder_window_is_flagged_without_inventing_speech(self):
         raw = dict(segments=[
             dict(seek=0,start=0,end=1,text='保留的原辨識文字'),

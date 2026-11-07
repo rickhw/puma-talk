@@ -19,7 +19,8 @@ def main():
     editorial_path=ROOT/'data/editorial.json'
     editorial=json.loads(editorial_path.read_text()) if editorial_path.exists() else dict(records=[])
     ai_records={row['videoId']:row for row in editorial['records']}
-    ai_count=sum(item['id'] in ai_records for item in valid)
+    ai_count=sum(item['id'] in ai_records and ai_records[item['id']]['review']['method']!='metadata-only' for item in valid)
+    metadata_count=sum(item['id'] in ai_records and ai_records[item['id']]['review']['method']=='metadata-only' for item in valid)
     references=sum(point.get('citationStatus')=='needs-review' for item in valid for point in articles[item['id']]['highlights'])
     stale=[item['id'] for item in valid if articles[item['id']]['provenance']['transcriptSha256']!=transcript_fingerprint(item['transcript'])]
     scope_notes=[(item,articles[item['id']]['sourceScopeNote']) for item in valid if articles[item['id']].get('sourceScopeNote')]
@@ -28,7 +29,7 @@ def main():
     site_url=site.get('siteUrl','')
     lines=['# 文章摘要處理進度','',
         f'更新：{dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(timespec="seconds")}（台灣時間）','',
-        f'已產生 **{len(valid)} / {len(archive["interviews"])} 篇 AI 文章摘要**。每篇包含導讀、3–5 項重點、總結與固定 slug。正體中文 AI 校對／翻譯版本已完成 {ai_count} 篇；人工覆核紀錄 {states["reviewed"]} 篇，AI 處理不冒充人工覆核。','',
+        f'已產生 **{len(valid)} / {len(archive["interviews"])} 篇 AI 文章摘要**。每篇包含導讀、3–5 項重點、總結與固定 slug。正體中文 AI 校對／翻譯版本已完成 {ai_count} 篇、作品資訊 {metadata_count} 篇；人工覆核紀錄 {states["reviewed"]} 篇，AI 處理不冒充人工覆核。','',
         f'共有 {references} 項時間連結採參考位置；原文由程式直接擷取，未把模型改字後的引文當作原話。其餘引證有精確文字對應；發言語意與立場仍應搭配原始影片理解。','',
         '每篇文章使用 `/interviews/SLUG/`；舊 query-string 連結仍可轉向並保留時間碼。完整設定與更新方式見[文章、網址與 GA 說明](articles.md)。','',
         '網站網址與 GTM／GA4 設定由 `data/site.json` 提供，啟用狀態依該設定及容器發布狀態而定。YouTube 每日統計與本站流量分開計算。此報告僅依儲存庫資料產生，不代表已在分析後台確認收到事件。','',
