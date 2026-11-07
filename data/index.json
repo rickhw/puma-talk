@@ -513,27 +513,18 @@
   },
   "statistics": {
     "version": 1,
-    "attemptedAt": "2026-11-07T21:39:26.106105+00:00",
-    "completedAt": "2026-11-07T21:50:58.963554+00:00",
+    "attemptedAt": "2026-11-07T22:42:17.310281+00:00",
+    "completedAt": "2026-11-07T22:43:15.504785+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 47198161,
-      "likes": 1207577,
-      "comments": 142360,
+      "views": 47592122,
+      "likes": 1214583,
+      "comments": 143167,
       "commentsAvailable": 124,
       "videos": 124,
       "viewsAvailable": 124,
       "likesAvailable": 124,
       "fresh": 124
-    },
-    "updateScope": {
-      "videoIds": [
-        "1akKxmX9mfA",
-        "f8AcQFSinLg",
-        "aiF45NY6iow"
-      ],
-      "method": "imported-youtube-metadata",
-      "note": "本批僅新增三支影片統計，其他影片保留先前成功數值與 fetchedAt。"
     }
   },
   "covers": {
