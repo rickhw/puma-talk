@@ -1,0 +1,45 @@
+{
+  "id": "1akKxmX9mfA",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "沈伯洋專訪曝秘辛！連續接招不間斷！  蔣萬安是菩薩還邪靈？撲馬眼中的他...【台灣最前線】2026.11.06(全集)",
+  "channel": "民視讚夯 Formosa TV Thumbs Up",
+  "date": "2026-11-07",
+  "sourceUrl": "https://www.youtube.com/watch?v=1akKxmX9mfA",
+  "metadataStatus": "imported",
+  "title": "《台灣最前線》沈伯洋專訪：市政規劃與府會溝通（全集剪輯版）",
+  "referenceUrl": "https://www.youtube.com/watch?v=1akKxmX9mfA",
+  "description": "2026-11-06 播出、11/07 上架的全集剪輯版，與已收錄 Cx-p-VdFu60 同場，依影片 ID 收錄，不計為新增獨立專訪場次。時間碼依此剪輯版獨立轉錄，不移植原直播稿。",
+  "category": "政治與公共事務",
+  "duration": 4489,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-07T21:40:37.268393+00:00",
+    "inputSha256": "0d53483ce4bb0a750da7736869a052b9204eb30e6a1b7b0aab379ddaa5875a46",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "rawEngineOutputSha256": "2b09ee8ca9678d98a64dafb0da432d5669adcc61a898cde372396f6f13643f42"
+  },
+  "publishedAt": "2026-11-07T00:07:35+08:00",
+  "contentType": "interview-edit",
+  "sourceScopeNote": "2026-11-06 播出、11/07 台灣時間上架的《台灣最前線》全集剪輯版，與已收錄 Cx-p-VdFu60 為同場節目，按影片 ID 收錄。包含主持與多位來賓提問、評論；時間碼依本剪輯版獨立辨識，不能全數歸為沈伯洋發言。",
+  "originalDescription": "📌 洋流崛起! 台灣最前線獨家專訪沈伯洋! 選戰祕辛!\n📌 選戰喊話變活動! 戒慎恐懼之夜爆滿! 螺絲君備戰!\n📌 互相交流! 沈伯洋拜會藍前議長! 下一位見誰玄機?\n📌 下猛藥? 藍營喊普發現金三萬! 變相買票搶救選情?\n📌 用人哲學? 沈伯洋若順利當選...小內閣會怎麼挑人?\n📌 無限都更計畫! 沈伯洋盼解決殭屍都更! 政策可行?\n📌 連動? 垃圾桶政策影響鼠患? 若沈伯洋當選怎麼做?\n📌 文化新氣象! 如果要推台北電影城...沈伯洋怎麼做?\n\n【主持人】 許仲江\n\n【節目來賓】\n民進黨台北市長候選人 沈伯洋\n國民黨台北市議員     秦慧珠\n資深媒體人 王瑞德\n資深媒體人 邱明玉\n民視政治組記者 王云宣\n作家      吳子雲(藤井樹)\n\n【收看資訊】(每週一至六晚上8點) \n📡 民視新聞台53台\n📡 無線數位頻道第9台\n📡 中華電信MOD第507台\n📡 Youtube影片頻道：https://youtube.com/playlist?list=PLf2VRok0uRO0BrUIa70CS1_PoeAghdM3K\n📡 Youtube直播頻道：https://youtu.be/ylYJSBUgaMA\n📡 Facebook粉絲專頁: https://bit.ly/2QgKKhP\n📡 Thread：https://www.threads.net/@twsuperline\n\n#台灣最前線 #沈伯洋 #台北市長",
+  "youtubeMetadata": {
+    "upload_date": "20261106",
+    "timestamp": 1793981255,
+    "release_timestamp": null
+  },
+  "relatedVideoIds": [
+    "Cx-p-VdFu60"
+  ],
+  "broadcastDate": "2026-11-06"
+}

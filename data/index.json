@@ -3,6 +3,18 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "f8AcQFSinLg",
+      "slug": "2026-11-07-shen-bo-yang-taipei-election"
+    },
+    {
+      "id": "aiF45NY6iow",
+      "slug": "2026-11-07-taipei-election-sports-policy"
+    },
+    {
+      "id": "1akKxmX9mfA",
+      "slug": "2026-11-07-shen-boyang-municipal-planning-full-edit"
+    },
+    {
       "id": "fbXCUgPZMdY",
       "slug": "2026-11-06-taipei-shun-qi-lai-rnb-version"
     },
@@ -489,30 +501,39 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-06"
+    "updatedAt": "2026-11-07"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-07T00:18:28.832997+00:00"
+    "updatedAt": "2026-11-07T21:54:03.568820+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-07T00:20:27.023878+00:00"
+    "updatedAt": "2026-11-07T21:57:53.801688+00:00"
   },
   "statistics": {
     "version": 1,
-    "attemptedAt": "2026-11-07T00:03:57.251979+00:00",
-    "completedAt": "2026-11-07T00:04:01.529073+00:00",
+    "attemptedAt": "2026-11-07T21:39:26.106105+00:00",
+    "completedAt": "2026-11-07T21:50:58.963554+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 44794057,
-      "likes": 1156838,
-      "comments": 141697,
-      "commentsAvailable": 121,
-      "videos": 121,
-      "viewsAvailable": 121,
-      "likesAvailable": 121,
-      "fresh": 121
+      "views": 47198161,
+      "likes": 1207577,
+      "comments": 142360,
+      "commentsAvailable": 124,
+      "videos": 124,
+      "viewsAvailable": 124,
+      "likesAvailable": 124,
+      "fresh": 124
+    },
+    "updateScope": {
+      "videoIds": [
+        "1akKxmX9mfA",
+        "f8AcQFSinLg",
+        "aiF45NY6iow"
+      ],
+      "method": "imported-youtube-metadata",
+      "note": "本批僅新增三支影片統計，其他影片保留先前成功數值與 fetchedAt。"
     }
   },
   "covers": {

@@ -1,0 +1,68 @@
+{
+  "id": "f8AcQFSinLg",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "【完整公開】LIVE 選戰緊繃 沈伯洋時事聯訪",
+  "channel": "台視新聞 TTV NEWS",
+  "date": "2026-11-07",
+  "sourceUrl": "https://www.youtube.com/watch?v=f8AcQFSinLg",
+  "metadataStatus": "imported",
+  "title": "沈伯洋時事聯訪與都市原住民政策說明（台視回放）",
+  "referenceUrl": "https://www.youtube.com/watch?v=f8AcQFSinLg",
+  "description": "媒體時事聯訪回放，包含現場等待及多人提問；標題與摘要應依實際逐字稿整理，不預先斷定問答內容。",
+  "category": "政治與公共事務",
+  "duration": 3275,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-07T21:41:24.391896+00:00",
+    "inputSha256": "390a98e05b9e3c4de4ac42a6ca20a0b0e2987f7bb4a0521f93acea15d0774da3",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。",
+      "檢視完整ASR、主持的演出介紹及原片縮圖時間軸後，將歌曲與演唱互動改為省略標記；完整原始引擎輸出與音訊保留於本機，不宣稱逐句人工覆核。"
+    ],
+    "omittedRanges": [
+      {
+        "start": 1144.32,
+        "end": 1214.32,
+        "reason": "主持宣布播放音樂後的音樂／表演互動，原始ASR含重複歡呼與不明音節；不作為談話逐字稿。"
+      },
+      {
+        "start": 2660.3,
+        "end": 2719.56,
+        "reason": "主持介紹歌曲後的現場演唱；省略歌詞與辨識雜訊，保留原片位置。"
+      },
+      {
+        "start": 3079.22,
+        "end": 3112.58,
+        "reason": "現場原住民族歌曲演唱，非中文談話，不將中文ASR音譯當作原意。"
+      },
+      {
+        "start": 3121.62,
+        "end": 3151.8,
+        "reason": "主持介紹泰雅族歌曲後的演唱／互動，省略歌詞及辨識雜訊。"
+      }
+    ],
+    "rawEngineOutputSha256": "c0aa163a69bed7408b3758e3f93d22a71141740d0f57d48eee53e19f76ba6595"
+  },
+  "publishedAt": "2026-11-07T13:59:46+08:00",
+  "contentType": "media-scrum",
+  "sourceScopeNote": "台視完整直播回放，前約 15 分鐘為媒體聯訪，後續為都市原住民政策活動，包含沈伯洋、林家豪及其他現場講者、文化互動與演出。摘要分開表述媒體問答與各人政策構想；演唱以原片時間標記省略，台語、族語與現場噪音的辨識可能不完整，未逐句分離說話者。",
+  "originalDescription": "#沈伯洋 #2026大選 #選戰\n\n2026.11.07【完整公開】選戰緊繃 沈伯洋時事聯訪\n\n✨歡迎收看並訂閱TTVNews台視新聞YouTube頻道✨\n\n◎【台視新聞網】👉https://news.ttv.com.tw/\n◎訂閱【台視新聞】👉https://www.youtube.com/c/ttvnewsview\n◎訂閱【TTV LIVE台視直播】👉https://www.youtube.com/c/twlivenews\n◎按讚【台視新聞FB】👉https://www.facebook.com/ttvnews/\n◎追蹤【台視新聞IG】👉https://www.instagram.com/ttvnews_tw/",
+  "youtubeMetadata": {
+    "upload_date": "20261107",
+    "timestamp": 1794031186,
+    "release_timestamp": 1794027655
+  },
+  "broadcastAt": "2026-11-07T13:00:55+08:00"
+}

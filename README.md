@@ -4,7 +4,7 @@
 
 - 網站：https://puma-talk.gtcafe.com/
 - 儲存庫：https://github.com/rickhw/puma-talk
-- 現有 121 支影片版本：分段、完整版、綜藝節目、活動直播與音樂作品各按影片 ID 計數，不等於獨立專訪場次。
+- 現有 124 支影片版本：分段、完整版、綜藝節目、活動直播與音樂作品各按影片 ID 計數，不等於獨立專訪場次。
 - 純靜態網站，沒有應用程式後端、資料庫服務或 npm 套件依賴。模型只在內容處理階段執行。
 
 ## 情境與指令索引
@@ -412,9 +412,9 @@ GitHub Pages 使用 **Settings → Pages → GitHub Actions**，設定 repositor
 | `data/catalog.json`、`data/pending-interviews.json`、`data/sources.json` | 候選判定、待確認原片與固定掃描來源 |
 | [處理進度](docs/processing-status.md)、[摘要進度](docs/articles-status.md) | 已提交資料的覆蓋率、來源範圍與待辦 |
 
-目前 88 支原稿來自上述 Whisper、32 支來自 YouTube 字幕，另 1 支為音樂作品資訊。121 篇摘要的模型紀錄為上述 Qwen；顯示稿包含 115 篇中文校對、5 篇英文翻譯及 1 篇作品資訊。這是目前資料快照，後續以進度報告為準。
+截至 2026-11-08，91 支原稿來自上述 Whisper、32 支來自 YouTube 字幕，另 1 支為音樂作品資訊。原有 121 篇摘要使用上述 Qwen3.6，11/07 三支新收錄影片使用 `lmstudio-community/Qwen3.8-27B-MLX-8bit`（同為 `mlx-lm==0.31.3`）；顯示稿包含 118 篇中文校對、5 篇英文翻譯及 1 篇作品資訊。三支新片的來源與省略範圍見[處理紀錄](docs/transcript-batch-2026-11-07.md)，後續數量以進度報告為準。
 
-模型來源可追查 `metadata.json` 的 `transcriptProvenance`、`article.json` 的 `provenance` 及 `editorial.json` 的 `review`。關鍵字工具目前記錄 `keywordsModel: "Model"` 類別名；實際權重由 `--model` 指定，現有紀錄使用同一 Qwen。摘要與校對／翻譯另存，保留原稿；AI 處理不冒充人工覆核。更多細節見[逐字稿流程](docs/transcripts.md)、[文章與網址](docs/articles.md)、[統計與文字處理](docs/statistics-and-editorial.md)。
+模型來源可追查 `metadata.json` 的 `transcriptProvenance`、`article.json` 的 `provenance` 及 `editorial.json` 的 `review`。關鍵字工具目前記錄 `keywordsModel: "Model"` 類別名；實際權重由 `--model` 指定；11/07 新收錄的三筆另記錄 `keywordsModelId` 與權重 revision，避免混淆 Qwen3.6 與 Qwen3.8。摘要與校對／翻譯另存，保留原稿；AI 處理不冒充人工覆核。更多細節見[逐字稿流程](docs/transcripts.md)、[文章與網址](docs/articles.md)、[統計與文字處理](docs/statistics-and-editorial.md)。
 
 `dist/` 的集中瀏覽器 JSON 是產物，提出內容修正請改單篇來源檔。瀏覽器收藏與自行匯入的字幕只保存於該瀏覽器，不會更新 repo。
 
