@@ -1,0 +1,36 @@
+{
+  "id": "ATse26gVFs4",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "S3 EP.173 讀書會魔人差點變成VTuber！撲馬的非典型法律路如何超展開？ ft. 立法委員 沈伯洋",
+  "channel": "Podcast人間動物園",
+  "date": "2026-07-24",
+  "sourceUrl": "https://www.youtube.com/watch?v=ATse26gVFs4",
+  "metadataStatus": "imported",
+  "title": "S3 EP.173 讀書會魔人差點變成VTuber！撲馬的非典型法律路如何超展開？ ft. 立法委員 沈伯洋",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "文化與閱讀",
+  "duration": 3498,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:50:17.532200+00:00",
+    "inputSha256": "34801201703cc035b6e259e89df81c7dc22c81c2e4f76c4ddc643996a8fe5f10",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

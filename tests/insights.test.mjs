@@ -63,6 +63,7 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   const app=(await readFile(new URL('../assets/app.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'');
   merged.interviews[0].transcript.push({start:12.9,end:20,text:'第二句對話'});
   merged.interviews[0].slug='test-reading';
+  merged.interviews[0].sourceDataUrl='https://github.com/example/archive/tree/main/data/test-reading/';
   merged.interviews[0].article={status:'draft',lead:'這是可轉貼的摘要。',highlights:[{title:'內容重點',text:'測試正文',start:0,end:10}],conclusion:'測試總結'};
   async function render(search='',detail=false){
     const elements=new Map(),errors=[],listeners=new Map(),players=[],copies=[];
@@ -128,6 +129,8 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   assert.ok(timeline.get('#ranking-panel').innerHTML.includes('最新發布'));
   const detail=await render('',true),cues=detail.get('#transcript-body');
   assert.ok(cues.innerHTML.includes('data-share="12.9"'));
+  assert.ok(detail.get('#main').innerHTML.includes(merged.interviews[0].sourceDataUrl));
+  assert.ok(detail.get('#main').innerHTML.includes('建議修正逐字稿'));
   assert.ok(cues.innerHTML.includes('class="cue-seek" data-seek="1"'));
   assert.ok(!cues.innerHTML.includes('class="cue-youtube"'));
   const clickButton=async(dataset)=>detail.listeners.get('click')({target:{closest(selector){return selector==='button'?{dataset,hasAttribute(name){return Object.hasOwn(dataset,name.replace(/^data-/,'').replace(/-([a-z])/g,(_,c)=>c.toUpperCase()));}}:null;}},preventDefault(){}});

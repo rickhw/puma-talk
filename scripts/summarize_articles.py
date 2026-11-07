@@ -12,6 +12,7 @@ from pathlib import Path
 import re
 import time
 
+from data_store import read_document, document_exists
 from import_youtube import ROOT, atomic_write, read_archive
 
 PROMPT_VERSION = 'article-summary-v1'
@@ -150,7 +151,7 @@ def main():
     print('LOADING',Path(args.model).name,flush=True)
     model,tokenizer=load(args.model)
     archive=read_archive(ROOT/'data/interviews.json')
-    manifest=json.loads(args.output.read_text()) if args.output.exists() else dict(version=1,articles=[])
+    manifest=read_document(args.output) if document_exists(args.output) else dict(version=1,articles=[])
     known={row['videoId']:row for row in manifest['articles']}
     occupied={row['slug'] for row in manifest['articles']}
     queue=[]

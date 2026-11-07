@@ -1,0 +1,42 @@
+{
+  "id": "tG4puJVsKN8",
+  "title": "從少年夢想，到自己想成為的大人",
+  "originalTitle": "【從少年夢想，到自己想成為的大人】專訪 台北市長候選人 沈伯洋｜幸福好時光 2026.10.19",
+  "channel": "中廣流行網 i like radio",
+  "date": "2026-10-19",
+  "category": "人物與成長",
+  "tags": [
+    "成長",
+    "人生選擇",
+    "人物訪談"
+  ],
+  "description": "跟著吳淡如的提問，從少年夢想切入人物故事。主題依節目標題整理。",
+  "sourceUrl": "https://www.youtube.com/watch?v=tG4puJVsKN8",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "metadataStatus": "imported",
+  "transcriptStatus": "auto",
+  "duration": 2445,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T07:43:56.592542+00:00",
+    "inputSha256": "a6f11387fe0f4f4b7d1ee01920896a97d97b7e047decf7299725ff5040d74fa9",
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "audioFormat": {
+      "id": "251",
+      "language": null,
+      "note": "medium"
+    },
+    "processingNotes": [
+      "ffmpeg silencedetect（-40 dB、最短 5 秒）測得 0–62.727 秒靜音；0–60 秒兩段重複宣傳句改為編輯註記。未經人工聆聽，原辨識輸出保留。"
+    ]
+  }
+}

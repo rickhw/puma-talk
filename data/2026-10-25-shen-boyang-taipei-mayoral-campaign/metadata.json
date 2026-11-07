@@ -1,0 +1,33 @@
+{
+  "id": "jbBdnbEkV2I",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【雅琴看世界】走遍台北街頭傾聽市民心聲！沈伯洋對未來有何期許？／洋流掃進成長地！家族成員沿路守候沈心境如何？／女兒是我的光！沈伯洋談起小麻糬笑容藏不住！",
+  "channel": "年代新聞CH50",
+  "date": "2026-10-25",
+  "sourceUrl": "https://www.youtube.com/watch?v=jbBdnbEkV2I",
+  "metadataStatus": "imported",
+  "title": "【雅琴看世界】走遍台北街頭傾聽市民心聲！沈伯洋對未來有何期許？／洋流掃進成長地！家族成員沿路守候沈心境如何？／女兒是我的光！沈伯洋談起小麻糬笑容藏不住！",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "社會與生活",
+  "duration": 4573,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:25:15.286175+00:00",
+    "inputSha256": "be085f566ad63438193f5701796b633e9875816fb8370eac765149e024943137",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

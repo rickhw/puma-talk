@@ -1,0 +1,37 @@
+{
+  "id": "64ckQX3l4Ao",
+  "tags": [
+    "綜藝節目",
+    "生活"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "平常拚選票！今天拚這些？ 候選人拚腦力×拚體力×拚美力 #女人我最大 20261105(完整版)｜楷教練、卞慶華、沈伯洋、蘇巧慧、宋哥、何妤玟、Amanda、甄莉",
+  "channel": "TVBS Queen",
+  "date": "2026-11-05",
+  "sourceUrl": "https://www.youtube.com/watch?v=64ckQX3l4Ao",
+  "metadataStatus": "imported",
+  "title": "沈伯洋、蘇巧慧同台《女人我最大》：候選人拚腦力、體力與美力",
+  "referenceUrl": "https://www.youtube.com/watch?v=64ckQX3l4Ao",
+  "description": "藍心湄主持《女人我最大》，沈伯洋、蘇巧慧與多位來賓一起參與腦力、體力及造型主題。這是多人綜藝節目完整版，請搭配原片區分各人發言與示範。",
+  "category": "社會與生活",
+  "duration": 2856,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-06T00:15:31.452186+00:00",
+    "inputSha256": "6ccefabb1cce27b33f8b7a1ce08f7b6f03f04132f3ed055cc8148af34d70b0f0",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  },
+  "programDate": "2026-11-05",
+  "publishedAt": "2026-11-05T22:00:09+08:00",
+  "youtubeUploadDate": "20261105"
+}

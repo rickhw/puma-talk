@@ -1,0 +1,37 @@
+{
+  "id": "Fc7mNhTRS5o",
+  "tags": [
+    "親子教育",
+    "育兒"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "除了「你好棒」，還可以怎麼稱讚孩子？這次到黃瑽寧醫師的 Podcast《寧夏璐66號茶坊》聊育兒。猜猜哪一個問題是我問的 #3號沈伯洋 #台北順起來 #你的市長沈伯洋",
+  "channel": "沈伯洋Puma",
+  "date": "2026-11-04",
+  "sourceUrl": "https://www.youtube.com/watch?v=Fc7mNhTRS5o",
+  "metadataStatus": "imported",
+  "title": "除了「你好棒」，還可以怎麼稱讚孩子？《寧夏璐66號茶坊》育兒訪談片段",
+  "referenceUrl": "https://whoispuma.com/videos/Fc7mNhTRS5o",
+  "description": "沈伯洋官方頻道發布的育兒訪談片段，長 6 分 34 秒；並非完整節目或另一場獨立專訪。",
+  "category": "社會與生活",
+  "duration": 394,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-05T02:20:23.083871+00:00",
+    "inputSha256": "65c7c9649e9a841821a47aeb8f743c9da3835373700b26a99d0558465701e9db",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  },
+  "publishedAt": "2026-11-04T17:18:06+08:00",
+  "dateTimezone": "Asia/Taipei",
+  "contentType": "interview-excerpt"
+}

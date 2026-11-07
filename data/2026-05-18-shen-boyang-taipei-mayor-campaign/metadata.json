@@ -1,0 +1,36 @@
+{
+  "id": "qpRmBIzLfzo",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【新聞放鞭炮】蔣頭痛醫頭、腳痛醫腳？沈伯洋要將台北市政順起來~來賓：沈伯洋 民進黨台北市長參選人🌶🌶｜主持：周玉蔻  20260518",
+  "channel": "寶島聯播網",
+  "date": "2026-05-18",
+  "sourceUrl": "https://www.youtube.com/watch?v=qpRmBIzLfzo",
+  "metadataStatus": "imported",
+  "title": "【新聞放鞭炮】蔣頭痛醫頭、腳痛醫腳？沈伯洋要將台北市政順起來~來賓：沈伯洋 民進黨台北市長參選人🌶🌶｜主持：周玉蔻  20260518",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3033,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:59:43.468078+00:00",
+    "inputSha256": "14c1316e7ececd770b51931123ddd086a4612dd8016a34a7aa96120cd9c47b4e",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

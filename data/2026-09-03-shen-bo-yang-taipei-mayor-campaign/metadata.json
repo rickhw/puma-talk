@@ -1,0 +1,36 @@
+{
+  "id": "n5jJUrQq0oI",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "2026-09-03《POP搶先爆》周楷專訪沈伯洋 談「掃街遇鬧場喊不雅詞，沈伯洋高EQ化解創造雙贏」",
+  "channel": "POP Radio聯播網 官方頻道",
+  "date": "2026-09-03",
+  "sourceUrl": "https://www.youtube.com/watch?v=n5jJUrQq0oI",
+  "metadataStatus": "imported",
+  "title": "2026-09-03《POP搶先爆》周楷專訪沈伯洋 談「掃街遇鬧場喊不雅詞，沈伯洋高EQ化解創造雙贏」",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3255,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:44:43.359941+00:00",
+    "inputSha256": "ad47f129b1489f5194b2302800df27668342c7f9aca7b7c59dfc18af8719ef05",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "36 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

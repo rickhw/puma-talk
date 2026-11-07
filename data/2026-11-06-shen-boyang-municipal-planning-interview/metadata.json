@@ -1,0 +1,36 @@
+{
+  "id": "Cx-p-VdFu60",
+  "tags": [
+    "市政政策",
+    "政治對談"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【台灣最前線｜選戰倒數沈伯洋獨家專訪】11/6(五) 20:55 準時登場｜民視讚夯",
+  "channel": "民視讚夯 Formosa TV Thumbs Up",
+  "date": "2026-11-06",
+  "sourceUrl": "https://www.youtube.com/watch?v=Cx-p-VdFu60",
+  "metadataStatus": "imported",
+  "title": "《台灣最前線》沈伯洋專訪：市政規劃與選戰對談（直播回放）",
+  "referenceUrl": "https://www.youtube.com/watch?v=Cx-p-VdFu60",
+  "description": "《台灣最前線》節目直播回放，包含主持人與多位來賓發言，可能穿插廣告及其他節目段落。",
+  "category": "政治與公共事務",
+  "duration": 7345,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-06T23:20:33.194874+00:00",
+    "inputSha256": "220e57b0a6c27ba1732a06a70c39678886c629f28a046e9434db21b3f49849f2",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  },
+  "publishedAt": "2026-11-06T23:02:18+08:00",
+  "broadcastAt": "2026-11-06T20:53:43+08:00"
+}

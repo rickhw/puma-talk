@@ -1,0 +1,33 @@
+{
+  "id": "-L-KGwS6gdY",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【下班瀚你聊】洋流升溫!沈伯洋攻台北!蔣萬安警報響起?!國民黨刪凍預算!2026恐大敗?!2026-08-23 Ep.402@TheStormMedia",
+  "channel": "風傳媒 The Storm Media",
+  "date": "2026-08-23",
+  "sourceUrl": "https://www.youtube.com/watch?v=-L-KGwS6gdY",
+  "metadataStatus": "imported",
+  "title": "【下班瀚你聊】洋流升溫!沈伯洋攻台北!蔣萬安警報響起?!國民黨刪凍預算!2026恐大敗?!2026-08-23 Ep.402@TheStormMedia",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3611,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:46:10.639939+00:00",
+    "inputSha256": "2c346034829c2be1871a99d55845b44b33ea6c90d7cfe66eb332e7f48c8d0d87",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

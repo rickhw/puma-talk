@@ -1,0 +1,37 @@
+{
+  "id": "P1yNgO-hw9c",
+  "tags": [
+    "專訪",
+    "人物短訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "謝謝你的誕生 寶貝每個出養童",
+  "channel": "勵馨基金會",
+  "date": "2023-12-05",
+  "sourceUrl": "https://www.youtube.com/watch?v=P1yNgO-hw9c",
+  "metadataStatus": "imported",
+  "title": "謝謝你的誕生 寶貝每個出養童",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道公開的短篇人物訪談版本；逐字稿待校對。",
+  "category": "人物與成長",
+  "duration": 295,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:16:39.368272+00:00",
+    "inputSha256": "220e42e59035e537d7abe91eb5abad82d9e2afd33cdcbec5967d9cac56084370",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

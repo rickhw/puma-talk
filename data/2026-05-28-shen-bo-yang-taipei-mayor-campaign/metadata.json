@@ -1,0 +1,33 @@
+{
+  "id": "qhfD-s251Dk",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "勝率極低，還是要選？沈伯洋踹共！feat.台北市長候選人 沈伯洋｜#鏡報 #鏡爆又怎樣 #直播 #live",
+  "channel": "鏡報 ",
+  "date": "2026-05-28",
+  "sourceUrl": "https://www.youtube.com/watch?v=qhfD-s251Dk",
+  "metadataStatus": "imported",
+  "title": "勝率極低，還是要選？沈伯洋踹共！feat.台北市長候選人 沈伯洋｜#鏡報 #鏡爆又怎樣 #直播 #live",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3520,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:57:58.862844+00:00",
+    "inputSha256": "e9e89aefd7cf91481d31d6679706075d080b30d5a93e851c08f2e1c49ae7cdcc",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

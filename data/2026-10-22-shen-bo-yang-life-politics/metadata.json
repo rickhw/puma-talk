@@ -1,0 +1,33 @@
+{
+  "id": "BaW2cA0BOlI",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "揪某聊 EP397｜為一顆蛋跟老婆吵架？我是閨蜜♡也是順毛小狗！（上）ft.沈伯洋",
+  "channel": "揪某聊",
+  "date": "2026-10-22",
+  "sourceUrl": "https://www.youtube.com/watch?v=BaW2cA0BOlI",
+  "metadataStatus": "imported",
+  "title": "揪某聊 EP397｜為一顆蛋跟老婆吵架？我是閨蜜♡也是順毛小狗！（上）ft.沈伯洋",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "社會與生活",
+  "duration": 3507,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:28:04.170030+00:00",
+    "inputSha256": "6e9c2c46b6525b5664f0df2894042ff7c7f4f5e7171538c48be163ca3ad803cd",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

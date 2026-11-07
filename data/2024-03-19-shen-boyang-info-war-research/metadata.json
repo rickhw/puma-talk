@@ -1,0 +1,33 @@
+{
+  "id": "EjN9mEAeV-A",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "S5EP08 北大犯罪所教授｜沈伯洋：調查發現，陰謀論相信最多的年齡是20-29歲",
+  "channel": "馬力歐陪你喝一杯",
+  "date": "2024-03-19",
+  "sourceUrl": "https://www.youtube.com/watch?v=EjN9mEAeV-A",
+  "metadataStatus": "imported",
+  "title": "S5EP08 北大犯罪所教授｜沈伯洋：調查發現，陰謀論相信最多的年齡是20-29歲",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 4183,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:12:00.417124+00:00",
+    "inputSha256": "b588cd647e5c2af582afc0c90d7782327f848a001ff81cd7b61b087b69a99307",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

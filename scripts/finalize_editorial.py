@@ -5,11 +5,25 @@ import datetime as dt
 import hashlib
 import json
 import re
+from data_store import read_document
 from import_youtube import ROOT,atomic_write,read_archive
 from summarize_articles import transcript_fingerprint
 from refine_transcripts import safe_corrections,replace_phrase
 from extract_keywords import ALIASES,context_for
 from traditional import TraditionalNormalizer
+
+
+def proofread_display(source, display, corrections):
+    if len(source)!=len(display) or any(a['start']!=b['start'] or a['end']!=b['end'] for a,b in zip(source,display)):
+        raise ValueError('校對顯示稿必須保留原稿時間碼')
+    result=[]
+    # Keep local contributor corrections instead of rebuilding from ASR text.
+    for cue in display:
+        value=cue['text']
+        for pair in corrections:value=replace_phrase(value,pair['before'],pair['after'])
+        if value.startswith(('［本段辨識','［靜音區段','［片頭靜音','［片尾辨識')):value='［此段音訊辨識不清，請對照原片］'
+        result.append(dict(start=cue['start'],end=cue['end'],text=value))
+    return result
 
 
 def main():
@@ -18,8 +32,8 @@ def main():
     args=parser.parse_args()
     converter=TraditionalNormalizer()
     source={x['id']:x for x in read_archive(ROOT/'data/interviews.json')['interviews']}
-    articles={x['videoId']:x for x in json.loads((ROOT/'data/articles.json').read_text())['articles']}
-    path=ROOT/'data/editorial.json';manifest=json.loads(path.read_text())
+    articles={x['videoId']:x for x in read_document(ROOT/'data/articles.json')['articles']}
+    path=ROOT/'data/editorial.json';manifest=read_document(path)
     if {x['videoId'] for x in manifest['records']}!=set(source):raise ValueError('校對資料未覆蓋所有專訪')
     unclear={}
     for value in args.mark_unclear:
@@ -41,16 +55,11 @@ def main():
             raw=' '.join(converter.convert(c['text']) for c in item['transcript'])
             accepted,rejected=safe_corrections(candidates,raw,converter)
             accepted=list({(pair['before'],pair['after']):pair for pair in accepted}.values())
-            row['transcript']=[]
-            for cue in item['transcript']:
-                value=converter.convert(cue['text'])
-                for pair in accepted:value=replace_phrase(value,pair['before'],pair['after'])
-                if value.startswith(('［本段辨識','［靜音區段','［片頭靜音','［片尾辨識')):value='［此段音訊辨識不清，請對照原片］'
-                row['transcript'].append(dict(start=cue['start'],end=cue['end'],text=value))
+            row['transcript']=proofread_display(item['transcript'],row['transcript'],accepted)
             row['review']['appliedCorrections']=accepted
             row['review']['rejectedCorrections']+=rejected
         else:
-            for cue in row['transcript']:cue['text']=converter.convert(cue['text']).replace('藍鳥運動','青鳥運動')
+            for cue in row['transcript']:cue['text']=cue['text'].replace('藍鳥運動','青鳥運動')
         if row['videoId'] in unclear:
             start=unclear[row['videoId']]
             for cue in row['transcript']:

@@ -1,0 +1,33 @@
+{
+  "id": "03xTQR77r6Q",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "「慈濟案」成在野迴力鏢？解密台北答案！聲量爆表怎變現 2026翻盤關鍵？ft.沈伯洋｜黃光芹-中午來開匯【CNEWS】2026/8/10 1200",
+  "channel": "CNEWS匯流新聞網",
+  "date": "2026-08-10",
+  "sourceUrl": "https://www.youtube.com/watch?v=03xTQR77r6Q",
+  "metadataStatus": "imported",
+  "title": "「慈濟案」成在野迴力鏢？解密台北答案！聲量爆表怎變現 2026翻盤關鍵？ft.沈伯洋｜黃光芹-中午來開匯【CNEWS】2026/8/10 1200",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 4049,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:48:00.015788+00:00",
+    "inputSha256": "1eb27927a370b751ee77374e06a47792fe7b797ecf1d5d83e7d5da173fcd142a",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

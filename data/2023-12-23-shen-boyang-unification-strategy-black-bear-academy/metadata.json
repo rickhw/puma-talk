@@ -1,0 +1,33 @@
+{
+  "id": "lkmwkRdM0mc",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【台灣正發生 028】錄完音隔週變不分區?! 台灣每天在面對的統戰危機們 feat.沈伯洋 Puma",
+  "channel": "台灣正發生",
+  "date": "2023-12-23",
+  "sourceUrl": "https://www.youtube.com/watch?v=lkmwkRdM0mc",
+  "metadataStatus": "imported",
+  "title": "【台灣正發生 028】錄完音隔週變不分區?! 台灣每天在面對的統戰危機們 feat.沈伯洋 Puma",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3401,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:15:02.978595+00:00",
+    "inputSha256": "eec473e315911ea9a2ef6a91bf110be0ef082cdaf622f5b2322ef678579fa980",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

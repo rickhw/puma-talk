@@ -1,0 +1,36 @@
+{
+  "id": "5Iv19PaXbz8",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "2026-08-18《POP大國民》林穎佑（代班）專訪沈伯洋 談「顧弱勢、合程序、不舉債！沈：普發現金就無妨！/ 為何提『夜間市長』？沈：更有效管理城市！」",
+  "channel": "POP Radio聯播網 官方頻道",
+  "date": "2026-08-18",
+  "sourceUrl": "https://www.youtube.com/watch?v=5Iv19PaXbz8",
+  "metadataStatus": "imported",
+  "title": "2026-08-18《POP大國民》林穎佑（代班）專訪沈伯洋 談「顧弱勢、合程序、不舉債！沈：普發現金就無妨！/ 為何提『夜間市長』？沈：更有效管理城市！」",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3145,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:46:55.261870+00:00",
+    "inputSha256": "bb6d3f3548d195e955a1b67ba19404b0b51bc11d393782bde034d9fe877ee298",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "8 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

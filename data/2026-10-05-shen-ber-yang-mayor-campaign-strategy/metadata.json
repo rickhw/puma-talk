@@ -1,0 +1,36 @@
+{
+  "id": "P6ycCSQoEoE",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【新聞放鞭炮】沈伯洋，你當選後會是什麼樣的市長？（上集）ft. 沈伯洋 民進黨台北市長候選人🌶🌶│主持：周玉蔻 20261005",
+  "channel": "寶島聯播網",
+  "date": "2026-10-05",
+  "sourceUrl": "https://www.youtube.com/watch?v=P6ycCSQoEoE",
+  "metadataStatus": "imported",
+  "title": "【新聞放鞭炮】沈伯洋，你當選後會是什麼樣的市長？（上集）ft. 沈伯洋 民進黨台北市長候選人🌶🌶│主持：周玉蔻 20261005",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3476,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:40:29.129453+00:00",
+    "inputSha256": "1d88ce5fc11e0342bd5d2a7d3adf3c7a4daebd164fc22342324589bf4beef711",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

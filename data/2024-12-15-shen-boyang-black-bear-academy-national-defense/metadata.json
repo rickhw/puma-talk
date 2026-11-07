@@ -1,0 +1,33 @@
+{
+  "id": "sVLPCOKwFYc",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "20241215 專訪沈伯洋 - 新增的台獨頑固份子 | 推廣“全民防衛”的黑熊學院 | 三年訓練300萬名黑熊勇士 | 推動代理人法控管第五縱隊 | 有夢上水 第二百Ο七集 陳水扁主持",
+  "channel": "微微笑廣播網",
+  "date": "2024-12-15",
+  "sourceUrl": "https://www.youtube.com/watch?v=sVLPCOKwFYc",
+  "metadataStatus": "imported",
+  "title": "20241215 專訪沈伯洋 - 新增的台獨頑固份子 | 推廣“全民防衛”的黑熊學院 | 三年訓練300萬名黑熊勇士 | 推動代理人法控管第五縱隊 | 有夢上水 第二百Ο七集 陳水扁主持",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "國際與安全",
+  "duration": 3360,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:06:56.498450+00:00",
+    "inputSha256": "af92c50396f9e43ee6ec37223673416b42e41eb94eabe7d8bc6c84dbf800d6c2",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

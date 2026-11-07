@@ -1,0 +1,33 @@
+{
+  "id": "Cc7Fhc6egbw",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "小麻糬是沈伯洋的動力來源! 揭女兒「撩爸語錄」:我最喜歡的禮物是你 沈伯洋談收養過程難處 用相處和陪伴建立愛｜【2026選戰風向球】｜TVBS新聞網 @tvbsnews24live",
+  "channel": "TVBS Network",
+  "date": "2026-10-11",
+  "sourceUrl": "https://www.youtube.com/watch?v=Cc7Fhc6egbw",
+  "metadataStatus": "imported",
+  "title": "小麻糬是沈伯洋的動力來源! 揭女兒「撩爸語錄」:我最喜歡的禮物是你 沈伯洋談收養過程難處 用相處和陪伴建立愛｜【2026選戰風向球】｜TVBS新聞網 @tvbsnews24live",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "社會與生活",
+  "duration": 1605,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:35:39.432566+00:00",
+    "inputSha256": "61b5b822421477a6c108034e769ee9128da31b2f9ac80f74889a28530fa98834",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

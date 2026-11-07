@@ -1,0 +1,37 @@
+{
+  "id": "IrcMhePLnww",
+  "tags": [
+    "專訪",
+    "節目完整版"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【#狠狠抖內幕】獨！專訪 #沈伯洋！台北奪還之戰獻出心臟！揭逆轉勝戰略？車掃擠爆松信！沒去過園長會議？#蔣萬安 被爆啥都不知！AI教父一秒幾十萬上下！蔣要 #黃仁勳 搭機捷？蜜獾重出江湖！",
+  "channel": "壹電視NEXT TV",
+  "date": "2026-10-19",
+  "sourceUrl": "https://www.youtube.com/watch?v=IrcMhePLnww",
+  "metadataStatus": "imported",
+  "title": "【#狠狠抖內幕】獨！專訪 #沈伯洋！台北奪還之戰獻出心臟！揭逆轉勝戰略？車掃擠爆松信！沒去過園長會議？#蔣萬安 被爆啥都不知！AI教父一秒幾十萬上下！蔣要 #黃仁勳 搭機捷？蜜獾重出江湖！",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "含沈伯洋受訪的節目完整版，可能包含其他來賓與非專訪段落；逐字稿待校對，未自動判定說話者。",
+  "category": "政治與公共事務",
+  "duration": 7470,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:31:25.308992+00:00",
+    "inputSha256": "ca2b606568149a08544011e27329e00506b758681364f833f2749f069278db6e",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "16 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

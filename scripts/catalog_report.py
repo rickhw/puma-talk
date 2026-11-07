@@ -23,7 +23,7 @@ def main():
     lines=['# 專訪處理進度','',
         f'更新：{dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")}','',
         f'已匯入 **{len(complete)} / {len(included)} 支影片版本**，共 {len(catalog["candidates"])} 個候選影片 ID。候選判定：{decisions["include"]} 支納入、{decisions["duplicate"]} 支重複版本、{decisions["deferred"]} 支待確認或另類內容。','',
-        '本報告由 `data/catalog.json` 與 `data/interviews.json` 產生，不依賴執行設備、下載快取或私人日誌。分段、完整版與綜藝節目按影片 ID 計數，不等於獨立專訪場次。','',
+        '本報告由 `data/catalog.json`、`data/index.json` 與各專訪目錄 產生，不依賴執行設備、下載快取或私人日誌。分段、完整版與綜藝節目按影片 ID 計數，不等於獨立專訪場次。','',
         f'原始文字來源：原頻道字幕 {kinds["youtube-original"]} 支、自動字幕 {kinds["youtube-auto"]} 支、語音辨識 {kinds["asr-local"]} 支。音樂作品資訊 {kinds["metadata-only"]} 支。影片片長合計 {timestamp(total_seconds).split(",")[0]}，包含片頭、片尾及非專訪段落。','',
         '網站另提供 AI 正體中文顯示稿。原始來源狀態與人工覆核分開保留；語音辨識及機械檢查不代表內容已人工確認。摘要與來源範圍見[文章進度](articles-status.md)。','',
         '| 發布年份 | 已匯入 | 納入清單 | 待處理 |','| --- | ---: | ---: | ---: |']

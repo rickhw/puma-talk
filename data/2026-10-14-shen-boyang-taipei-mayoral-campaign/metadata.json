@@ -1,0 +1,33 @@
+{
+  "id": "8hA_-SkaYGE",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "2026.10.14【趙少康時間】專訪 台北市長候選人 沈伯洋",
+  "channel": "中廣流行網 i like radio",
+  "date": "2026-10-14",
+  "sourceUrl": "https://www.youtube.com/watch?v=8hA_-SkaYGE",
+  "metadataStatus": "imported",
+  "title": "2026.10.14【趙少康時間】專訪 台北市長候選人 沈伯洋",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3245,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:33:08.437669+00:00",
+    "inputSha256": "0fcef36659279d8b704cff55bd7cae1e98aa65851d07b915f67951dac15715b3",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

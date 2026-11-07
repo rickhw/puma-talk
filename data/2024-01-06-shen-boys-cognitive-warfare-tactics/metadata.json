@@ -1,0 +1,36 @@
+{
+  "id": "k6Q9JMEIDv8",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "专访沈伯洋：如何辨识中共认知战手法",
+  "channel": "美国之音中文网",
+  "date": "2024-01-06",
+  "sourceUrl": "https://www.youtube.com/watch?v=k6Q9JMEIDv8",
+  "metadataStatus": "imported",
+  "title": "专访沈伯洋：如何辨识中共认知战手法",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "國際與安全",
+  "duration": 2319,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:12:37.596202+00:00",
+    "inputSha256": "81457e40ef8e80aeb0cf7a3c3929e4409bfa2325ab5ec8002978874655cc7637",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

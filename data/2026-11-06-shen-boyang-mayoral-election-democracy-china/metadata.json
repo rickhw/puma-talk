@@ -1,0 +1,62 @@
+{
+  "id": "U0N4WZl0_Gk",
+  "tags": [
+    "城市交流",
+    "民主制度"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "發燒新聞／路透社專訪談市長選戰　沈伯洋全英回應畫面曝｜民視新聞｜",
+  "channel": "民視新聞網 Formosa TV News network",
+  "date": "2026-11-06",
+  "sourceUrl": "https://www.youtube.com/watch?v=U0N4WZl0_Gk",
+  "metadataStatus": "imported",
+  "title": "路透英文專訪沈伯洋：民視整理的市長選戰訪談影音",
+  "referenceUrl": "https://www.youtube.com/watch?v=U0N4WZl0_Gk",
+  "description": "民視整理的路透英文受訪片段與後續中文訪談影音，並非路透完整原片。前段英文提供 AI 正體中文譯稿，後段中文依原音辨識整理；重複剪輯、問題與答覆請搭配原片理解。",
+  "category": "政治與公共事務",
+  "duration": 665,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "en",
+    "generatedAt": "2026-11-06T23:57:31.906961+00:00",
+    "inputSha256": "2f9fb3748f91f7591142ef8f67470efdeb049a672e0e6b035a22d5538e3fa92a",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "原音音軌標記為 zh-Hant，但前段實際為英文、後段為中文，已分段辨識；語言切換處保留辨識不清標記。"
+    ],
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "languageSegments": [
+      {
+        "start": 0,
+        "end": 164.6,
+        "language": "en"
+      },
+      {
+        "start": 164.6,
+        "end": 665,
+        "language": "zh"
+      }
+    ],
+    "segmentedAsr": {
+      "engine": "mlx",
+      "engineVersion": "0.4.3",
+      "model": "mlx-community/whisper-large-v3-turbo",
+      "offset": 164.6,
+      "language": "zh",
+      "inputSha256": "9130b203f81a3ba22af15859dac583e35081a042e83e887be8aee5396592a1a5"
+    }
+  },
+  "publishedAt": "2026-11-06T14:17:48+08:00"
+}

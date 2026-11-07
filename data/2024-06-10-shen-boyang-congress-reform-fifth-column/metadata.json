@@ -1,0 +1,33 @@
+{
+  "id": "NTzjoeA7k9I",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "2024-06-10【POP撞新聞】黃暐瀚專訪沈伯洋「第五縱隊，怎麼防？」",
+  "channel": "POP Radio聯播網 官方頻道",
+  "date": "2024-06-10",
+  "sourceUrl": "https://www.youtube.com/watch?v=NTzjoeA7k9I",
+  "metadataStatus": "imported",
+  "title": "2024-06-10【POP撞新聞】黃暐瀚專訪沈伯洋「第五縱隊，怎麼防？」",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3195,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:10:44.638238+00:00",
+    "inputSha256": "aeaec4aeba7216373065647a1c92f1ff1ee2358f8b06eec13358d95d16d0b767",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "ulFh3rsVjNI",
+  "tags": [
+    "專訪",
+    "人物短訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "TVBS新聞網專訪／駁「只會抗中保台」　沈伯洋評蔣萬安：選戰策略很怪｜TVBS新聞",
+  "channel": "TVBS Network",
+  "date": "2026-07-08",
+  "sourceUrl": "https://www.youtube.com/watch?v=ulFh3rsVjNI",
+  "metadataStatus": "imported",
+  "title": "TVBS新聞網專訪／駁「只會抗中保台」　沈伯洋評蔣萬安：選戰策略很怪｜TVBS新聞",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道公開的短篇人物訪談版本；逐字稿待校對。",
+  "category": "政治與公共事務",
+  "duration": 588,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:50:29.199511+00:00",
+    "inputSha256": "1fd5a2c776ed572c21b56ca6de48b9c368198e8f881b19d8f7e81c4c7e73fc6f",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

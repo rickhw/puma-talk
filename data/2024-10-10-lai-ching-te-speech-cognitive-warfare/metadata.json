@@ -1,0 +1,36 @@
+{
+  "id": "MOKJwCw-C-I",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "賴清德首次國慶演說！說出國民黨不敢說的：「中華人民共和國無權代表台灣」！從國慶演說看中共認知戰 feat.立法委員沈伯洋【冠廷好說EP42】",
+  "channel": "卓冠廷",
+  "date": "2024-10-10",
+  "sourceUrl": "https://www.youtube.com/watch?v=MOKJwCw-C-I",
+  "metadataStatus": "imported",
+  "title": "賴清德首次國慶演說！說出國民黨不敢說的：「中華人民共和國無權代表台灣」！從國慶演說看中共認知戰 feat.立法委員沈伯洋【冠廷好說EP42】",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "國際與安全",
+  "duration": 6818,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:08:21.266375+00:00",
+    "inputSha256": "ace8546dfbd840a0ea79f9d17c86a91fccb44d3db2b97d54df5836bafc97555d",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

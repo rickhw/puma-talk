@@ -1,0 +1,37 @@
+{
+  "id": "5xiSvP6f5wE",
+  "tags": [
+    "專訪",
+    "節目完整版"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【雅琴看世界】參戰台北市長！ 《雅琴看世界》獨家專訪沈伯洋！／沈伯洋挑戰蔣萬安！《雅琴》獨家拆解提名內幕！／習近平對台灣議題表態強硬　川普拒回答是否保台！／盧比歐稱對台政策未變　中國想用公投誘統？！",
+  "channel": "年代新聞CH50",
+  "date": "2026-05-17",
+  "sourceUrl": "https://www.youtube.com/watch?v=5xiSvP6f5wE",
+  "metadataStatus": "imported",
+  "title": "【雅琴看世界】參戰台北市長！ 《雅琴看世界》獨家專訪沈伯洋！／沈伯洋挑戰蔣萬安！《雅琴》獨家拆解提名內幕！／習近平對台灣議題表態強硬　川普拒回答是否保台！／盧比歐稱對台政策未變　中國想用公投誘統？！",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "含沈伯洋受訪的節目完整版，可能包含其他來賓與非專訪段落；逐字稿待校對，未自動判定說話者。",
+  "category": "政治與公共事務",
+  "duration": 5771,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:01:23.587390+00:00",
+    "inputSha256": "f48d434442e20db2eebc564caea025f5fdfcf8eb95d6b31eb73a16cb5810eb18",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "2 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

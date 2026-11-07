@@ -42,7 +42,8 @@ jobs:
       - name: Propose data update
         shell: bash
         run: |
-          if git diff --quiet -- data/interviews.json; then
+          git add data
+          if git diff --cached --quiet; then
             echo 'No data changes.'
             exit 0
           fi
@@ -50,7 +51,6 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git checkout -b "$branch"
-          git add data/interviews.json
           git commit -m 'data: import YouTube interviews for review'
           git push origin "$branch"
           gh pr create --base main --head "$branch" --title '收錄新的 YouTube 專訪（待檢閱）' --body '自動匯入影片中繼資料。請核對日期、頻道與主題分類後合併；此流程不下載或公開完整字幕。'

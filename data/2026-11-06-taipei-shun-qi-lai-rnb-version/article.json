@@ -1,0 +1,55 @@
+{
+  "videoId": "fbXCUgPZMdY",
+  "slug": "2026-11-06-taipei-shun-qi-lai-rnb-version",
+  "status": "draft",
+  "lead": "《臺北順起來 R&B 版》是史茵茵演唱的音樂影片。原頻道製作資訊列出翁宇君負責詞曲、馬賽為繪師，動畫由發威·FAW·KAI製作。本頁整理作品與製作名單，不將演唱內容當作訪談發言；完整演出請回原片收聽。",
+  "highlights": [
+    {
+      "title": "演唱者資訊",
+      "text": "原頻道標示歌手為史茵茵，並附上她的 Facebook 與 Instagram 連結。",
+      "start": 0,
+      "end": 167,
+      "evidence": "歌手：史茵茵",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "詞曲創作",
+      "text": "原頻道製作資訊將詞曲列為翁宇君。",
+      "start": 0,
+      "end": 167,
+      "evidence": "詞曲：翁宇君",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "繪師資訊",
+      "text": "原頻道製作名單標示繪師為馬賽。",
+      "start": 0,
+      "end": 167,
+      "evidence": "繪師：馬賽",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "動畫製作",
+      "text": "原頻道製作資訊標示動畫為發威·FAW·KAI。",
+      "start": 0,
+      "end": 167,
+      "evidence": "動畫：發威·FAW·KAI",
+      "citationStatus": "matched"
+    }
+  ],
+  "conclusion": "這支 R&B 版音樂影片的製作資訊包括演唱、詞曲、繪師與動畫四項分工。上述名單依原頻道說明整理，不推測創作動機；演唱內容與視覺呈現以原片為準。",
+  "provenance": {
+    "kind": "local-ai-summary",
+    "model": "Qwen3.6-27B-MLX-4bit",
+    "engine": "mlx-lm",
+    "engineVersion": "0.31.3",
+    "promptVersion": "music-metadata-v1",
+    "generatedAt": "2026-11-07T00:05:55.271305+00:00",
+    "transcriptSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metadataSha256": "ac632b35c27249e369e8963c02e0a79184dcfd6e0c8418fefc7a5ecc4d1f148e",
+    "coverage": "video-metadata",
+    "editedAfterGeneration": true,
+    "editorialNote": "依來源範圍與原文整理中立用語，未宣稱逐句人工覆核。"
+  },
+  "sourceScopeNote": "音樂影片，非訪談。作品介紹依原頻道標題與製作資訊整理；本頁不刊登完整歌詞，演唱內容請在原片收聽。"
+}

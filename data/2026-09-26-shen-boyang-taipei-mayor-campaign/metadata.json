@@ -1,0 +1,33 @@
+{
+  "id": "QJ8-y1L5YNM",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【佳頴T政步】台北就是藍大於綠 沈伯洋為什麼還說：做了，就要想辦法贏？跟著沈伯洋走一天 看他的腦袋到底怎麼想｜TVBS新聞@TVBSNEWS01",
+  "channel": "TVBS NEWS",
+  "date": "2026-09-26",
+  "sourceUrl": "https://www.youtube.com/watch?v=QJ8-y1L5YNM",
+  "metadataStatus": "imported",
+  "title": "【佳頴T政步】台北就是藍大於綠 沈伯洋為什麼還說：做了，就要想辦法贏？跟著沈伯洋走一天 看他的腦袋到底怎麼想｜TVBS新聞@TVBSNEWS01",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 2168,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:41:02.065407+00:00",
+    "inputSha256": "7e2c389a815131b403a99c5d7879405aef45fe0135a82bba9ec81ec5328b3d8b",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

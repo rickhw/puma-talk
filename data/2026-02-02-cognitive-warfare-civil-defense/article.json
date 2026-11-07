@@ -1,0 +1,56 @@
+{
+  "videoId": "ajnoGnVAmB0",
+  "slug": "2026-02-02-cognitive-warfare-civil-defense",
+  "status": "draft",
+  "lead": "這場英文訪談討論認知作戰如何運用真實資訊、社會矛盾與心理壓力。沈伯洋以選舉及個人遭遇為例說明其看法，並談到從家庭、社區安全切入的民防教育；立法透明化、公民保護與民主國家合作也是對談主題。",
+  "highlights": [
+    {
+      "title": "認知作戰利用真實資訊放大社會矛盾",
+      "text": "沈伯洋說明，認知作戰不只使用假消息，也可能選擇和放大真實新聞。他以2018年的空氣污染議題為例，討論大量帳號、社會不滿與選民判斷之間的關係，並將其理解為測試及利用社會脆弱點的方式。",
+      "start": 261.52,
+      "end": 323.04,
+      "evidence": "80%ofthecognitivewarfareisaboutImeanrealnewsbuttheytrytoexaggerateortrytoamplifyitontheinternet.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "以生活安全切入民間防衛教育",
+      "text": "沈伯洋以黑熊學院的親子活動為例，說明如何從止血、報警和日常災害安全切入民防教育。他認為家庭與社區的安全需求可以成為參與起點，再逐步討論國家安全及危機下的民間角色。",
+      "start": 699.28,
+      "end": 762.64,
+      "evidence": "wetrytoinvitelotsofparentstobringtheirkidstotheparkrightsoImeanparentsalwayswanttobringtheirkidstotheparksotheycouldrelax",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "心理戰施壓與建立保護系統",
+      "text": "對於住處影像曝光等事件，沈伯洋將其解讀為企圖影響政治人物決策的心理壓力。他說明自己的應對方式，也主張建立保護公民免受騷擾及跨國打壓的制度，不只依靠個人承擔風險。",
+      "start": 1697.76,
+      "end": 1759.12,
+      "evidence": "thepsychologicalwarfareisthewhytheytrytotargetthepoliticianandthemilitaryandmakesurethatyougetpressureandthenyoumakewrongfuldecision",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "推動立法透明化與國際合作",
+      "text": "沈伯洋提出法案要求立法委員赴中國行程需透明化，以阻斷統戰滲透，但遭反對黨多次阻撓。他認為民主國家應建立混合戰中心，共享情報以反制威權國家的認知作戰，並指出若缺乏國際協作，單一國家難以有效駁斥針對民主陣營的謠言。",
+      "start": 2074.08,
+      "end": 2137.84,
+      "evidence": "won't be kidnapped, were being harassed by China. We have lots of actors and actress I mean I mean having their business there in China how can you protect them that's the case once you have the program once you have the system and then as the politician you also symbolically I mean deliver the message to the general public this is not this is nothing to be afraid of then that you're really I mean be having all the public being prepared for the future threats. No, that's awesome. And um you know hopefully lessons that the US and our allies can also learn from all of this, right? Definitely. Yeah, I think because I think that's something that every country would face. So here as a legislator, I'll try to push for the we call it a hybrid warfare center something like that. So it's like every country needs like a center that we got the intelligence we try to collect the this information that they try to spread and also how the legal system work how to fight against their legal warfare and psychological warfare and this thing needs to be shared I mean simultaneously to the democratic allies and everywhere has the same system we collaborate with each other that's how",
+      "citationStatus": "needs-review"
+    }
+  ],
+  "conclusion": "受訪者認為，資訊操作不只涉及真假判斷，也與資訊如何被選擇和放大有關。他將民防教育、立法與國際合作視為不同層面的回應途徑，並討論個人面對威脅和公共保護機制之間的關係。",
+  "provenance": {
+    "kind": "local-ai-summary",
+    "model": "Qwen3.6-27B-MLX-4bit",
+    "engine": "mlx-lm",
+    "engineVersion": "0.31.3",
+    "promptVersion": "article-summary-v1",
+    "generatedAt": "2026-11-04T13:25:00.310722+00:00",
+    "transcriptSha256": "9882637db37526821c5739a31ccffaa103e6b49e51593d1960504a24952f3e11",
+    "inputSegments": 462,
+    "inputBlocks": 41,
+    "coverage": "full-transcript",
+    "recoveryNote": "從本批完整逐字稿的原始模型 JSON 恢復；英文短引文放寬字元上限，仍保留精確原文比對及待校對狀態。",
+    "cachedResponse": ".cache/articles/ajnoGnVAmB0/20261104T125100486798Z/response-3.txt",
+    "editorialNote": "摘要文字經 AI 編輯檢視，未逐篇對音人工校對；保留待校對狀態與既有 slug。"
+  }
+}

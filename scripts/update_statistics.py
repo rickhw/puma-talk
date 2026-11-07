@@ -8,6 +8,7 @@ from pathlib import Path
 import shutil
 import subprocess
 from zoneinfo import ZoneInfo
+from data_store import read_document, document_exists
 from import_youtube import ROOT, atomic_write, read_archive
 
 
@@ -50,7 +51,7 @@ def main():
     args=parser.parse_args()
     archive=read_archive(ROOT/'data/interviews.json')['interviews']
     known={}
-    if args.output.exists():known={x['videoId']:x for x in json.loads(args.output.read_text())['videos']}
+    if document_exists(args.output):known={x['videoId']:x for x in read_document(args.output)['videos']}
     items=archive[:args.limit] if args.limit else archive
     attempted=dt.datetime.now(dt.timezone.utc).isoformat()
     with ThreadPoolExecutor(max_workers=max(1,min(args.workers,4))) as executor:

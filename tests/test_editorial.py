@@ -9,6 +9,7 @@ from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from refine_transcripts import safe_corrections,keywords,json_response,translation_blocks,replace_phrase
 from extract_keywords import parse_keywords
+from finalize_editorial import proofread_display
 import update_statistics
 from install_daily_statistics import configuration
 
@@ -17,6 +18,14 @@ class Identity:
 
 
 class EditorialTests(unittest.TestCase):
+    def test_finalizing_preserves_a_contributors_local_text_correction(self):
+        source=[dict(start=0,end=2,text='錯誤的辨識原文')]
+        display=[dict(start=0,end=2,text='讀者核對原片後的修正')]
+        self.assertEqual(proofread_display(source,display,[]),display)
+        self.assertEqual(source[0]['text'],'錯誤的辨識原文')
+        with self.assertRaisesRegex(ValueError,'時間碼'):
+            proofread_display(source,[dict(start=1,end=2,text='錯誤時間')],[])
+
     def test_proofreading_cannot_change_negation_facts_or_remove_speech(self):
         source='沈柏陽提到不支持10億元，也說對不起沒有共鳴。'
         accepted,rejected=safe_corrections([{'from':'沈柏陽','to':'沈伯洋'},

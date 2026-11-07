@@ -1,0 +1,33 @@
+{
+  "id": "9lt6Onwh8mw",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "#央視八分鐘影片大菜款待　#撲馬獨爆中共對他下一步｜沈伯洋｜吳安琪｜【#有話鏡來講】20251110",
+  "channel": "鏡新聞",
+  "date": "2025-11-10",
+  "sourceUrl": "https://www.youtube.com/watch?v=9lt6Onwh8mw",
+  "metadataStatus": "imported",
+  "title": "#央視八分鐘影片大菜款待　#撲馬獨爆中共對他下一步｜沈伯洋｜吳安琪｜【#有話鏡來講】20251110",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "國際與安全",
+  "duration": 1091,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:04:12.735623+00:00",
+    "inputSha256": "6da94a3250a7ff026700bc24e6cb6592d28904a3d93e0361b9f75fef7093c864",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

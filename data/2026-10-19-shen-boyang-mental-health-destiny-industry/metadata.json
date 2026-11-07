@@ -1,0 +1,36 @@
+{
+  "id": "N8xyCixeEYw",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "「會算命的市長」遇到「命理大師」，會產生什麼火花？歡迎台北的市長沈伯洋【國際紫微學會&大耕老師】請開字幕",
+  "channel": "ISZN 國際紫微學會",
+  "date": "2026-10-19",
+  "sourceUrl": "https://www.youtube.com/watch?v=N8xyCixeEYw",
+  "metadataStatus": "imported",
+  "title": "「會算命的市長」遇到「命理大師」，會產生什麼火花？歡迎台北的市長沈伯洋【國際紫微學會&大耕老師】請開字幕",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "國際與安全",
+  "duration": 1990,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:29:47.530679+00:00",
+    "inputSha256": "8ee9610fcb28bb0b0dc99b186937a2496a5448bf6495ade69bdc49b7d4aa383d",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

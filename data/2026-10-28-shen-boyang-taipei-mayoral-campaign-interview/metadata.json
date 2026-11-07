@@ -1,0 +1,36 @@
+{
+  "id": "0O5y49gbQhY",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "沈伯洋完整專訪！選戰倒數一個月 脆友問題新鮮直送攝影棚《台灣ON AIR》 撲馬現場抽題接招！｜許貴雅 主持｜【台灣ON AIR】",
+  "channel": "台灣ON AIR",
+  "date": "2026-10-28",
+  "sourceUrl": "https://www.youtube.com/watch?v=0O5y49gbQhY",
+  "metadataStatus": "imported",
+  "title": "沈伯洋完整專訪！選戰倒數一個月 脆友問題新鮮直送攝影棚《台灣ON AIR》 撲馬現場抽題接招！｜許貴雅 主持｜【台灣ON AIR】",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3585,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:23:14.202287+00:00",
+    "inputSha256": "6c9c23fb1ad5bdbdbc155173768d694b907b59664fb320e006150da5de7d4e4b",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

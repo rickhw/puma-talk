@@ -73,17 +73,17 @@ python scripts/transcripts.py report
 
 | 處理階段 | 程式 | 輸入與產物 |
 | --- | --- | --- |
-| 音訊轉錄 · Whisper | `scripts/batch_transcripts.py`、`scripts/transcripts.py transcribe` | 音訊 → 原始逐字稿與時間碼；套用後存入 `data/interviews.json`，保留輸入 hash、模型及引擎版本 |
-| 文章摘要 · Qwen | `scripts/summarize_articles.py` | 完整逐字稿的有效區段 → 導讀、3–5 項重點、總結、固定 slug 與原文引證，存入 `data/articles.json` |
+| 音訊轉錄 · Whisper | `scripts/batch_transcripts.py`、`scripts/transcripts.py transcribe` | 音訊 → 原始逐字稿與時間碼；套用後存入 `data/<slug>/transcript.json`，保留輸入 hash、模型及引擎版本 |
+| 文章摘要 · Qwen | `scripts/summarize_articles.py` | 完整逐字稿的有效區段 → 導讀、3–5 項重點、總結、固定 slug 與原文引證，存入 `data/<slug>/article.json` |
 | 音樂作品資訊 · Qwen | `scripts/summarize_media.py` | 音樂影片標題與原頻道製作資訊 → 作品摘要與原文引證；不產生歌詞，來源以 metadata hash 驗證 |
-| 校對／翻譯 · Qwen | `scripts/refine_transcripts.py` | 原始逐字稿 → 保守用字修正或正體中文譯稿，存入 `data/editorial.json`；原稿與來源時間範圍另行保留 |
-| 關鍵字 · Qwen | `scripts/refine_transcripts.py --keywords-only`，內部呼叫 `scripts/extract_keywords.py` | 已完成的文章摘要 → 5–10 個可對應文章文字的關鍵字，存入 `data/editorial.json`，供卡片與 tag cloud 使用 |
+| 校對／翻譯 · Qwen | `scripts/refine_transcripts.py` | 原始逐字稿 → 保守用字修正或正體中文譯稿，存入 `data/<slug>/editorial.json`；原稿與來源時間範圍另行保留 |
+| 關鍵字 · Qwen | `scripts/refine_transcripts.py --keywords-only`，內部呼叫 `scripts/extract_keywords.py` | 已完成的文章摘要 → 5–10 個可對應文章文字的關鍵字，存入 `data/<slug>/editorial.json`，供卡片與 tag cloud 使用 |
 
 文字模型以 Apple Silicon、Metal 與已取得的 MLX 權重執行。文字工具會設定 `HF_HUB_OFFLINE=1`；請先從模型來源取得權重，再以 `--model` 指定模型目錄。批次 ASR 預設使用上述 Whisper 模型，首次使用遠端模型名稱時會下載權重。模型、音訊與快取需自行準備磁碟空間；推論記憶體需求取決於模型及逐字稿長度。
 
 正體字形統一使用 `opencc-python-reimplemented==0.1.7`（`t2s → s2tw`），`scripts/finalize_editorial.py` 負責關鍵字來源及顯示稿規則檢查；兩者不執行 LLM 推論。封面使用 Pillow 將原影片縮圖與文字排版，詳見[封面說明](docs/covers.md)。
 
-模型紀錄可從 `data/interviews.json` 的 `transcriptProvenance`、`data/articles.json` 的 `provenance` 與 `data/editorial.json` 的 `review` 追查。關鍵字工具目前將模型類別記為 `keywordsModel: "Model"`；實際權重由執行時的 `--model` 指定，現有資料使用同一個 Qwen 模型。
+模型紀錄可從 `data/<slug>/metadata.json` 的 `transcriptProvenance`、`data/<slug>/article.json` 的 `provenance` 與 `data/<slug>/editorial.json` 的 `review` 追查。關鍵字工具目前將模型類別記為 `keywordsModel: "Model"`；實際權重由執行時的 `--model` 指定，現有資料使用同一個 Qwen 模型。
 
 ## 新增或更新專訪
 
@@ -101,7 +101,7 @@ python scripts/import_youtube.py 'https://www.youtube.com/watch?v=VIDEO_ID' --fe
 python scripts/import_youtube.py --info-json ./video.info.json --subtitle ./captions.srt
 ```
 
-資料寫入 `data/interviews.json`，以影片 ID 去重。重複匯入保留編輯過的標題、分類及標籤，並保護已人工校對的稿件。原頻道字幕、自動字幕及語音辨識稿均保留來源與輸入 hash。
+影片資料與原稿分別寫入 `data/<slug>/metadata.json`、`transcript.json`，由 `data/index.json` 以影片 ID 去重。重複匯入保留編輯過的標題、分類及標籤，並保護已人工校對的稿件。原頻道字幕、自動字幕及語音辨識稿均保留來源與輸入 hash。
 
 缺少合適字幕時，可使用 MLX Whisper（Apple Silicon macOS）或 faster-whisper（CPU）產生語音辨識工作稿。安裝、轉錄、套用與人工覆核步驟見 [逐字稿工作流程](docs/transcripts.md)。批次下載及 ASR 工具目前使用 MLX 引擎。
 
@@ -134,7 +134,7 @@ npm run build       # 將更新後的資料建置成網站
 
 | GitHub Actions | 觸發與用途 |
 | --- | --- |
-| `pages.yml` | 推送 `main` 或手動執行：測試、建置；啟用 Pages 時部署 |
+| `pages.yml` | PR：測試與建置；推送 `main` 或手動執行：測試、建置及 Pages 部署 |
 | `statistics.yml` | 每日 19:10 UTC（台灣時間 03:10）或手動執行：更新數字、提交快照、建置及部署 |
 | `update-interviews.yml` | 每週日 22:00 UTC（台灣週一 06:00）或手動執行：依來源清單發現影片並提出資料 PR |
 
@@ -164,16 +164,21 @@ GitHub Pages 使用儲存庫的 **Settings → Pages → GitHub Actions**，再�
 
 首頁與專訪頁提供 Open Graph／Twitter 封面資訊；既有封面是 1200 × 630 JPEG，建置不需額外圖形工具。重新產生方式見 [封面說明](docs/covers.md)。轉貼按鈕複製標題、摘要、重點標題及該篇固定網址；字幕右側的「跳轉」與左側時間碼共用嵌入播放器。
 
+## 單篇資料與 PR 修正
+
+121 篇內容各自存於 `data/<固定 slug>/`，例如 [2026-11-04-stress-relief-family-and-daily-life](data/2026-11-04-stress-relief-family-and-daily-life/)。每篇分開保存原始逐字稿、網站顯示稿、文章摘要、統計與封面紀錄；修正網站文字通常只需修改該篇 `editorial.json`，不需要模型。專訪頁已提供資料目錄與修正連結，詳見[資料與 PR 指南](data/README.md)。
+
 ## 資料與文件索引
 
 | 路徑 | 內容 |
 | --- | --- |
-| `data/interviews.json` | 影片資料、原始逐字稿、時間碼及來源紀錄 |
-| `data/articles.json` | 導讀、重點、總結、固定 slug 與原文引證 |
-| `data/editorial.json` | AI 校對／翻譯的正體中文顯示稿及關鍵字 |
-| `data/statistics*.json` | 單片 YouTube 統計與每日快照 |
+| `data/index.json` | ID／固定 slug 索引與集合共用資訊 |
+| `data/<slug>/metadata.json`、`transcript.json` | 影片資料、原始逐字稿、時間碼及來源紀錄 |
+| `data/<slug>/article.json` | 導讀、重點、總結、固定 slug 與原文引證 |
+| `data/<slug>/editorial.json` | AI 校對／翻譯的正體中文顯示稿及關鍵字 |
+| `data/<slug>/statistics.json`、`data/statistics-history.json` | 單片 YouTube 統計與每日快照 |
 | `data/catalog.json`、`data/pending-interviews.json` | 候選判定與尚待確認原片的訪談 |
-| `data/covers.json`、`assets/covers/` | 封面來源、尺寸、內容指紋及 JPEG 圖片 |
+| `data/<slug>/cover.json`、`assets/covers/` | 封面來源、尺寸、內容指紋及 JPEG 圖片 |
 | `assets/`、`scripts/`、`tests/` | 前端、建置／資料工具及測試 |
 | [處理進度](docs/processing-status.md)、[摘要進度](docs/articles-status.md) | 由已提交資料產生的覆蓋率、來源範圍與待辦 |
 

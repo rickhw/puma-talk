@@ -1,0 +1,33 @@
+{
+  "id": "jSGuWCpbS90",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "豈有此呂 EP128｜認知作戰大師沈伯洋超另類 讀台大就決定不生要收養 笑等女兒長大嗆「我又不是你親生的」｜呂捷 @呂捷-b2d",
+  "channel": "ETtoday News",
+  "date": "2023-12-01",
+  "sourceUrl": "https://www.youtube.com/watch?v=jSGuWCpbS90",
+  "metadataStatus": "imported",
+  "title": "豈有此呂 EP128｜認知作戰大師沈伯洋超另類 讀台大就決定不生要收養 笑等女兒長大嗆「我又不是你親生的」｜呂捷 @呂捷-b2d",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "國際與安全",
+  "duration": 2966,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:17:17.768953+00:00",
+    "inputSha256": "6278014506c44cfe5ef2675e3cf2e50b943b0e1d6f0fe0ab2c6276c30120745c",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

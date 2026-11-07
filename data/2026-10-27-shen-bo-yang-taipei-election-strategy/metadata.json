@@ -1,0 +1,33 @@
+{
+  "id": "I7His0HDPBU",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "大選鏡來講專訪沈伯洋！台北靠3！2026台北開始贏？｜陳園淳｜【#大選鏡來講】20261026",
+  "channel": "鏡新聞",
+  "date": "2026-10-27",
+  "sourceUrl": "https://www.youtube.com/watch?v=I7His0HDPBU",
+  "metadataStatus": "imported",
+  "title": "大選鏡來講專訪沈伯洋！台北靠3！2026台北開始贏？｜陳園淳｜【#大選鏡來講】20261026",
+  "referenceUrl": "https://www.youtube.com/results?search_query=沈伯洋+專訪+2026",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3527,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:24:04.443690+00:00",
+    "inputSha256": "9d08daa43924ba2796c071e6ad8b48fee768567460e88f62d7bec495011e2d68",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

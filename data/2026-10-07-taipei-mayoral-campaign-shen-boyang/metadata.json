@@ -1,0 +1,39 @@
+{
+  "id": "awX7tVlEWxU",
+  "title": "少康戰情室：專訪台北市長參選人沈伯洋",
+  "originalTitle": "【#獨家專訪】決戰六都 誰來當市長？　台北市長參選人沈伯洋直球對決 #少康戰情室 20261007",
+  "channel": "TVBS Situation Room",
+  "date": "2026-10-07",
+  "category": "政治與公共事務",
+  "tags": [
+    "市政",
+    "台北",
+    "公共政策"
+  ],
+  "description": "由趙少康主持，錢怡君、李承穎參與提問的電視專訪。保留原始長篇影片連結。",
+  "sourceUrl": "https://www.youtube.com/watch?v=awX7tVlEWxU",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "metadataStatus": "imported",
+  "transcriptStatus": "auto",
+  "duration": 3690,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T07:48:13.868407+00:00",
+    "inputSha256": "ce46b0ba2051e3b10aa86b51e433be354a76b8430ca37028d5b8761cab10cb85",
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "audioFormat": {
+      "id": "251-3",
+      "language": "zh-Hant",
+      "note": "Chinese (Traditional) original (default), medium"
+    }
+  }
+}

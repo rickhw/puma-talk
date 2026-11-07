@@ -1,0 +1,36 @@
+{
+  "id": "PYSR-DYcXxI",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【新聞觀測站】首都爭霸！備戰台北市長拚改革！熱血動漫宅x留美學霸x愛心老爸 沈伯洋專訪｜完整版｜劉方慈主持｜2026.06.13",
+  "channel": "民視讚夯 Formosa TV Thumbs Up",
+  "date": "2026-06-15",
+  "sourceUrl": "https://www.youtube.com/watch?v=PYSR-DYcXxI",
+  "metadataStatus": "imported",
+  "title": "【新聞觀測站】首都爭霸！備戰台北市長拚改革！熱血動漫宅x留美學霸x愛心老爸 沈伯洋專訪｜完整版｜劉方慈主持｜2026.06.13",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "文化與閱讀",
+  "duration": 2273,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:53:03.322826+00:00",
+    "inputSha256": "ad18620dd0b84c1057c61230021f9b1f190be1ee0fbed5fb872d4d3e9791e4fb",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

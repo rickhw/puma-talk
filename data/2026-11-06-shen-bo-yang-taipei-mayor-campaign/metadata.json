@@ -1,0 +1,56 @@
+{
+  "id": "H-uziOFi3Ug",
+  "tags": [
+    "活動直播",
+    "雙北交流"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "「沈麼啦！這慧贏！」戒慎恐懼之夜✨",
+  "channel": "沈伯洋Puma",
+  "date": "2026-11-06",
+  "sourceUrl": "https://www.youtube.com/watch?v=H-uziOFi3Ug",
+  "metadataStatus": "imported",
+  "title": "「沈麼啦！這慧贏！」戒慎恐懼之夜：Puma 官方活動直播",
+  "referenceUrl": "https://www.youtube.com/watch?v=H-uziOFi3Ug",
+  "description": "官方活動直播，含不同講者與表演，並非沈伯洋單人專訪。 音樂演出與末段合唱、散場以時間標記保留，談話以原片為準。",
+  "category": "政治與公共事務",
+  "duration": 10341,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-06T23:22:43.151507+00:00",
+    "inputSha256": "551de7ccf1fba0fb5ddb992aa62726b42a8246fb9b3b2b4e2c848c3f41c79c31",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "40 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ],
+    "omittedRanges": [
+      {
+        "start": 286.8,
+        "end": 307.6,
+        "reason": "音樂演出或活動收尾不作為訪談逐字稿；保留原片時間範圍。"
+      },
+      {
+        "start": 4575,
+        "end": 4825.8,
+        "reason": "音樂演出或活動收尾不作為訪談逐字稿；保留原片時間範圍。"
+      },
+      {
+        "start": 9400,
+        "end": 10341.0,
+        "reason": "音樂演出或活動收尾不作為訪談逐字稿；保留原片時間範圍。"
+      }
+    ]
+  },
+  "publishedAt": "2026-11-06T21:56:06+08:00",
+  "broadcastAt": "2026-11-06T18:55:27+08:00"
+}

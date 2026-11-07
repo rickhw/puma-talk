@@ -1,3 +1,4 @@
+import {readCollection, readIndex} from './data-store.mjs';
 import { readFile, mkdir, rm, cp, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -7,10 +8,9 @@ import { mergeEnhancements, collectionStatsHTML, videoStatsHTML, rankingHTML, ho
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export async function build() {
-  const archive = validateArchive(JSON.parse(await readFile(path.join(root, 'data/interviews.json'), 'utf8')));
-  let articles = {version:1, articles:[]};
-  try { articles = JSON.parse(await readFile(path.join(root, 'data/articles.json'), 'utf8')); }
-  catch (error) { if (error.code !== 'ENOENT') throw error; }
+  const directory=path.join(root,'data');
+  const archive = validateArchive(await readCollection(directory,'interviews.json'));
+  const articles = await readCollection(directory,'articles.json');
   let data = mergeArticles(archive, articles);
   for (const item of data.interviews) if (item.article) {
     const fingerprint = createHash('sha256').update(transcriptFingerprintText(item.transcript)).digest('hex');
@@ -18,7 +18,7 @@ export async function build() {
     if(item.article.provenance.coverage==='video-metadata'&&createHash('sha256').update(metadataFingerprintText(item)).digest('hex')!==item.article.provenance.metadataSha256)throw new Error(`${item.id} 作品資訊已更新，請先重新整理摘要`);
   }
   async function optionalJSON(name,fallback) {
-    try{return JSON.parse(await readFile(path.join(root,'data',name),'utf8'));}
+    try{return await readCollection(directory,name);}
     catch(error){if(error.code==='ENOENT')return fallback;throw error;}
   }
   const editorial=await optionalJSON('editorial.json',{version:1,records:[]});
@@ -34,6 +34,12 @@ export async function build() {
     }
   }
   data=mergeEnhancements(data,editorial,statistics);
+  const index=await readIndex(directory);
+  const slugs=new Map(index.interviews.map(entry=>[entry.id,entry.slug]));
+  for(const item of data.interviews) {
+    item.slug ||= slugs.get(item.id);
+    item.sourceDataUrl=`https://github.com/rickhw/puma-talk/tree/main/data/${item.slug}/`;
+  }
   const covers=await optionalJSON('covers.json',{version:1,home:null,interviews:[]});
   async function publicCover(record) {
     if(!record)return null;
@@ -111,7 +117,7 @@ export async function build() {
     const description = item.article?.lead || item.description;
     const canonical = config.siteUrl ? new URL(interviewPath(item), config.siteUrl).href : interviewPath(item);
     const metadata = `<base href="../../">\n  <meta name="interview-id" content="${escapeHTML(item.id)}">\n  <meta name="article-slug" content="${escapeHTML(item.slug)}">\n  <link rel="canonical" href="${escapeHTML(canonical)}">\n  ${socialHead(item.coverImage,title,description,canonical,'article')}`;
-    const staticContent = `<div class="detail-page wrap"><a class="back-link" href="./index.html#archive">← 回到所有專訪</a><header class="detail-heading"><div><div class="eyebrow">THE CONVERSATION ／ ${escapeHTML(item.category)}</div><h1>${escapeHTML(item.title)}</h1><p class="detail-meta">${escapeHTML(item.channel)} · <time datetime="${item.date}">${item.date}</time></p></div><div class="detail-actions"><button class="button button-dark" data-share-summary ${config.siteUrl?`data-share-text="${escapeHTML(interviewShareText(item,canonical)).replaceAll('\n','&#10;')}"`:""}>複製摘要與連結</button></div></header>${videoStatsHTML(item)}<div class="card-tags">${item.tags.map(tag=>`<a class="tag" href="./index.html?tag=${encodeURIComponent(tag)}#archive"># ${escapeHTML(tag)}</a>`).join('')}</div><div class="detail-layout"><aside class="video-column"><a class="article-cover-link" href="${escapeHTML(item.sourceUrl)}" target="_blank" rel="noopener noreferrer"><img class="article-cover-image" src="${escapeHTML(item.coverImage.url)}" width="1200" height="630" alt="${escapeHTML(item.coverImage.alt)}"></a><p class="static-source-link"><a class="button button-outline" href="${escapeHTML(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">觀看原始影片 ↗</a></p></aside><div class="reading-column">${articleSummaryHTML(item)}</div></div></div>`;
+    const staticContent = `<div class="detail-page wrap"><a class="back-link" href="./index.html#archive">← 回到所有專訪</a><header class="detail-heading"><div><div class="eyebrow">THE CONVERSATION ／ ${escapeHTML(item.category)}</div><h1>${escapeHTML(item.title)}</h1><p class="detail-meta">${escapeHTML(item.channel)} · <time datetime="${item.date}">${item.date}</time></p></div><div class="detail-actions"><button class="button button-dark" data-share-summary ${config.siteUrl?`data-share-text="${escapeHTML(interviewShareText(item,canonical)).replaceAll('\n','&#10;')}"`:""}>複製摘要與連結</button></div></header>${videoStatsHTML(item)}<div class="card-tags">${item.tags.map(tag=>`<a class="tag" href="./index.html?tag=${encodeURIComponent(tag)}#archive"># ${escapeHTML(tag)}</a>`).join('')}</div><div class="detail-layout"><aside class="video-column"><a class="article-cover-link" href="${escapeHTML(item.sourceUrl)}" target="_blank" rel="noopener noreferrer"><img class="article-cover-image" src="${escapeHTML(item.coverImage.url)}" width="1200" height="630" alt="${escapeHTML(item.coverImage.alt)}"></a><p class="static-source-link"><a class="button button-outline" href="${escapeHTML(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">觀看原始影片 ↗</a></p></aside><div class="reading-column">${articleSummaryHTML(item)}<p><a class="text-link" href="${escapeHTML(item.sourceDataUrl)}" target="_blank" rel="noopener noreferrer">檢視本篇資料／提出修正 ↗</a></p></div></div></div>`;
     let page = template.replace('<meta charset="utf-8">', `<meta charset="utf-8">\n  ${metadata}`)
       .replace('href="#main"', `href="${escapeHTML(interviewPath(item))}#main"`)
       .replace(/<title>[^<]*<\/title>/, `<title>${escapeHTML(title)}</title>`)

@@ -1,0 +1,28 @@
+{
+  "id": "YjbsgHRLuJo",
+  "title": "雅琴看世界：一場英文專訪",
+  "originalTitle": "【雅琴看世界】《雅琴看世界》獨家英文專訪！ 深入「洋流」風潮背後",
+  "channel": "年代新聞CH50",
+  "date": "2026-10-25",
+  "category": "國際與安全",
+  "tags": [
+    "英文訪談",
+    "國際視角",
+    "台北"
+  ],
+  "description": "張雅琴主持的英文專訪。收錄原始影片，保留不同語言的閱讀與聆聽入口。",
+  "sourceUrl": "https://www.youtube.com/watch?v=YjbsgHRLuJo",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "metadataStatus": "imported",
+  "transcriptStatus": "auto",
+  "duration": 1165,
+  "transcriptSource": "youtube-captions",
+  "transcriptProvenance": {
+    "kind": "youtube-auto",
+    "language": "en",
+    "importedAt": "2026-11-04T07:38:56.587867+00:00",
+    "inputSha256": "9fe087ce8735cbb57ba52d2e85afd816a927faa604a0765c2d529d9a6086c4b8",
+    "format": "json3",
+    "note": "英文專訪保留英文；以 JSON3 原始文字事件轉為段落，排除 VTT 捲動顯示產生的重複行。"
+  }
+}

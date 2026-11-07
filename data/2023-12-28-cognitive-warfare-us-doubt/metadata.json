@@ -1,0 +1,33 @@
+{
+  "id": "Z9vpvLNMuxM",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "疑美論已影響美國對台的決策！ - 鄭弘儀 主持專訪 沈伯洋 民進黨不分區立委第二名 -【寶島全世界】",
+  "channel": "鄭弘儀 - 寶島全世界",
+  "date": "2023-12-28",
+  "sourceUrl": "https://www.youtube.com/watch?v=Z9vpvLNMuxM",
+  "metadataStatus": "imported",
+  "title": "疑美論已影響美國對台的決策！ - 鄭弘儀 主持專訪 沈伯洋 民進黨不分區立委第二名 -【寶島全世界】",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3013,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:13:22.554018+00:00",
+    "inputSha256": "69bdaba35df0aea1133c4142b772f5eca95aafbb456b2210d71640d1eabaee19",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "DRoojuCx4b8",
+  "tags": [
+    "專訪",
+    "分段訪談"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "台灣羚聲專訪影片EP4121之1-專訪台北市長候選人沈伯洋第一段",
+  "channel": "台灣羚聲人物專訪",
+  "date": "2026-07-02",
+  "sourceUrl": "https://www.youtube.com/watch?v=DRoojuCx4b8",
+  "metadataStatus": "imported",
+  "title": "台灣羚聲專訪影片EP4121之1-專訪台北市長候選人沈伯洋第一段",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道分段或延伸訪談，保留該影片完整時間軸；逐字稿待校對。",
+  "category": "社會與生活",
+  "duration": 881,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:51:33.260997+00:00",
+    "inputSha256": "7fc591b857f4c2252878a58c2cb8a7de0551df81229c7f5a44e678cc6b435a62",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

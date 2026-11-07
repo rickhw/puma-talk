@@ -1,0 +1,33 @@
+{
+  "id": "fJn4-G06gPE",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "2026-09-21【嗆新聞】黃暐瀚撞新聞專訪沈伯洋「沈伯洋將推『無限都更』計畫！",
+  "channel": "hitfm",
+  "date": "2026-09-21",
+  "sourceUrl": "https://www.youtube.com/watch?v=fJn4-G06gPE",
+  "metadataStatus": "imported",
+  "title": "2026-09-21【嗆新聞】黃暐瀚撞新聞專訪沈伯洋「沈伯洋將推『無限都更』計畫！",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3150,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:41:50.464260+00:00",
+    "inputSha256": "8d0f6ced1cc04a879dda48d7928f8a106ae3aefda3398129ec71b05e38035260",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

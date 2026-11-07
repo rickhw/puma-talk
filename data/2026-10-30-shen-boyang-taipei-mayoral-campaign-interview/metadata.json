@@ -1,0 +1,36 @@
+{
+  "id": "Yewxcp4pPB0",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【完整專訪】辯論倒數！沈伯洋登《台灣ON AIR》直球接招！脫口秀演員突爆金句「蔣市長都是金」全場笑翻 沈伯洋無腳本「全英語推銷台北景美」貴雅嚇喊：太流利！｜三立新聞網 SETN.com",
+  "channel": "SETN News Network",
+  "date": "2026-10-30",
+  "sourceUrl": "https://www.youtube.com/watch?v=Yewxcp4pPB0",
+  "metadataStatus": "imported",
+  "title": "【完整專訪】辯論倒數！沈伯洋登《台灣ON AIR》直球接招！脫口秀演員突爆金句「蔣市長都是金」全場笑翻 沈伯洋無腳本「全英語推銷台北景美」貴雅嚇喊：太流利！｜三立新聞網 SETN.com",
+  "referenceUrl": "https://www.youtube.com/results?search_query=沈伯洋+專訪+2026",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3689,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:22:18.727417+00:00",
+    "inputSha256": "32bf4f31590112cb44cef7493a100cab2aa354e0e219cace4ebce582ce64cd51",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "3 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

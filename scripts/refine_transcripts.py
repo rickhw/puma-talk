@@ -10,6 +10,7 @@ import os
 from pathlib import Path
 import re
 import time
+from data_store import read_document, document_exists
 from import_youtube import ROOT,atomic_write,read_archive
 from summarize_articles import transcript_fingerprint,transcript_blocks
 from traditional import TraditionalNormalizer
@@ -123,7 +124,7 @@ def main():
     from mlx_lm import load,stream_generate
     from mlx_lm.sample_utils import make_sampler
     model,tokenizer=load(args.model)
-    known={x['videoId']:x for x in json.loads(args.output.read_text())['records']} if args.output.exists() else {}
+    known={x['videoId']:x for x in read_document(args.output)['records']} if document_exists(args.output) else {}
     archive=read_archive(ROOT/'data/interviews.json')['interviews']
     queue=[item for item in archive if (not args.video_id or item['id']==args.video_id)
         and not (known.get(item['id'],{}).get('sourceSha256')==transcript_fingerprint(item['transcript']) and known[item['id']].get('version')==VERSION)]

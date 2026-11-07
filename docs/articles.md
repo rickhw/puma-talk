@@ -1,6 +1,6 @@
 # 訪談文章、固定網址與 GA4
 
-每支訪談影片在 `data/articles.json` 有獨立文章記錄，包含 `videoId`、固定 `slug`、導讀 `lead`、3–5 項 `highlights`、`conclusion` 與來源紀錄。每項重點保留原文引證與時間範圍，頁面可直接回看原片。文章摘要與原稿保留各自的內部覆核狀態；網站顯示 AI 摘要與 AI 輔助校對，不把 AI 處理冒充人工覆核。
+每支訪談影片在 `data/<slug>/article.json` 有獨立文章記錄，包含 `videoId`、固定 `slug`、導讀 `lead`、3–5 項 `highlights`、`conclusion` 與來源紀錄。每項重點保留原文引證與時間範圍，頁面可直接回看原片。文章摘要與原稿保留各自的內部覆核狀態；網站顯示 AI 摘要與 AI 輔助校對，不把 AI 處理冒充人工覆核。
 
 已知來源範圍問題另存 `sourceScopeNote`，頁面會醒目標示。重跑摘要會保留此註記，需人工對照來源確認後才移除。
 

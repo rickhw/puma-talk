@@ -1,0 +1,57 @@
+{
+  "videoId": "4jrh2JsC0TA",
+  "slug": "2025-11-10-taiwan-democracy-resilience-berlin-speech",
+  "status": "draft",
+  "lead": "本收錄版本的現有英文逐字稿主要涵蓋蔡英文在柏林的演講，她討論台灣民主轉型、社會韌性、數位防禦與國際合作。以下重點歸屬這段演講；標題提及的沈伯洋評論部分，仍待對照原始影片確認。",
+  "highlights": [
+    {
+      "title": "台灣民主歷程與全球威脅的連結",
+      "text": "蔡英文在演講中回顧台灣從威權統治走向民主化的歷程，包含1996年首次總統直選。她接著比較歐洲與亞洲面對的威權壓力，並討論俄烏戰爭、AI與認知作戰等議題。",
+      "start": 130.239,
+      "end": 252.159,
+      "evidence": "Eventually,theirpersistenteffortsledtoTaiwan'sfirstdemocraticpresidentialelectionin1996,andaperiodofdemocraticconsolidationfollowed.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "韌性作為對抗威權的核心策略",
+      "text": "蔡英文將灰色地帶活動與軍事壓力，連結到台灣建立社會韌性的經驗。她介紹國防預算、不對稱戰力及關鍵基礎設施等方向，也說明自己對危機下維持社會運作和選舉安全的看法。",
+      "start": 376.16,
+      "end": 436.319,
+      "evidence": "Contrarytothat,thepeopleofTaiwanutilizethesechallengesasabasistobuildtheirresilience.Resiliencehashelpedusdefendourelections.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "數位防禦與全球供應鏈安全",
+      "text": "演講討論數位基礎設施和外國資訊操弄，也以半導體說明台灣與全球經濟的連結。蔡英文主張透過戰略夥伴合作，將產業與技術能力連結到供應鏈安全；這是她在演講中提出的國際角色論述。",
+      "start": 561.92,
+      "end": 622.32,
+      "evidence": "Ourhigh-techsector,particularlyinsemiconductors,hasbecomeanindispensablepartoftheglobaleconomy.InanagewhereAIalsodefinespower,Taiwan'schipindustryalsoanchorsglobalprosperity.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "國際合作與民主防線的共榮",
+      "text": "蔡英文談到與其他國家深化安全、通訊和資訊分享合作，並引用G7及歐盟等國際聲明。她將這些支持理解為共同維護區域穩定的訊號，主張台灣與其他民主國家的安全彼此相關。",
+      "start": 682.64,
+      "end": 744.48,
+      "evidence": "StatementslikethesetellBeijingthatTaiwanisnotaloneandshowthatandshowtheTaiwanesepeoplethattheyhavesupports.",
+      "citationStatus": "matched"
+    }
+  ],
+  "conclusion": "演講將台灣民主轉型的經驗、社會韌性和產業角色，連結到跨國安全合作。蔡英文主張，面對威權壓力及資訊操弄，不同地區的民主國家需要共同承擔穩定與防禦的責任。",
+  "provenance": {
+    "kind": "local-ai-summary",
+    "model": "Qwen3.6-27B-MLX-4bit",
+    "engine": "mlx-lm",
+    "engineVersion": "0.31.3",
+    "promptVersion": "article-summary-v1",
+    "generatedAt": "2026-11-04T13:25:00.311854+00:00",
+    "transcriptSha256": "a2c6b3f48268e7cfd942f4dd5ba933eaac09e0c788a0980585c187f2d46ffecd",
+    "inputSegments": 317,
+    "inputBlocks": 21,
+    "coverage": "full-transcript",
+    "recoveryNote": "從本批完整逐字稿的原始模型 JSON 恢復；英文短引文放寬字元上限，仍保留精確原文比對及待校對狀態。",
+    "cachedResponse": ".cache/articles/4jrh2JsC0TA/20261104T125432503185Z/response-3.txt",
+    "editorialNote": "摘要文字經 AI 編輯檢視，未逐篇對音人工校對；保留待校對狀態與既有 slug。"
+  },
+  "sourceScopeNote": "現有英文逐字稿以蔡英文柏林演講為主，標題提及的沈伯洋評論待對照原片確認。"
+}

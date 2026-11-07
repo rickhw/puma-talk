@@ -1,0 +1,36 @@
+{
+  "id": "OhWHKK0tmGg",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "被挑釁也不失控？沈伯洋的情緒管理課！若沈伯洋是市長：想怎麼帶領公務團隊？首都市長的格局：台北在國際的定位？趙少康被藍營罵是CIA走狗？藍營支持者怒斥趙少康做球讓沈伯洋殺？【立院榮譽顧問 EP.240】",
+  "channel": "94要客訴",
+  "date": "2026-10-08",
+  "sourceUrl": "https://www.youtube.com/watch?v=OhWHKK0tmGg",
+  "metadataStatus": "imported",
+  "title": "被挑釁也不失控？沈伯洋的情緒管理課！若沈伯洋是市長：想怎麼帶領公務團隊？首都市長的格局：台北在國際的定位？趙少康被藍營罵是CIA走狗？藍營支持者怒斥趙少康做球讓沈伯洋殺？【立院榮譽顧問 EP.240】",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "國際與安全",
+  "duration": 6373,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:39:38.900299+00:00",
+    "inputSha256": "9785bb1142928148e7173a98a7744474846b42e8de156eed44c5860d0c3ac0a4",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "25 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

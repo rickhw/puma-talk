@@ -1,0 +1,34 @@
+{
+  "id": "nyVWWcKaiIk",
+  "tags": [
+    "台北市政",
+    "都市更新"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "1102如何讓世界認識台北？沈伯洋不擔心被中國拒絕？「我蓋新房換你舊房」解都更難題？",
+  "channel": "The World TODAY",
+  "date": "2026-11-05",
+  "sourceUrl": "https://www.youtube.com/watch?v=nyVWWcKaiIk",
+  "metadataStatus": "imported",
+  "title": "1102如何讓世界認識台北？沈伯洋不擔心被中國拒絕？「我蓋新房換你舊房」解都更難題？",
+  "referenceUrl": "https://www.youtube.com/watch?v=nyVWWcKaiIk",
+  "description": "《TODAY 看世界》專訪沈伯洋，討論台北國際定位、城市交流與都市更新。原標題標示 1102，YouTube 發布日期為 2026-11-05。",
+  "category": "政治與公共事務",
+  "duration": 2495,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-05T09:34:45.219410+00:00",
+    "inputSha256": "9ed6902e20e25cba462469254829843c6badf6163dadcb21a2f55e2fec1b36bb",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

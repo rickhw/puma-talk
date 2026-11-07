@@ -1,0 +1,36 @@
+{
+  "id": "1cVy3_rjUJ8",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【台灣正發生 029】拆解迷思：台灣正面臨著戰爭與和平的抉擇嗎？ feat.沈伯洋Puma",
+  "channel": "台灣正發生",
+  "date": "2023-12-26",
+  "sourceUrl": "https://www.youtube.com/watch?v=1cVy3_rjUJ8",
+  "metadataStatus": "imported",
+  "title": "【台灣正發生 029】拆解迷思：台灣正面臨著戰爭與和平的抉擇嗎？ feat.沈伯洋Puma",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3310,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:14:13.512539+00:00",
+    "inputSha256": "553b96e86b5286a2b1f18b8d36700392fe5a778fec5da3e573af750c083d4df3",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

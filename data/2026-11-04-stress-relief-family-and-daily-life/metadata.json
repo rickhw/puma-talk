@@ -1,0 +1,38 @@
+{
+  "id": "9zRsNOYZ7U4",
+  "tags": [
+    "綜藝節目",
+    "生活"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "沈伯洋撲馬來了！難得節目露出無奈表情？來紓壓反被老沈鬧騰 這才不舒壓！#11點熱吵店20261103(完整版)│#沈伯洋 #佳娜 #麥基 #甄莉 #陳天仁 #沈玉琳 #唐綺陽",
+  "channel": "11點熱吵店",
+  "date": "2026-11-04",
+  "sourceUrl": "https://www.youtube.com/watch?v=9zRsNOYZ7U4",
+  "metadataStatus": "imported",
+  "title": "沈伯洋撲馬來了！《11點熱吵店》多人紓壓主題完整版",
+  "referenceUrl": "https://whoispuma.com/videos/9zRsNOYZ7U4",
+  "description": "節目日期為 2026-11-03，台灣時間 11-04 凌晨上線。沈伯洋與多位來賓共同參與的綜藝節目完整版；摘要區分他的發言與其他來賓經驗。",
+  "category": "社會與生活",
+  "duration": 2693,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-05T02:20:13.876846+00:00",
+    "inputSha256": "b8a1d7aecb72011af62b5871e6c59c4d2bbda9156739ac71f0880b94d3243b4e",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  },
+  "publishedAt": "2026-11-04T00:00:20+08:00",
+  "dateTimezone": "Asia/Taipei",
+  "programDate": "2026-11-03",
+  "contentType": "variety-full-episode"
+}

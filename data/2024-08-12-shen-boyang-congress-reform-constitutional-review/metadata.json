@@ -1,0 +1,33 @@
+{
+  "id": "yODeqA0h_No",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "釋憲辯論錯誤類比 藍白浪費時間?國會擴權結局全部違憲?ft.沈伯洋｜黃光芹-中午來開匯【CNEWS】2024/8/12 1200",
+  "channel": "CNEWS匯流新聞網",
+  "date": "2024-08-12",
+  "sourceUrl": "https://www.youtube.com/watch?v=yODeqA0h_No",
+  "metadataStatus": "imported",
+  "title": "釋憲辯論錯誤類比 藍白浪費時間?國會擴權結局全部違憲?ft.沈伯洋｜黃光芹-中午來開匯【CNEWS】2024/8/12 1200",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 6275,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:09:52.892835+00:00",
+    "inputSha256": "0fe171b7278bf24d0c6e6971fe9aa6bc7b2b1c144b4df1100844e25828092b4d",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "KcQlumnQHoE",
+  "tags": [
+    "專訪",
+    "人物短訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "鏡週刊 一鏡到底》這裡的犯罪不流血 沈伯洋",
+  "channel": "鏡人物",
+  "date": "2019-04-29",
+  "sourceUrl": "https://www.youtube.com/watch?v=KcQlumnQHoE",
+  "metadataStatus": "imported",
+  "title": "鏡週刊 一鏡到底》這裡的犯罪不流血 沈伯洋",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道公開的短篇人物訪談版本；逐字稿待校對。",
+  "category": "人物與成長",
+  "duration": 189,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:18:45.083941+00:00",
+    "inputSha256": "9cb8e553c591170b760714da10e67880e5260b3f6e1b8f1667b04f1f6c03b6bd",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "PWGbn-9DS20",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "EP555 詳解 ft. 沈伯洋",
+  "channel": "台灣通勤第一品牌",
+  "date": "2026-06-07",
+  "sourceUrl": "https://www.youtube.com/watch?v=PWGbn-9DS20",
+  "metadataStatus": "imported",
+  "title": "EP555 詳解 ft. 沈伯洋",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "人物與成長",
+  "duration": 4682,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:54:20.436204+00:00",
+    "inputSha256": "d6d7689eb2e3b3d68523350e6408403f4180cbf54e504caf5fe0412474516eda",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

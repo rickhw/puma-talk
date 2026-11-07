@@ -16,8 +16,10 @@ import sys
 import tempfile
 from urllib.parse import parse_qs, urlparse
 
+from data_store import atomic_write, read_document
+
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_DB = ROOT / 'data/interviews.json'
+DEFAULT_DB = ROOT / 'data/index.json'
 CATEGORIES = ['人物與成長', '政治與公共事務', '社會與生活', '國際與安全', '文化與閱讀']
 VIDEO_ID = re.compile(r'^[A-Za-z0-9_-]{11}$')
 LANGUAGES = ['zh-TW', 'zh-Hant', 'zh-HK', 'zh', 'zh-CN', 'zh-Hans', 'en']
@@ -109,22 +111,10 @@ def parse_youtube_json3(text):
     return cues
 
 def read_archive(db):
-    data = json.loads(Path(db).read_text(encoding='utf-8'))
+    data = read_document(db)
     if data.get('version') != 1 or not isinstance(data.get('interviews'), list):
         raise ValueError('資料庫格式錯誤')
     return data
-
-def atomic_write(db, data):
-    db = Path(db)
-    db.parent.mkdir(parents=True, exist_ok=True)
-    fd, temp_path = tempfile.mkstemp(prefix='.archive-', suffix='.json', dir=db.parent)
-    try:
-        with os.fdopen(fd, 'w', encoding='utf-8') as stream:
-            json.dump(data, stream, ensure_ascii=False, indent=2)
-            stream.write('\n')
-        os.replace(temp_path, db)
-    finally:
-        Path(temp_path).unlink(missing_ok=True)
 
 def import_record(data, info, args, cues=None, subtitle_status=None, provenance=None):
     vid = info.get('id')

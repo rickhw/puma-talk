@@ -1,0 +1,33 @@
+{
+  "id": "HI7hZpxLxEI",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "參戰北市遭看衰？「沈式生態系」翻盤戰術？能讓秦慧珠賠上百萬？ft.沈伯洋｜黃光芹-中午來開匯【CNEWS】2026/6/1 1200",
+  "channel": "CNEWS匯流新聞網",
+  "date": "2026-06-01",
+  "sourceUrl": "https://www.youtube.com/watch?v=HI7hZpxLxEI",
+  "metadataStatus": "imported",
+  "title": "參戰北市遭看衰？「沈式生態系」翻盤戰術？能讓秦慧珠賠上百萬？ft.沈伯洋｜黃光芹-中午來開匯【CNEWS】2026/6/1 1200",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 4000,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:55:58.669721+00:00",
+    "inputSha256": "971f99adbd6f2d903e36839da39413d9c4f93967308b442addd12a00a64d8414",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

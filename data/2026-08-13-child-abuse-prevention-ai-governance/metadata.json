@@ -1,0 +1,33 @@
+{
+  "id": "0E63S8F8KCU",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【矢板明夫俱樂部】蔣萬安做不好兒虐預防預警！？沈伯洋：台北市12行政區都應成立家庭教育中心 設立家長版1999專線",
+  "channel": "矢板明夫俱樂部",
+  "date": "2026-08-13",
+  "sourceUrl": "https://www.youtube.com/watch?v=0E63S8F8KCU",
+  "metadataStatus": "imported",
+  "title": "【矢板明夫俱樂部】蔣萬安做不好兒虐預防預警！？沈伯洋：台北市12行政區都應成立家庭教育中心 設立家長版1999專線",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "社會與生活",
+  "duration": 901,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:47:09.632645+00:00",
+    "inputSha256": "cc0300b2336511116ad5a514129765be4fcd59f60f9d8cb0a3a01e1df4c04a10",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "E8jBidIrouc",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "揪某聊 EP398｜問A答B？殘酷二選一？怪癖煩躁地雷是滑鼠？ （下）ft.沈伯洋",
+  "channel": "揪某聊",
+  "date": "2026-10-23",
+  "sourceUrl": "https://www.youtube.com/watch?v=E8jBidIrouc",
+  "metadataStatus": "imported",
+  "title": "揪某聊 EP398｜問A答B？殘酷二選一？怪癖煩躁地雷是滑鼠？ （下）ft.沈伯洋",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "人物與成長",
+  "duration": 2997,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:27:18.350697+00:00",
+    "inputSha256": "ce05ef0d387a29f86335e13ce06df831b5a5834a30d6fbdbd7d65dbd384cf471",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

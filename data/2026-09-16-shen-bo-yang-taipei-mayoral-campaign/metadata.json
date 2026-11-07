@@ -1,0 +1,37 @@
+{
+  "id": "X4l12N2cIcg",
+  "tags": [
+    "專訪",
+    "節目完整版"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "藍議員批「洋流」是民進黨動員蟑螂老鼠 沈伯洋：真正的老鼠在大巨蛋 一百公尺走將近十分鐘  撲馬人氣炸裂公館夜市 苗博雅議會狂電蔣萬安　網友許願「想看質詢沈伯洋」：矛盾大對決｜下班鏡來講20260916",
+  "channel": "鏡新聞",
+  "date": "2026-09-16",
+  "sourceUrl": "https://www.youtube.com/watch?v=X4l12N2cIcg",
+  "metadataStatus": "imported",
+  "title": "藍議員批「洋流」是民進黨動員蟑螂老鼠 沈伯洋：真正的老鼠在大巨蛋 一百公尺走將近十分鐘  撲馬人氣炸裂公館夜市 苗博雅議會狂電蔣萬安　網友許願「想看質詢沈伯洋」：矛盾大對決｜下班鏡來講20260916",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "含沈伯洋受訪的節目完整版，可能包含其他來賓與非專訪段落；逐字稿待校對，未自動判定說話者。",
+  "category": "政治與公共事務",
+  "duration": 5575,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:43:02.451719+00:00",
+    "inputSha256": "88d73bef6ad8ebac1c98e474caf86c63e5106f21481d4720c881fe706d4058a4",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

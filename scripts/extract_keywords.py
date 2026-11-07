@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import re
+from data_store import read_document
 from import_youtube import ROOT,atomic_write
 from traditional import TraditionalNormalizer
 
@@ -42,8 +43,8 @@ def run(args):
     from mlx_lm import load,stream_generate
     from mlx_lm.sample_utils import make_sampler
     model,tokenizer=load(args.model)
-    articles={x['videoId']:x for x in json.loads((ROOT/'data/articles.json').read_text())['articles']}
-    manifest=json.loads(args.output.read_text())
+    articles={x['videoId']:x for x in read_document(ROOT/'data/articles.json')['articles']}
+    manifest=read_document(args.output)
     queue=[]
     for row in manifest['records']:
         if args.video_id and row['videoId']!=args.video_id:continue

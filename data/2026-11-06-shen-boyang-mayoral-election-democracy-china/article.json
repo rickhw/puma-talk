@@ -1,0 +1,48 @@
+{
+  "videoId": "U0N4WZl0_Gk",
+  "slug": "2026-11-06-shen-boyang-mayoral-election-democracy-china",
+  "status": "draft",
+  "lead": "本片前段收錄沈伯洋以英文談民主選舉、選戰溝通及兩岸交流，後段轉為中文訪談與模擬問答。中文部分討論市長所需能力、行政經驗，以及青年、育兒與高齡照護政策的預算估算。本頁依民視這支剪輯整理，相關數字與政策均為訪談中的說法。",
+  "highlights": [
+    {
+      "title": "民主選舉與選民溝通",
+      "text": "英文受訪片段中，沈伯洋將民主制度的運作視為對中國的回應，並以即使對手當選為例說明其看法。他也說明不以藍白綠劃分所有選民，而是從照顧子女、父母等生活需求溝通。這是受訪者的論述，不是對選舉是否受干擾的查核結論。",
+      "start": 0.0,
+      "end": 22.0,
+      "evidence": "I think what a real slap on China is democracy. It doesn't... So for me, even Jiang Wang Han got elected, it's also a slap on China. Because we prove that democracy works here in Taiwan, and we're not interfered, I mean, by China. So every election is a slap on them.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "以願景與執行力回應行政經驗質疑",
+      "text": "中文模擬問答針對缺乏地方首長經驗提出質疑。沈伯洋以協調局處、執行力、政治意志與願景回應，並援引民防工作及團隊修正錯誤的經驗。這些是他對自身能力的說明，並非已經實現的市政成果。",
+      "start": 385.52,
+      "end": 405.14,
+      "evidence": "好 我覺得這個問題 其實可以分成幾個面向 就是作為市長 到底需要什麼樣的能力 第一個市長是要能夠去協調各個局處 然後第二個就是市長 他要有一定的執行力跟政治意志 那第三個我認為市長要有願景 那這幾件事情 其實跟我有沒有當過首長",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "政策成本估算與財源規劃",
+      "text": "對談提到青年 AI 政策、敬老卡升級、臨託與親子通行卡等方向，分別說明成本估算，沒有將各項政策視為相同預算。他表示扣除人事與既有建設後，新政策可運用餘裕約為55至60億元，另談到股息等財源。數字是訪談估算，仍須依正式預算與政策內容核對。",
+      "start": 610.74,
+      "end": 640.84,
+      "evidence": "不是因為我最想做這三件事 而是在我提出的所有政策裡面 這幾個最花錢 那因為我發現目前來講 我們有餘裕大概是五十五到六十億 是真正在首長能夠動用在新政策上面 雖然我們現在一年有多了四百多億的 這樣的一個補助款從中央到地方 但是因為如果扣掉人事費 以及扣掉已經在做的建設 比如說捷運 其實真正能夠動用是55到60 所以我們一直以來 就是用55到60這一個範圍 來做我們政策相關的規劃",
+      "citationStatus": "matched"
+    }
+  ],
+  "conclusion": "這支剪輯將英文選戰受訪與中文市政問答放在同一片中。主題從民主與選民溝通，延伸到行政能力及政策財源；閱讀時應區分主持人的模擬挑戰、受訪者的回應，以及尚屬構想或估算的政策內容。",
+  "provenance": {
+    "kind": "local-ai-summary",
+    "model": "Qwen3.6-27B-MLX-4bit",
+    "engine": "mlx-lm",
+    "engineVersion": "0.31.3",
+    "promptVersion": "article-summary-v1",
+    "generatedAt": "2026-11-07T00:16:59.891618+00:00",
+    "transcriptSha256": "a43efe708e07ccb90edd3fdfd60699f0cea69502acbc8212158e4f6a4da13636",
+    "inputSegments": 348,
+    "inputBlocks": 11,
+    "coverage": "full-transcript",
+    "editedAfterGeneration": true,
+    "editorialNote": "依來源範圍與原文整理中立用語，未宣稱逐句人工覆核。"
+  },
+  "sourceScopeNote": "這是民視整理的路透英文受訪片段及後續中文訪談剪輯，並非已核實的路透完整原片。原音前段為英文、後段為中文，已分段辨識並提供正體中文顯示稿；內容有重複剪輯與主持人模擬提問，語言切換處另作註記。"
+}

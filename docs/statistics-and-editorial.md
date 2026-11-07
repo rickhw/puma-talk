@@ -11,7 +11,7 @@ python scripts/update_statistics.py
 npm run build
 ```
 
-- `data/statistics.json` 保存單片 `views`、`likes`、`comments`、取得時間與更新狀態。舊快照未含留言欄位時視為未提供。
+- `data/<slug>/statistics.json` 保存單片 `views`、`likes`、`comments`、取得時間與更新狀態。舊快照未含留言欄位時視為未提供。
 - `data/statistics-history.json` 依 Asia/Taipei 日期保存快照，同一天重跑會更新該日資料。
 - 未提供的數字為 `null`，真正的零仍為 `0`。
 - 連線失敗保留上次成功值與時間，以 stale 或 unavailable 標示。
@@ -53,7 +53,7 @@ python scripts/finalize_editorial.py
 
 先依[文章工作流程](articles.md)產生或更新摘要，再挑選關鍵字。校對與關鍵字選取分開執行，以各篇文章為依據，選出 5–10 個具體詞彙；程式核對文字及 hash，文章改變後需重新選詞。首頁顯示常見詞，主題頁提供完整標籤雲，權重為包含該詞的影片數。
 
-原始 `data/interviews.json` 與顯示用 `data/editorial.json` 分開保存。中文顯示稿透過 OpenCC `t2s → s2tw` 統一字形，並採保守詞彙修正；英文提供正體中文譯稿並保留時間範圍。語意不明時保留明確註記，不猜測發言。`review` 保存模型、方法、來源 hash、時間及人工覆核狀態；AI 處理不標為人工覆核。
+原始 `data/<slug>/transcript.json` 與顯示用 `data/<slug>/editorial.json` 分開保存。中文顯示稿透過 OpenCC `t2s → s2tw` 統一字形，並採保守詞彙修正；英文提供正體中文譯稿並保留時間範圍。語意不明時保留明確註記，不猜測發言。`review` 保存模型、方法、來源 hash、時間及人工覆核狀態；AI 處理不標為人工覆核。
 
 OpenCC 與模型套件由目前 Python 環境提供，不從下載快取載入套件或私人覆寫檔。`.cache/` 只保存可重建的生成與媒體產物；不得將原始音訊、模型、cookies、憑證或設備日誌提交儲存庫。
 

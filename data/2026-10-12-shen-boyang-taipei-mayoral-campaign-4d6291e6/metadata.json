@@ -1,0 +1,36 @@
+{
+  "id": "Fp1m81qlICg",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "2026-10-12【嗆新聞】黃暐瀚撞新聞專訪沈伯洋「四場辯論 交叉詰問」",
+  "channel": "hitfm",
+  "date": "2026-10-12",
+  "sourceUrl": "https://www.youtube.com/watch?v=Fp1m81qlICg",
+  "metadataStatus": "imported",
+  "title": "2026-10-12【嗆新聞】黃暐瀚撞新聞專訪沈伯洋「四場辯論 交叉詰問」",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3205,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:35:17.469396+00:00",
+    "inputSha256": "7fc7b1eb26d0fa37b0c87d00be191392a10f3da4f723d07a57f2c8bfe79fc4b3",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

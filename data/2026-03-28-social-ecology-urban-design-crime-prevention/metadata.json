@@ -1,0 +1,33 @@
+{
+  "id": "CDRvqjrq10A",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【這樣川正好】城市不只是水泥牆！沈伯洋解密「社會生態學」：街道設計竟能決定犯罪率？ 來賓：沈伯洋｜ 王義川 主持 2026/03/28",
+  "channel": "寶島聯播網",
+  "date": "2026-03-28",
+  "sourceUrl": "https://www.youtube.com/watch?v=CDRvqjrq10A",
+  "metadataStatus": "imported",
+  "title": "【這樣川正好】城市不只是水泥牆！沈伯洋解密「社會生態學」：街道設計竟能決定犯罪率？ 來賓：沈伯洋｜ 王義川 主持 2026/03/28",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3015,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:03:53.919048+00:00",
+    "inputSha256": "45f86289a4e2c31f901fc60164b53463d4933981598d451d8da74501ddb63fab",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "-LhSFTmQg6Q",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "2026-09-07《POP最正點》林書煒 專訪 臺北市長 候選人 沈伯洋",
+  "channel": "POP Radio聯播網 官方頻道",
+  "date": "2026-09-07",
+  "sourceUrl": "https://www.youtube.com/watch?v=-LhSFTmQg6Q",
+  "metadataStatus": "imported",
+  "title": "2026-09-07《POP最正點》林書煒 專訪 臺北市長 候選人 沈伯洋",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3120,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:43:57.267972+00:00",
+    "inputSha256": "2b9466ac272b67ec5c524f0130fa7945f6eceda9397a6aac710c9108e0206f87",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "17 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

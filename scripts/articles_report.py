@@ -5,6 +5,7 @@ import datetime as dt
 import json
 from urllib.parse import urljoin
 
+from data_store import read_document, document_exists
 from import_youtube import ROOT,read_archive
 from summarize_articles import transcript_fingerprint
 
@@ -12,12 +13,12 @@ from summarize_articles import transcript_fingerprint
 def main():
     archive=read_archive(ROOT/'data/interviews.json')
     path=ROOT/'data/articles.json'
-    manifest=json.loads(path.read_text()) if path.exists() else dict(version=1,articles=[])
+    manifest=read_document(path) if document_exists(path) else dict(version=1,articles=[])
     articles={article['videoId']:article for article in manifest['articles']}
     valid=[item for item in archive['interviews'] if item['id'] in articles]
     states=Counter(articles[item['id']]['status'] for item in valid)
     editorial_path=ROOT/'data/editorial.json'
-    editorial=json.loads(editorial_path.read_text()) if editorial_path.exists() else dict(records=[])
+    editorial=read_document(editorial_path) if document_exists(editorial_path) else dict(records=[])
     ai_records={row['videoId']:row for row in editorial['records']}
     ai_count=sum(item['id'] in ai_records and ai_records[item['id']]['review']['method']!='metadata-only' for item in valid)
     metadata_count=sum(item['id'] in ai_records and ai_records[item['id']]['review']['method']=='metadata-only' for item in valid)

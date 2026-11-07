@@ -1,9 +1,9 @@
 # 封面與社群預覽
 
-首頁與現有 121 篇專訪各有 1200 × 630 JPEG 封面。首頁是網站品牌封面，專訪封面由原影片縮圖、標題、頻道及日期排版。影片圖像仍屬原作者，來源 URL 與原圖 SHA-256 保存於 `data/covers.json`。
+首頁與現有 121 篇專訪各有 1200 × 630 JPEG 封面。首頁是網站品牌封面，專訪封面由原影片縮圖、標題、頻道及日期排版。影片圖像仍屬原作者，來源 URL 與原圖 SHA-256 保存於 `data/<slug>/cover.json`。
 
 - `assets/covers/`：已產生的圖片，檔名含內容指紋，隨儲存庫提交。
-- `data/covers.json`：首頁與逐片封面的對應、尺寸、替代文字及來源。
+- `data/<slug>/cover.json`：逐片封面的對應、尺寸、替代文字及來源；首頁封面紀錄位於 `data/index.json` 的 `covers.home`。
 - 建置將封面加入社群 Open Graph／Twitter metadata，並用於專訪播放器的播放前畫面。分享平台可直接讀取 HTML，不需執行本站 JavaScript。
 - `data/site.json` 的 `siteUrl` 需為正確的正式網址，才能產生完整社群圖片 URL。
 

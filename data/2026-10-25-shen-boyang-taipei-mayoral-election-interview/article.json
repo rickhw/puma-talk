@@ -1,0 +1,62 @@
+{
+  "videoId": "YjbsgHRLuJo",
+  "slug": "2026-10-25-shen-boyang-taipei-mayoral-election-interview",
+  "status": "draft",
+  "lead": "這場英文專訪討論「洋流」的形成、中國對沈伯洋的施壓，以及雙城論壇的參與條件。沈伯洋將支持者的自發參與與自己的參選理由連結，並說明對政治前提、軍事壓力和交流風險的看法；訪談也談到如何蒐集市民問題與提出回應。",
+  "highlights": [
+    {
+      "title": "洋流現象源自支持者自發",
+      "text": "沈伯洋說明「洋流」一詞並非他所發明，而是來自支持者。因其中文名「洋」字意為海洋，支持者設計橙黑白配色海報與絲帶，並綁在機車上，此風潮隨後擴散。他強調這股力量屬於支持者，團隊僅在成立總部時將其正式化，象徵溫暖且包容所有人的精神。",
+      "start": 62.32,
+      "end": 123.68,
+      "evidence": "Ididn'tinventthethetermyangliorighttheoceancurrentit'sactuallyfromoursupporters",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "拒絕中國恐嚇與干預",
+      "text": "針對中國將其列入黑名單、提出刑事案件及跟蹤家人的事件，沈伯洋在訪談中將其解讀為製造恐懼與干預選舉。他表示參選是為了解決城市問題，並主張台北市長應由台北市民選舉產生。",
+      "start": 245.439,
+      "end": 306.32,
+      "evidence": "Theygaveittomeforfree.Theytheygaveittomeforfree.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "雙城論壇需無政治前提",
+      "text": "沈伯洋表示雙城論壇可保留架構但需改變內容，拒絕「九二共識」等政治前提。他主張若上海有治水等經驗可學習，但若東京也有且無政治標籤，則更傾向與東京交流。同時強調需進行主權與資安風險管理，保持透明溝通，確保對台北有益。",
+      "start": 490.0,
+      "end": 550.0,
+      "evidence": "Sofirstthereshouldn'tbeanypoliticalprecondition.Yeah.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "軍演期間拒絕參與論壇",
+      "text": "若中國軍機持續繞台或進行軍演，沈伯洋表示無法接受繼續舉辦雙城論壇。他認為論壇是談判與傳遞訊息的管道，若在參與論壇期間遭遇軍事演習，這對他而言是不可接受的，因為這涉及保護領土與國家的立場，與現任市長的做法不同。",
+      "start": 610.959,
+      "end": 671.12,
+      "evidence": "Idon'tformeisit'snotacceptable.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "透過傾聽民意建立信心",
+      "text": "面對民調波動，沈伯洋將民調比喻為反映當下狀況的溫度計，表示最終結果仍待投票。他說明團隊蒐集市民訊息，並透過肥皂箱演講討論問題與解決方案，將這些互動連結到自己的選情判斷。",
+      "start": 733.76,
+      "end": 795.92,
+      "evidence": "Soweactuallycollectedmorethan60,000messagesonline.",
+      "citationStatus": "matched"
+    }
+  ],
+  "conclusion": "訪談交織選民自主參與、外部政治壓力與城市交流三項議題。對談將雙城論壇的參與條件連結到政治前提、軍事行動與風險評估，並以傾聽市民需求、討論解決方案作為參選論述的一部分。",
+  "provenance": {
+    "kind": "local-ai-summary",
+    "model": "Qwen3.6-27B-MLX-4bit",
+    "engine": "mlx-lm",
+    "engineVersion": "0.31.3",
+    "promptVersion": "article-summary-v1",
+    "generatedAt": "2026-11-04T11:27:41.807428+00:00",
+    "transcriptSha256": "1dd3351d78343bff50f60f32edc2156417d126f13c3f8158614c30446398ad95",
+    "inputSegments": 428,
+    "inputBlocks": 19,
+    "coverage": "full-transcript",
+    "editorialNote": "摘要文字經 AI 編輯檢視，未逐篇對音人工校對；保留待校對狀態與既有 slug。"
+  }
+}

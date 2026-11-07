@@ -1,0 +1,33 @@
+{
+  "id": "MVPhEcDwH5A",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "2026-04-01【POP撞新聞】黃暐瀚專訪沈伯洋「若被徵詢 願意承擔」",
+  "channel": "POP Radio聯播網 官方頻道",
+  "date": "2026-04-01",
+  "sourceUrl": "https://www.youtube.com/watch?v=MVPhEcDwH5A",
+  "metadataStatus": "imported",
+  "title": "2026-04-01【POP撞新聞】黃暐瀚專訪沈伯洋「若被徵詢 願意承擔」",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3225,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:03:11.845657+00:00",
+    "inputSha256": "1b63db08065a1c88c3e04dd88394704d277cb2af0bfea1e29b96584d0461dd61",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

@@ -3,10 +3,12 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 import { parseSubtitles, filterInterviews, validateArchive, escapeHTML, formatTime, interviewPath, youtubeTimeURL } from '../assets/core.js';
+import {readCollection} from '../scripts/data-store.mjs';
+import {fileURLToPath} from 'node:url';
 import { build } from '../scripts/build.mjs';
 import { handleRequest } from '../scripts/serve.mjs';
 
-const archive = JSON.parse(await readFile(new URL('../data/interviews.json', import.meta.url)));
+const archive = await readCollection(fileURLToPath(new URL('../data/',import.meta.url)),'interviews.json');
 test('archive records have consistent IDs, sources and transcript status', () => {
   assert.equal(validateArchive(archive), archive);
   const duplicate = structuredClone(archive); duplicate.interviews.push(duplicate.interviews[0]);
@@ -91,6 +93,8 @@ test('static output serves correctly without dependencies or a backend', async (
     assert.ok(!page.includes('id="archive-data"'),'article pages share the archive JSON instead of duplicating it');
     if (item.article) {
       assert.ok(page.includes(escapeHTML(item.article.lead)));
+      assert.equal(item.sourceDataUrl,`https://github.com/rickhw/puma-talk/tree/main/data/${item.slug}/`);
+      assert.ok(page.includes(item.sourceDataUrl)&&page.includes('提出修正'));
       const label=item.article.status==='reviewed'?'摘要已校對':'AI 摘要';
       assert.ok(page.includes(item.contentType==='music'?'作品資訊':'專訪重點')&&page.includes('總結')&&page.includes(label));
     }
@@ -146,7 +150,7 @@ test('deployed HTML references content-addressed scripts, styles and article dat
 
 test('home and every interview expose a real 1200 by 630 JPEG social cover',async()=>{
   await build();
-  const manifest=JSON.parse(await readFile(new URL('../data/covers.json',import.meta.url),'utf8'));
+  const manifest=await readCollection(fileURLToPath(new URL('../data/',import.meta.url)),'covers.json');
   const data=JSON.parse(await readFile(new URL('../dist/data/interviews.json',import.meta.url),'utf8'));
   const config=JSON.parse(await readFile(new URL('../data/site.json',import.meta.url),'utf8'));
   assert.ok(manifest.interviews.length<=data.interviews.length);

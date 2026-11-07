@@ -1,0 +1,42 @@
+{
+  "id": "SLJ-PuMcv-c",
+  "title": "運動終身化、體育產業化，與城市的強壯文化",
+  "originalTitle": "沈伯洋 ＆ 怪獸訓練 何立安《市長你給我聽好了！運動產業特別企劃》運動終身化、體育產業化、城市強壯文化【邱個Podcast 137 】#沈伯洋  @PumaShen #怪獸訓練 #何立安 #邱個",
+  "channel": "SBD Taiwan 邱個",
+  "date": "2026-10-20",
+  "category": "社會與生活",
+  "tags": [
+    "運動",
+    "公共政策",
+    "城市日常"
+  ],
+  "description": "以運動與體育產業為主題的對談，與何立安、邱個一起討論。主題依節目標題整理。",
+  "sourceUrl": "https://www.youtube.com/watch?v=SLJ-PuMcv-c",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "metadataStatus": "imported",
+  "transcriptStatus": "auto",
+  "duration": 5385,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T07:50:42.981228+00:00",
+    "inputSha256": "f8efb85f5e70a078b88409aa3bf2526b32e9f4ee910dffcc402568605f3fe745",
+    "processingNotes": [
+      "移除 2015.92 秒的空白零長度事件；5110.74 秒起模型輸出非有限信心值、逆向時間碼與疑似歌曲，改為不可靠區段註記。原始引擎輸出完整保留，待人工核對。"
+    ],
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "audioFormat": {
+      "id": "251-3",
+      "language": "zh-Hant",
+      "note": "Chinese (Traditional) original (default), medium"
+    }
+  }
+}

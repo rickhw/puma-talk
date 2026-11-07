@@ -1,0 +1,36 @@
+{
+  "id": "oO5vFxO8rmE",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "資訊戰專家來了！台灣選舉正在被中國干擾？抗中保台變成笑話怎麼辦？ ft. 沈伯洋【 阿苗的臺北百科全書】",
+  "channel": "苗博雅",
+  "date": "2023-12-20",
+  "sourceUrl": "https://www.youtube.com/watch?v=oO5vFxO8rmE",
+  "metadataStatus": "imported",
+  "title": "資訊戰專家來了！台灣選舉正在被中國干擾？抗中保台變成笑話怎麼辦？ ft. 沈伯洋【 阿苗的臺北百科全書】",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "國際與安全",
+  "duration": 5530,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:16:28.519449+00:00",
+    "inputSha256": "337967a67ed5957ae87c9f842195e0f01bbc5b12386474f317aa277d295dd06e",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

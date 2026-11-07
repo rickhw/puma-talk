@@ -1,0 +1,33 @@
+{
+  "id": "55AhLL-nmP8",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "東森房業涵獨家專訪／沈伯洋拋「線上收集6萬題」解兒虐 談雙城論壇：願純經濟交流【28分鐘完整版】",
+  "channel": "Taiwan EBC News",
+  "date": "2026-10-20",
+  "sourceUrl": "https://www.youtube.com/watch?v=55AhLL-nmP8",
+  "metadataStatus": "imported",
+  "title": "東森房業涵獨家專訪／沈伯洋拋「線上收集6萬題」解兒虐 談雙城論壇：願純經濟交流【28分鐘完整版】",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 1694,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:29:23.252117+00:00",
+    "inputSha256": "0243691843b5b37572dd0e98f2b486aecfeefd8af23b3a4e7c429936a28527bf",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

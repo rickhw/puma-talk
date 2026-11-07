@@ -1,0 +1,34 @@
+{
+  "id": "0jOSng47e4I",
+  "tags": [
+    "專訪",
+    "人物短訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "『那些年，我在南陽街』｜「撲馬無限談」",
+  "channel": "沈伯洋Puma",
+  "date": "2026-06-08",
+  "sourceUrl": "https://www.youtube.com/watch?v=0jOSng47e4I",
+  "metadataStatus": "imported",
+  "title": "『那些年，我在南陽街』｜「撲馬無限談」",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道公開的短篇人物訪談版本；逐字稿待校對。",
+  "category": "政治與公共事務",
+  "duration": 481,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:53:11.434813+00:00",
+    "inputSha256": "fb26dd69a063da4ee2d652367a487006cd548808a9e046a25dfa63f20fbda28f",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

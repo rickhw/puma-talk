@@ -1,0 +1,32 @@
+{
+  "videoId": "fbXCUgPZMdY",
+  "version": "traditional-editorial-v2",
+  "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "keywords": [
+    "臺北順起來 R&B 版",
+    "史茵茵",
+    "翁宇君",
+    "馬賽",
+    "發威·FAW·KAI",
+    "詞曲",
+    "繪師",
+    "動畫"
+  ],
+  "transcript": [],
+  "review": {
+    "method": "metadata-only",
+    "model": "Qwen3.6-27B-MLX-4bit",
+    "engine": "mlx-lm",
+    "checkedAt": "2026-11-07T00:05:55.271305+00:00",
+    "sourceLanguage": "zh",
+    "displayLanguage": "zh-Hant-TW",
+    "humanReviewed": false,
+    "coverage": "video-metadata",
+    "metadataSha256": "ac632b35c27249e369e8963c02e0a79184dcfd6e0c8418fefc7a5ecc4d1f148e",
+    "keywordSelection": "article-grounded",
+    "keywordInputSha256": "1b804aa79b25cf7e58cf0e92a4c3234984227442bfa15cbff170af03790308a6",
+    "keywordsModel": "Model",
+    "keywordsUpdatedAt": "2026-11-07T00:19:24.191092+00:00",
+    "converter": "opencc-python-reimplemented 0.1.7 / t2s → s2tw (mixed-script normalization)"
+  }
+}

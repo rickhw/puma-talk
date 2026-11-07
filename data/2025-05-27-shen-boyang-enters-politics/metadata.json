@@ -1,0 +1,33 @@
+{
+  "id": "2FLLswRnRWw",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "The KK Show 310 - 立法委員 沈伯洋 @PumaShen",
+  "channel": "Bailingguo News",
+  "date": "2025-05-27",
+  "sourceUrl": "https://www.youtube.com/watch?v=2FLLswRnRWw",
+  "metadataStatus": "imported",
+  "title": "The KK Show 310 - 立法委員 沈伯洋 @PumaShen",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "人物與成長",
+  "duration": 5608,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:06:13.251386+00:00",
+    "inputSha256": "008ca31c48c7cb54998fbd6faf80acaa6d9cb4aca3df0047b1a4489a8574e10b",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

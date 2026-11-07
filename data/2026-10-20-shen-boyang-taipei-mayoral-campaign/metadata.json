@@ -1,0 +1,36 @@
+{
+  "id": "WvGbTmYP6Gc",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【沈伯洋破圈轉播】王淺秋專訪沈伯洋！最犀利問答！｜王淺秋 沈伯洋【鄉民監察院】完整版20261020",
+  "channel": "政治讀新術",
+  "date": "2026-10-20",
+  "sourceUrl": "https://www.youtube.com/watch?v=WvGbTmYP6Gc",
+  "metadataStatus": "imported",
+  "title": "【沈伯洋破圈轉播】王淺秋專訪沈伯洋！最犀利問答！｜王淺秋 沈伯洋【鄉民監察院】完整版20261020",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 3813,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:28:57.065786+00:00",
+    "inputSha256": "3251c70a5e37b67cf4850b5bd915159d0c75bfdf4aa72d38b2c7aa5fcc32e440",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "2 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

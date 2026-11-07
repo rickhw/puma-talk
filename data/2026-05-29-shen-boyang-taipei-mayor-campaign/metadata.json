@@ -1,0 +1,34 @@
+{
+  "id": "sFJJ3nfFr8k",
+  "tags": [
+    "專訪",
+    "節目完整版"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "滿滿含金量！ #沈伯洋 鏡來講！ 有料！扁霸氣喊追半年就贏？｜【#有話鏡來講】20260529",
+  "channel": "鏡新聞",
+  "date": "2026-05-29",
+  "sourceUrl": "https://www.youtube.com/watch?v=sFJJ3nfFr8k",
+  "metadataStatus": "imported",
+  "title": "滿滿含金量！ #沈伯洋 鏡來講！ 有料！扁霸氣喊追半年就贏？｜【#有話鏡來講】20260529",
+  "referenceUrl": "https://whoispuma.com/videos",
+  "description": "含沈伯洋受訪的節目完整版，可能包含其他來賓與非專訪段落；逐字稿待校對，未自動判定說話者。",
+  "category": "政治與公共事務",
+  "duration": 5345,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:57:09.428528+00:00",
+    "inputSha256": "10601513e886cf02016d1f6f63e5dc2ae4f64128dd1bd1e4e8aecb38a2116b8f",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  }
+}

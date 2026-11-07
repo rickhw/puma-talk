@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path
 
+from data_store import read_document
 from import_youtube import ROOT, atomic_write, read_archive
 from summarize_articles import parse_response, make_slug, transcript_fingerprint
 from traditional import TraditionalNormalizer
@@ -61,13 +62,13 @@ def main():
     for point in article['highlights']:
         for key in ['title','text']:point[key]=normalizer.convert(point[key])
     source_hash=hashlib.sha256((item['originalTitle']+'\n'+item['originalDescription']).encode()).hexdigest()
-    path=ROOT/'data/articles.json';manifest=json.loads(path.read_text());known={x['videoId']:x for x in manifest['articles']}
+    path=ROOT/'data/articles.json';manifest=read_document(path);known={x['videoId']:x for x in manifest['articles']}
     slug=make_slug(item,article.pop('slugTopic'),{x['slug'] for x in known.values()},known.get(item['id'],{}).get('slug'))
     provenance=dict(kind='local-ai-summary',model=Path(args.model).name,engine='mlx-lm',engineVersion=importlib.metadata.version('mlx-lm'),promptVersion='music-metadata-v1',generatedAt=now,transcriptSha256=transcript_fingerprint([]),metadataSha256=source_hash,coverage='video-metadata')
     if args.draft_json:provenance['editedAfterGeneration']=True
     known[item['id']]=dict(videoId=item['id'],slug=slug,status='draft',**article,provenance=provenance,sourceScopeNote='音樂影片，非訪談。作品介紹依原頻道標題與製作資訊整理；本頁不刊登完整歌詞，演唱內容請在原片收聽。')
     manifest.update(updatedAt=now,articles=list(known.values()));atomic_write(path,manifest)
-    path=ROOT/'data/editorial.json';manifest=json.loads(path.read_text());known={x['videoId']:x for x in manifest['records']}
+    path=ROOT/'data/editorial.json';manifest=read_document(path);known={x['videoId']:x for x in manifest['records']}
     known[item['id']]=dict(videoId=item['id'],version='traditional-editorial-v2',sourceSha256=transcript_fingerprint([]),keywords=item['tags'],transcript=[],review=dict(method='metadata-only',model=Path(args.model).name,engine='mlx-lm',checkedAt=now,sourceLanguage='zh',displayLanguage='zh-Hant-TW',humanReviewed=False,coverage='video-metadata',metadataSha256=source_hash))
     manifest.update(updatedAt=now,records=list(known.values()));atomic_write(path,manifest)
     print('COMPLETED MUSIC',item['id'],slug,flush=True)

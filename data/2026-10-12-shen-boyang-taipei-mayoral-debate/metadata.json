@@ -1,0 +1,37 @@
+{
+  "id": "Y5P4EG5RkUA",
+  "tags": [
+    "專訪",
+    "節目完整版"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "台北大洋流船長鏡來講！專訪台北市長候選人沈伯洋！神秘「當事人」將Call in鏡來澄清！沈蔣辯論會再卡關？到底誰在「卡」」？蔣萬安又甩鍋給沈伯洋？#有話鏡來講 20261012",
+  "channel": "鏡新聞",
+  "date": "2026-10-12",
+  "sourceUrl": "https://www.youtube.com/watch?v=Y5P4EG5RkUA",
+  "metadataStatus": "imported",
+  "title": "台北大洋流船長鏡來講！專訪台北市長候選人沈伯洋！神秘「當事人」將Call in鏡來澄清！沈蔣辯論會再卡關？到底誰在「卡」」？蔣萬安又甩鍋給沈伯洋？#有話鏡來講 20261012",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "含沈伯洋受訪的節目完整版，可能包含其他來賓與非專訪段落；逐字稿待校對，未自動判定說話者。",
+  "category": "政治與公共事務",
+  "duration": 7280,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T09:34:30.791969+00:00",
+    "inputSha256": "013ecda65459d73cae4fc183ea6af65f32d9ab6b0079bbde4cf449e3529063f1",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "7 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "videoId": "D0CSPTdkIYc",
+  "slug": "2026-09-11-shen-boyang-taipei-mayor-vision",
+  "status": "draft",
+  "lead": "這場英文專訪討論沈伯洋從立法院工作轉向台北市政的構想。內容涵蓋認知作戰、國際城市交流、老屋更新、步道與夜間活動，並以HEART架構說明居住、世代支持、社區陪伴、韌性和時間等政策主題；對談也涉及海外台灣人的公共參與。",
+  "highlights": [
+    {
+      "title": "立法工作與公民運動回顧",
+      "text": "沈伯洋在訪談中比較兒少、交通與國安等法案的推動情況，並回顧2024年立法院爭議及青鳥運動。他認為憲政爭議與公民發聲相互關聯，也將後續罷免的結果放在社會運動能量累積的脈絡中討論。",
+      "start": 723.44,
+      "end": 784.56,
+      "evidence": "IthinkrecallImeanatthattimeisnotlikeathestrategyismorelikeatoolImeanforthecivilsocietythattheywanttoshowtheirresistancetothiswholesystem.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "回應中國制裁與威脅",
+      "text": "受訪者談到中國制裁、通緝與逮捕威脅，並說明自己對這些行動的反應。他表示相關壓力已在預期之中，也把個人遭遇放在台灣民主與國際政治的脈絡下討論。",
+      "start": 414.639,
+      "end": 475.919,
+      "evidence": "Iviewthisasabadgeofhonor.Amongthoseofusinpoliticsandcertainlymanyofmyfriends,thereisactuallyanexpectationofbeingsanctionedbyChina.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "HEART五項市政願景",
+      "text": "沈伯洋以HEART整理五項市政主題，分別涉及居住、世代發展機會、陪伴、韌性和時間。他將交通與托育連結到家庭可用時間，並認為各項構想需要法律、數據工具與跨部門合作等執行配套。",
+      "start": 1703.52,
+      "end": 1764.32,
+      "evidence": "Hisforhabitat.FromaffordablehomesinthetreesoutsideourdoorstotheDangShreandGilongriversandthemountainssurroundingTaipei,wewillreconnectthespacesthathavelongbeencutofffromcityresidents.",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "無限城市與登山城市願景",
+      "text": "他批評現有的雙城論壇缺乏實質效益，建議推動「無限城市」計畫，與東京、紐約等城市進行包含政府官員、企業與公民在內的深度交流，並先建立如AI或韌性建設等可交換的實質成果。同時，他計畫將台北打造為亞洲首選登山城市，結合捷運、步道與文化景點，吸引國際遊客並促進城市行銷。",
+      "start": 1214.24,
+      "end": 1276.24,
+      "evidence": "Solet'ssayifyou'regoodatAIandthenyouhavetalentsofAIandhowyouapplyAItoyoursmallbusinessthatmightbesomethingthatyoucouldexchangerightsofirstthingthatyouneedtodoisthatyouneedtodevelopanecosystemofAIinyourowncity",
+      "citationStatus": "matched"
+    },
+    {
+      "title": "城市重建與數位韌性",
+      "text": "針對城市老屋，沈伯洋將重建與居住安全、能源及通訊能力連結。他認為地震、颱風和潛在戰爭等風險都應納入討論，並提出以建築間連線等方式思考危機下的數位韌性。",
+      "start": 1948.0,
+      "end": 2009.039,
+      "evidence": "Soforexample,ifyouwanttorebuildthebuildingishowtokeeptheenergyImeanonlyforthisbuildingthat'sonethingthatyoucoulddoandalsoanotherthingisthatyoucanuselotsofnewtechnologies",
+      "citationStatus": "matched"
+    }
+  ],
+  "conclusion": "訪談將國會經驗、城市交流與地方防災連結到台北市政。受訪者討論建立城市特色與實質交流條件，也以都市更新、登山步道和夜間活動說明其政策構想，並談到公民運動與海外參與。",
+  "provenance": {
+    "kind": "local-ai-summary",
+    "model": "Qwen3.6-27B-MLX-4bit",
+    "engine": "mlx-lm",
+    "engineVersion": "0.31.3",
+    "promptVersion": "article-summary-v1",
+    "generatedAt": "2026-11-04T13:25:00.307374+00:00",
+    "transcriptSha256": "2ba9a95049c62d2443c87db99de952bbe0d79c6f0d2e19b53518a438859c22be",
+    "inputSegments": 932,
+    "inputBlocks": 38,
+    "coverage": "full-transcript",
+    "recoveryNote": "從本批完整逐字稿的原始模型 JSON 恢復；英文短引文放寬字元上限，仍保留精確原文比對及待校對狀態。",
+    "cachedResponse": ".cache/articles/D0CSPTdkIYc/20261104T120902154345Z/response-3.txt",
+    "editorialNote": "摘要文字經 AI 編輯檢視，未逐篇對音人工校對；保留待校對狀態與既有 slug。"
+  }
+}

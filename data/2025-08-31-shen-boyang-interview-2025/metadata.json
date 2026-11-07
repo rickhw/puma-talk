@@ -1,0 +1,36 @@
+{
+  "id": "RRjr8a2B4Mc",
+  "tags": [
+    "專訪"
+  ],
+  "transcriptStatus": "auto",
+  "originalTitle": "【完整版】沈伯洋從法學補教名師到國會立委的理性與感性 律訓邂逅愛情  揭黃國昌傲慢與偏見 傅崐萁化的國民黨質變 夫妻遭網暴跟蹤恐嚇針孔偷拍 │鄭弘儀 主持│【話時代人物】20250831│三立新聞台",
+  "channel": "話時代人物",
+  "date": "2025-08-31",
+  "sourceUrl": "https://www.youtube.com/watch?v=RRjr8a2B4Mc",
+  "metadataStatus": "imported",
+  "title": "【完整版】沈伯洋從法學補教名師到國會立委的理性與感性 律訓邂逅愛情  揭黃國昌傲慢與偏見 傅崐萁化的國民黨質變 夫妻遭網暴跟蹤恐嚇針孔偷拍 │鄭弘儀 主持│【話時代人物】20250831│三立新聞台",
+  "referenceUrl": "https://vocus.cc/article/6ad8d562fd89780001e98adb",
+  "description": "原頻道訪談版本；逐字稿為待校對工作稿，請搭配原始影片閱讀。",
+  "category": "社會與生活",
+  "duration": 2955,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-04T10:04:57.016418+00:00",
+    "inputSha256": "26a6574e1a55456e03d2dbcf61efaecdb0e47a0e4fd86b3d5a5568f4017373ec",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。"
+    ]
+  }
+}
