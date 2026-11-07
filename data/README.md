@@ -41,3 +41,5 @@ data/2026-11-04-stress-relief-family-and-daily-life/
 Python 的 `scripts/data_store.py` 與 Node.js 的 `scripts/data-store.mjs` 是共用讀寫層，建置與匯入工具直接讀寫上述目錄。工具內部的 `interviews.json`、`articles.json` 等名稱是邏輯集合，不再對應儲存庫中的集中檔案；自訂的外部 JSON 匯出路徑仍可使用。
 
 `dist/data/interviews*.json` 是建置時產生的瀏覽器資料，不提交 Git，也不是提出修正的位置。`dist/`、音訊、模型、下載快取與私人日誌均不提交。
+
+`metadata.json.channelId` 保存可核對的 YouTube 頻道 ID，供排行榜排除沈伯洋官方頻道時使用。舊紀錄缺少 ID 時，僅以確切的「沈伯洋Puma」名稱判定；不因其他媒體名稱含有「官方」而排除。

@@ -140,6 +140,8 @@ def import_record(data, info, args, cues=None, subtitle_status=None, provenance=
         'sourceUrl':f'https://www.youtube.com/watch?v={vid}',
         'metadataStatus':'imported',
     })
+    if isinstance(info.get('channel_id'), str) and re.fullmatch(r'UC[A-Za-z0-9_-]{22}', info['channel_id']):
+        item['channelId'] = info['channel_id']
     item.setdefault('title', title)
     item.setdefault('referenceUrl', item['sourceUrl'])
     item.setdefault('description', '影片資料由原頻道匯入；主題與內容待編輯整理。')

@@ -4,7 +4,7 @@
 
 - 網站：https://puma-talk.gtcafe.com/
 - 儲存庫：https://github.com/rickhw/puma-talk
-- 現有 128 支影片版本：分段、完整版、綜藝節目、活動直播與音樂作品各按影片 ID 計數，不等於獨立專訪場次。
+- 現有 129 支影片版本：分段、完整版、綜藝節目、活動直播與音樂作品各按影片 ID 計數，不等於獨立專訪場次。
 - 純靜態網站，沒有應用程式後端、資料庫服務或 npm 套件依賴。模型只在內容處理階段執行。
 
 頂部「所有專訪」右側的「車掃與市政」整理已確認的官方車掃與市政開講原片，各篇以「車掃」標籤標示。此入口可搭配搜尋、分類與排序；一般專訪僅在談話中提到車掃時，不會因此進入這個活動清單。
@@ -247,15 +247,15 @@ python scripts/daily_update.py
 
 ### 匯出統計報表 JSON（選用，不連線 YouTube）
 
-先建置，以下指令從網站實際使用的資料匯出單片數字、三組 Top 10、全部關鍵字與五類計數，存入忽略提交的快取：
+先建置，以下指令從網站實際使用的資料匯出單片數字、五組 Top 10、全部關鍵字與五類計數，存入忽略提交的快取：
 
 ```sh
 npm run build
 mkdir -p .cache
 node --input-type=module > .cache/statistics-report.json <<'JS'
 import {readFile} from 'node:fs/promises';
-import {categories, filterInterviews, interviewPath} from './assets/core.js';
-import {keywordCounts, collectionStats} from './assets/insights.js';
+import {categories, interviewPath} from './assets/core.js';
+import {keywordCounts, collectionStats, rankedInterviews} from './assets/insights.js';
 const data = JSON.parse(await readFile('dist/data/interviews.json', 'utf8'));
 const site = JSON.parse(await readFile('data/site.json', 'utf8'));
 const items = data.interviews;
@@ -264,7 +264,7 @@ const video = item => ({
   url: new URL(interviewPath(item), site.siteUrl).href,
   ...item.youtubeStats
 });
-const top = sort => filterInterviews(items, {sort}).slice(0, 10).map(video);
+const top = mode => rankedInterviews(items, mode).map(video);
 const knownComments = items.map(x => x.youtubeStats.comments).filter(Number.isSafeInteger);
 console.log(JSON.stringify({
   statisticsUpdatedAt: data.statisticsUpdatedAt,
@@ -272,7 +272,7 @@ console.log(JSON.stringify({
     comments: knownComments.reduce((sum, n) => sum + n, 0),
     commentsAvailable: knownComments.length},
   videos: items.map(video),
-  rankings: {views: top('views'), comments: top('comments'), newest: top('newest')},
+  rankings: Object.fromEntries(['views', 'views-nonofficial', 'newest', 'comments', 'comments-nonofficial'].map(mode => [mode, top(mode)])),
   keywords: keywordCounts(items),
   categories: categories.map(category => ({
     category, videos: items.filter(x => x.category === category).length
@@ -414,9 +414,9 @@ GitHub Pages 使用 **Settings → Pages → GitHub Actions**，設定 repositor
 | `data/catalog.json`、`data/pending-interviews.json`、`data/sources.json` | 候選判定、待確認原片與固定掃描來源 |
 | [處理進度](docs/processing-status.md)、[摘要進度](docs/articles-status.md) | 已提交資料的覆蓋率、來源範圍與待辦 |
 
-截至 2026-11-08，95 支原稿來自上述 Whisper、32 支來自 YouTube 字幕，另 1 支為音樂作品資訊。原有 121 篇摘要使用上述 Qwen3.6，11/07 三支與本次四支車掃直播使用 `lmstudio-community/Qwen3.8-27B-MLX-8bit`（同為 `mlx-lm==0.31.3`）；顯示稿包含 122 篇中文校對、5 篇英文翻譯及 1 篇作品資訊。11/07 三支新片的來源與省略範圍見[處理紀錄](docs/transcript-batch-2026-11-07.md)，本次四支另見[車掃收錄紀錄](docs/car-sweep-2026-11-08.md)，後續數量以進度報告為準。
+截至 2026-11-08，95 支原稿來自上述 Whisper、33 支來自 YouTube 字幕，另 1 支為音樂作品資訊。原有 121 篇摘要使用上述 Qwen3.6，後續八篇（11/07 三支、四支車掃與親子天下收養片段）使用 `lmstudio-community/Qwen3.8-27B-MLX-8bit`（同為 `mlx-lm==0.31.3`）；顯示稿包含 123 篇中文校對、5 篇英文翻譯及 1 篇作品資訊。11/07 三支新片的來源與省略範圍見[處理紀錄](docs/transcript-batch-2026-11-07.md)，四支車掃另見[車掃收錄紀錄](docs/car-sweep-2026-11-08.md)，收養片段與五種排行榜見[本次更新紀錄](docs/adoption-and-rankings-2026-11-08.md)，後續數量以進度報告為準。
 
-模型來源可追查 `metadata.json` 的 `transcriptProvenance`、`article.json` 的 `provenance` 及 `editorial.json` 的 `review`。關鍵字工具目前記錄 `keywordsModel: "Model"` 類別名；實際權重由 `--model` 指定；上述七筆新收錄資料另記錄 `keywordsModelId` 與權重 revision，避免混淆 Qwen3.6 與 Qwen3.8。摘要與校對／翻譯另存，保留原稿；AI 處理不冒充人工覆核。更多細節見[逐字稿流程](docs/transcripts.md)、[文章與網址](docs/articles.md)、[統計與文字處理](docs/statistics-and-editorial.md)。
+模型來源可追查 `metadata.json` 的 `transcriptProvenance`、`article.json` 的 `provenance` 及 `editorial.json` 的 `review`。關鍵字工具目前記錄 `keywordsModel: "Model"` 類別名；實際權重由 `--model` 指定；上述八筆新收錄資料另記錄 `keywordsModelId` 與權重 revision，避免混淆 Qwen3.6 與 Qwen3.8。摘要與校對／翻譯另存，保留原稿；AI 處理不冒充人工覆核。更多細節見[逐字稿流程](docs/transcripts.md)、[文章與網址](docs/articles.md)、[統計與文字處理](docs/statistics-and-editorial.md)。
 
 `dist/` 的集中瀏覽器 JSON 是產物，提出內容修正請改單篇來源檔。瀏覽器收藏與自行匯入的字幕只保存於該瀏覽器，不會更新 repo。
 

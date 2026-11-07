@@ -78,16 +78,28 @@ export function mergeEnhancements(archive,editorial,statistics) {
   return validateArchive(data);
 }
 
+const rankingOptions=[['views','觀看排行榜'],['views-nonofficial','觀看排行榜 (不含官方)'],['newest','時間序列'],['comments','留言排行榜'],['comments-nonofficial','留言排行榜 (不含官方)']];
+export function normalizeRanking(value) {
+  return value==='oldest'||rankingOptions.some(([mode])=>mode===value)?value:'views';
+}
+export function isOfficialChannel(item) {
+  // Older records predate channel IDs; match only Puma's exact channel name.
+  return item.channelId ? item.channelId==='UC49EKUpNvS_fzdk5SKvipQg' : item.channel?.trim()==='沈伯洋Puma';
+}
+export function rankedInterviews(items, sort='views') {
+  const mode=normalizeRanking(sort);
+  const eligible=mode.endsWith('-nonofficial')?items.filter(item=>!isOfficialChannel(item)):items;
+  return filterInterviews(eligible,{sort:mode.split('-')[0]}).slice(0,10);
+}
 export function rankingHTML(items, sort='views', updatedAt=null, query='') {
-  const mode=['views','comments','newest','oldest'].includes(sort)?sort:'views';
-  const options=[['views','觀看排行榜'],['newest','時間序列'],['comments','留言排行榜']];
-  const sorted=filterInterviews(items,{sort:mode}).slice(0,10);
-  const label=mode==='views'?'觀看次數':mode==='comments'?'留言則數':mode==='oldest'?'最早發布':'最新發布';
+  const mode=normalizeRanking(sort),metric=mode.split('-')[0],nonofficial=mode.endsWith('-nonofficial');
+  const sorted=rankedInterviews(items,mode);
+  const label=metric==='views'?'觀看次數':metric==='comments'?'留言則數':mode==='oldest'?'最早發布':'最新發布';
   const rankingURL=value=>{
     const params=new URLSearchParams(query);params.set('ranking',value);
     return './index.html?'+escapeHTML(params.toString())+'#rankings';
   };
-  return `<section class="ranking-section wrap" id="rankings" aria-labelledby="ranking-title"><div class="ranking-heading"><h2 id="ranking-title">專訪排行</h2><span>全站前 10 ${['newest','oldest'].includes(mode)?'支':'名'} · ${label}</span></div><nav class="ranking-tabs" aria-label="選擇專訪排行">${options.map(([value,title])=>`<a href="${rankingURL(value)}" data-ranking="${value}" ${mode===value||(value==='newest'&&mode==='oldest')?'aria-current="true"':''}>${title}</a>`).join('')}</nav><ol class="ranking-list">${sorted.map((item,index)=>`<li><span class="ranking-position">${String(index+1).padStart(2,'0')}</span><a href="${escapeHTML(interviewPath(item))}"><strong>${escapeHTML(item.title)}</strong><small>${escapeHTML(item.channel)} · ${escapeHTML(item.date)}</small></a><span class="ranking-value">${['views','comments'].includes(mode)?formatCount(item.youtubeStats?.[mode]):escapeHTML(item.date)}</span></li>`).join('')||'<li class="ranking-empty">尚無符合的影片</li>'}</ol><p class="ranking-note">${['views','comments'].includes(mode)?`YouTube ${label} · ${escapeHTML(formatUpdate(updatedAt))} 更新；未提供的數值列於最後。`:'依影片發布日期排列；下方專訪列表可獨立設定排序。'}</p></section>`;
+  return `<section class="ranking-section wrap" id="rankings" aria-labelledby="ranking-title"><div class="ranking-heading"><h2 id="ranking-title">專訪排行</h2><span>${nonofficial?'不含官方':'全站'}前 10 ${['newest','oldest'].includes(mode)?'支':'名'} · ${label}</span></div><nav class="ranking-tabs" aria-label="選擇專訪排行">${rankingOptions.map(([value,title])=>`<a href="${rankingURL(value)}" data-ranking="${value}" ${mode===value||(value==='newest'&&mode==='oldest')?'aria-current="true"':''}>${title}</a>`).join('')}</nav><ol class="ranking-list">${sorted.map((item,index)=>`<li><span class="ranking-position">${String(index+1).padStart(2,'0')}</span><a href="${escapeHTML(interviewPath(item))}"><strong>${escapeHTML(item.title)}</strong><small>${escapeHTML(item.channel)} · ${escapeHTML(item.date)}</small></a><span class="ranking-value">${['views','comments'].includes(metric)?formatCount(item.youtubeStats?.[metric]):escapeHTML(item.date)}</span></li>`).join('')||'<li class="ranking-empty">尚無符合的影片</li>'}</ol><p class="ranking-note">${['views','comments'].includes(metric)?`YouTube ${label} · ${escapeHTML(formatUpdate(updatedAt))} 更新；未提供的數值列於最後。`:'依影片發布日期排列；下方專訪列表可獨立設定排序。'}${nonofficial?' 此榜排除沈伯洋的官方 YouTube 頻道，其他媒體頻道仍列入。':''}</p></section>`;
 }
 
 export function photoHTML(item,large=false) {

@@ -1,5 +1,5 @@
 import { categories, statusLabels, escapeHTML as esc, formatTime, filterInterviews, parseSubtitles, validateArchive, interviewPath, interviewSharePath, interviewShareText, articleSummaryHTML } from './core.js';
-import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML, commonPhraseCloudHTML, rankingHTML, photoHTML, homeHeroHTML} from './insights.js';
+import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML, commonPhraseCloudHTML, rankingHTML, normalizeRanking, photoHTML, homeHeroHTML} from './insights.js';
 
 const icons = {
   arrow: '<path d="M5 12h14m-5-5 5 5-5 5"/>',
@@ -97,7 +97,7 @@ function home() {
   filters = Object.fromEntries(['q', 'category', 'format', 'tag', 'phrase', 'status', 'sort'].map(k => [k, params.get(k) || '']));
   filters.saved = params.get('saved') === '1';
   filters.sort = ['views','comments','newest','oldest'].includes(filters.sort) ? filters.sort : 'newest';
-  rankingSort = ['views','comments','newest','oldest'].includes(params.get('ranking')) ? params.get('ranking') : 'views';
+  rankingSort = normalizeRanking(params.get('ranking'));
   activeItem = null;
   document.title = 'PUMA TALKS｜沈伯洋專訪資料庫';
   main.innerHTML = `${homeHeroHTML(items)}${collectionStatsHTML(items,archive.statisticsUpdatedAt)}<div id="ranking-panel">${rankingHTML(items,rankingSort,archive.statisticsUpdatedAt)}</div>

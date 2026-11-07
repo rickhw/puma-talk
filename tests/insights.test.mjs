@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
-import {mergeEnhancements,collectionStats,collectionStatsHTML,keywordCounts,keywordCloudHTML,videoStatsHTML,rankingHTML} from '../assets/insights.js';
+import {mergeEnhancements,collectionStats,collectionStatsHTML,keywordCounts,keywordCloudHTML,videoStatsHTML,rankingHTML,rankedInterviews,isOfficialChannel,normalizeRanking} from '../assets/insights.js';
 
 function fixture(){
   const item={id:'AbCdEfGh_12',title:'測試',date:'2026-11-04',channel:'測試頻道',category:'文化與閱讀',tags:['舊標籤'],sourceUrl:'https://www.youtube.com/watch?v=AbCdEfGh_12',duration:120,transcriptStatus:'auto',transcript:[{start:0,end:10,text:'这是原文。'}]};
@@ -125,6 +125,15 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   const restored=await render('?sort=oldest&ranking=comments');
   assert.equal(restored.get('#sort-filter').value,'oldest');
   assert.match(restored.get('#ranking-panel').innerHTML,/data-ranking="comments" aria-current="true"/);
+  const external=await render('?sort=oldest&ranking=views-nonofficial&format='+encodeURIComponent('車掃'));
+  assert.equal(external.get('#sort-filter').value,'oldest');
+  assert.match(external.get('#ranking-panel').innerHTML,/data-ranking="views-nonofficial" aria-current="true"/);
+  await external.listeners.get('click')({target:{closest(selector){return selector==='[data-ranking]'?{dataset:{ranking:'comments-nonofficial'}}:null;}},preventDefault(){}});
+  assert.equal(new URL(external.lastURL,'https://example.test/').searchParams.get('format'),'車掃');
+  assert.equal(new URL(external.lastURL,'https://example.test/').searchParams.get('sort'),'oldest');
+  assert.match(external.get('#ranking-panel').innerHTML,/data-ranking="comments-nonofficial" aria-current="true"/);
+  await external.listeners.get('change')({target:{id:'sort-filter',value:'views'}});
+  assert.equal(new URL(external.lastURL,'https://example.test/').searchParams.get('ranking'),'comments-nonofficial');
   const sweep=await render('?format='+encodeURIComponent('車掃')+'&sort=oldest&ranking=comments');
   assert.equal(sweep.document.title,'車掃與市政｜PUMA TALKS');
   assert.match(sweep.get('#archive-title').innerHTML,/車掃與市政/);
@@ -211,4 +220,30 @@ test('ranking links use article slugs, preserve missing comments and escape titl
   assert.ok(html.includes('未提供')&&html.includes('aria-current="true"'));
   assert.ok(html.includes('data-ranking="views"')&&html.includes('data-ranking="newest"'));
   assert.ok(html.includes('href="./index.html?ranking=comments#rankings"'));
+});
+test('nonofficial rankings exclude only Puma before selecting ten and preserve count ordering',()=>{
+  const {item}=fixture();
+  const media=Array.from({length:12},(_,i)=>({...item,id:String(i).padStart(11,'0'),channel:i===0?'媒體官方頻道':'其他媒體',date:'2026-11-04',youtubeStats:{views:100-i,comments:50-i}}));
+  const official={...item,id:'Official_12',channel:'沈伯洋Puma',youtubeStats:{views:99999,comments:99999}};
+  const renamed={...official,id:'Renamed__12',channel:'改名後的頻道',channelId:'UC49EKUpNvS_fzdk5SKvipQg'};
+  assert.ok(isOfficialChannel(official)&&isOfficialChannel(renamed));
+  assert.ok(!isOfficialChannel(media[0]));
+  assert.ok(!isOfficialChannel({...official,channelId:'UCJU_mEOzlhdKAAUyt08NGog'}));
+  const all=[official,renamed,...media];
+  assert.equal(rankedInterviews(all,'views')[0].id,official.id);
+  for(const mode of ['views-nonofficial','comments-nonofficial']){
+    assert.deepEqual(rankedInterviews(all,mode).map(x=>x.id),media.slice(0,10).map(x=>x.id));
+    const html=rankingHTML(all,mode,null,'format=車掃&sort=oldest&ranking=views');
+    assert.ok(!html.includes('href="./index.html?id=Official_12"'));
+    assert.match(html,/不含官方前 10 名/);
+    assert.match(html,/排除沈伯洋的官方 YouTube 頻道/);
+    assert.match(html,new RegExp(`data-ranking="${mode}" aria-current="true"`));
+    assert.ok(html.includes('format=%E8%BB%8A%E6%8E%83&amp;sort=oldest'));
+  }
+  const edge=[{...media[0],youtubeStats:{views:null,comments:null}},{...media[1],youtubeStats:{views:0,comments:0}}];
+  for(const mode of ['views-nonofficial','comments-nonofficial'])assert.equal(rankedInterviews(edge,mode)[0].id,media[1].id);
+  const tabs=[...rankingHTML(all).matchAll(/data-ranking="([^"]+)"/g)].map(x=>x[1]);
+  assert.deepEqual(tabs,['views','views-nonofficial','newest','comments','comments-nonofficial']);
+  assert.equal(normalizeRanking('oldest'),'oldest');
+  assert.equal(normalizeRanking('invalid'),'views');
 });

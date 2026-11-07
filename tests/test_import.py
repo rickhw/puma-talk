@@ -61,6 +61,16 @@ class ImportTests(unittest.TestCase):
         with self.assertRaises(ValueError): importer.parse_subtitles('no captions')
         with self.assertRaises(ValueError): importer.parse_subtitles('00:00:09,000 --> 00:00:01,000\nreverse')
 
+    def test_channel_id_survives_reimport_without_id(self):
+        data = dict(version=1, interviews=[])
+        info = dict(self.info(), channel_id='UCJU_mEOzlhdKAAUyt08NGog')
+        item = importer.import_record(data,info,self.args())
+        self.assertEqual(item['channelId'], info['channel_id'])
+        importer.import_record(data,self.info(),self.args())
+        self.assertEqual(data['interviews'][0]['channelId'], info['channel_id'])
+        importer.import_record(data,dict(self.info(),channel_id='invalid'),self.args())
+        self.assertEqual(data['interviews'][0]['channelId'], info['channel_id'])
+
     def test_prefer_original_subtitles_before_auto(self):
         self.assertEqual(importer.choose_language({'subtitles':{'en':[]},'automatic_captions':{'zh-TW':[]}}),('en','imported',False))
         self.assertEqual(importer.choose_language({'automatic_captions':{'zh-TW':[]}}),('zh-TW','auto',True))

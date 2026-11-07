@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T22:41:35.376945+00:00",
+  "updatedAt": "2026-11-07T23:04:02.599530+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -8451,6 +8451,27 @@
       "formatTags": [
         "車掃"
       ]
+    },
+    {
+      "id": "YGkPslUR84c",
+      "title": "讀了一堆專書，孩子來的那天還是慌了｜沈伯洋（Puma）談收養｜寧夏璐66號茶坊｜親子天下",
+      "displayTitle": "從決定收養到接孩子回家：沈伯洋談家庭準備與安定感",
+      "channel": "親子天下",
+      "channelId": "UCJU_mEOzlhdKAAUyt08NGog",
+      "uploadDate": "20261107",
+      "duration": 1020,
+      "url": "https://www.youtube.com/watch?v=YGkPslUR84c",
+      "sourceUrl": "https://www.youtube.com/watch?v=YGkPslUR84c",
+      "referenceUrl": "https://www.youtube.com/watch?v=YGkPslUR84c",
+      "decision": "include",
+      "reason": "使用者指定；原頻道收養主題訪談片段，另有完整Podcast，按本片ID收錄。",
+      "category": "人物與成長",
+      "spokenLanguage": "zh",
+      "description": "親子天下《寧夏璐66號茶坊》收養主題訪談的影片片段；原頻道另提供完整 Podcast 連結，本片不是完整集數。包含主持人寧夏璐及沈伯洋的談話，個人經驗、主持人轉述的案例與一般收養制度須分開理解，不代表所有收養家庭的情況。",
+      "sourceScopeNote": "親子天下《寧夏璐66號茶坊》收養主題訪談的影片片段；原頻道另提供完整 Podcast 連結，本片不是完整集數。包含主持人寧夏璐及沈伯洋的談話，個人經驗、主持人轉述的案例與一般收養制度須分開理解，不代表所有收養家庭的情況。",
+      "metadataFile": ".cache/add-YGkPslUR84c/video.info.json",
+      "publishedAt": "2026-11-07T18:00:37+08:00",
+      "status": "imported"
     }
   ]
 }
