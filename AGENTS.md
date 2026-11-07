@@ -117,7 +117,7 @@ data/2026-11-04-stress-relief-family-and-daily-life/
 - 首頁左上品牌連到 **`https://puma-talk.gtcafe.com/`** 對應的根路徑；不要改回 `index.html` 作為品牌首頁網址。
 - 首頁順序：**「從一場對話，認識沈伯洋。」→「每一場對話，都持續被看見。」→ 專訪排行**，再接專訪列表。
 - 專訪排行預設 **觀看排行榜**；列表「每場對話，都有新的發現」預設 **最新優先**。兩者獨立，URL 參數為 `ranking` 與 `sort`，切換其一保留另一個。
-- Top 10 選項順序為觀看、觀看（不含官方）、時間序列、留言、留言（不含官方）；不含官方只排除沈伯洋自己的 YouTube 頻道，先排除再取十筆。`ranking=views-nonofficial`／`comments-nonofficial` 與列表排序獨立。現有最新排序依發布日期，同日用 ID 穩定排序，不宣稱精確到秒。
+- Top 10 選項順序為觀看、觀看（不含官方）、時間序列、留言；不含官方只排除沈伯洋自己的 YouTube 頻道，先排除再取十筆。`ranking=views-nonofficial` 與列表排序獨立；已移除的 `comments-nonofficial` 舊連結回到一般留言榜。現有最新排序依發布日期，同日用 ID 穩定排序，不宣稱精確到秒。
 - 列表搜尋 input 右邊的逐字稿狀態篩選已移除；關於計畫的逐字稿步驟說明也已移除。
 - 網站以「我們使用 AI 技術校對」相關文字呈現，不顯示一般稿件「待校對」徽章。內部來源狀態、AI 與人工覆核仍分開保存；音樂作品顯示音樂類型。
 - 每篇與首頁有 1200 × 630 JPEG 封面及 HTML 內的 OG／Twitter metadata。首頁保持輕量，逐字稿共用 JSON 不嵌入 `<head>`；避免 Facebook 擷取不到封面。Facebook 自身的快取更新需另以 Sharing Debugger 核對。

@@ -128,12 +128,16 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   const external=await render('?sort=oldest&ranking=views-nonofficial&format='+encodeURIComponent('車掃'));
   assert.equal(external.get('#sort-filter').value,'oldest');
   assert.match(external.get('#ranking-panel').innerHTML,/data-ranking="views-nonofficial" aria-current="true"/);
-  await external.listeners.get('click')({target:{closest(selector){return selector==='[data-ranking]'?{dataset:{ranking:'comments-nonofficial'}}:null;}},preventDefault(){}});
+  await external.listeners.get('click')({target:{closest(selector){return selector==='[data-ranking]'?{dataset:{ranking:'comments'}}:null;}},preventDefault(){}});
   assert.equal(new URL(external.lastURL,'https://example.test/').searchParams.get('format'),'車掃');
   assert.equal(new URL(external.lastURL,'https://example.test/').searchParams.get('sort'),'oldest');
-  assert.match(external.get('#ranking-panel').innerHTML,/data-ranking="comments-nonofficial" aria-current="true"/);
+  assert.match(external.get('#ranking-panel').innerHTML,/data-ranking="comments" aria-current="true"/);
   await external.listeners.get('change')({target:{id:'sort-filter',value:'views'}});
-  assert.equal(new URL(external.lastURL,'https://example.test/').searchParams.get('ranking'),'comments-nonofficial');
+  assert.equal(new URL(external.lastURL,'https://example.test/').searchParams.get('ranking'),'comments');
+  const removedRanking=await render('?ranking=comments-nonofficial&sort=oldest');
+  assert.match(removedRanking.get('#ranking-panel').innerHTML,/data-ranking="comments" aria-current="true"/);
+  assert.ok(!removedRanking.get('#ranking-panel').innerHTML.includes('comments-nonofficial'));
+  assert.equal(removedRanking.get('#sort-filter').value,'oldest');
   const sweep=await render('?format='+encodeURIComponent('車掃')+'&sort=oldest&ranking=comments');
   assert.equal(sweep.document.title,'車掃與市政｜PUMA TALKS');
   assert.match(sweep.get('#archive-title').innerHTML,/車掃與市政/);
@@ -231,7 +235,7 @@ test('nonofficial rankings exclude only Puma before selecting ten and preserve c
   assert.ok(!isOfficialChannel({...official,channelId:'UCJU_mEOzlhdKAAUyt08NGog'}));
   const all=[official,renamed,...media];
   assert.equal(rankedInterviews(all,'views')[0].id,official.id);
-  for(const mode of ['views-nonofficial','comments-nonofficial']){
+  for(const mode of ['views-nonofficial']){
     assert.deepEqual(rankedInterviews(all,mode).map(x=>x.id),media.slice(0,10).map(x=>x.id));
     const html=rankingHTML(all,mode,null,'format=車掃&sort=oldest&ranking=views');
     assert.ok(!html.includes('href="./index.html?id=Official_12"'));
@@ -241,9 +245,11 @@ test('nonofficial rankings exclude only Puma before selecting ten and preserve c
     assert.ok(html.includes('format=%E8%BB%8A%E6%8E%83&amp;sort=oldest'));
   }
   const edge=[{...media[0],youtubeStats:{views:null,comments:null}},{...media[1],youtubeStats:{views:0,comments:0}}];
-  for(const mode of ['views-nonofficial','comments-nonofficial'])assert.equal(rankedInterviews(edge,mode)[0].id,media[1].id);
+  for(const mode of ['views-nonofficial'])assert.equal(rankedInterviews(edge,mode)[0].id,media[1].id);
   const tabs=[...rankingHTML(all).matchAll(/data-ranking="([^"]+)"/g)].map(x=>x[1]);
-  assert.deepEqual(tabs,['views','views-nonofficial','newest','comments','comments-nonofficial']);
+  assert.deepEqual(tabs,['views','views-nonofficial','newest','comments']);
   assert.equal(normalizeRanking('oldest'),'oldest');
   assert.equal(normalizeRanking('invalid'),'views');
+  assert.equal(normalizeRanking('comments-nonofficial'),'comments');
+  assert.equal(rankedInterviews(all,'comments-nonofficial')[0].id,official.id);
 });

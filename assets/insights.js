@@ -78,8 +78,9 @@ export function mergeEnhancements(archive,editorial,statistics) {
   return validateArchive(data);
 }
 
-const rankingOptions=[['views','觀看排行榜'],['views-nonofficial','觀看排行榜 (不含官方)'],['newest','時間序列'],['comments','留言排行榜'],['comments-nonofficial','留言排行榜 (不含官方)']];
+const rankingOptions=[['views','觀看排行榜'],['views-nonofficial','觀看排行榜 (不含官方)'],['newest','時間序列'],['comments','留言排行榜']];
 export function normalizeRanking(value) {
+  if(value==='comments-nonofficial')return 'comments';
   return value==='oldest'||rankingOptions.some(([mode])=>mode===value)?value:'views';
 }
 export function isOfficialChannel(item) {

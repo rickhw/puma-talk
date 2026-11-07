@@ -247,7 +247,7 @@ python scripts/daily_update.py
 
 ### 匯出統計報表 JSON（選用，不連線 YouTube）
 
-先建置，以下指令從網站實際使用的資料匯出單片數字、五組 Top 10、全部關鍵字與五類計數，存入忽略提交的快取：
+先建置，以下指令從網站實際使用的資料匯出單片數字、四組 Top 10、全部關鍵字與五類計數，存入忽略提交的快取：
 
 ```sh
 npm run build
@@ -272,7 +272,7 @@ console.log(JSON.stringify({
     comments: knownComments.reduce((sum, n) => sum + n, 0),
     commentsAvailable: knownComments.length},
   videos: items.map(video),
-  rankings: Object.fromEntries(['views', 'views-nonofficial', 'newest', 'comments', 'comments-nonofficial'].map(mode => [mode, top(mode)])),
+  rankings: Object.fromEntries(['views', 'views-nonofficial', 'newest', 'comments'].map(mode => [mode, top(mode)])),
   keywords: keywordCounts(items),
   categories: categories.map(category => ({
     category, videos: items.filter(x => x.category === category).length
@@ -414,7 +414,7 @@ GitHub Pages 使用 **Settings → Pages → GitHub Actions**，設定 repositor
 | `data/catalog.json`、`data/pending-interviews.json`、`data/sources.json` | 候選判定、待確認原片與固定掃描來源 |
 | [處理進度](docs/processing-status.md)、[摘要進度](docs/articles-status.md) | 已提交資料的覆蓋率、來源範圍與待辦 |
 
-截至 2026-11-08，95 支原稿來自上述 Whisper、33 支來自 YouTube 字幕，另 1 支為音樂作品資訊。原有 121 篇摘要使用上述 Qwen3.6，後續八篇（11/07 三支、四支車掃與親子天下收養片段）使用 `lmstudio-community/Qwen3.8-27B-MLX-8bit`（同為 `mlx-lm==0.31.3`）；顯示稿包含 123 篇中文校對、5 篇英文翻譯及 1 篇作品資訊。11/07 三支新片的來源與省略範圍見[處理紀錄](docs/transcript-batch-2026-11-07.md)，四支車掃另見[車掃收錄紀錄](docs/car-sweep-2026-11-08.md)，收養片段與五種排行榜見[本次更新紀錄](docs/adoption-and-rankings-2026-11-08.md)，後續數量以進度報告為準。
+截至 2026-11-08，95 支原稿來自上述 Whisper、33 支來自 YouTube 字幕，另 1 支為音樂作品資訊。原有 121 篇摘要使用上述 Qwen3.6，後續八篇（11/07 三支、四支車掃與親子天下收養片段）使用 `lmstudio-community/Qwen3.8-27B-MLX-8bit`（同為 `mlx-lm==0.31.3`）；顯示稿包含 123 篇中文校對、5 篇英文翻譯及 1 篇作品資訊。11/07 三支新片的來源與省略範圍見[處理紀錄](docs/transcript-batch-2026-11-07.md)，四支車掃另見[車掃收錄紀錄](docs/car-sweep-2026-11-08.md)，收養片段與排行榜見[本次更新紀錄](docs/adoption-and-rankings-2026-11-08.md)，後續數量以進度報告為準。
 
 模型來源可追查 `metadata.json` 的 `transcriptProvenance`、`article.json` 的 `provenance` 及 `editorial.json` 的 `review`。關鍵字工具目前記錄 `keywordsModel: "Model"` 類別名；實際權重由 `--model` 指定；上述八筆新收錄資料另記錄 `keywordsModelId` 與權重 revision，避免混淆 Qwen3.6 與 Qwen3.8。摘要與校對／翻譯另存，保留原稿；AI 處理不冒充人工覆核。更多細節見[逐字稿流程](docs/transcripts.md)、[文章與網址](docs/articles.md)、[統計與文字處理](docs/statistics-and-editorial.md)。
 
