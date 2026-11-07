@@ -21,6 +21,16 @@ test('display corrections preserve raw records and keyword/source constraints',(
   assert.throws(()=>mergeEnhancements(archive,{version:1,records:[{...record,keywords:['少於五個']}]},statistics),/關鍵字/);
   assert.throws(()=>mergeEnhancements(archive,{version:1,records:[record,record]},statistics),/重複/);
 });
+test('curated format tags survive article keyword selection without replacing topic keywords',()=>{
+  const {archive,record,statistics}=fixture();
+  archive.interviews[0].formatTags=['車掃','車掃'];
+  const data=mergeEnhancements(archive,{version:1,records:[record]},statistics);
+  assert.deepEqual(data.interviews[0].tags,['車掃',...record.keywords]);
+  assert.equal(record.keywords.length,5);
+  assert.ok(!data.interviews[0].tags.includes('舊標籤'));
+  archive.interviews[0].formatTags='車掃';
+  assert.throws(()=>mergeEnhancements(archive,{version:1,records:[record]},statistics),/形式標籤/);
+});
 
 test('metadata-only editorial records require a music video and no transcript',()=>{
   const {archive,record,statistics}=fixture();
@@ -60,6 +70,8 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   const merged=mergeEnhancements(archive,{version:1,records:[record]},statistics);
   merged.commonPhrases={videos:1,phrases:[{term:'我覺得',count:2,videos:1}]};
   merged.interviews[0].commonPhrases=['我覺得'];
+  merged.interviews[0].formatTags=['車掃'];
+  merged.interviews[0].tags.unshift('車掃');
   const core=(await readFile(new URL('../assets/core.js',import.meta.url),'utf8')).replace(/^export /gm,'');
   const insights=(await readFile(new URL('../assets/insights.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'').replace(/^export /gm,'');
   const app=(await readFile(new URL('../assets/app.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'');
@@ -69,6 +81,7 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   merged.interviews[0].article={status:'draft',lead:'這是可轉貼的摘要。',highlights:[{title:'內容重點',text:'測試正文',start:0,end:10}],conclusion:'測試總結'};
   async function render(search='',detail=false){
     const elements=new Map(),errors=[],listeners=new Map(),players=[],copies=[];
+    const nav=['archive','car-sweep','topics','about'].map(value=>({dataset:{nav:value},attributes:{},setAttribute(k,v){this.attributes[k]=v;},removeAttribute(k){delete this.attributes[k];}}));
     const document={title:'',baseURI:'https://example.test/',querySelector(selector){
       if(selector==='#archive-data')return null;
       if(selector==='meta[name="archive-data-url"]')return {content:'./data/interviews.fingerprint.json'};
@@ -78,7 +91,7 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
       if(selector==='.skip-link'||selector.startsWith('meta['))return null;
       if(!elements.has(selector))elements.set(selector,{innerHTML:'',textContent:'',value:'',scrollIntoView(){elements.scrolled=true;},classList:{add(){},remove(){}},hasAttribute(){return false;}});
       return elements.get(selector);
-    },querySelectorAll(){return [];},addEventListener(type,listener){listeners.set(type,listener);}};
+    },querySelectorAll(selector){return selector==='[data-nav]'?nav:[];},addEventListener(type,listener){listeners.set(type,listener);}};
     await vm.runInNewContext(`(async()=>{${core}\n${insights}\nconst esc=escapeHTML;\n${app}})()`,{
       document,window:{addEventListener(){},YT:{Player:function(id,options){this.seeks=[];this.plays=0;this.seekTo=(time,allow)=>this.seeks.push([time,allow]);this.playVideo=()=>this.plays++;this.ready=()=>options.events.onReady({target:this});players.push(this);}}},navigator:{clipboard:{async writeText(text){copies.push(text);}}},matchMedia(){return {matches:true};},setTimeout(){return 0;},clearTimeout(){},localStorage:{getItem(){return null;}},structuredClone,URL,URLSearchParams,
       fetch:async url=>{assert.equal(url,'./data/interviews.fingerprint.json');return {ok:true,json:async()=>structuredClone(merged)};},
@@ -87,6 +100,7 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
     });
     assert.equal(errors.length,0,errors.map(String).join(';'));
     elements.listeners=listeners;elements.players=players;elements.copies=copies;
+    elements.nav=nav;elements.document=document;
     return elements;
   }
   const home=await render(),html=home.get('#main').innerHTML;
@@ -111,6 +125,19 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   const restored=await render('?sort=oldest&ranking=comments');
   assert.equal(restored.get('#sort-filter').value,'oldest');
   assert.match(restored.get('#ranking-panel').innerHTML,/data-ranking="comments" aria-current="true"/);
+  const sweep=await render('?format='+encodeURIComponent('車掃')+'&sort=oldest&ranking=comments');
+  assert.equal(sweep.document.title,'車掃與市政｜PUMA TALKS');
+  assert.match(sweep.get('#archive-title').innerHTML,/車掃與市政/);
+  assert.match(sweep.get('#results-count').innerHTML,/1<\/strong> 支車掃與市政影片/);
+  assert.equal(sweep.nav.find(a=>a.dataset.nav==='car-sweep').attributes['aria-current'],'page');
+  assert.ok(!sweep.nav.find(a=>a.dataset.nav==='archive').attributes['aria-current']);
+  await sweep.listeners.get('change')({target:{id:'sort-filter',value:'newest'}});
+  assert.equal(new URL(sweep.lastURL,'https://example.test/').searchParams.get('format'),'車掃');
+  assert.ok(sweep.lastURL.includes('ranking=comments'));
+  await sweep.listeners.get('click')({target:{closest(selector){return selector==='button'?{dataset:{removeFilter:'format'},hasAttribute(name){return name==='data-remove-filter';}}:null;}},preventDefault(){}});
+  assert.match(sweep.get('#archive-title').innerHTML,/每場對話，都有新的發現/);
+  assert.equal(sweep.nav.find(a=>a.dataset.nav==='archive').attributes['aria-current'],'page');
+  assert.ok(!sweep.nav.find(a=>a.dataset.nav==='car-sweep').attributes['aria-current']);
   const phraseResults=await render('?phrase=我覺得&ranking=comments&sort=oldest');
   assert.match(phraseResults.get('#active-filters').innerHTML,/常用語：我覺得/);
   assert.ok(phraseResults.get('#interview-grid').innerHTML.includes('interview-card'));

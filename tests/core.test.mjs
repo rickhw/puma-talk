@@ -22,6 +22,9 @@ test('search includes transcript text and intersects category, tag and saved fil
   assert.equal(filterInterviews([item], {q:'性別 不存在'}).length, 0);
   assert.equal(filterInterviews([item], {category:item.category,tag:item.tags[0],saved:true},[item.id]).length,1);
   assert.equal(filterInterviews([item], {status:'available'}).length,1);
+  const sweep={...item,formatTags:['車掃']},mentioned={...item,tags:['車掃']};
+  assert.equal(filterInterviews([sweep,mentioned],{format:'車掃'}).length,1);
+  assert.equal(filterInterviews([sweep],{format:'車掃',category:item.category,saved:true},[item.id]).length,1);
   assert.equal(filterInterviews([item], {status:'pending'}).length,0);
   assert.equal(filterInterviews(archive.interviews, {saved:true}, []).length,0);
 });
@@ -51,6 +54,10 @@ test('static output serves correctly without dependencies or a backend', async (
     await handleRequest({url,method},response); return response;
   }
   for (const url of ['/', '/?v=YlEaWM3NAKs', '/?view=topics', '/assets/app.bundle.js', '/assets/style.css', '/data/interviews.json', '/examples/reader-demo.srt']) assert.equal((await request(url)).status,200,url);
+  const homeHTML=(await request('/')).body.toString();
+  assert.ok(homeHTML.indexOf('data-nav="archive"')<homeHTML.indexOf('data-nav="car-sweep"'));
+  assert.ok(homeHTML.indexOf('data-nav="car-sweep"')<homeHTML.indexOf('data-nav="topics"'));
+  assert.match(homeHTML,/href="\.\/index\.html\?format=%E8%BB%8A%E6%8E%83#archive" data-nav="car-sweep">車掃與市政<\/a>/);
   assert.equal((await request('/assets/missing.js')).status,404);
   assert.equal((await request('/%E0%A4%A')).status,400);
   assert.equal((await request('/','POST')).status,405);

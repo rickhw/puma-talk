@@ -71,7 +71,9 @@ export function mergeEnhancements(archive,editorial,statistics) {
     const row=reviews.get(item.id);
     const treatment=row?(row.review.method==='ai-translated'?'使用 AI 翻譯與校對':'使用 AI 輔助校對'):'整理中';
     const description=(item.description||'').replace(/逐字稿(?:為待校對工作稿|待校對)/g,'逐字稿'+treatment).replace('未自動判定說話者','多人發言請搭配原片理解');
-    return {...item,description,...(row?{tags:row.review.keywordSelection==='article-grounded'?row.keywords:item.tags,transcript:row.transcript,aiReview:row.review}:{}),youtubeStats:counts.get(item.id)||{views:null,likes:null,comments:null,fetchedAt:null,status:'unavailable'}};
+    const topicTags=row?.review.keywordSelection==='article-grounded'?row.keywords:item.tags;
+    const tags=[...new Set([...(item.formatTags||[]),...topicTags])];
+    return {...item,description,tags,...(row?{transcript:row.transcript,aiReview:row.review}:{}),youtubeStats:counts.get(item.id)||{views:null,likes:null,comments:null,fetchedAt:null,status:'unavailable'}};
   })};
   return validateArchive(data);
 }

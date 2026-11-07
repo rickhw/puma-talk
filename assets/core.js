@@ -81,6 +81,7 @@ export function filterInterviews(items, filters = {}, saved = []) {
   const words = (filters.q || "").trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   return items.filter(item => {
     if (filters.category && item.category !== filters.category) return false;
+    if (filters.format && !item.formatTags?.includes(filters.format)) return false;
     if (filters.tag && !item.tags.includes(filters.tag)) return false;
     if (filters.phrase && !item.commonPhrases?.includes(filters.phrase)) return false;
     if (filters.saved && !saved.includes(item.id)) return false;
@@ -117,6 +118,7 @@ export function validateArchive(data) {
     for (const field of ["title", "channel", "date", "category", "sourceUrl", "transcriptStatus"]) if (typeof item[field] !== "string" || !item[field]) throw new Error(`${item.id} 缺少 ${field}`);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(item.date) || Number.isNaN(Date.parse(item.date)) || !categories.includes(item.category)) throw new Error(`${item.id} 日期或分類錯誤`);
     if (item.sourceUrl !== `https://www.youtube.com/watch?v=${item.id}` || !Array.isArray(item.tags) || item.tags.some(t => typeof t !== "string") || !Array.isArray(item.transcript) || !statusLabels[item.transcriptStatus]) throw new Error(`${item.id} 來源或逐字稿格式錯誤`);
+    if (item.formatTags !== undefined && (!Array.isArray(item.formatTags) || item.formatTags.some(tag => typeof tag !== 'string' || !tag.trim() || tag.length > 24))) throw new Error(`${item.id} 內容形式標籤無效`);
     if (item.transcriptStatus === "pending" && item.transcript.length || item.transcriptStatus !== "pending" && !item.transcript.length) throw new Error(`${item.id} 逐字稿狀態與內容不一致`);
     let last = -1;
     for (const cue of item.transcript) {

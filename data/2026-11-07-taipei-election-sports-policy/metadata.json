@@ -1563,5 +1563,8 @@
     "timestamp": 1794061182,
     "release_timestamp": 1794039765
   },
-  "broadcastAt": "2026-11-07T16:22:45+08:00"
+  "broadcastAt": "2026-11-07T16:22:45+08:00",
+  "formatTags": [
+    "車掃"
+  ]
 }

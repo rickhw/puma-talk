@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T21:50:58.946493+00:00",
+  "updatedAt": "2026-11-07T22:41:35.376945+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -664,15 +664,34 @@
     },
     {
       "id": "RzhfsRxusG4",
-      "listedTitle": "11/1 台北大洋流｜大安文山｜車掃直播 開講直播｜你的市長 沈伯洋",
-      "listedDate": "2026-11-02",
-      "listedChannel": "沈伯洋Puma",
-      "listedDuration": "片長 5:45:10",
+      "title": "11/1 台北大洋流｜大安文山｜車掃直播 開講直播｜你的市長 沈伯洋",
+      "displayTitle": "台北大洋流大安文山場：車掃與市政開講（官方直播）",
+      "channel": "沈伯洋Puma",
+      "uploadDate": "20261102",
+      "duration": 20710,
       "url": "https://www.youtube.com/watch?v=RzhfsRxusG4",
-      "referenceUrl": "https://whoispuma.com/videos",
       "sourceUrl": "https://www.youtube.com/watch?v=RzhfsRxusG4",
-      "decision": "deferred",
-      "reason": "相關影片目錄或搜尋候選；尚未確認是沈伯洋本人受訪的原版專訪"
+      "referenceUrl": "https://www.youtube.com/watch?v=RzhfsRxusG4",
+      "decision": "include",
+      "reason": "官方大安文山場車掃與市政開講原片，包含可辨識市政談話及問答。",
+      "category": "政治與公共事務",
+      "tags": [
+        "車掃"
+      ],
+      "spokenLanguage": "zh",
+      "description": "沈伯洋官方台北大洋流大安文山場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。活動於 2026-11-01 直播，回放於台灣時間 2026-11-02T02:15:02+08:00 發布，兩者分開記錄。",
+      "sourceScopeNote": "沈伯洋官方台北大洋流大安文山場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。活動於 2026-11-01 直播，回放於台灣時間 2026-11-02T02:15:02+08:00 發布，兩者分開記錄。",
+      "metadataFile": ".cache/car-sweep-20261108/metadata/RzhfsRxusG4.info.json",
+      "contentType": "public-event",
+      "eventArea": "大安文山",
+      "formatTags": [
+        "車掃"
+      ],
+      "publishedAt": "2026-11-02T02:15:02+08:00",
+      "liveStartedAt": "2026-11-01T16:16:41+08:00",
+      "broadcastDate": "2026-11-01",
+      "youtubeUploadDate": "20261101",
+      "status": "imported"
     },
     {
       "id": "OzhCcJKvYq8",
@@ -1097,15 +1116,34 @@
     },
     {
       "id": "73iJRVHx780",
-      "listedTitle": "10/31 台北大洋流｜中正萬華｜車掃直播 開講直播｜你的市長 沈伯洋",
-      "listedDate": "2026-10-31",
-      "listedChannel": "沈伯洋Puma",
-      "listedDuration": "片長 4:47:55",
+      "title": "10/31 台北大洋流｜中正萬華｜車掃直播 開講直播｜你的市長 沈伯洋",
+      "displayTitle": "台北大洋流中正萬華場：車掃與市政開講（官方直播）",
+      "channel": "沈伯洋Puma",
+      "uploadDate": "20261031",
+      "duration": 17275,
       "url": "https://www.youtube.com/watch?v=73iJRVHx780",
-      "referenceUrl": "https://whoispuma.com/videos",
       "sourceUrl": "https://www.youtube.com/watch?v=73iJRVHx780",
-      "decision": "deferred",
-      "reason": "相關影片目錄或搜尋候選；尚未確認是沈伯洋本人受訪的原版專訪"
+      "referenceUrl": "https://www.youtube.com/watch?v=73iJRVHx780",
+      "decision": "include",
+      "reason": "官方中正萬華場車掃與市政開講原片，包含可辨識市政談話及問答。",
+      "category": "政治與公共事務",
+      "tags": [
+        "車掃"
+      ],
+      "spokenLanguage": "zh",
+      "description": "沈伯洋官方台北大洋流中正萬華場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。",
+      "sourceScopeNote": "沈伯洋官方台北大洋流中正萬華場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。",
+      "metadataFile": ".cache/car-sweep-20261108/metadata/73iJRVHx780.info.json",
+      "contentType": "public-event",
+      "eventArea": "中正萬華",
+      "formatTags": [
+        "車掃"
+      ],
+      "publishedAt": "2026-10-31T23:10:13+08:00",
+      "liveStartedAt": "2026-10-31T17:14:30+08:00",
+      "broadcastDate": "2026-10-31",
+      "youtubeUploadDate": "20261031",
+      "status": "imported"
     },
     {
       "id": "5rfOlTx5Mhk",
@@ -2106,15 +2144,34 @@
     },
     {
       "id": "8c5X6zeMOHI",
-      "listedTitle": "10/18 台北大洋流｜松山信義｜車掃直播 開講直播｜你的市長 沈伯洋",
-      "listedDate": "2026-10-18",
-      "listedChannel": "沈伯洋Puma",
-      "listedDuration": "片長 4:19:56",
+      "title": "10/18 台北大洋流｜松山信義｜車掃直播 開講直播｜你的市長 沈伯洋",
+      "displayTitle": "台北大洋流松山信義場：車掃與市政開講（官方直播）",
+      "channel": "沈伯洋Puma",
+      "uploadDate": "20261018",
+      "duration": 15595,
       "url": "https://www.youtube.com/watch?v=8c5X6zeMOHI",
-      "referenceUrl": "https://whoispuma.com/videos",
       "sourceUrl": "https://www.youtube.com/watch?v=8c5X6zeMOHI",
-      "decision": "deferred",
-      "reason": "相關影片目錄或搜尋候選；尚未確認是沈伯洋本人受訪的原版專訪"
+      "referenceUrl": "https://www.youtube.com/watch?v=8c5X6zeMOHI",
+      "decision": "include",
+      "reason": "官方松山信義場車掃與市政開講原片，包含可辨識市政談話及問答。",
+      "category": "政治與公共事務",
+      "tags": [
+        "車掃"
+      ],
+      "spokenLanguage": "zh",
+      "description": "沈伯洋官方台北大洋流松山信義場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。",
+      "sourceScopeNote": "沈伯洋官方台北大洋流松山信義場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。",
+      "metadataFile": ".cache/car-sweep-20261108/metadata/8c5X6zeMOHI.info.json",
+      "contentType": "public-event",
+      "eventArea": "松山信義",
+      "formatTags": [
+        "車掃"
+      ],
+      "publishedAt": "2026-10-18T21:56:09+08:00",
+      "liveStartedAt": "2026-10-18T17:13:39+08:00",
+      "broadcastDate": "2026-10-18",
+      "youtubeUploadDate": "20261018",
+      "status": "imported"
     },
     {
       "id": "pNzV2U_7M6g",
@@ -2700,15 +2757,34 @@
     },
     {
       "id": "sraSoHalAMk",
-      "listedTitle": "10/11 台北大洋流｜中山大同｜車掃直播 開講直播｜你的市長 沈伯洋",
-      "listedDate": "2026-10-11",
-      "listedChannel": "沈伯洋Puma",
-      "listedDuration": "片長 4:00:36",
+      "title": "10/11 台北大洋流｜中山大同｜車掃直播 開講直播｜你的市長 沈伯洋",
+      "displayTitle": "台北大洋流中山大同場：車掃與市政開講（官方直播）",
+      "channel": "沈伯洋Puma",
+      "uploadDate": "20261011",
+      "duration": 14436,
       "url": "https://www.youtube.com/watch?v=sraSoHalAMk",
-      "referenceUrl": "https://whoispuma.com/videos",
       "sourceUrl": "https://www.youtube.com/watch?v=sraSoHalAMk",
-      "decision": "deferred",
-      "reason": "相關影片目錄或搜尋候選；尚未確認是沈伯洋本人受訪的原版專訪"
+      "referenceUrl": "https://www.youtube.com/watch?v=sraSoHalAMk",
+      "decision": "include",
+      "reason": "官方中山大同場車掃與市政開講原片，包含可辨識市政談話及問答。",
+      "category": "政治與公共事務",
+      "tags": [
+        "車掃"
+      ],
+      "spokenLanguage": "zh",
+      "description": "沈伯洋官方台北大洋流中山大同場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。",
+      "sourceScopeNote": "沈伯洋官方台北大洋流中山大同場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。",
+      "metadataFile": ".cache/car-sweep-20261108/metadata/sraSoHalAMk.info.json",
+      "contentType": "public-event",
+      "eventArea": "中山大同",
+      "formatTags": [
+        "車掃"
+      ],
+      "publishedAt": "2026-10-11T21:32:43+08:00",
+      "liveStartedAt": "2026-10-11T17:15:56+08:00",
+      "broadcastDate": "2026-10-11",
+      "youtubeUploadDate": "20261011",
+      "status": "imported"
     },
     {
       "id": "g3MCFruxowQ",
@@ -8371,7 +8447,10 @@
       "publishedAt": "2026-11-07T22:19:42+08:00",
       "status": "imported",
       "liveStartedAt": "2026-11-07T16:22:45+08:00",
-      "contentType": "public-event"
+      "contentType": "public-event",
+      "formatTags": [
+        "車掃"
+      ]
     }
   ]
 }

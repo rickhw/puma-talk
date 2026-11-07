@@ -1,8 +1,8 @@
 # 文章摘要處理進度
 
-更新：2026-11-08T05:59:11+08:00（台灣時間）
+更新：2026-11-08T06:56:01+08:00（台灣時間）
 
-已產生 **124 / 124 篇 AI 文章摘要**。每篇包含導讀、3–5 項重點、總結與固定 slug。正體中文 AI 校對／翻譯版本已完成 123 篇、作品資訊 1 篇；人工覆核紀錄 0 篇，AI 處理不冒充人工覆核。
+已產生 **128 / 128 篇 AI 文章摘要**。每篇包含導讀、3–5 項重點、總結與固定 slug。正體中文 AI 校對／翻譯版本已完成 127 篇、作品資訊 1 篇；人工覆核紀錄 0 篇，AI 處理不冒充人工覆核。
 
 共有 113 項時間連結採參考位置；原文由程式直接擷取，未把模型改字後的引文當作原話。其餘引證有精確文字對應；發言語意與立場仍應搭配原始影片理解。
 
@@ -10,7 +10,7 @@
 
 網站網址與 GTM／GA4 設定由 `data/site.json` 提供，啟用狀態依該設定及容器發布狀態而定。YouTube 每日統計與本站流量分開計算。此報告僅依儲存庫資料產生，不代表已在分析後台確認收到事件。
 
-另有 **11 篇來源範圍說明**，詳見下方專節；文章頁已醒目標示，辨識不清部分保留時間範圍並註記。
+另有 **15 篇來源範圍說明**，詳見下方專節；文章頁已醒目標示，辨識不清部分保留時間範圍並註記。
 
 | 日期 | 訪談 | 固定 slug | 重點數 |
 | --- | --- | --- | ---: |
@@ -27,8 +27,10 @@
 | 2026-11-04 | [沈伯洋撲馬來了！《11點熱吵店》多人紓壓主題完整版](https://puma-talk.gtcafe.com/interviews/2026-11-04-stress-relief-family-and-daily-life/) | `2026-11-04-stress-relief-family-and-daily-life` | 4 |
 | 2026-11-03 | [回應執行力質疑！沈伯洋談台北市政改革，如何讓政策真正落地？ ft. 沈伯洋 台北市長參選人、立法委員｜遠見On Air](https://puma-talk.gtcafe.com/interviews/2026-11-03-shen-boyang-taipei-municipal-reform/) | `2026-11-03-shen-boyang-taipei-municipal-reform` | 5 |
 | 2026-11-02 | [【商周專訪沈伯洋】如果台北市長只有100元，會怎麼花？「無限都更」怎麼做？沈伯洋：台北不能只有輝達！](https://puma-talk.gtcafe.com/interviews/2026-11-02-taipei-urban-renewal-ai-talent-policy/) | `2026-11-02-taipei-urban-renewal-ai-talent-policy` | 5 |
+| 2026-11-02 | [台北大洋流大安文山場：車掃與市政開講（官方直播）](https://puma-talk.gtcafe.com/interviews/2026-11-02-taipei-election-policy/) | `2026-11-02-taipei-election-policy` | 5 |
 | 2026-11-02 | [《今夜最新！從不被看好到「洋流」勢如破竹！沈伯洋能扳倒蔣萬安高牆？》【2026.11.02新聞面對面】](https://puma-talk.gtcafe.com/interviews/2026-11-02-shen-boyang-taipei-mayoral-campaign/) | `2026-11-02-shen-boyang-taipei-mayoral-campaign` | 5 |
 | 2026-10-31 | [從改變自己到改變制度，性別意識怎麼走進城市日常？](https://puma-talk.gtcafe.com/interviews/2026-10-31-gender-awareness-urban-policy/) | `2026-10-31-gender-awareness-urban-policy` | 4 |
+| 2026-10-31 | [台北大洋流中正萬華場：車掃與市政開講（官方直播）](https://puma-talk.gtcafe.com/interviews/2026-10-31-taipei-city-hall-policy/) | `2026-10-31-taipei-city-hall-policy` | 5 |
 | 2026-10-30 | [發生沈麼事：沈春華對談沈伯洋](https://puma-talk.gtcafe.com/interviews/2026-10-30-shen-boyao-taipei-mayoral-campaign/) | `2026-10-30-shen-boyao-taipei-mayoral-campaign` | 5 |
 | 2026-10-30 | [【完整專訪】辯論倒數！沈伯洋登《台灣ON AIR》直球接招！脫口秀演員突爆金句「蔣市長都是金」全場笑翻 沈伯洋無腳本「全英語推銷台北景美」貴雅嚇喊：太流利！｜三立新聞網 SETN.com](https://puma-talk.gtcafe.com/interviews/2026-10-30-shen-boyang-taipei-mayoral-campaign-interview/) | `2026-10-30-shen-boyang-taipei-mayoral-campaign-interview` | 5 |
 | 2026-10-28 | [沈伯洋完整專訪！選戰倒數一個月 脆友問題新鮮直送攝影棚《台灣ON AIR》 撲馬現場抽題接招！｜許貴雅 主持｜【台灣ON AIR】](https://puma-talk.gtcafe.com/interviews/2026-10-28-shen-boyang-taipei-mayoral-campaign-interview/) | `2026-10-28-shen-boyang-taipei-mayoral-campaign-interview` | 5 |
@@ -45,6 +47,7 @@
 | 2026-10-19 | [「會算命的市長」遇到「命理大師」，會產生什麼火花？歡迎台北的市長沈伯洋【國際紫微學會&大耕老師】請開字幕](https://puma-talk.gtcafe.com/interviews/2026-10-19-shen-boyang-mental-health-destiny-industry/) | `2026-10-19-shen-boyang-mental-health-destiny-industry` | 4 |
 | 2026-10-19 | [【#狠狠抖內幕】獨！專訪 #沈伯洋！台北奪還之戰獻出心臟！揭逆轉勝戰略？車掃擠爆松信！沒去過園長會議？#蔣萬安 被爆啥都不知！AI教父一秒幾十萬上下！蔣要 #黃仁勳 搭機捷？蜜獾重出江湖！](https://puma-talk.gtcafe.com/interviews/2026-10-19-shen-heyang-taipei-mayoral-campaign-strategy/) | `2026-10-19-shen-heyang-taipei-mayoral-campaign-strategy` | 4 |
 | 2026-10-19 | [洋流來了！熱門政策直球答辯 小水滴擠爆北市街頭！人氣旺=選情樂觀？ft.沈伯洋｜黃光芹-中午來開匯【CNEWS】2026/10/19 1200](https://puma-talk.gtcafe.com/interviews/2026-10-19-shen-boyang-taipei-mayoral-campaign-strategy/) | `2026-10-19-shen-boyang-taipei-mayoral-campaign-strategy` | 5 |
+| 2026-10-18 | [台北大洋流松山信義場：車掃與市政開講（官方直播）](https://puma-talk.gtcafe.com/interviews/2026-10-18-taipei-shen-bo-yang-songsan-xinyi/) | `2026-10-18-taipei-shen-bo-yang-songsan-xinyi` | 4 |
 | 2026-10-15 | [台灣名人堂 2026-10-15 台北市長參選人 沈伯洋](https://puma-talk.gtcafe.com/interviews/2026-10-15-taipei-mayoral-campaign-shen-boyang/) | `2026-10-15-taipei-mayoral-campaign-shen-boyang` | 5 |
 | 2026-10-15 | [他選了一首曾經的禁歌](https://puma-talk.gtcafe.com/interviews/2026-10-15-shen-boyang-taipei-memory/) | `2026-10-15-shen-boyang-taipei-memory` | 4 |
 | 2026-10-14 | [2026.10.14【趙少康時間】專訪 台北市長候選人 沈伯洋](https://puma-talk.gtcafe.com/interviews/2026-10-14-shen-boyang-taipei-mayoral-campaign/) | `2026-10-14-shen-boyang-taipei-mayoral-campaign` | 5 |
@@ -53,6 +56,7 @@
 | 2026-10-12 | [台北大洋流船長鏡來講！專訪台北市長候選人沈伯洋！神秘「當事人」將Call in鏡來澄清！沈蔣辯論會再卡關？到底誰在「卡」」？蔣萬安又甩鍋給沈伯洋？#有話鏡來講 20261012](https://puma-talk.gtcafe.com/interviews/2026-10-12-shen-boyang-taipei-mayoral-debate/) | `2026-10-12-shen-boyang-taipei-mayoral-debate` | 5 |
 | 2026-10-12 | [EP148 那個被國民黨訓練出來的男人｜沈伯洋](https://puma-talk.gtcafe.com/interviews/2026-10-12-shen-boyang-taipei-mayoral-campaign/) | `2026-10-12-shen-boyang-taipei-mayoral-campaign` | 5 |
 | 2026-10-12 | [2026-10-12【嗆新聞】黃暐瀚撞新聞專訪沈伯洋「四場辯論 交叉詰問」](https://puma-talk.gtcafe.com/interviews/2026-10-12-shen-boyang-taipei-mayoral-campaign-4d6291e6/) | `2026-10-12-shen-boyang-taipei-mayoral-campaign-4d6291e6` | 5 |
+| 2026-10-11 | [台北大洋流中山大同場：車掃與市政開講（官方直播）](https://puma-talk.gtcafe.com/interviews/2026-10-11-taipei-ocean-current-policy/) | `2026-10-11-taipei-ocean-current-policy` | 5 |
 | 2026-10-11 | [蔣萬安、沈伯洋選戰升溫！免費營養午餐該加價？沈伯洋專訪談台北市政 ft.台北市長參選人、立法委員沈伯洋｜遠見On Air](https://puma-talk.gtcafe.com/interviews/2026-10-11-shen-boyang-taipei-municipal-policy/) | `2026-10-11-shen-boyang-taipei-municipal-policy` | 4 |
 | 2026-10-11 | [小麻糬是沈伯洋的動力來源! 揭女兒「撩爸語錄」:我最喜歡的禮物是你 沈伯洋談收養過程難處 用相處和陪伴建立愛｜【2026選戰風向球】｜TVBS新聞網 @tvbsnews24live](https://puma-talk.gtcafe.com/interviews/2026-10-11-shen-boyang-adoption-urban-planning/) | `2026-10-11-shen-boyang-adoption-urban-planning` | 5 |
 | 2026-10-11 | [數字台灣#HD636　洋流破萬安防線 沈伯洋有備而來　 謝金河 沈伯洋](https://puma-talk.gtcafe.com/interviews/2026-10-11-taipei-ai-governance-urban-renewal/) | `2026-10-11-taipei-ai-governance-urban-renewal` | 5 |
@@ -151,4 +155,8 @@
 - `64ckQX3l4Ao`：多人綜藝節目完整版，包含沈伯洋、蘇巧慧、主持人、教練及其他來賓發言與示範，非沈伯洋單人政策專訪。節目日期與 YouTube 發布日期均為 2026-11-05。
 - `Fc7mNhTRS5o`：沈伯洋官方頻道發布的 6 分 34 秒片段，並非完整 Podcast；片頭說明問題來自辦公室同仁，其中一題是他自己的問題。
 - `9zRsNOYZ7U4`：多人綜藝節目完整版；節目日期為 2026-11-03，台灣時間 2026-11-04 凌晨上線。
+- `RzhfsRxusG4`：沈伯洋官方台北大洋流大安文山場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。活動於 2026-11-01 直播，回放於台灣時間 2026-11-02T02:15:02+08:00 發布，兩者分開記錄。
+- `73iJRVHx780`：沈伯洋官方台北大洋流中正萬華場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。
+- `8c5X6zeMOHI`：沈伯洋官方台北大洋流松山信義場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。
+- `sraSoHalAMk`：沈伯洋官方台北大洋流中山大同場完整直播，包含車隊掃街、主持與多位來賓發言、市政開講及現場問答，非單人專訪。車掃的擴音、台語與背景音樂混雜，辨識不可靠處保留時間並註記；確認的音樂／演出範圍以省略標記保留。摘要聚焦可辨識談話，未逐句分離說話者，其他來賓評論、活動口號與玩笑不全數歸屬沈伯洋；政策構想不代表已實施。
 - `4jrh2JsC0TA`：現有英文逐字稿以蔡英文柏林演講為主，標題提及的沈伯洋評論待對照原片確認。
