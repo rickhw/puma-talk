@@ -1,5 +1,5 @@
 import { categories, statusLabels, escapeHTML as esc, formatTime, filterInterviews, parseSubtitles, validateArchive, interviewPath, interviewSharePath, interviewShareText, articleSummaryHTML } from './core.js';
-import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML, rankingHTML, photoHTML, homeHeroHTML} from './insights.js';
+import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML, commonPhraseCloudHTML, rankingHTML, photoHTML, homeHeroHTML} from './insights.js';
 
 const icons = {
   arrow: '<path d="M5 12h14m-5-5 5 5-5 5"/>',
@@ -91,7 +91,7 @@ function card(item, index) {
 }
 function home() {
   const params = new URLSearchParams(location.search);
-  filters = Object.fromEntries(['q', 'category', 'tag', 'status', 'sort'].map(k => [k, params.get(k) || '']));
+  filters = Object.fromEntries(['q', 'category', 'tag', 'phrase', 'status', 'sort'].map(k => [k, params.get(k) || '']));
   filters.saved = params.get('saved') === '1';
   filters.sort = ['views','comments','newest','oldest'].includes(filters.sort) ? filters.sort : 'newest';
   rankingSort = ['views','comments','newest','oldest'].includes(params.get('ranking')) ? params.get('ranking') : 'views';
@@ -121,7 +121,7 @@ function updateResults(changeURL = true) {
   document.querySelectorAll('[data-category]').forEach(button => { const active = button.dataset.category === filters.category; button.classList.toggle('active', active); button.setAttribute('aria-pressed', active); });
   const chips = [];
   if (filters.saved) chips.push('<button class="filter-chip" data-remove-filter="saved">我的收藏 ×</button>');
-  for (const key of ['category', 'tag', 'status']) if (filters[key]) chips.push(`<button class="filter-chip" data-remove-filter="${key}">${esc(key === 'status' ? { available: '有逐字稿', ai: 'AI 校對', reviewed: '人工校對', pending: '整理中' }[filters[key]] || filters[key] : filters[key])} ×</button>`);
+  for (const key of ['category', 'tag', 'phrase', 'status']) if (filters[key]) chips.push(`<button class="filter-chip" data-remove-filter="${key}">${esc(key === 'phrase' ? '常用語：'+filters[key] : key === 'status' ? { available: '有逐字稿', ai: 'AI 校對', reviewed: '人工校對', pending: '整理中' }[filters[key]] || filters[key] : filters[key])} ×</button>`);
   if (chips.length || filters.q) chips.push('<button class="clear-link" data-clear>清除篩選</button>');
   document.querySelector('#active-filters').innerHTML = chips.join('');
   updateSaved();
@@ -202,7 +202,7 @@ function topics() {
   activeItem = null;
   document.title = '主題探索｜PUMA TALKS';
   const descriptions = ['一個人如何成為現在的自己？從求學、家庭與人生選擇開始認識。', '回到公共議題的提問現場，從不同節目觀察政策對話。', '從每天的生活裡，找到性別、家庭、運動與城市的連結。', '保留跨語言訪談的入口，從更廣的視角聆聽對話。', '一本書、一首歌、一個故事，都是另一種認識的方式。'];
-  main.innerHTML = `<section class="topics-page wrap"><div class="eyebrow">FIND YOUR WAY IN</div><h1>從你在意的事，<br>開始一場對話<span class="heading-dot">.</span></h1><p class="page-lead">不必照著時間順序。從一個主題，找到想聽的專訪。</p><div class="topic-grid">${categories.map((category, index) => `<a class="topic-card theme-${topicColors[index]}" href="./index.html?category=${encodeURIComponent(category)}#archive"><div class="topic-card-top"><span>${items.filter(i => i.category === category).length} 支訪談影片</span>${icon('upRight')}</div><h2>${category}</h2><p>${descriptions[index]}</p><div class="topic-tags">${[...new Set(items.filter(i => i.category === category).flatMap(i => i.tags))].slice(0,3).map(t => `<span># ${esc(t)}</span>`).join('')}</div></a>`).join('')}</div><div class="tag-cloud-section" id="keyword-cloud"><div class="eyebrow">FOLLOW YOUR CURIOSITY</div><h2>也可以，從一個關鍵字開始。</h2><p>每篇挑選 5–10 個主題關鍵字。字越大，涵蓋的專訪越多。</p>${keywordCloudHTML(items,Infinity)}</div></section>`;
+  main.innerHTML = `<section class="topics-page wrap"><div class="eyebrow">FIND YOUR WAY IN</div><h1>從你在意的事，<br>開始一場對話<span class="heading-dot">.</span></h1><p class="page-lead">不必照著時間順序。從一個主題，找到想聽的專訪。</p>${commonPhraseCloudHTML(archive.commonPhrases)}<div class="topic-grid">${categories.map((category, index) => `<a class="topic-card theme-${topicColors[index]}" href="./index.html?category=${encodeURIComponent(category)}#archive"><div class="topic-card-top"><span>${items.filter(i => i.category === category).length} 支訪談影片</span>${icon('upRight')}</div><h2>${category}</h2><p>${descriptions[index]}</p><div class="topic-tags">${[...new Set(items.filter(i => i.category === category).flatMap(i => i.tags))].slice(0,3).map(t => `<span># ${esc(t)}</span>`).join('')}</div></a>`).join('')}</div><div class="tag-cloud-section" id="keyword-cloud"><div class="eyebrow">FOLLOW YOUR CURIOSITY</div><h2>也可以，從一個關鍵字開始。</h2><p>每篇挑選 5–10 個主題關鍵字。字越大，涵蓋的專訪越多。</p>${keywordCloudHTML(items,Infinity)}</div></section>`;
 }
 function about() {
   activeItem = null;
@@ -255,7 +255,7 @@ document.addEventListener('click', async event => {
   } else if (button?.hasAttribute('data-category')) { filters.category = button.dataset.category; updateResults(); }
   else if (button?.hasAttribute('data-tag')) { location.href = new URL(`./index.html?tag=${encodeURIComponent(button.dataset.tag)}#archive`, document.baseURI).href; }
   else if (button?.hasAttribute('data-clear')) {
-    filters = { q:'', category:'', tag:'', status:'', sort:'newest', saved:false };
+    filters = { q:'', category:'', tag:'', phrase:'', status:'', sort:'newest', saved:false };
     document.querySelector('#archive-search').value = ''; document.querySelector('#sort-filter').value = 'newest';
     document.querySelector('#archive-title').innerHTML = '每場對話，都有新的發現<span class="heading-dot">.</span>'; updateResults();
   } else if (button?.hasAttribute('data-remove-filter')) { filters[button.dataset.removeFilter] = ''; if (button.dataset.removeFilter === 'saved') document.querySelector('#archive-title').innerHTML = '每場對話，都有新的發現<span class="heading-dot">.</span>'; updateResults(); }
@@ -339,7 +339,7 @@ try {
   }
   saved = saved.filter(id => items.some(item => item.id === id));
   route();
-  if (['#archive','#keyword-cloud'].includes(location.hash)) requestAnimationFrame(() => document.querySelector(location.hash)?.scrollIntoView());
+  if (['#archive','#keyword-cloud','#common-phrases'].includes(location.hash)) requestAnimationFrame(() => document.querySelector(location.hash)?.scrollIntoView());
 } catch (error) {
   if (!main.hasAttribute('data-static-article')) main.innerHTML = `<section class="wrap empty-state"><h1>專訪資料暫時無法讀取。</h1><p>請重新整理頁面。若從檔案直接開啟，請改用本機預覽伺服器。</p><a class="button button-dark" href="./index.html">重新載入</a></section>`;
   console.error(error);

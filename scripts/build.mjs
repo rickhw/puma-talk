@@ -1,4 +1,5 @@
 import {readCollection, readIndex} from './data-store.mjs';
+import {buildCommonPhrases} from './common-phrases.mjs';
 import { readFile, mkdir, rm, cp, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -10,6 +11,8 @@ export const root = fileURLToPath(new URL('../', import.meta.url));
 export async function build() {
   const directory=path.join(root,'data');
   const archive = validateArchive(await readCollection(directory,'interviews.json'));
+  const phraseConfig=JSON.parse(await readFile(path.join(directory,'common-phrases.json'),'utf8'));
+  const commonPhrases=buildCommonPhrases(archive.interviews,phraseConfig);
   const articles = await readCollection(directory,'articles.json');
   let data = mergeArticles(archive, articles);
   for (const item of data.interviews) if (item.article) {
@@ -34,6 +37,8 @@ export async function build() {
     }
   }
   data=mergeEnhancements(data,editorial,statistics);
+  data.commonPhrases=commonPhrases.summary;
+  for(const item of data.interviews)item.commonPhrases=commonPhrases.videoTerms.get(item.id)||[];
   const index=await readIndex(directory);
   const slugs=new Map(index.interviews.map(entry=>[entry.id,entry.slug]));
   for(const item of data.interviews) {

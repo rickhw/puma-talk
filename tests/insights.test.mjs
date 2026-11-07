@@ -58,6 +58,8 @@ test('keyword weights count videos rather than repeated tags and links are escap
 test('actual homepage shows entry statistics, keyword links and AI copy; about has no transcript steps',async()=>{
   const {archive,record,statistics}=fixture();
   const merged=mergeEnhancements(archive,{version:1,records:[record]},statistics);
+  merged.commonPhrases={videos:1,phrases:[{term:'我覺得',count:2,videos:1}]};
+  merged.interviews[0].commonPhrases=['我覺得'];
   const core=(await readFile(new URL('../assets/core.js',import.meta.url),'utf8')).replace(/^export /gm,'');
   const insights=(await readFile(new URL('../assets/insights.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'').replace(/^export /gm,'');
   const app=(await readFile(new URL('../assets/app.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'');
@@ -109,6 +111,14 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   const restored=await render('?sort=oldest&ranking=comments');
   assert.equal(restored.get('#sort-filter').value,'oldest');
   assert.match(restored.get('#ranking-panel').innerHTML,/data-ranking="comments" aria-current="true"/);
+  const phraseResults=await render('?phrase=我覺得&ranking=comments&sort=oldest');
+  assert.match(phraseResults.get('#active-filters').innerHTML,/常用語：我覺得/);
+  assert.ok(phraseResults.get('#interview-grid').innerHTML.includes('interview-card'));
+  await phraseResults.listeners.get('change')({target:{id:'sort-filter',value:'newest'}});
+  assert.ok(new URL(phraseResults.lastURL,'https://example.test/').searchParams.get('phrase')==='我覺得');
+  const topicHTML=(await render('?view=topics')).get('#main').innerHTML;
+  assert.ok(topicHTML.indexOf('id="common-phrases"')<topicHTML.indexOf('class="topic-grid"'));
+  assert.ok(topicHTML.includes('?phrase=')&&topicHTML.includes('id="keyword-cloud"'));
   await home.listeners.get('click')({target:{closest(selector){return selector==='button'?{dataset:{clear:''},hasAttribute(name){return name==='data-clear';}}:null;}},preventDefault(){}});
   assert.equal(home.get('#sort-filter').value,'newest');
   assert.ok(home.lastURL.includes('sort=newest'));

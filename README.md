@@ -279,6 +279,22 @@ console.log(JSON.stringify({
 JS
 ```
 
+### 從原始逐字稿分析常見詞彙
+
+使用已有的原始中文字幕做詞串計數，不載入模型或連線。需安裝資料工具環境中的 OpenCC：
+
+```sh
+.venv/bin/python scripts/analyze_vocabulary.py
+```
+
+產生 `docs/analysis/vocabulary-YYYY-MM-DD.md` 與同名 JSON，日期採台灣時間。報告包含口語／議題詞表的次數、影片涵蓋數、每萬中文字頻率、來源 hash 與原片時間連結；`--output` 可指定輸出檔名基底，`--db` 可指定資料索引。
+
+統計不使用摘要、顯示稿或英文翻譯。既有編輯關鍵字只作另一份候選詞表，次數仍由原稿計算。**原稿沒有說話者標記，因此結果是整段對談詞頻，不能直接稱為 Puma 個人的口頭禪。** 詞表、字形合併、字幕斷行接合、排除記錄與重複片段限制均寫在報告中。首份分析見 [2026-11-07 詞彙報告](docs/analysis/vocabulary-2026-11-07.md)。
+
+首頁上方導覽的「主題探索」頁提供「對談裡的常用語」tag cloud。字體大小與數字依原稿詞串出現次數計算；點選後以 `phrase` URL 參數篩選原稿含該詞的影片，可與搜尋、分類、主題標籤、收藏及排序一起使用。常用語不是每篇的主題標籤，沒有加入單篇 `editorial.json`。
+
+詞表、排除清單與字形對照位於 `data/common-phrases.json`；`npm run build` 使用 Node.js 從原始逐字稿計算，沒有新增模型或 Python 套件需求。新增詞彙時，請補足所需字形對照，並與 Python 分析結果交叉核對。原有主題 tag cloud 仍以含該標籤的影片數作為權重。
+
 ### 排程更新
 
 既有 GitHub Actions 每天 **19:10 UTC／台灣 03:10** 執行 `statistics.yml`，更新數字、提交快照、測試、建置並部署。不需讓個人電腦保持開機；GitHub 排程可能延遲，結果以 Actions 紀錄為準。

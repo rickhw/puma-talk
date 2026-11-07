@@ -82,6 +82,7 @@ export function filterInterviews(items, filters = {}, saved = []) {
   return items.filter(item => {
     if (filters.category && item.category !== filters.category) return false;
     if (filters.tag && !item.tags.includes(filters.tag)) return false;
+    if (filters.phrase && !item.commonPhrases?.includes(filters.phrase)) return false;
     if (filters.saved && !saved.includes(item.id)) return false;
     if (filters.status === "available" && !item.transcript?.length) return false;
     if (filters.status === "ai" && !item.aiReview) return false;

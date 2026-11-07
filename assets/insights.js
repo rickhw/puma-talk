@@ -17,6 +17,15 @@ export function keywordCloudHTML(items,limit=50) {
     return `<a href="./index.html?tag=${encodeURIComponent(tag)}#archive" style="--keyword-size:${size}px" aria-label="${escapeHTML(tag)}，${count} 支影片"><span>${escapeHTML(tag)}</span><small>${count}</small></a>`;
   }).join('')}</div>${all.length>limit?`<p class="keyword-more"><a class="text-link" href="./index.html?view=topics#keyword-cloud">查看全部 ${all.length} 個關鍵字 ↗</a></p>`:''}`;
 }
+export function commonPhraseCloudHTML(vocabulary) {
+  const words=vocabulary?.phrases||[];
+  const max=Math.max(1,...words.map(word=>word.count));
+  const cloud=words.length?`<div class="keyword-cloud phrase-cloud" aria-label="依原始逐字稿出現次數排列的常用語">${words.map(({term,count,videos})=>{
+    const size=Math.round(14+13*Math.log2(count+1)/Math.log2(max+1));
+    return `<a href="./index.html?phrase=${encodeURIComponent(term)}#archive" style="--keyword-size:${size}px" aria-label="${escapeHTML(term)}，出現 ${formatCount(count)} 次，涵蓋 ${videos} 支影片" title="${escapeHTML(term)}：${formatCount(count)} 次／${videos} 支影片"><span>${escapeHTML(term)}</span><small>${formatCount(count)}</small></a>`;
+  }).join('')}</div>`:'<p class="phrase-cloud-empty">常用語統計整理中。</p>';
+  return `<section class="common-phrases-section" id="common-phrases" aria-labelledby="common-phrases-heading"><div class="eyebrow">WORDS IN CONVERSATION</div><h2 id="common-phrases-heading">對談裡的常用語</h2><p>字越大，出現次數越多；數字為詞串出現次數。點選常用語，尋找原稿含有這句話的專訪。</p>${cloud}<p class="common-phrases-note">統計自 ${vocabulary?.videos||0} 支中文影片的原始逐字稿，包含主持人與來賓發言，並非 Puma 個人詞頻。已排除英文／混合語言、音樂作品與部分多人節目。</p></section>`;
+}
 export function videoStatsHTML(item,compact=false) {
   const stats=item.youtubeStats||{};
   return `<div class="video-statistics ${compact?'compact':''}" aria-label="YouTube 影片統計"><span>YouTube 觀看 <strong>${formatCount(stats.views)}</strong></span><span>按讚 <strong>${formatCount(stats.likes)}</strong></span><span>留言 <strong>${formatCount(stats.comments)}</strong></span>${compact?'':`<small>統計截至 ${escapeHTML(formatUpdate(stats.fetchedAt))}${stats.status==='stale'?' · 沿用上次取得的數值':''}</small>`}</div>`;
