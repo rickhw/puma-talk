@@ -1,0 +1,98 @@
+{
+  "id": "BPw_pWr1QL0",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "學界後援會成立大會｜HEART政見論壇",
+  "channel": "沈伯洋Puma",
+  "date": "2026-11-08",
+  "sourceUrl": "https://www.youtube.com/watch?v=BPw_pWr1QL0",
+  "metadataStatus": "imported",
+  "channelId": "UC49EKUpNvS_fzdk5SKvipQg",
+  "title": "學界後援會／HEART 政見論壇（官方直播）",
+  "referenceUrl": "https://www.youtube.com/watch?v=BPw_pWr1QL0",
+  "description": "沈伯洋官方學界後援會成立大會暨HEART政見論壇，包含主持、周婉窈致詞、林益仁、陳縕儂、周月清、彭保羅、李梅君等講者與沈伯洋回應。學者評述、提問及政策構想分開理解，不能全數歸屬沈伯洋或改寫成已實施成果。片頭待機畫面的政策介紹音訊與後續現場論壇分開看待；入場歌曲保留省略時間標記，致詞辨識不可靠處保留時間而不猜譯。",
+  "category": "政治與公共事務",
+  "duration": 5343,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-09T01:55:12.778554+00:00",
+    "inputSha256": "54eddff3ef1f9979ebe0ef817a5760b5c7ee0f59de736abd27872c30cad16f79",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "rawEngineOutputSha256": "a42651a5162cf3b5a77e07b638aa6e52c618f50e6ef5f6a46e55810cb2e3911d",
+    "omittedRanges": [
+      {
+        "start": 618.36,
+        "end": 652.96,
+        "kind": "music",
+        "reason": "主持歡迎後的入場歌曲"
+      }
+    ],
+    "uncertainRanges": [
+      {
+        "start": 974.06,
+        "end": 1290.72,
+        "reason": "致詞段姓名、句子與數字大幅錯亂，現有辨識無法可靠還原，不猜譯原話。"
+      },
+      {
+        "start": 1736.76,
+        "end": 1739.6,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 1740.74,
+        "end": 1743.6,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 1745.1,
+        "end": 1748.1,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 1749.68,
+        "end": 1752.6,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 1754.12,
+        "end": 1756.92,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 1758.54,
+        "end": 1761.14,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 1762.74,
+        "end": 1765.58,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      }
+    ],
+    "processingNotes": [
+      "依原片時間軸、完整ASR與活動前後語境整理音樂、候場及不可靠辨識；原音及原引擎輸出留本機，不宣稱全篇人工聆聽。"
+    ]
+  },
+  "publishedAt": "2026-11-08T14:13:44+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC49EKUpNvS_fzdk5SKvipQg",
+  "contentType": "public-event",
+  "sourceScopeNote": "沈伯洋官方學界後援會成立大會暨HEART政見論壇，包含主持、周婉窈致詞、林益仁、陳縕儂、周月清、彭保羅、李梅君等講者與沈伯洋回應。學者評述、提問及政策構想分開理解，不能全數歸屬沈伯洋或改寫成已實施成果。片頭待機畫面的政策介紹音訊與後續現場論壇分開看待；入場歌曲保留省略時間標記，致詞辨識不可靠處保留時間而不猜譯。",
+  "originalDescription": "",
+  "youtubeMetadata": {
+    "upload_date": "20261108",
+    "timestamp": 1794118424,
+    "release_timestamp": 1794112670
+  },
+  "broadcastAt": "2026-11-08T12:37:50+08:00",
+  "broadcastDate": "2026-11-08"
+}

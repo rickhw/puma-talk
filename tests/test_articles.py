@@ -27,10 +27,11 @@ class ArticleTests(unittest.TestCase):
         self.assertNotEqual(transcript_fingerprint(cues),transcript_fingerprint(changed))
 
     def test_music_markers_are_excluded_and_short_credits_require_explicit_mode(self):
-        cues=[dict(start=0,end=10,text='實際對談內容。'),
-              dict(start=10,end=20,text='［音樂演出或活動收尾，請在原片觀看］'),
-              dict(start=20,end=30,text='演出之後的實際發言。')]
-        self.assertEqual([b['start'] for b in transcript_blocks(cues)],[0,20])
+        cues=[dict(start=0,end=10,text='［候場、現場準備與背景閒談省略，請對照原片］'),
+              dict(start=10,end=20,text='實際對談內容。'),
+              dict(start=20,end=30,text='［音樂演出或活動收尾，請在原片觀看］'),
+              dict(start=30,end=40,text='演出之後的實際發言。')]
+        self.assertEqual([b['start'] for b in transcript_blocks(cues)],[10,30])
         value=self.response()
         for point in value['highlights']:
             point.update(sourceBlock=0,evidence='詞曲：翁宇君')

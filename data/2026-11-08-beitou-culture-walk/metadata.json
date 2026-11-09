@@ -1,0 +1,160 @@
+{
+  "id": "k0fSrm08AX4",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "直播／沈伯洋北投走讀　探訪在地文化歷史｜20261108",
+  "channel": "鏡新聞",
+  "date": "2026-11-08",
+  "sourceUrl": "https://www.youtube.com/watch?v=k0fSrm08AX4",
+  "metadataStatus": "imported",
+  "channelId": "UC4LjkybVKXCDlneVXlKAbmw",
+  "title": "北投文化走讀與現場交流（鏡新聞直播）",
+  "referenceUrl": "https://www.youtube.com/watch?v=k0fSrm08AX4",
+  "description": "鏡新聞11月8日北投文化走讀直播，包含媒體聯訪、吳思瑤與李遠等參與者的發言、在地導覽及現場交流，非單人專訪。片頭約52分鐘為候場、現場準備與背景閒談，以省略標記保留原片時間；後續保留聯訪與走讀內容，辨識不清處註記。導覽者的歷史解說不全數歸屬沈伯洋，也不把提案、正在修復的空間或合作願景改寫為已完成成果。現場音樂演出另以省略標記保留。",
+  "category": "政治與公共事務",
+  "duration": 10254,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-09T01:58:20.173573+00:00",
+    "inputSha256": "009e40feec252a910e991c26be52daba6ea7503bf3fcbda80c833efb693c9b16",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。",
+      "依原片時間軸、完整ASR與活動前後語境整理音樂、候場及不可靠辨識；原音及原引擎輸出留本機，不宣稱全篇人工聆聽。"
+    ],
+    "rawEngineOutputSha256": "526635e6d940eafe292f0ec3bd054179fe0bc2846e3341734b2926069ec5e83b",
+    "omittedRanges": [
+      {
+        "start": 0,
+        "end": 3139.32,
+        "kind": "waiting",
+        "reason": "候場、現場準備與背景閒談；多處ASR為不相干字串。保留主要媒體聯訪開始後的原片時間。"
+      },
+      {
+        "start": 7175.8,
+        "end": 7352.22,
+        "kind": "music",
+        "reason": "演出者自我介紹後的月琴與歌唱演出，結束後主持致謝；不將歌詞或音譯列為原話。"
+      }
+    ],
+    "uncertainRanges": [
+      {
+        "start": 3139.32,
+        "end": 3152.2000000000003,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3721.12,
+        "end": 3723.12,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3723.12,
+        "end": 3725.12,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3725.96,
+        "end": 3727.96,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3728.44,
+        "end": 3730.44,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3730.7799999999997,
+        "end": 3732.96,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3733.48,
+        "end": 3735.48,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3736.04,
+        "end": 3738.04,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3739.04,
+        "end": 3741.04,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3742.1,
+        "end": 3744.1,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3745.64,
+        "end": 3747.38,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 3748.38,
+        "end": 3750.16,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 6543.9,
+        "end": 6551.219999999999,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 6951.8,
+        "end": 6964.8,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 6966.8,
+        "end": 6970.8,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 6971.8,
+        "end": 6975.8,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 6976.8,
+        "end": 6978.8,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 10215.5,
+        "end": 10219.58,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      },
+      {
+        "start": 10219.58,
+        "end": 10222.04,
+        "reason": "低信心、異常重複或不相干字串；指標不是辨識準確率。"
+      }
+    ]
+  },
+  "publishedAt": "2026-11-08T17:35:59+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC4LjkybVKXCDlneVXlKAbmw",
+  "contentType": "public-event",
+  "sourceScopeNote": "鏡新聞11月8日北投文化走讀直播，包含媒體聯訪、吳思瑤與李遠等參與者的發言、在地導覽及現場交流，非單人專訪。片頭約52分鐘為候場、現場準備與背景閒談，以省略標記保留原片時間；後續保留聯訪與走讀內容，辨識不清處註記。導覽者的歷史解說不全數歸屬沈伯洋，也不把提案、正在修復的空間或合作願景改寫為已完成成果。現場音樂演出另以省略標記保留。",
+  "originalDescription": "#沈伯洋 #北投走讀 #文化歷史\n\n（鏡新聞已上架86台，若無法收看，請洽詢當地系統台）\n--\n鏡電視推出個人廣告囉！\n讓你也能成為廣告主Show Yourself👉https://mnews.oen.tw/\n--\n《鏡好買》電商平台全新上線🔥\n鏡好買是鏡電視全新推出的官方選物平台，精選日常生活中真正好用、安心、有品質的商品，從美食、生活用品到居家好物，幫你把關品質好生活❤️\n現在加入就送購物優惠券👉 https://lihi.cc/keGMC\n--\n加入頻道會員支持鏡新聞🩷：\nhttps://www.youtube.com/channel/UC4LjkybVKXCDlneVXlKAbmw/join\n--\n鏡好買MirrorLife👉https://lihi.cc/keGM\n鏡新聞官方網站👉https://www.mnews.tw/\n鏡新聞Facebook👉https://www.facebook.com/mnewstw/\n鏡新聞Instagram👉https://www.instagram.com/mnewstw/\n鏡新聞X👉 https://twitter.com/mnews_tw\n鏡新聞Threads👉https://www.threads.net/@mnewstw\n鏡新聞Line帳號👉https://lin.ee/4XsO8xi\n鏡新聞APP iOS👉https://reurl.cc/kqyqML\n鏡新聞APP Android👉https://reurl.cc/Ay2y63\n鏡電視綜合台YouTube👉http://pse.is/59enw2\n鏡電視直播台YouTube👉https://pse.is/4w3gts\n有話鏡來講YouTube👉https://reurl.cc/A4DjQj\n少年新聞週記YouTube👉https://reurl.cc/K4DeN9",
+  "youtubeMetadata": {
+    "upload_date": "20261108",
+    "timestamp": 1794130559,
+    "release_timestamp": 1794117702
+  },
+  "broadcastAt": "2026-11-08T14:01:42+08:00",
+  "broadcastDate": "2026-11-08"
+}

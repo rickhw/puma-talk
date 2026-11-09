@@ -39,7 +39,7 @@ def transcript_blocks(cues, seconds=60):
     blocks=[]
     split_next=False
     for cue in cues:
-        if cue['text'].startswith(('［本段辨識','［靜音區段','［片頭靜音','［片尾辨識','［音樂演出')):
+        if cue['text'].startswith(('［本段辨識','［靜音區段','［片頭靜音','［片尾辨識','［音樂演出','［候場')):
             split_next=True
             continue
         if split_next or not blocks or cue['start']-blocks[-1]['start']>=seconds:
