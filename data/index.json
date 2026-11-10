@@ -3,6 +3,10 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "WZ4FMGW9OmA",
+      "slug": "2026-11-09-shen-bo-yang-tarot-faith"
+    },
+    {
       "id": "k0fSrm08AX4",
       "slug": "2026-11-08-beitou-culture-walk"
     },
@@ -533,39 +537,37 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-09"
+    "updatedAt": "2026-11-10"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-09T02:04:53.913414+00:00"
+    "updatedAt": "2026-11-10T00:46:31.686196+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-09T02:09:13.649503+00:00"
+    "updatedAt": "2026-11-10T00:48:27.324447+00:00"
   },
   "statistics": {
     "version": 1,
-    "attemptedAt": "2026-11-09T01:08:26.697787+00:00",
-    "completedAt": "2026-11-09T02:00:44.306740+00:00",
+    "attemptedAt": "2026-11-10T00:27:04.145056+00:00",
+    "completedAt": "2026-11-10T00:45:18.368962+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 55959587,
-      "likes": 1399511,
-      "comments": 147266,
-      "commentsAvailable": 132,
-      "videos": 132,
-      "viewsAvailable": 132,
-      "likesAvailable": 132,
-      "fresh": 132
+      "views": 56054592,
+      "likes": 1403886,
+      "comments": 147783,
+      "commentsAvailable": 133,
+      "videos": 133,
+      "viewsAvailable": 133,
+      "likesAvailable": 133,
+      "fresh": 133
     },
     "updateScope": {
       "videoIds": [
-        "gXIx64FcRCI",
-        "BPw_pWr1QL0",
-        "k0fSrm08AX4"
+        "WZ4FMGW9OmA"
       ],
       "method": "imported-youtube-metadata",
-      "note": "本次僅新增三支影片數字；其餘129筆保留已整合的遠端每日統計及各片 fetchedAt。"
+      "note": "本次只新增指定影片數字，既有132筆保留各片取得時間與成功值。"
     }
   },
   "covers": {

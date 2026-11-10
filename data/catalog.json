@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-09T02:00:44.299087+00:00",
+  "updatedAt": "2026-11-10T00:45:18.353163+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -8541,6 +8541,27 @@
       "sourceScopeNote": "鏡新聞11月8日北投文化走讀直播，包含媒體聯訪、吳思瑤與李遠等參與者的發言、在地導覽及現場交流，非單人專訪。片頭約52分鐘為候場、現場準備與背景閒談，以省略標記保留原片時間；後續保留聯訪與走讀內容，辨識不清處註記。導覽者的歷史解說不全數歸屬沈伯洋，也不把提案、正在修復的空間或合作願景改寫為已完成成果。現場音樂演出另以省略標記保留。",
       "contentType": "public-event",
       "publishedAt": "2026-11-08T17:35:59+08:00",
+      "status": "imported"
+    },
+    {
+      "id": "WZ4FMGW9OmA",
+      "title": "【命運好好玩】沈伯洋來了！選前親抽「死神牌」吉凶難料？PK小孟老師預測台股還會噴？周映君2027「丁未年」國運大預言！20261109（沈伯洋、周映君、小孟、劉家仰）",
+      "displayTitle": "《命運好好玩》沈伯洋來了：信仰經驗與塔羅互動",
+      "channel": "命運好好玩 官方頻道",
+      "channelId": "UC4yuK2uKP3y5upFB6xgWz4Q",
+      "uploadDate": "20261109",
+      "duration": 2774,
+      "url": "https://www.youtube.com/watch?v=WZ4FMGW9OmA",
+      "sourceUrl": "https://www.youtube.com/watch?v=WZ4FMGW9OmA",
+      "referenceUrl": "https://www.youtube.com/watch?v=WZ4FMGW9OmA",
+      "decision": "include",
+      "reason": "使用者指定僅收錄11/9《命運好好玩》沈伯洋來賓完整版。",
+      "category": "社會與生活",
+      "spokenLanguage": "zh",
+      "metadataFile": ".cache/scan-20261109/metadata/WZ4FMGW9OmA.info.json",
+      "description": "《命運好好玩》官方頻道11月9日來賓完整版，含沈伯洋的信仰與塔羅學習、收藏經驗，以及主持人、小孟、周映君、劉家仰等人的抽牌與命理互動。使用原頻道正體中文字幕並保留時間碼；來賓預告、玩笑與各人解讀分開理解，不能全數歸屬沈伯洋。節目中的選情、國運、健康或股市解讀屬各講者的占卜說法，不改寫成已驗證事實、政策成果或專業建議。",
+      "publishedAt": "2026-11-09T22:00:10+08:00",
+      "sourceScopeNote": "《命運好好玩》官方頻道11月9日來賓完整版，含沈伯洋的信仰與塔羅學習、收藏經驗，以及主持人、小孟、周映君、劉家仰等人的抽牌與命理互動。使用原頻道正體中文字幕並保留時間碼；來賓預告、玩笑與各人解讀分開理解，不能全數歸屬沈伯洋。節目中的選情、國運、健康或股市解讀屬各講者的占卜說法，不改寫成已驗證事實、政策成果或專業建議。",
       "status": "imported"
     }
   ]
