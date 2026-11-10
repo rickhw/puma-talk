@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-10T00:45:18.353163+00:00",
+  "updatedAt": "2026-11-10T09:20:40.094342+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,23 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "GYeE73a9diU",
+      "title": "【#真相對話錄 精華】沈伯洋民調狂輸蔣萬安 賴清德為何堅持徵召他？",
+      "displayTitle": "《真相對話錄》沈伯洋參選台北市長：徵召、民調與選戰起步（精華）",
+      "channel": "真相對話錄",
+      "uploadDate": "20261110",
+      "duration": 875,
+      "sourceUrl": "https://www.youtube.com/watch?v=GYeE73a9diU",
+      "url": "https://www.youtube.com/watch?v=GYeE73a9diU",
+      "referenceUrl": "https://www.youtube.com/watch?v=GYeE73a9diU",
+      "decision": "include",
+      "reason": "使用者指定收錄的真相對話錄多人選戰專題精華；原頻道無可用字幕，使用中文原音ASR，不當成沈伯洋個人完整專訪。",
+      "spokenLanguage": "zh",
+      "category": "政治與公共事務",
+      "metadataFile": ".cache/analysis/GYeE73a9diU.info.json",
+      "status": "metadata-fetched"
+    },
     {
       "id": "fbXCUgPZMdY",
       "title": "《台北順起來 R&B 版》 by 史茵茵",

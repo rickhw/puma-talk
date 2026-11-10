@@ -3,6 +3,10 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "GYeE73a9diU",
+      "slug": "2026-11-10-shen-bo-yang-taipei-mayor-election"
+    },
+    {
       "id": "WZ4FMGW9OmA",
       "slug": "2026-11-09-shen-bo-yang-tarot-faith"
     },
@@ -541,11 +545,11 @@
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-10T00:46:31.686196+00:00"
+    "updatedAt": "2026-11-10T23:29:57.058951+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-10T00:48:27.324447+00:00"
+    "updatedAt": "2026-11-10T23:34:23.270185+00:00"
   },
   "statistics": {
     "version": 1,
@@ -553,14 +557,14 @@
     "completedAt": "2026-11-10T02:03:07.454901+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 56525235,
-      "likes": 1409874,
-      "comments": 148308,
-      "commentsAvailable": 133,
-      "videos": 133,
-      "viewsAvailable": 133,
-      "likesAvailable": 133,
-      "fresh": 133
+      "views": 56538090,
+      "likes": 1410210,
+      "comments": 148334,
+      "commentsAvailable": 134,
+      "videos": 134,
+      "viewsAvailable": 134,
+      "likesAvailable": 134,
+      "fresh": 134
     }
   },
   "covers": {
