@@ -245,6 +245,17 @@ python scripts/daily_update.py
 
 排行榜、標籤雲與大分類計數由建置／頁面載入時的收錄資料計算，統計更新不會重新選取關鍵字或更動分類。網站數字只代表已收錄影片的 YouTube 累計值，與 GA 網站流量不同。
 
+首頁「專訪排行」保留前十名，按「查看完整排名」可進入目前榜單的全部名次；完整頁內也能切換四個榜單：
+
+| 完整排行榜 | 固定網址 |
+| --- | --- |
+| 觀看排行榜 | [/rankings/views/](https://puma-talk.gtcafe.com/rankings/views/) |
+| 觀看排行榜（不含官方） | [/rankings/views-nonofficial/](https://puma-talk.gtcafe.com/rankings/views-nonofficial/) |
+| 時間序列 | [/rankings/newest/](https://puma-talk.gtcafe.com/rankings/newest/) |
+| 留言排行榜 | [/rankings/comments/](https://puma-talk.gtcafe.com/rankings/comments/) |
+
+完整頁一次列出全部符合影片，與首頁預覽共用排序規則；不含官方只排除沈伯洋自己的頻道，缺漏數值排最後、真正的 0 保留。時間序列按發布日期最新優先，同日以 ID 穩定排序。每日統計建置時會一併更新四頁。
+
 ### 匯出統計報表 JSON（選用，不連線 YouTube）
 
 先建置，以下指令從網站實際使用的資料匯出單片數字、四組 Top 10、全部關鍵字與五類計數，存入忽略提交的快取：

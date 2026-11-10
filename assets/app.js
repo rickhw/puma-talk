@@ -1,5 +1,5 @@
 import { categories, statusLabels, escapeHTML as esc, formatTime, filterInterviews, parseSubtitles, validateArchive, interviewPath, interviewSharePath, interviewShareText, articleSummaryHTML } from './core.js';
-import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML, commonPhraseCloudHTML, rankingHTML, normalizeRanking, photoHTML, homeHeroHTML} from './insights.js';
+import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML, commonPhraseCloudHTML, rankingHTML, normalizeRanking, photoHTML, homeHeroHTML, fullRankingHTML, rankingOptions} from './insights.js';
 
 const icons = {
   arrow: '<path d="M5 12h14m-5-5 5 5-5 5"/>',
@@ -219,7 +219,12 @@ function about() {
 function route() {
   const params = new URLSearchParams(location.search);
   const articleId = document.querySelector('meta[name="interview-id"]')?.content;
-  if (articleId || params.get('v')) {
+  const fullRanking = document.querySelector('meta[name="ranking-mode"]')?.content;
+  if (fullRanking) {
+    activeItem=null;filters=null;
+    main.innerHTML=fullRankingHTML(items,fullRanking,archive.statisticsUpdatedAt);
+    document.title=rankingOptions.find(([mode])=>mode===fullRanking)[1]+'｜完整排名｜PUMA TALKS';
+  } else if (articleId || params.get('v')) {
     const item = items.find(i => i.id === (articleId || params.get('v')));
     if (item && !articleId) {
       const target = new URL(detailURL(item.id), document.baseURI);
@@ -231,7 +236,7 @@ function route() {
   } else if (params.get('view') === 'topics') topics();
   else if (params.get('view') === 'about') about();
   else home();
-  updateNavigation(params.get('view') || ((activeItem?.formatTags?.includes('車掃') || params.get('format') === '車掃') ? 'car-sweep' : 'archive'));
+  updateNavigation(fullRanking?'rankings':params.get('view') || ((activeItem?.formatTags?.includes('車掃') || params.get('format') === '車掃') ? 'car-sweep' : 'archive'));
   updateSaved();
 }
 function download(filename, content, type = 'text/plain;charset=utf-8') {
@@ -349,6 +354,6 @@ try {
   route();
   if (['#archive','#keyword-cloud','#common-phrases'].includes(location.hash)) requestAnimationFrame(() => document.querySelector(location.hash)?.scrollIntoView());
 } catch (error) {
-  if (!main.hasAttribute('data-static-article')) main.innerHTML = `<section class="wrap empty-state"><h1>專訪資料暫時無法讀取。</h1><p>請重新整理頁面。若從檔案直接開啟，請改用本機預覽伺服器。</p><a class="button button-dark" href="./index.html">重新載入</a></section>`;
+  if (!main.hasAttribute('data-static-article')&&!main.hasAttribute('data-static-ranking')) main.innerHTML = `<section class="wrap empty-state"><h1>專訪資料暫時無法讀取。</h1><p>請重新整理頁面。若從檔案直接開啟，請改用本機預覽伺服器。</p><a class="button button-dark" href="./index.html">重新載入</a></section>`;
   console.error(error);
 }

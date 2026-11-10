@@ -26,6 +26,14 @@
 
 完整閱讀器請透過 `npm run dev` 或 `npm run preview` 使用；直接以 `file:` 開啟文章時仍可閱讀靜態摘要，但瀏覽器可能阻擋共用逐字稿資料的讀取。
 
+## 完整排行榜網址
+
+首頁維持四種前十名預覽，每個預覽下方的「查看完整排名」連到目前榜單。建置同時產生 `/rankings/views/`、`/rankings/views-nonofficial/`、`/rankings/newest/`、`/rankings/comments/`，頁內以相同順序提供切換入口，每頁一次列出全部符合影片，並連到各篇固定文章。
+
+完整榜與預覽共用 `rankedInterviews`，完整榜使用全部筆數；不含官方先排除沈伯洋本人頻道，數值缺漏、真正的 0、同日與同數值的穩定排序規則一致。首頁的列表 `sort` 與預覽 `ranking` 仍獨立；既有 `comments-nonofficial` 連結歸一一般留言榜，不新增第五個榜單。
+
+四頁各自有標題、描述、canonical、OG 資訊、`ranking-mode`、建置版本及完整靜態名次。關閉 JavaScript 或共用資料暫時載入失敗時，仍能讀到建置時的完整名次並使用文章與榜單連結。每日統計及一般 Pages 建置沿用同一產生流程，不另存一份排名資料來源。
+
 ## 產生與更新摘要
 
 摘要工具需 Apple Silicon macOS 14 以上、相容 Metal 環境及已下載的 MLX 文字模型。先在所選 Python 虛擬環境安裝選用依賴；網站建置與一般測試不依賴這些套件：

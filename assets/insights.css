@@ -48,3 +48,35 @@
 .detail-actions .button{font-size:12px;white-space:nowrap}.article-cover-link{display:block}.article-cover-image{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:10px}
 .video-player{min-height:200px}.player-loading{display:grid;place-items:center;min-height:200px;height:100%;padding:20px;color:var(--paper);font-size:13px;text-align:center}
 @media(max-width:760px){.detail-actions{justify-content:flex-start;max-width:none;margin-top:20px}.detail-actions .button{min-height:44px;font-size:11px}.detail-actions .icon{width:15px;height:15px}}
+
+/* Complete rankings share the preview style, with full titles and one ordered column. */
+.ranking-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:16px}
+.ranking-footer .ranking-note{margin:0}.ranking-full-link{flex-shrink:0;min-height:44px;white-space:nowrap}
+.full-ranking-page{padding-top:36px;padding-bottom:64px}
+.full-ranking-heading{margin:34px 0 28px}.full-ranking-heading h1{font-size:clamp(27px,3.3vw,40px);letter-spacing:-.6px;margin:12px 0}
+.full-ranking-description{max-width:740px;font-size:14px;color:var(--muted);line-height:1.9}
+.full-ranking-summary{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:20px;font-size:12px;color:var(--muted)}
+.full-ranking-summary strong{font-size:15px;color:var(--purple-deep)}
+.full-ranking-page .ranking-tabs{margin-bottom:28px}
+.full-ranking-page .ranking-tabs a{display:inline-flex;align-items:center;min-height:44px}
+.ranking-columns{display:grid;grid-template-columns:60px minmax(0,1fr) 130px;gap:24px;padding:14px 18px;background:var(--lavender);border-radius:7px;font-size:11px;color:var(--purple-deep)}
+.ranking-columns span:last-child{text-align:right}
+.complete-ranking-list{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-flow:row}
+.complete-ranking-list li{grid-template-columns:60px minmax(0,1fr) 130px;gap:24px;padding:22px 18px;min-height:100px}
+.complete-ranking-list .ranking-position{font-size:23px;font-variant-numeric:tabular-nums}
+.complete-ranking-list li:nth-child(-n+3) .ranking-position{font-size:30px;font-weight:650;color:var(--purple-deep)}
+.complete-ranking-list strong{display:block;overflow:visible;font-size:15px;line-height:1.8;font-weight:600;overflow-wrap:anywhere}
+.complete-ranking-list small{font-size:11px;white-space:normal;overflow:visible;margin-top:5px;line-height:1.8}
+.complete-ranking-list .ranking-value{font-size:16px;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ranking-metric-label{display:none}.ranking-back-top{display:inline-flex;min-height:44px;align-items:center;margin-top:16px}
+@media(max-width:760px){
+  .ranking-footer{align-items:flex-start;flex-direction:column;gap:12px}.ranking-full-link{align-self:flex-end}
+  .full-ranking-page{padding-top:26px;padding-bottom:40px}.full-ranking-heading{margin-top:26px}.full-ranking-description{font-size:13px}
+  .full-ranking-page .ranking-tabs{margin-bottom:18px}.ranking-columns{display:none}
+  .complete-ranking-list li{grid-template-columns:28px minmax(0,1fr);gap:7px 14px;padding:20px 0}
+  .complete-ranking-list .ranking-position{grid-column:1;grid-row:1 / span 2;align-self:start;padding-top:2px;font-size:16px}
+  .complete-ranking-list li:nth-child(-n+3) .ranking-position{font-size:22px}
+  .complete-ranking-list a{grid-column:2;grid-row:1}.complete-ranking-list strong{font-size:14px}
+  .complete-ranking-list .ranking-value{grid-column:2;grid-row:2;text-align:left;font-size:14px;justify-self:start}
+  .complete-ranking-list .ranking-metric-label{display:inline;font:10px var(--body);color:var(--muted);margin-right:8px}
+}

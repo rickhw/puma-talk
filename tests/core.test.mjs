@@ -7,6 +7,7 @@ import {readCollection} from '../scripts/data-store.mjs';
 import {fileURLToPath} from 'node:url';
 import { build } from '../scripts/build.mjs';
 import { handleRequest } from '../scripts/serve.mjs';
+import {rankingOptions,rankingPath,rankedInterviews} from '../assets/insights.js';
 
 const archive = await readCollection(fileURLToPath(new URL('../data/',import.meta.url)),'interviews.json');
 test('archive records have consistent IDs, sources and transcript status', () => {
@@ -86,6 +87,24 @@ test('static output serves correctly without dependencies or a backend', async (
   const publicData=JSON.parse(String((await request('/data/interviews.json')).body));
   const config=JSON.parse(await readFile(new URL('../data/site.json',import.meta.url),'utf8'));
   assert.equal(new Set(publicData.interviews.map(item=>item.slug)).size,archive.interviews.length);
+  for(const [mode,label] of rankingOptions){
+    const pathname=rankingPath(mode).slice(1),response=await request(pathname);
+    assert.equal(response.status,200,pathname);
+    const page=String(response.body),expected=rankedInterviews(publicData.interviews,mode,Infinity);
+    assert.ok(page.includes('<base href="../../">'));
+    assert.ok(page.includes(`name="ranking-mode" content="${mode}"`));
+    assert.ok(page.includes(`href="${rankingPath(mode)}#main"`));
+    assert.ok(page.includes('data-static-ranking="true"'));
+    assert.ok(page.includes(`<h1 id="full-ranking-title">${label}</h1>`));
+    assert.ok(page.includes(`rel="canonical" href="${new URL(rankingPath(mode),config.siteUrl).href}"`));
+    assert.ok(page.includes(`property="og:url" content="${new URL(rankingPath(mode),config.siteUrl).href}"`));
+    assert.ok(page.includes('property="og:image"'));
+    assert.deepEqual([...page.matchAll(/data-ranking-video="([^"]+)"/g)].map(x=>x[1]),expected.map(x=>x.id));
+    assert.equal([...page.matchAll(/data-full-ranking=/g)].length,4);
+    assert.ok(!page.includes('id="archive-data"'),'rank pages share data and work as static HTML');
+    const redirect=await request(pathname.slice(0,-1));
+    assert.equal(redirect.status,301);assert.equal(redirect.headers.Location,pathname);
+  }
   for (const item of publicData.interviews) {
     const pathname=interviewPath(item).slice(1);
     const response=await request(pathname);
@@ -144,7 +163,7 @@ test('deployed HTML references content-addressed scripts, styles and article dat
     assert.deepEqual(content,await readFile(new URL('../dist/'+original.slice(2),import.meta.url)));
   }
   const merged=JSON.parse(await readFile(new URL('../dist/data/interviews.json',import.meta.url),'utf8'));
-  for(const relative of ['index.html',`interviews/${merged.interviews[0].slug}/index.html`]) {
+  for(const relative of ['index.html',`interviews/${merged.interviews[0].slug}/index.html`,...rankingOptions.map(([mode])=>`rankings/${mode}/index.html`)]) {
     const page=await readFile(new URL('../dist/'+relative,import.meta.url),'utf8');
     assert.ok(page.includes(`name="build-version" content="${manifest.buildId}"`));
     assert.ok(page.includes(`name="archive-data-url" content="${manifest.assets['./data/interviews.json']}"`));

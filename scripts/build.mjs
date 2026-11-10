@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { validateArchive, mergeArticles, interviewPath, articleSummaryHTML, escapeHTML, transcriptFingerprintText, metadataFingerprintText, interviewShareText } from '../assets/core.js';
-import { mergeEnhancements, collectionStatsHTML, videoStatsHTML, rankingHTML, homeHeroHTML } from '../assets/insights.js';
+import { mergeEnhancements, collectionStatsHTML, videoStatsHTML, rankingHTML, homeHeroHTML, fullRankingHTML, rankingOptions, rankingPath, rankingDescription } from '../assets/insights.js';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export async function build() {
@@ -117,6 +117,22 @@ export async function build() {
     .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1">${homeHeroHTML(data.interviews)}${collectionStatsHTML(data.interviews,data.statisticsUpdatedAt)}<div id="ranking-panel">${rankingHTML(data.interviews,'views',data.statisticsUpdatedAt)}</div><div class="loading-state">正在載入專訪…</div></main>`));
   const homeCanonical = config.siteUrl ? `<link rel="canonical" href="${escapeHTML(config.siteUrl)}">` : '';
   await writeFile(path.join(out, 'index.html'), html.replace('<meta charset="utf-8">', `<meta charset="utf-8">\n  ${homeCanonical}\n  ${socialHead(data.homeCover,'PUMA TALKS｜沈伯洋專訪資料庫','從一場對話，認識沈伯洋。專訪、摘要與正體中文逐字稿。',config.siteUrl,'website')}`));
+  for (const [mode,label] of rankingOptions) {
+    const title=label+'｜完整排名｜PUMA TALKS',description=rankingDescription(mode);
+    const pagePath=rankingPath(mode),canonical=config.siteUrl?new URL(pagePath,config.siteUrl).href:pagePath;
+    const metadata=`<base href="../../">\n  <meta name="ranking-mode" content="${mode}">\n  <link rel="canonical" href="${escapeHTML(canonical)}">\n  ${socialHead(data.homeCover,title,description,canonical,'website')}`;
+    let page=template.replace('<meta charset="utf-8">',`<meta charset="utf-8">\n  ${metadata}`)
+      .replace('href="#main"',`href="${pagePath}#main"`)
+      .replace(/<title>[^<]*<\/title>/,`<title>${escapeHTML(title)}</title>`)
+      .replace(/<meta name="description" content="[^"]*">/,`<meta name="description" content="${escapeHTML(description)}">`)
+      .replace(/<meta property="og:title" content="[^"]*">/,`<meta property="og:title" content="${escapeHTML(title)}">`)
+      .replace(/<meta property="og:description" content="[^"]*">/,`<meta property="og:description" content="${escapeHTML(description)}">`)
+      .replace('<script type="module" src="./assets/app.js"></script>','<script defer src="./assets/app.bundle.js"></script>')
+      .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1" data-static-ranking="true">${fullRankingHTML(data.interviews,mode,data.statisticsUpdatedAt)}</main>`);
+    const directory=path.join(out,'rankings',mode);
+    await mkdir(directory,{recursive:true});
+    await writeFile(path.join(directory,'index.html'),withAnalytics(page));
+  }
   for (const item of data.interviews) {
     const title = `${item.title}｜PUMA TALKS`;
     const description = item.article?.lead || item.description;

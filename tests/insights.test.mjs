@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
-import {mergeEnhancements,collectionStats,collectionStatsHTML,keywordCounts,keywordCloudHTML,videoStatsHTML,rankingHTML,rankedInterviews,isOfficialChannel,normalizeRanking} from '../assets/insights.js';
+import {mergeEnhancements,collectionStats,collectionStatsHTML,keywordCounts,keywordCloudHTML,videoStatsHTML,rankingHTML,rankedInterviews,isOfficialChannel,normalizeRanking,fullRankingHTML,rankingPath} from '../assets/insights.js';
 
 function fixture(){
   const item={id:'AbCdEfGh_12',title:'測試',date:'2026-11-04',channel:'測試頻道',category:'文化與閱讀',tags:['舊標籤'],sourceUrl:'https://www.youtube.com/watch?v=AbCdEfGh_12',duration:120,transcriptStatus:'auto',transcript:[{start:0,end:10,text:'这是原文。'}]};
@@ -79,7 +79,7 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   merged.interviews[0].slug='test-reading';
   merged.interviews[0].sourceDataUrl='https://github.com/example/archive/tree/main/data/test-reading/';
   merged.interviews[0].article={status:'draft',lead:'這是可轉貼的摘要。',highlights:[{title:'內容重點',text:'測試正文',start:0,end:10}],conclusion:'測試總結'};
-  async function render(search='',detail=false){
+  async function render(search='',detail=false,rankingMode=null,failData=false){
     const elements=new Map(),errors=[],listeners=new Map(),players=[],copies=[];
     const nav=['archive','car-sweep','topics','about'].map(value=>({dataset:{nav:value},attributes:{},setAttribute(k,v){this.attributes[k]=v;},removeAttribute(k){delete this.attributes[k];}}));
     const document={title:'',baseURI:'https://example.test/',querySelector(selector){
@@ -88,22 +88,32 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
       if(selector==='#status-filter')throw new Error('Removed transcript status control must not be accessed');
       if(selector==='#site-config')return {textContent:JSON.stringify({siteUrl:'https://example.test/'})};
       if(detail&&selector==='meta[name="interview-id"]')return {content:merged.interviews[0].id};
+      if(rankingMode&&selector==='meta[name="ranking-mode"]')return {content:rankingMode};
       if(selector==='.skip-link'||selector.startsWith('meta['))return null;
-      if(!elements.has(selector))elements.set(selector,{innerHTML:'',textContent:'',value:'',scrollIntoView(){elements.scrolled=true;},classList:{add(){},remove(){}},hasAttribute(){return false;}});
+      if(!elements.has(selector))elements.set(selector,{innerHTML:rankingMode&&selector==='#main'?'STATIC COMPLETE RANKING':'',textContent:'',value:'',scrollIntoView(){elements.scrolled=true;},classList:{add(){},remove(){}},hasAttribute(name){return Boolean(rankingMode&&name==='data-static-ranking');}});
       return elements.get(selector);
     },querySelectorAll(selector){return selector==='[data-nav]'?nav:[];},addEventListener(type,listener){listeners.set(type,listener);}};
     await vm.runInNewContext(`(async()=>{${core}\n${insights}\nconst esc=escapeHTML;\n${app}})()`,{
       document,window:{addEventListener(){},YT:{Player:function(id,options){this.seeks=[];this.plays=0;this.seekTo=(time,allow)=>this.seeks.push([time,allow]);this.playVideo=()=>this.plays++;this.ready=()=>options.events.onReady({target:this});players.push(this);}}},navigator:{clipboard:{async writeText(text){copies.push(text);}}},matchMedia(){return {matches:true};},setTimeout(){return 0;},clearTimeout(){},localStorage:{getItem(){return null;}},structuredClone,URL,URLSearchParams,
-      fetch:async url=>{assert.equal(url,'./data/interviews.fingerprint.json');return {ok:true,json:async()=>structuredClone(merged)};},
+      fetch:async url=>{assert.equal(url,'./data/interviews.fingerprint.json');return {ok:!failData,json:async()=>structuredClone(merged)};},
       history:{replaceState(_state,_title,url){elements.lastURL=url;}},
       location:new URL('https://example.test/'+search),console:{error(error){errors.push(error);}}
     });
-    assert.equal(errors.length,0,errors.map(String).join(';'));
+    assert.equal(errors.length,failData?1:0,errors.map(String).join(';'));
     elements.listeners=listeners;elements.players=players;elements.copies=copies;
     elements.nav=nav;elements.document=document;
     return elements;
   }
   const home=await render(),html=home.get('#main').innerHTML;
+  for(const mode of ['views','views-nonofficial','newest','comments']){
+    const page=await render('',false,mode);
+    assert.ok(page.get('#main').innerHTML.includes('complete-ranking-list'));
+    assert.ok(page.get('#main').innerHTML.includes(`data-full-ranking="${mode}" aria-current="page"`));
+    assert.ok(!page.has('#sort-filter'),'full rankings must not render the home archive');
+    assert.match(page.document.title,/完整排名/);
+  }
+  const fallback=await render('',false,'views',true);
+  assert.equal(fallback.get('#main').innerHTML,'STATIC COMPLETE RANKING','keep static ranking when shared data cannot load');
   assert.ok(html.indexOf('class="hero wrap"')<html.indexOf('collection-statistics'));
   assert.ok(html.indexOf('collection-statistics')<html.indexOf('id="ranking-panel"'));
   for(const label of ['觀看排行榜','時間序列','留言排行榜'])assert.ok(home.get('#ranking-panel').innerHTML.includes(label));
@@ -118,6 +128,7 @@ test('actual homepage shows entry statistics, keyword links and AI copy; about h
   assert.equal(home.get('#sort-filter').value,'newest');
   assert.ok(home.lastURL.includes('sort=newest')&&home.lastURL.includes('ranking=comments'));
   assert.match(home.get('#ranking-panel').innerHTML,/data-ranking="comments" aria-current="true"/);
+  assert.ok(home.get('#ranking-panel').innerHTML.includes('href="./rankings/comments/"'));
   await home.listeners.get('change')({target:{id:'sort-filter',value:'oldest'}});
   assert.ok(home.lastURL.includes('sort=oldest')&&home.lastURL.includes('ranking=comments'));
   assert.match(home.get('#ranking-panel').innerHTML,/data-ranking="comments" aria-current="true"/);
@@ -252,4 +263,29 @@ test('nonofficial rankings exclude only Puma before selecting ten and preserve c
   assert.equal(normalizeRanking('invalid'),'views');
   assert.equal(normalizeRanking('comments-nonofficial'),'comments');
   assert.equal(rankedInterviews(all,'comments-nonofficial')[0].id,official.id);
+});
+
+test('complete rankings include every eligible video in preview order, including zero and missing counts',()=>{
+  const {item}=fixture();
+  const media=Array.from({length:14},(_,i)=>({...item,id:String(i).padStart(11,'0'),slug:'reading-'+i,title:i===0?'<script>完整標題':'完整標題 '+i,date:'2026-11-04',youtubeStats:{views:100-i,comments:i}}));
+  const official={...item,id:'Official_12',slug:'official-reading',channelId:'UC49EKUpNvS_fzdk5SKvipQg',youtubeStats:{views:9999,comments:9999}};
+  const zero={...item,id:'Zero_____12',slug:'zero-counts',youtubeStats:{views:0,comments:0}};
+  const missing={...item,id:'Missing__12',slug:'missing-counts',youtubeStats:{views:null,comments:null}};
+  const all=[official,missing,...media,zero];
+  for(const mode of ['views','views-nonofficial','newest','comments']){
+    const expected=rankedInterviews(all,mode,Infinity),html=fullRankingHTML(all,mode);
+    assert.equal(expected.length,mode==='views-nonofficial'?all.length-1:all.length);
+    assert.deepEqual(expected.slice(0,10),rankedInterviews(all,mode));
+    assert.deepEqual([...html.matchAll(/data-ranking-video="([^"]+)"/g)].map(x=>x[1]),expected.map(x=>x.id));
+    assert.match(html,/&lt;script&gt;完整標題/);
+    assert.ok(!html.includes('<script>'));
+    assert.equal([...html.matchAll(/data-full-ranking=/g)].length,4);
+    assert.ok(html.includes(`href="./index.html?ranking=${mode}#rankings"`));
+    assert.ok(rankingHTML(all,mode).includes(`href="${rankingPath(mode)}"`));
+    if(mode!=='newest')assert.equal(expected.at(-1).id,missing.id);
+  }
+  assert.equal(rankingPath('comments-nonofficial'),'./rankings/comments/');
+  assert.equal(rankingPath('oldest'),'./rankings/newest/');
+  assert.equal(rankingPath('invalid'),'./rankings/views/');
+  assert.match(fullRankingHTML([]),/0 支影片/);
 });

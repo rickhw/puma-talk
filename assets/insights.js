@@ -78,7 +78,7 @@ export function mergeEnhancements(archive,editorial,statistics) {
   return validateArchive(data);
 }
 
-const rankingOptions=[['views','觀看排行榜'],['views-nonofficial','觀看排行榜 (不含官方)'],['newest','時間序列'],['comments','留言排行榜']];
+export const rankingOptions=[['views','觀看排行榜'],['views-nonofficial','觀看排行榜 (不含官方)'],['newest','時間序列'],['comments','留言排行榜']];
 export function normalizeRanking(value) {
   if(value==='comments-nonofficial')return 'comments';
   return value==='oldest'||rankingOptions.some(([mode])=>mode===value)?value:'views';
@@ -87,10 +87,29 @@ export function isOfficialChannel(item) {
   // Older records predate channel IDs; match only Puma's exact channel name.
   return item.channelId ? item.channelId==='UC49EKUpNvS_fzdk5SKvipQg' : item.channel?.trim()==='沈伯洋Puma';
 }
-export function rankedInterviews(items, sort='views') {
+export function rankedInterviews(items, sort='views', limit=10) {
   const mode=normalizeRanking(sort);
   const eligible=mode.endsWith('-nonofficial')?items.filter(item=>!isOfficialChannel(item)):items;
-  return filterInterviews(eligible,{sort:mode.split('-')[0]}).slice(0,10);
+  return filterInterviews(eligible,{sort:mode.split('-')[0]}).slice(0,limit);
+}
+export function rankingPath(sort='views') {
+  const mode=normalizeRanking(sort);
+  return `./rankings/${mode==='oldest'?'newest':mode}/`;
+}
+export function rankingDescription(sort='views') {
+  const mode=normalizeRanking(sort);
+  if(mode==='newest'||mode==='oldest')return '依發布日期由新到舊，瀏覽所有已收錄影片；同日影片以固定順序排列。';
+  return `依 YouTube ${mode==='comments'?'留言則數':'累計觀看數'}由高到低，瀏覽所有已收錄影片的完整排名。${mode==='views-nonofficial'?'此榜排除沈伯洋的官方 YouTube 頻道，其他媒體頻道仍列入。':''}`;
+}
+function rankingRowsHTML(items,mode,complete=false) {
+  const metric=mode.split('-')[0],label=metric==='views'?'觀看次數':metric==='comments'?'留言則數':'發布日期';
+  return items.map((item,index)=>`<li data-ranking-video="${escapeHTML(item.id)}"><span class="ranking-position" aria-hidden="true">${String(index+1).padStart(2,'0')}</span><a href="${escapeHTML(interviewPath(item))}"><strong>${escapeHTML(item.title)}</strong><small>${escapeHTML(item.channel)} · <time datetime="${escapeHTML(item.date)}">${escapeHTML(item.date)}</time></small></a><span class="ranking-value">${complete?`<span class="ranking-metric-label">${label}</span>`:''}${['views','comments'].includes(metric)?formatCount(item.youtubeStats?.[metric]):escapeHTML(item.date)}</span></li>`).join('')||'<li class="ranking-empty">尚無符合的影片</li>';
+}
+export function fullRankingHTML(items, sort='views', updatedAt=null) {
+  const requested=normalizeRanking(sort),mode=requested==='oldest'?'newest':requested;
+  const title=rankingOptions.find(([value])=>value===mode)[1],sorted=rankedInterviews(items,mode,Infinity);
+  const metric=mode.split('-')[0],label=metric==='views'?'觀看次數':metric==='comments'?'留言則數':'發布日期';
+  return `<section class="full-ranking-page wrap" aria-labelledby="full-ranking-title"><a class="back-link" href="./index.html?ranking=${mode}#rankings">← 回到首頁專訪排行</a><header class="full-ranking-heading"><div class="eyebrow">THE FULL RANKING</div><h1 id="full-ranking-title">${title}</h1><p class="full-ranking-description">${rankingDescription(mode)}</p><p class="full-ranking-summary"><strong>${formatCount(sorted.length)} 支影片</strong><span>完整排名</span><span>${escapeHTML(formatUpdate(updatedAt))} 更新</span></p></header><nav class="ranking-tabs" aria-label="選擇完整排行榜">${rankingOptions.map(([value,text])=>`<a href="${rankingPath(value)}" data-full-ranking="${value}" ${mode===value?'aria-current="page"':''}>${text}</a>`).join('')}</nav><div class="ranking-columns" aria-hidden="true"><span>名次</span><span>專訪</span><span>${label}</span></div><ol class="ranking-list complete-ranking-list" role="list">${rankingRowsHTML(sorted,mode,true)}</ol><p class="ranking-note">${['views','comments'].includes(metric)?'數字為原影片的 YouTube 累計值；未提供的數值列於最後。各影片取得時間請見專訪頁。':'日期為影片發布日；同日排序不代表精確到秒的上架順序。'}分段、剪輯及完整版依影片分別計算。</p><a class="text-link ranking-back-top" href="${rankingPath(mode)}#main">回到排行榜頂端 ↑</a></section>`;
 }
 export function rankingHTML(items, sort='views', updatedAt=null, query='') {
   const mode=normalizeRanking(sort),metric=mode.split('-')[0],nonofficial=mode.endsWith('-nonofficial');
@@ -100,7 +119,7 @@ export function rankingHTML(items, sort='views', updatedAt=null, query='') {
     const params=new URLSearchParams(query);params.set('ranking',value);
     return './index.html?'+escapeHTML(params.toString())+'#rankings';
   };
-  return `<section class="ranking-section wrap" id="rankings" aria-labelledby="ranking-title"><div class="ranking-heading"><h2 id="ranking-title">專訪排行</h2><span>${nonofficial?'不含官方':'全站'}前 10 ${['newest','oldest'].includes(mode)?'支':'名'} · ${label}</span></div><nav class="ranking-tabs" aria-label="選擇專訪排行">${rankingOptions.map(([value,title])=>`<a href="${rankingURL(value)}" data-ranking="${value}" ${mode===value||(value==='newest'&&mode==='oldest')?'aria-current="true"':''}>${title}</a>`).join('')}</nav><ol class="ranking-list">${sorted.map((item,index)=>`<li><span class="ranking-position">${String(index+1).padStart(2,'0')}</span><a href="${escapeHTML(interviewPath(item))}"><strong>${escapeHTML(item.title)}</strong><small>${escapeHTML(item.channel)} · ${escapeHTML(item.date)}</small></a><span class="ranking-value">${['views','comments'].includes(metric)?formatCount(item.youtubeStats?.[metric]):escapeHTML(item.date)}</span></li>`).join('')||'<li class="ranking-empty">尚無符合的影片</li>'}</ol><p class="ranking-note">${['views','comments'].includes(metric)?`YouTube ${label} · ${escapeHTML(formatUpdate(updatedAt))} 更新；未提供的數值列於最後。`:'依影片發布日期排列；下方專訪列表可獨立設定排序。'}${nonofficial?' 此榜排除沈伯洋的官方 YouTube 頻道，其他媒體頻道仍列入。':''}</p></section>`;
+  return `<section class="ranking-section wrap" id="rankings" aria-labelledby="ranking-title"><div class="ranking-heading"><h2 id="ranking-title">專訪排行</h2><span>${nonofficial?'不含官方':'全站'}前 10 ${['newest','oldest'].includes(mode)?'支':'名'} · ${label}</span></div><nav class="ranking-tabs" aria-label="選擇專訪排行">${rankingOptions.map(([value,title])=>`<a href="${rankingURL(value)}" data-ranking="${value}" ${mode===value||(value==='newest'&&mode==='oldest')?'aria-current="true"':''}>${title}</a>`).join('')}</nav><ol class="ranking-list" role="list">${rankingRowsHTML(sorted,mode)}</ol><div class="ranking-footer"><p class="ranking-note">${['views','comments'].includes(metric)?`YouTube ${label} · ${escapeHTML(formatUpdate(updatedAt))} 更新；未提供的數值列於最後。`:'依影片發布日期排列；下方專訪列表可獨立設定排序。'}${nonofficial?' 此榜排除沈伯洋的官方 YouTube 頻道，其他媒體頻道仍列入。':''}</p><a class="button button-outline ranking-full-link" href="${rankingPath(mode)}" aria-label="查看${rankingOptions.find(([value])=>value===(mode==='oldest'?'newest':mode))[1]}的完整排名">查看完整排名 <span aria-hidden="true">→</span></a></div></section>`;
 }
 
 export function photoHTML(item,large=false) {
