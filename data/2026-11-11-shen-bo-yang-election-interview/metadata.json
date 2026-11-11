@@ -1,0 +1,71 @@
+{
+  "id": "8NxRohkTuCk",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "【完整公開】LIVE 沈伯洋 選戰時事受訪",
+  "channel": "台視新聞 TTV NEWS",
+  "date": "2026-11-11",
+  "sourceUrl": "https://www.youtube.com/watch?v=8NxRohkTuCk",
+  "metadataStatus": "imported",
+  "channelId": "UC8ROUUjHzEQm-ndb69CX8Ww",
+  "title": "沈伯洋台視聯訪：跨受眾溝通、政策討論與選前安排",
+  "referenceUrl": "https://www.youtube.com/watch?v=8NxRohkTuCk",
+  "description": "台視新聞2026年11月11日回放中的沈伯洋媒體聯訪，討論跨受眾溝通、支持者互相尊重、市政影片與選前行程；本篇聚焦原片約29:23–48:07，前置質詢、其他立委記者會及片尾另列省略說明。",
+  "category": "政治與公共事務",
+  "duration": 2980,
+  "publishedAt": "2026-11-11T10:14:02+08:00",
+  "broadcastAt": "2026-11-11T09:21:22+08:00",
+  "originalDescription": "#沈伯洋 #選戰 #2026大選 \n\n2026.11.11【完整公開】沈伯洋 選戰時事受訪\n\n✨歡迎收看並訂閱TTVNews台視新聞YouTube頻道✨\n\n◎【台視新聞網】👉https://news.ttv.com.tw/\n◎訂閱【台視新聞】👉https://www.youtube.com/c/ttvnewsview\n◎訂閱【TTV LIVE台視直播】👉https://www.youtube.com/c/twlivenews\n◎按讚【台視新聞FB】👉https://www.facebook.com/ttvnews/\n◎追蹤【台視新聞IG】👉https://www.instagram.com/ttvnews_tw/",
+  "channelUrl": "https://www.youtube.com/channel/UC8ROUUjHzEQm-ndb69CX8Ww",
+  "youtubeMetadata": {
+    "upload_date": "20261111",
+    "timestamp": 1794363242,
+    "release_timestamp": 1794360082
+  },
+  "versionType": "media-scrum",
+  "formatTags": [
+    "媒體聯訪"
+  ],
+  "sourceScopeNote": "台視49分40秒回放包含前置國防委員會質詢、其他立委記者會與片尾宣傳。本篇摘要及顯示稿聚焦約29:23–48:07的沈伯洋媒體聯訪；前後內容以省略標記保留原片位置，不將其他立委發言歸給沈伯洋。開頭部分提問辨識不清，保守註記。",
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "language": "zh",
+    "generatedAt": "2026-11-11T09:52:35.998724+00:00",
+    "inputSha256": "f59d7ea2d4aac15d8bc721b0bf5bcd262affdd9597b1cb831882edbb8b677515",
+    "audioRange": {
+      "start": 1750,
+      "end": 2920
+    },
+    "originalAudioSha256": "78e89b11c9fff12c2b239594a0c50c8ed49353ba9c4aa156f1fc056f69e57a2d",
+    "omittedRanges": [
+      {
+        "start": 0,
+        "end": 1763.18,
+        "reason": "前置國防委員會質詢、鏡頭切換與其他立委記者會，不屬本篇沈伯洋媒體聯訪。"
+      },
+      {
+        "start": 2887.34,
+        "end": 2980.049,
+        "reason": "聯訪結束後現場收尾與台視宣傳片，不列入訪談文字。"
+      }
+    ],
+    "uncertainRanges": [
+      {
+        "start": 1763.18,
+        "end": 1775.76,
+        "reason": "記者提問開頭混入無關外語辨識，保守註記，不猜譯原話。"
+      }
+    ],
+    "rawOutputSha256": "23a406513845ddce47cd7fec70eede2701ae61e25acee51e40742be3e2f7ed28",
+    "processingNotes": [
+      "先以完整2980.049秒原音辨識並抽查畫面，辨認前置質詢、其他立委記者會、本人聯訪與片尾。",
+      "另取原片1750–2920秒獨立辨識，保留1763.18–2887.34秒聯訪，所有時間碼加回1750秒，不重設原片時間軸。",
+      "完整及分段原始引擎輸出保留本機；省略區間與不可靠開頭另有明確標記，未完成人工全篇聆聽。"
+    ]
+  }
+}

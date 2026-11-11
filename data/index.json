@@ -3,6 +3,10 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "8NxRohkTuCk",
+      "slug": "2026-11-11-shen-bo-yang-election-interview"
+    },
+    {
       "id": "gfq6AXJbNKI",
       "slug": "2026-11-10-shen-po-yang-acquaintance-recollections"
     },
@@ -549,11 +553,11 @@
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-11T00:45:06.708956+00:00"
+    "updatedAt": "2026-11-11T09:55:11.391810+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-11T00:48:52.854674+00:00"
+    "updatedAt": "2026-11-11T10:05:44.304513+00:00"
   },
   "statistics": {
     "version": 1,
@@ -561,14 +565,14 @@
     "completedAt": "2026-11-11T00:01:03.032480+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 57619329,
-      "likes": 1433900,
-      "comments": 150501,
-      "commentsAvailable": 135,
-      "videos": 135,
-      "viewsAvailable": 135,
-      "likesAvailable": 135,
-      "fresh": 135
+      "views": 57666646,
+      "likes": 1434831,
+      "comments": 150568,
+      "commentsAvailable": 136,
+      "videos": 136,
+      "viewsAvailable": 136,
+      "likesAvailable": 136,
+      "fresh": 136
     }
   },
   "covers": {
