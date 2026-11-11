@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-10T09:20:40.094342+00:00",
+  "updatedAt": "2026-11-11T00:17:33.093951+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,23 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "9DXrFXbveEA",
+      "title": "【#真相對話錄 完整版】自己人不看好？連握手都不會 沈伯洋如何拚出台北逆轉勝",
+      "displayTitle": "《真相對話錄》沈伯洋的台北選戰：洋流起點、破圈專訪與政策問答（完整版）",
+      "channel": "真相對話錄",
+      "uploadDate": "20261109",
+      "duration": 2881,
+      "sourceUrl": "https://www.youtube.com/watch?v=9DXrFXbveEA",
+      "url": "https://www.youtube.com/watch?v=9DXrFXbveEA",
+      "referenceUrl": "https://www.youtube.com/watch?v=9DXrFXbveEA",
+      "decision": "include",
+      "reason": "使用者指定收錄真相對話錄48分01秒完整版，並取代已下架精華GYeE73a9diU；多人新聞專題，不作為單人完整專訪。",
+      "category": "政治與公共事務",
+      "spokenLanguage": "zh",
+      "metadataFile": ".cache/analysis/9DXrFXbveEA.info.json",
+      "status": "metadata-fetched"
+    },
     {
       "id": "GYeE73a9diU",
       "title": "【#真相對話錄 精華】沈伯洋民調狂輸蔣萬安 賴清德為何堅持徵召他？",
@@ -19,12 +36,14 @@
       "sourceUrl": "https://www.youtube.com/watch?v=GYeE73a9diU",
       "url": "https://www.youtube.com/watch?v=GYeE73a9diU",
       "referenceUrl": "https://www.youtube.com/watch?v=GYeE73a9diU",
-      "decision": "include",
-      "reason": "使用者指定收錄的真相對話錄多人選戰專題精華；原頻道無可用字幕，使用中文原音ASR，不當成沈伯洋個人完整專訪。",
+      "decision": "duplicate",
+      "reason": "使用者要求以同一節目的48分01秒完整版取代此14分35秒精華，已移除網站文章、逐字稿、封面及單片統計；候選保留作為版本判定紀錄。",
       "spokenLanguage": "zh",
       "category": "政治與公共事務",
       "metadataFile": ".cache/analysis/GYeE73a9diU.info.json",
-      "status": "metadata-fetched"
+      "status": "metadata-fetched",
+      "canonicalId": "9DXrFXbveEA",
+      "replacedAt": "2026-11-11T00:17:33.093951+00:00"
     },
     {
       "id": "fbXCUgPZMdY",

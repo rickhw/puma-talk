@@ -425,7 +425,7 @@ GitHub Pages 使用 **Settings → Pages → GitHub Actions**，設定 repositor
 | `data/catalog.json`、`data/pending-interviews.json`、`data/sources.json` | 候選判定、待確認原片與固定掃描來源 |
 | [處理進度](docs/processing-status.md)、[摘要進度](docs/articles-status.md) | 已提交資料的覆蓋率、來源範圍與待辦 |
 
-截至 2026-11-11，99 支原稿來自上述 Whisper、34 支來自 YouTube 字幕，另 1 支為音樂作品資訊。原有 121 篇摘要使用上述 Qwen3.6，後續十三篇（11/07 三支、四支車掃、親子天下收養片段、三支活動／對談、《命運好好玩》及《真相對話錄》精華）使用 `lmstudio-community/Qwen3.8-27B-MLX-8bit`（同為 `mlx-lm==0.31.3`）；顯示稿包含 128 篇中文校對、5 篇英文翻譯及 1 篇作品資訊。11/07 三支新片的來源與省略範圍見[處理紀錄](docs/transcript-batch-2026-11-07.md)，四支車掃另見[車掃收錄紀錄](docs/car-sweep-2026-11-08.md)，收養片段與排行榜見[本次更新紀錄](docs/adoption-and-rankings-2026-11-08.md)，三支活動／對談的範圍見[收錄紀錄](docs/events-2026-11-09.md)，《命運好好玩》見[處理紀錄](docs/lucky-talk-2026-11-10.md)，《真相對話錄》精華見[處理紀錄](docs/truth-dialogue-2026-11-11.md)，後續數量以進度報告為準。
+截至 2026-11-11，99 支原稿來自上述 Whisper、34 支來自 YouTube 字幕，另 1 支為音樂作品資訊。原有 121 篇摘要使用上述 Qwen3.6，後續十三篇（11/07 三支、四支車掃、親子天下收養片段、三支活動／對談、《命運好好玩》及《真相對話錄》完整版）使用 `lmstudio-community/Qwen3.8-27B-MLX-8bit`（同為 `mlx-lm==0.31.3`）；顯示稿包含 128 篇中文校對、5 篇英文翻譯及 1 篇作品資訊。11/07 三支新片的來源與省略範圍見[處理紀錄](docs/transcript-batch-2026-11-07.md)，四支車掃另見[車掃收錄紀錄](docs/car-sweep-2026-11-08.md)，收養片段與排行榜見[本次更新紀錄](docs/adoption-and-rankings-2026-11-08.md)，三支活動／對談的範圍見[收錄紀錄](docs/events-2026-11-09.md)，《命運好好玩》見[處理紀錄](docs/lucky-talk-2026-11-10.md)，《真相對話錄》完整版見[處理紀錄](docs/truth-dialogue-2026-11-11.md)，後續數量以進度報告為準。
 
 模型來源可追查 `metadata.json` 的 `transcriptProvenance`、`article.json` 的 `provenance` 及 `editorial.json` 的 `review`。關鍵字工具目前記錄 `keywordsModel: "Model"` 類別名；實際權重由 `--model` 指定；上述十三筆新收錄資料另記錄 `keywordsModelId` 與權重 revision，避免混淆 Qwen3.6 與 Qwen3.8。摘要與校對／翻譯另存，保留原稿；AI 處理不冒充人工覆核。更多細節見[逐字稿流程](docs/transcripts.md)、[文章與網址](docs/articles.md)、[統計與文字處理](docs/statistics-and-editorial.md)。
 
