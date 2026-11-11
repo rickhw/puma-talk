@@ -3,6 +3,10 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "gfq6AXJbNKI",
+      "slug": "2026-11-10-shen-po-yang-acquaintance-recollections"
+    },
+    {
       "id": "WZ4FMGW9OmA",
       "slug": "2026-11-09-shen-bo-yang-tarot-faith"
     },
@@ -545,11 +549,11 @@
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-11T00:10:34.954159+00:00"
+    "updatedAt": "2026-11-11T00:45:06.708956+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-11T00:18:23.228201+00:00"
+    "updatedAt": "2026-11-11T00:48:52.854674+00:00"
   },
   "statistics": {
     "version": 1,
@@ -557,14 +561,14 @@
     "completedAt": "2026-11-11T00:01:03.032480+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 57618783,
-      "likes": 1433852,
-      "comments": 150498,
-      "commentsAvailable": 134,
-      "videos": 134,
-      "viewsAvailable": 134,
-      "likesAvailable": 134,
-      "fresh": 134
+      "views": 57619329,
+      "likes": 1433900,
+      "comments": 150501,
+      "commentsAvailable": 135,
+      "videos": 135,
+      "viewsAvailable": 135,
+      "likesAvailable": 135,
+      "fresh": 135
     }
   },
   "covers": {

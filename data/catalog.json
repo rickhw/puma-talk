@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-11T00:17:33.093951+00:00",
+  "updatedAt": "2026-11-11T00:32:58.091822+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,26 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "gfq6AXJbNKI",
+      "title": "認識他三十年的人，怎麼說沈伯洋？49 篇親友回憶＋他親口說｜阿惠整理｜沈伯洋專題",
+      "displayTitle": "認識他三十年的人，怎麼說沈伯洋？阿惠的親友回憶整理（AI 專題）",
+      "channel": "台灣齊心向前邁",
+      "uploadDate": "20261110",
+      "duration": 1353,
+      "sourceUrl": "https://www.youtube.com/watch?v=gfq6AXJbNKI",
+      "url": "https://www.youtube.com/watch?v=gfq6AXJbNKI",
+      "referenceUrl": "https://www.youtube.com/watch?v=gfq6AXJbNKI",
+      "decision": "include",
+      "reason": "使用者指定收錄的第三方專題整理；AI虛擬主持及配音，轉述支持者親友回憶並穿插舊專訪短原音，不當作本人新專訪。",
+      "spokenLanguage": "zh",
+      "category": "人物與成長",
+      "formatTags": [
+        "專題整理"
+      ],
+      "metadataFile": ".cache/analysis/gfq6AXJbNKI.info.json",
+      "status": "metadata-fetched"
+    },
     {
       "id": "9DXrFXbveEA",
       "title": "【#真相對話錄 完整版】自己人不看好？連握手都不會 沈伯洋如何拚出台北逆轉勝",
