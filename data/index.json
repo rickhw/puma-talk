@@ -3,6 +3,18 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "or3dymQF4CI",
+      "slug": "2026-11-12-shen-communication-traffic"
+    },
+    {
+      "id": "AH0ahwXhwPE",
+      "slug": "2026-11-12-taipei-urban-renewal-ai-policy"
+    },
+    {
+      "id": "6vdQtp-SiBA",
+      "slug": "2026-11-12-shen-bo-yang-family-election"
+    },
+    {
       "id": "8NxRohkTuCk",
       "slug": "2026-11-11-shen-bo-yang-election-interview"
     },
@@ -549,15 +561,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-11"
+    "updatedAt": "2026-11-12"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-11T09:55:11.391810+00:00"
+    "updatedAt": "2026-11-12T23:42:53.499422+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-11T10:05:44.304513+00:00"
+    "updatedAt": "2026-11-12T23:47:02.161048+00:00"
   },
   "statistics": {
     "version": 1,
@@ -565,14 +577,14 @@
     "completedAt": "2026-11-12T01:31:04.537303+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 58058107,
-      "likes": 1440908,
-      "comments": 151166,
-      "commentsAvailable": 136,
-      "videos": 136,
-      "viewsAvailable": 136,
-      "likesAvailable": 136,
-      "fresh": 136
+      "views": 58234158,
+      "likes": 1442880,
+      "comments": 151592,
+      "commentsAvailable": 139,
+      "videos": 139,
+      "viewsAvailable": 139,
+      "likesAvailable": 138,
+      "fresh": 139
     }
   },
   "covers": {
