@@ -573,13 +573,13 @@
   },
   "statistics": {
     "version": 1,
-    "attemptedAt": "2026-11-12T01:29:58.811575+00:00",
-    "completedAt": "2026-11-12T01:31:04.537303+00:00",
+    "attemptedAt": "2026-11-13T00:17:29.395177+00:00",
+    "completedAt": "2026-11-13T00:18:38.215394+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 58234158,
-      "likes": 1442880,
-      "comments": 151592,
+      "views": 58456864,
+      "likes": 1445592,
+      "comments": 151901,
       "commentsAvailable": 139,
       "videos": 139,
       "viewsAvailable": 139,
