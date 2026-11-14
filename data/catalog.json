@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-12T23:39:17.274378+00:00",
+  "updatedAt": "2026-11-14T00:52:50.719456+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,42 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "dj1Zrm4dEmM",
+      "title": "S2EP01.「市長你給我聽好了」文學與漫畫場！首都台北的政策，就是台灣文化的樞紐 ft.楊双子、沈伯洋｜親愛的宵夜",
+      "displayTitle": "《親愛的宵夜》：沈伯洋、楊双子談文學漫畫與台北文化政策",
+      "channel": "朱宥勳使出人生攻擊!",
+      "uploadDate": "20261113",
+      "duration": 4019,
+      "referenceUrl": "https://www.youtube.com/watch?v=dj1Zrm4dEmM",
+      "sourceUrl": "https://www.youtube.com/watch?v=dj1Zrm4dEmM",
+      "url": "https://www.youtube.com/watch?v=dj1Zrm4dEmM",
+      "metadataFile": ".cache/publish-20261113/dj1Zrm4dEmM.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架；《親愛的宵夜》S2EP01，由謝宜安、朱宥勳主持，楊双子、沈伯洋共同參與的66分59秒文學與漫畫對談。摘要區分主持提問、作家經驗、閱讀測驗與沈伯洋的政策構想；不把多人發言全歸給沈伯洋，不將建議或預期效果寫成已實施成果。依原頻道完整字幕整理，未完成全篇人工聆聽。",
+      "spokenLanguage": "zh",
+      "category": "文化與閱讀",
+      "description": "原頻道文化對談，字幕與AI整理分開保存，請搭配原始影片閱讀。",
+      "status": "source-imported"
+    },
+    {
+      "id": "rXk5QYvyti8",
+      "title": "【台灣正發生169】為什麼文化人願意為了沈伯洋集體燒肝？朱宥勳揭秘《洋流誌》如何把生硬政策變創作奇蹟",
+      "displayTitle": "《台灣正發生169》：朱宥勳談《洋流誌》的創作與文化參與",
+      "channel": "台灣正發生",
+      "uploadDate": "20261113",
+      "duration": 2825,
+      "referenceUrl": "https://www.youtube.com/watch?v=rXk5QYvyti8",
+      "sourceUrl": "https://www.youtube.com/watch?v=rXk5QYvyti8",
+      "url": "https://www.youtube.com/watch?v=rXk5QYvyti8",
+      "metadataFile": ".cache/publish-20261113/rXk5QYvyti8.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架；《台灣正發生169》由劉文訪問朱宥勳，談《洋流誌》的文字統籌與文化參與；不是沈伯洋本人受訪。摘要及逐字稿中的計畫說明、評論與回憶，依主持人及朱宥勳的發言理解，不歸為沈伯洋原話或承諾。原片47分05秒，原頻道字幕涵蓋02:13.962–46:55.058；前133.962秒及末段約10秒未提供字幕，未另行轉錄或推定內容。",
+      "spokenLanguage": "zh",
+      "category": "文化與閱讀",
+      "description": "原頻道文化對談，字幕與AI整理分開保存，請搭配原始影片閱讀。",
+      "status": "source-imported"
+    },
     {
       "id": "or3dymQF4CI",
       "title": "沈伯洋拜託桃園鄉親「別錯過黃世杰」：他實力比我好太多！ 洋流吹進桃園「張善政緊張了」于北辰許願：讓我在議會電爆黃世杰│許貴雅 主持│【台灣ON AIR PART1】20261112│三立新聞台",

@@ -3,6 +3,14 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "rXk5QYvyti8",
+      "slug": "2026-11-13-yang-liu-zhi-creation"
+    },
+    {
+      "id": "dj1Zrm4dEmM",
+      "slug": "2026-11-13-taipei-literature-manga-policy"
+    },
+    {
       "id": "or3dymQF4CI",
       "slug": "2026-11-12-shen-communication-traffic"
     },
@@ -561,15 +569,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-12"
+    "updatedAt": "2026-11-14"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-12T23:42:53.499422+00:00"
+    "updatedAt": "2026-11-14T00:54:59.215710+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-12T23:47:02.161048+00:00"
+    "updatedAt": "2026-11-14T01:00:57.807985+00:00"
   },
   "statistics": {
     "version": 1,
@@ -577,14 +585,14 @@
     "completedAt": "2026-11-14T00:20:38.060908+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 59003230,
-      "likes": 1449220,
-      "comments": 152645,
-      "commentsAvailable": 139,
-      "videos": 139,
-      "viewsAvailable": 139,
-      "likesAvailable": 138,
-      "fresh": 139
+      "views": 59116881,
+      "likes": 1454532,
+      "comments": 152911,
+      "commentsAvailable": 141,
+      "videos": 141,
+      "viewsAvailable": 141,
+      "likesAvailable": 140,
+      "fresh": 141
     }
   },
   "covers": {
