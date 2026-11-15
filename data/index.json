@@ -3,6 +3,10 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "QOZyHyc6rVg",
+      "slug": "2026-11-14-shen-bo-yang-taipei-election"
+    },
+    {
       "id": "rXk5QYvyti8",
       "slug": "2026-11-13-yang-liu-zhi-creation"
     },
@@ -569,15 +573,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-14"
+    "updatedAt": "2026-11-15"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-14T00:54:59.215710+00:00"
+    "updatedAt": "2026-11-15T00:41:41.517780+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-14T01:00:57.807985+00:00"
+    "updatedAt": "2026-11-15T00:43:48.262712+00:00"
   },
   "statistics": {
     "version": 1,
@@ -585,14 +589,14 @@
     "completedAt": "2026-11-14T22:57:59.961487+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 59632443,
-      "likes": 1462236,
-      "comments": 153417,
-      "commentsAvailable": 141,
-      "videos": 141,
-      "viewsAvailable": 141,
-      "likesAvailable": 140,
-      "fresh": 141
+      "views": 60068454,
+      "likes": 1473247,
+      "comments": 154239,
+      "commentsAvailable": 142,
+      "videos": 142,
+      "viewsAvailable": 142,
+      "likesAvailable": 141,
+      "fresh": 142
     }
   },
   "covers": {

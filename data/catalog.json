@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-14T00:52:50.719456+00:00",
+  "updatedAt": "2026-11-15T00:40:25.381261+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,25 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "QOZyHyc6rVg",
+      "title": "【下班瀚你聊】落後28%仍拚翻盤!沈伯洋差5萬票能追上?!無限都更!縫合市民大道!台北順起來?!2026-11-14 Ep.426@TheStormMedia",
+      "displayTitle": "《下班瀚你聊》Ep.426：沈伯洋談選戰策略與台北市政構想",
+      "channel": "風傳媒 The Storm Media",
+      "uploadDate": "20261114",
+      "duration": 3860,
+      "url": "https://www.youtube.com/watch?v=QOZyHyc6rVg",
+      "sourceUrl": "https://www.youtube.com/watch?v=QOZyHyc6rVg",
+      "referenceUrl": "https://www.youtube.com/watch?v=QOZyHyc6rVg",
+      "metadataFile": ".cache/publish-20261114/QOZyHyc6rVg.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架；《下班瀚你聊》Ep.426，黃暐瀚節目，原頻道說明列有雪寶，沈伯洋本人參與的64分20秒對談。原頻道無可用原語言字幕，本篇以中文原音進行本機語音辨識，再由AI整理正體中文顯示稿與摘要。主持人的提問、評論與來賓回應分開理解；選戰票差、民調與預測是節目陳述，未另作事實查核；市政構想不表示已實施或效果已驗證。未完成全篇人工聆聽覆核，請搭配原片閱讀。",
+      "spokenLanguage": "zh",
+      "audioLanguage": "zh-Hant",
+      "skipSubtitles": true,
+      "category": "政治與公共事務",
+      "status": "source-imported"
+    },
     {
       "id": "dj1Zrm4dEmM",
       "title": "S2EP01.「市長你給我聽好了」文學與漫畫場！首都台北的政策，就是台灣文化的樞紐 ft.楊双子、沈伯洋｜親愛的宵夜",
