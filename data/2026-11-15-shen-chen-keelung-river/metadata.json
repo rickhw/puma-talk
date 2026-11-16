@@ -1,0 +1,59 @@
+{
+  "id": "ZLIdLGhEESk",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "【#原音重現】關渡宮合體遇媒體出考題！被問划SUP高雄還是關渡好？沈伯洋笑喊「不好意思比較」 陳其邁秒搶答：當然高雄比較好！ 霸氣護主場全場笑翻｜三立新聞網 SETN.com",
+  "channel": "SETN News Network",
+  "date": "2026-11-15",
+  "sourceUrl": "https://www.youtube.com/watch?v=ZLIdLGhEESk",
+  "metadataStatus": "imported",
+  "channelId": "UCIU8ha-NHmLjtUwU7dFiXUA",
+  "title": "沈伯洋、陳其邁士林北投車掃聯訪：河岸治理與城市合作",
+  "referenceUrl": "https://www.youtube.com/watch?v=ZLIdLGhEESk",
+  "description": "三立新聞網原片，包含沈伯洋、陳其邁共同媒體聯訪、片頭預覽、同場聯訪重播及記者現場旁白，非兩場不同受訪。河岸治理、港市協調及助選評論需區分陳其邁與沈伯洋的發言；SUP比較為活動問答，不表述為已驗證的城市優劣。 本篇以原音本機ASR與AI正體中文稿整理，未完成全篇人工聆聽覆核，請搭配原片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 1245,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-16T00:27:35.899634+00:00",
+    "inputSha256": "6b16d06f1aae48e44e5e5b93ae758f1ce0ee8cb0d3386190f38a93b09789f197",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "rawEngineOutputSha256": "655d5c282840ac874e489025edf30ad04199604bbe2e6ea9a5bf75d2feb27f8f",
+    "omittedRanges": [],
+    "uncertainRanges": [
+      {
+        "start": 376.53999999999996,
+        "end": 398.91999999999996
+      }
+    ],
+    "processingNotes": [
+      "完整原音已執行本機ASR，原引擎輸出留於工作快取；省略音樂、非談話或不可靠段落時保留原片時間，不重設時間軸。",
+      "另標註1個原始cue：avg_logprob < -2、compression_ratio > 4或明顯不相干字幕／訂閱套語；這不是準確率，不猜譯台語或其他語言。"
+    ]
+  },
+  "publishedAt": "2026-11-15T20:45:07+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UCIU8ha-NHmLjtUwU7dFiXUA",
+  "originalDescription": "#原音重現 #沈伯洋 #合體 #陳其邁 #雙城對決 #台北 #關渡 #關渡宮 #高雄 #高雄港 #媒體 #SUP #划SUP \n🫰熱搜 https://setn.com/topic 🫰大事直播 https://live.setn.com \n成為這個頻道的會員並獲得福利：\nhttps://www.youtube.com/channel/UCIU8ha-NHmLjtUwU7dFiXUA/join\n◎更多即時新聞看這裡！【三立新聞網】：https://www.setn.com\n◎下載【三立新聞網APP】掌握最新資訊：https://acts.setn.com/event/2024newsapp/\n◎加入【三立新聞網LINE】掌握天下大小事：https://page.line.me/setn?openQrModal=true\n◎訂閱【三立新聞網YT】最新影片搶先看：https://www.youtube.com/@setn\n◎按讚【三立新聞FB】熱門話題一手掌握：https://www.facebook.com/setnews\n◎追蹤【三立新聞網IG】直新聞隨時看：https://www.instagram.com/setnews\n◎追蹤【三立新聞網X】全球時事不漏接：https://twitter.com/taiwannews_setn",
+  "youtubeMetadata": {
+    "upload_date": "20261115",
+    "timestamp": 1794746707,
+    "release_timestamp": 1794746707
+  },
+  "sourceScopeNote": "三立新聞網原片，包含沈伯洋、陳其邁共同媒體聯訪、片頭預覽、同場聯訪重播及記者現場旁白，非兩場不同受訪。河岸治理、港市協調及助選評論需區分陳其邁與沈伯洋的發言；SUP比較為活動問答，不表述為已驗證的城市優劣。 本篇以原音本機ASR與AI正體中文稿整理，未完成全篇人工聆聽覆核，請搭配原片閱讀。",
+  "versionType": "press-interview-with-other-content",
+  "formatTags": [
+    "媒體聯訪"
+  ],
+  "broadcastAt": "2026-11-15T20:45:07+08:00",
+  "broadcastDate": "2026-11-15"
+}

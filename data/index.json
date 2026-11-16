@@ -3,6 +3,22 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "uiJWepnBvEs",
+      "slug": "2026-11-15-shen-bo-yang-road-race-interview"
+    },
+    {
+      "id": "ZLIdLGhEESk",
+      "slug": "2026-11-15-shen-chen-keelung-river"
+    },
+    {
+      "id": "YtNJ0lBQdUM",
+      "slug": "2026-11-15-shilin-beitou-policy"
+    },
+    {
+      "id": "Cc1NdScyoZM",
+      "slug": "2026-11-15-shen-bo-yang-election-interview"
+    },
+    {
       "id": "QOZyHyc6rVg",
       "slug": "2026-11-14-shen-bo-yang-taipei-election"
     },
@@ -573,15 +589,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-15"
+    "updatedAt": "2026-11-16"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-15T00:41:41.517780+00:00"
+    "updatedAt": "2026-11-16T01:11:38.256218+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-15T00:43:48.262712+00:00"
+    "updatedAt": "2026-11-16T01:16:53.817365+00:00"
   },
   "statistics": {
     "version": 1,
@@ -589,14 +605,24 @@
     "completedAt": "2026-11-15T23:23:46.946990+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 60668991,
-      "likes": 1480998,
-      "comments": 154741,
-      "commentsAvailable": 142,
-      "videos": 142,
-      "viewsAvailable": 142,
-      "likesAvailable": 141,
-      "fresh": 142
+      "views": 63218173,
+      "likes": 1546331,
+      "comments": 155525,
+      "commentsAvailable": 146,
+      "videos": 146,
+      "viewsAvailable": 146,
+      "likesAvailable": 145,
+      "fresh": 146
+    },
+    "updateScope": {
+      "videoIds": [
+        "Cc1NdScyoZM",
+        "YtNJ0lBQdUM",
+        "ZLIdLGhEESk",
+        "uiJWepnBvEs"
+      ],
+      "method": "imported-youtube-metadata",
+      "note": "僅新增四片統計，其餘影片保留每日更新的成功值及取得時間。"
     }
   },
   "covers": {

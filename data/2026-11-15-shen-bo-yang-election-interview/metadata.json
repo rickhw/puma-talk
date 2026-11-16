@@ -1,0 +1,55 @@
+{
+  "id": "Cc1NdScyoZM",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "一刀未剪｜沈伯洋坦承政見會錯引《火影》名言直呼尷尬：正想怎麼彌補 百工百業海報驚見奇特造型 笑稱「有夫妻臉」 秦慧珠夫改口預測蔣萬安勝算高！撲馬：預言是要拿來打破的｜三立新聞LIVE",
+  "channel": "Taiwan SETNEWS Live  Channel",
+  "date": "2026-11-15",
+  "sourceUrl": "https://www.youtube.com/watch?v=Cc1NdScyoZM",
+  "metadataStatus": "imported",
+  "channelId": "UC2TuODJhC03pLgd6MpWP0iw",
+  "title": "沈伯洋百工百業活動聯訪：政見會引言與選戰回應",
+  "referenceUrl": "https://www.youtube.com/watch?v=Cc1NdScyoZM",
+  "description": "三立新聞LIVE原片，前282.28秒為百工百業活動相關沈伯洋聯訪（含片頭預覽），後接同日新聞報導、其他受訪者與節目宣傳。摘要聚焦前段本人問答，不將後續新聞、記者題目中的事實前提或其他候選人發言寫成沈伯洋新回答或本站查核結論；片頭預覽不算另一場受訪。 本篇以原音本機ASR與AI正體中文稿整理，未完成全篇人工聆聽覆核，請搭配原片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 861,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-16T00:27:18.292600+00:00",
+    "inputSha256": "7f6d34f79f4e20b847bb18f10f7a6750b715d27d12d9d60e4584c7dad35b061d",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。",
+      "完整原音已執行本機ASR，原引擎輸出留於工作快取；省略音樂、非談話或不可靠段落時保留原片時間，不重設時間軸。",
+      "另標註0個原始cue：avg_logprob < -2、compression_ratio > 4或明顯不相干字幕／訂閱套語；這不是準確率，不猜譯台語或其他語言。"
+    ],
+    "rawEngineOutputSha256": "21fec87ee832521971c19a3cad06506da528007c33d9c3b30f4b1e50cfa0b473",
+    "omittedRanges": [],
+    "uncertainRanges": []
+  },
+  "publishedAt": "2026-11-15T18:15:10+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC2TuODJhC03pLgd6MpWP0iw",
+  "originalDescription": "#沈伯洋 #政見會 #火影忍者 #火影 #名言 #百工百業後援會 #百工百業 #造型 #千尋老師 #曾心慧 #夫妻臉 #結婚紀念日 #秦慧珠 #章魚哥 #預言 #蔣萬安 \n📺 想看更多即時新聞？點我收看24小時直播 👉https://youtube.com/live/yeYC0mbSIOo\n\n💬 精選節目看這裡 ⬇️⬇️⬇️\n🌍 李文儀｜消失的國界\n看見世界，走出台灣 🌐\n👉https://www.youtube.com/@消失的國界\n💪 許貴雅｜台灣ON AIR\n政論熱血沸騰，為台灣發聲🔥\n👉https://www.youtube.com/@台灣ON AIR\n🗣️ 李正皓｜新台派上線\n最敢說的新觀點，沒有極限！\n👉 https://www.youtube.com/@新台派上線\n🚀 王偊菁｜前進新台灣\n一起推進改變台灣的力量 💫\n👉https://www.youtube.com/@前進新台灣\n🕵️‍♀️ 呂惠敏｜驚爆新聞線\n重大事件第一線深度揭密！\n👉 https://www.youtube.com/@驚爆新聞線\n🧑‍💼 鄭弘儀｜話時代人物\n與你一起走進人物背後的故事 ❤️\n👉 https://www.youtube.com/@話時代人物\n📱 下載三立新聞網APP（新聞不漏接、節目隨時看）\n👉 https://acts.setn.com/event/2024newsapp/\n🌐 三立新聞網官網\n👉 https://www.setn.com/\n💼 想加入我們，一起說好故事？\n👉【職缺介紹】https://www.104.com.tw/job/8rrov?jobsource=google",
+  "youtubeMetadata": {
+    "upload_date": "20261115",
+    "timestamp": 1794737710,
+    "release_timestamp": 1794737710
+  },
+  "sourceScopeNote": "三立新聞LIVE原片，前282.28秒為百工百業活動相關沈伯洋聯訪（含片頭預覽），後接同日新聞報導、其他受訪者與節目宣傳。摘要聚焦前段本人問答，不將後續新聞、記者題目中的事實前提或其他候選人發言寫成沈伯洋新回答或本站查核結論；片頭預覽不算另一場受訪。 本篇以原音本機ASR與AI正體中文稿整理，未完成全篇人工聆聽覆核，請搭配原片閱讀。",
+  "versionType": "press-interview-with-other-content",
+  "formatTags": [
+    "媒體聯訪"
+  ],
+  "broadcastAt": "2026-11-15T18:15:10+08:00",
+  "broadcastDate": "2026-11-15"
+}

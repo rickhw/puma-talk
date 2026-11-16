@@ -1,0 +1,90 @@
+{
+  "id": "uiJWepnBvEs",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "直播／沈伯洋出席第12屆電器盃！　節能公益路跑登場｜20261115",
+  "channel": "鏡新聞",
+  "date": "2026-11-15",
+  "sourceUrl": "https://www.youtube.com/watch?v=uiJWepnBvEs",
+  "metadataStatus": "imported",
+  "channelId": "UC4LjkybVKXCDlneVXlKAbmw",
+  "title": "沈伯洋電器盃路跑聯訪：付款爭議、活動與選戰回應",
+  "referenceUrl": "https://www.youtube.com/watch?v=uiJWepnBvEs",
+  "description": "鏡新聞第12屆電器盃節能公益路跑原片，包含沈伯洋會前媒體聯訪及其後主持、其他來賓致詞、暖身與活動畫面，非全程本人專訪。摘要聚焦可辨識的沈伯洋問答，後續活動、他人致詞與背景聲不全數歸屬沈伯洋；與其他頻道路跑版本屬同一活動。 本篇以原音本機ASR與AI正體中文稿整理，未完成全篇人工聆聽覆核，請搭配原片閱讀。",
+  "category": "政治與公共事務",
+  "duration": 2960,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-16T00:35:23.685708+00:00",
+    "inputSha256": "8b83755acd4efaed0446d077a262062ac7377c15aebced29f9df0e124ee81c87",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "rawEngineOutputSha256": "a9d7df289f5d3219d1d3f255afa55b7cc58ce4768a21bf5691123792f8e8098d",
+    "omittedRanges": [
+      {
+        "start": 1168.76,
+        "end": 1742.92,
+        "reason": "主持介紹後的配樂暖身、運動教學與歌曲，非本人訪談。",
+        "marker": "［音樂演出及配樂暖身省略，請對照原片；不將歌曲或運動指導列為沈伯洋原話］"
+      }
+    ],
+    "uncertainRanges": [
+      {
+        "start": 1842.92,
+        "end": 1872.9
+      },
+      {
+        "start": 1873.8000000000002,
+        "end": 1891.94
+      },
+      {
+        "start": 1891.94,
+        "end": 1921.92
+      },
+      {
+        "start": 1951.96,
+        "end": 1973.76
+      },
+      {
+        "start": 1974.32,
+        "end": 2000.52
+      },
+      {
+        "start": 2000.52,
+        "end": 2030.5
+      },
+      {
+        "start": 2031.16,
+        "end": 2034.36
+      }
+    ],
+    "processingNotes": [
+      "完整原音已執行本機ASR，原引擎輸出留於工作快取；省略音樂、非談話或不可靠段落時保留原片時間，不重設時間軸。",
+      "另標註7個原始cue：avg_logprob < -2、compression_ratio > 4或明顯不相干字幕／訂閱套語；這不是準確率，不猜譯台語或其他語言。"
+    ]
+  },
+  "publishedAt": "2026-11-15T07:01:29+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC4LjkybVKXCDlneVXlKAbmw",
+  "originalDescription": "#沈伯洋 #電器盃 #節能公益路跑\n\n（鏡新聞已上架86台，若無法收看，請洽詢當地系統台）\n--\n鏡電視推出個人廣告囉！\n讓你也能成為廣告主Show Yourself👉https://mnews.oen.tw/\n--\n《鏡好買》電商平台全新上線🔥\n鏡好買是鏡電視全新推出的官方選物平台，精選日常生活中真正好用、安心、有品質的商品，從美食、生活用品到居家好物，幫你把關品質好生活❤️\n現在加入就送購物優惠券👉 https://lihi.cc/keGMC\n--\n加入頻道會員支持鏡新聞🩷：\nhttps://www.youtube.com/channel/UC4LjkybVKXCDlneVXlKAbmw/join\n--\n鏡好買MirrorLife👉https://lihi.cc/keGM\n鏡新聞官方網站👉https://www.mnews.tw/\n鏡新聞Facebook👉https://www.facebook.com/mnewstw/\n鏡新聞Instagram👉https://www.instagram.com/mnewstw/\n鏡新聞X👉 https://twitter.com/mnews_tw\n鏡新聞Threads👉https://www.threads.net/@mnewstw\n鏡新聞Line帳號👉https://lin.ee/4XsO8xi\n鏡新聞APP iOS👉https://reurl.cc/kqyqML\n鏡新聞APP Android👉https://reurl.cc/Ay2y63\n鏡電視綜合台YouTube👉http://pse.is/59enw2\n鏡電視直播台YouTube👉https://pse.is/4w3gts\n有話鏡來講YouTube👉https://reurl.cc/A4DjQj\n少年新聞週記YouTube👉https://reurl.cc/K4DeN9",
+  "youtubeMetadata": {
+    "upload_date": "20261114",
+    "timestamp": 1794697289,
+    "release_timestamp": 1794694015
+  },
+  "sourceScopeNote": "鏡新聞第12屆電器盃節能公益路跑原片，包含沈伯洋會前媒體聯訪及其後主持、其他來賓致詞、暖身與活動畫面，非全程本人專訪。摘要聚焦可辨識的沈伯洋問答，後續活動、他人致詞與背景聲不全數歸屬沈伯洋；與其他頻道路跑版本屬同一活動。 本篇以原音本機ASR與AI正體中文稿整理，未完成全篇人工聆聽覆核，請搭配原片閱讀。",
+  "versionType": "press-interview-with-other-content",
+  "formatTags": [
+    "媒體聯訪"
+  ],
+  "broadcastAt": "2026-11-15T06:06:55+08:00",
+  "broadcastDate": "2026-11-15"
+}
