@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T01:07:00.637330+00:00",
+  "updatedAt": "2026-11-17T00:28:50.223088+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,78 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "MyuG0OA1XUs",
+      "title": "走出暗黝森林──沈伯洋談閱讀、陪伴與文化｜ #文學新聞「讀書人」",
+      "displayTitle": "《走出暗黝森林》：閱讀、陪伴與文化（完整版）",
+      "channel": "鏡文學",
+      "uploadDate": "20261116",
+      "duration": 3849,
+      "url": "https://www.youtube.com/watch?v=MyuG0OA1XUs",
+      "sourceUrl": "https://www.youtube.com/watch?v=MyuG0OA1XUs",
+      "referenceUrl": "https://www.youtube.com/watch?v=MyuG0OA1XUs",
+      "metadataFile": ".cache/publish-20261116/MyuG0OA1XUs.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架本次掃描的三部原片。",
+      "spokenLanguage": "zh",
+      "category": "文化與閱讀",
+      "description": "依原頻道影音整理，原始字幕／ASR與AI正體中文顯示稿分開保留，請搭配原片閱讀。",
+      "publishedAt": "2026-11-16T12:18:44+08:00",
+      "youtubeUploadDate": "20261116",
+      "sourceScopeNote": "鏡文學「讀書人」系列於2026/11/16新公開的完整版，並非已核實於當日新錄；同系列9/7、9/8、9/9三段短版（PTEoG2CSPAU、dmLF1wjt1CU、1OvkV6SPS8w）已分別收錄。頻道原語言字幕為來源；對家庭、作品與求學的回憶為受訪者自述，城市與文化方案為訪談當時構想，不表述為已實施成果。 原始字幕／ASR與AI顯示稿分開保存；未完成全篇人工聆聽覆核。",
+      "formatTags": [
+        "完整版"
+      ],
+      "status": "source-imported"
+    },
+    {
+      "id": "b7bl87mIQn0",
+      "title": "【完整公開】LIVE 深夜赴醫院探視支持者 沈伯洋選戰時事受訪",
+      "displayTitle": "沈伯洋立法院聯訪：活動安排與選戰回應",
+      "channel": "台視新聞 TTV NEWS",
+      "uploadDate": "20261116",
+      "duration": 2155,
+      "url": "https://www.youtube.com/watch?v=b7bl87mIQn0",
+      "sourceUrl": "https://www.youtube.com/watch?v=b7bl87mIQn0",
+      "referenceUrl": "https://www.youtube.com/watch?v=b7bl87mIQn0",
+      "metadataFile": ".cache/publish-20261116/b7bl87mIQn0.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架本次掃描的三部原片。",
+      "spokenLanguage": "zh",
+      "category": "政治與公共事務",
+      "description": "依原頻道影音整理，原始字幕／ASR與AI正體中文顯示稿分開保留，請搭配原片閱讀。",
+      "publishedAt": "2026-11-16T10:35:06+08:00",
+      "youtubeUploadDate": "20261116",
+      "sourceScopeNote": "台視新聞2026/11/16立法院媒體聯訪直播回放，總長35:55包含同場問答重播及片尾頻道宣傳，並非35分鐘不重複的新談話。問答約17分鐘後重播；以相同場次理解。活動人數、支持者狀況、民調、不實訊息及基泰大直案相關回應均保留為沈伯洋說法；記者提問中的前提不視為本站查核結論。 原始字幕／ASR與AI顯示稿分開保存；未完成全篇人工聆聽覆核。",
+      "formatTags": [
+        "媒體聯訪"
+      ],
+      "status": "source-imported"
+    },
+    {
+      "id": "Tlyzh1scW0Y",
+      "title": "【完整公開】LIVE 被邀做披薩 沈伯洋「+1」回應先體驗",
+      "displayTitle": "沈伯洋達美樂體驗與聯訪：家庭生活及市政議題",
+      "channel": "台視新聞 TTV NEWS",
+      "uploadDate": "20261116",
+      "duration": 4555,
+      "url": "https://www.youtube.com/watch?v=Tlyzh1scW0Y",
+      "sourceUrl": "https://www.youtube.com/watch?v=Tlyzh1scW0Y",
+      "referenceUrl": "https://www.youtube.com/watch?v=Tlyzh1scW0Y",
+      "metadataFile": ".cache/publish-20261116/Tlyzh1scW0Y.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架本次掃描的三部原片。",
+      "spokenLanguage": "zh",
+      "category": "政治與公共事務",
+      "description": "依原頻道影音整理，原始字幕／ASR與AI正體中文顯示稿分開保留，請搭配原片閱讀。",
+      "publishedAt": "2026-11-16T15:25:42+08:00",
+      "youtubeUploadDate": "20261116",
+      "sourceScopeNote": "台視新聞2026/11/16達美樂龍江店體驗與媒體聯訪直播回放，包含現場體驗、工作人員對話、媒體問答及同場問答重播與片尾內容，非全程單人專訪；聯訪與同日其他頻道直播屬同場。摘要依可辨識的本人回答整理，工作人員指導、記者提問與其他人的發言不全部歸屬沈伯洋，市政構想不表述為已實施。 原始字幕／ASR與AI顯示稿分開保存；未完成全篇人工聆聽覆核。 前段以現場等候、店內體驗及工作人員維持動線為主，主要本人問答約46分鐘開始、約63分鐘再重播；背景聲不清處明確註記，不虛構補字。",
+      "formatTags": [
+        "媒體聯訪"
+      ],
+      "status": "source-imported"
+    },
     {
       "id": "uiJWepnBvEs",
       "title": "直播／沈伯洋出席第12屆電器盃！　節能公益路跑登場｜20261115",

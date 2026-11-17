@@ -3,6 +3,18 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "b7bl87mIQn0",
+      "slug": "2026-11-16-shen-bo-yang-election-interview"
+    },
+    {
+      "id": "Tlyzh1scW0Y",
+      "slug": "2026-11-16-shen-ber-yang-pizza-visit"
+    },
+    {
+      "id": "MyuG0OA1XUs",
+      "slug": "2026-11-16-shen-boyang-reading-companionship"
+    },
+    {
       "id": "uiJWepnBvEs",
       "slug": "2026-11-15-shen-bo-yang-road-race-interview"
     },
@@ -589,15 +601,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-16"
+    "updatedAt": "2026-11-17"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-16T01:11:38.256218+00:00"
+    "updatedAt": "2026-11-17T00:28:36.257683+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-16T01:16:53.817365+00:00"
+    "updatedAt": "2026-11-17T00:29:54.210901+00:00"
   },
   "statistics": {
     "version": 1,
@@ -605,24 +617,23 @@
     "completedAt": "2026-11-15T23:23:46.946990+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 63218173,
-      "likes": 1546331,
-      "comments": 155525,
-      "commentsAvailable": 146,
-      "videos": 146,
-      "viewsAvailable": 146,
-      "likesAvailable": 145,
-      "fresh": 146
+      "views": 63385523,
+      "likes": 1549810,
+      "comments": 155689,
+      "commentsAvailable": 149,
+      "videos": 149,
+      "viewsAvailable": 149,
+      "likesAvailable": 148,
+      "fresh": 149
     },
     "updateScope": {
       "videoIds": [
-        "Cc1NdScyoZM",
-        "YtNJ0lBQdUM",
-        "ZLIdLGhEESk",
-        "uiJWepnBvEs"
+        "MyuG0OA1XUs",
+        "Tlyzh1scW0Y",
+        "b7bl87mIQn0"
       ],
       "method": "imported-youtube-metadata",
-      "note": "僅新增四片統計，其餘影片保留每日更新的成功值及取得時間。"
+      "note": "新增三片統計採本次掃描取得的YouTube中繼資料與實際取得時間，其餘影片保留每日更新值；重新查詢遭YouTube登入驗證限制，未冒充更新成功。"
     }
   },
   "covers": {
