@@ -3,6 +3,18 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "TMHMMzTQ324",
+      "slug": "2026-11-17-shen-ber-yang-taipei-municipal-policy"
+    },
+    {
+      "id": "NAUU8AHGKic",
+      "slug": "2026-11-17-taipei-yilan-cooperation"
+    },
+    {
+      "id": "4R75pgAAYyc",
+      "slug": "2026-11-17-shen-bo-yang-election-policy"
+    },
+    {
       "id": "b7bl87mIQn0",
       "slug": "2026-11-16-shen-bo-yang-election-interview"
     },
@@ -601,15 +613,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-17T00:28:36.257683+00:00"
+    "updatedAt": "2026-11-18T00:45:34.083426+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-17T00:29:54.210901+00:00"
+    "updatedAt": "2026-11-18T00:49:29.714770+00:00"
   },
   "statistics": {
     "version": 1,
@@ -617,14 +629,23 @@
     "completedAt": "2026-11-17T02:28:27.192590+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 63845647,
-      "likes": 1555720,
-      "comments": 156421,
-      "commentsAvailable": 149,
-      "videos": 149,
-      "viewsAvailable": 149,
-      "likesAvailable": 148,
-      "fresh": 149
+      "views": 64136076,
+      "likes": 1566284,
+      "comments": 159956,
+      "commentsAvailable": 152,
+      "videos": 152,
+      "viewsAvailable": 152,
+      "likesAvailable": 151,
+      "fresh": 152
+    },
+    "updateScope": {
+      "videoIds": [
+        "4R75pgAAYyc",
+        "NAUU8AHGKic",
+        "TMHMMzTQ324"
+      ],
+      "method": "imported-youtube-metadata",
+      "note": "僅新增本次三片統計，採實際取得時間；其餘影片保留遠端每日更新值及統計歷史。"
     }
   },
   "covers": {

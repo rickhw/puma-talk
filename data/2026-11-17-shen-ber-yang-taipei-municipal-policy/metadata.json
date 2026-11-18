@@ -1,0 +1,48 @@
+{
+  "id": "TMHMMzTQ324",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "EP6｜沈伯洋是莎粉？訪問完沈伯洋，我的決定是…？｜feat.沈伯洋",
+  "channel": "莎晨報 Alisasa Podcast",
+  "date": "2026-11-17",
+  "sourceUrl": "https://www.youtube.com/watch?v=TMHMMzTQ324",
+  "metadataStatus": "imported",
+  "channelId": "UCJs5RfbD1_gaOn7YTSUGAAg",
+  "title": "《莎晨報》EP6：愛莉莎莎訪問沈伯洋",
+  "referenceUrl": "https://www.youtube.com/watch?v=TMHMMzTQ324",
+  "description": "莎晨報Alisasa Podcast EP6原頻道本人專訪，2026/11/17公開。開場對過往政治立場、觀眾與邀訪動機的說明，以及對政策的追問與評語，屬主持人愛莉莎莎的發言；沈伯洋的回答另依上下文理解。都更、青年基金、市容、交通與防詐方案為受訪時構想，並非已實施成果。 原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 2535,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-18T00:37:47.129309+00:00",
+    "inputSha256": "8bd84a37e76b599b65cee090247f9e58662da465583bc0a9c60afe36f73448da",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "rawEngineOutputSha256": "0f350d324ccce2f7bd89420c472777f78270d2cebcebfdf00efd97fb070cf41f",
+    "uncertainRanges": [],
+    "processingNotes": [
+      "AI另標註0個明顯不相干或低可靠解碼cue，原引擎輸出另留工作快取；未完整聆聽，標註數不代表準確率。"
+    ]
+  },
+  "publishedAt": "2026-11-17T20:38:50+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UCJs5RfbD1_gaOn7YTSUGAAg",
+  "originalDescription": "為什麼我會邀請他？\n因為我發現，\n只聽同溫層的聲音，\n很可能會錯過一個愛台北的人！\n\n☀️ 莎莎被攻擊過，一度先入為主討厭他\n☀️ 台北最需要改革的事？先幫公務員減壓\n☀️ 市容怎麼改？先從違建鐵皮頂樓下手\n☀️ 社宅蓋好要三到五年，包租代管先頂上\n☀️ 城市青年基金，是讓年輕人不勞而獲嗎？\n☀️ 內湖交通不強制分區上班，改讓企業認領時段\n☀️ 詐騙越來越誇張，應該先打「防詐疫苗」\n☀️ 好政策不分顏色，柯市府的建設也會延續\n☀️ 結語：支持一個政黨，不代表要討厭另一個",
+  "youtubeMetadata": {
+    "upload_date": "20261117",
+    "timestamp": 1794919130,
+    "release_timestamp": null
+  },
+  "sourceScopeNote": "莎晨報Alisasa Podcast EP6原頻道本人專訪，2026/11/17公開。開場對過往政治立場、觀眾與邀訪動機的說明，以及對政策的追問與評語，屬主持人愛莉莎莎的發言；沈伯洋的回答另依上下文理解。都更、青年基金、市容、交通與防詐方案為受訪時構想，並非已實施成果。 原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+  "formatTags": [],
+  "versionType": "full-interview"
+}

@@ -1,0 +1,93 @@
+{
+  "id": "NAUU8AHGKic",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "【完整公開】LIVE 沈伯洋、林國漳簽署 新北宜生活圈合作備忘錄",
+  "channel": "台視新聞 TTV NEWS",
+  "date": "2026-11-17",
+  "sourceUrl": "https://www.youtube.com/watch?v=NAUU8AHGKic",
+  "metadataStatus": "imported",
+  "channelId": "UC8ROUUjHzEQm-ndb69CX8Ww",
+  "title": "沈伯洋、林國漳：新北宜生活圈合作與媒體問答",
+  "referenceUrl": "https://www.youtube.com/watch?v=NAUU8AHGKic",
+  "description": "台視2026/11/17「新北宜生活圈」合作備忘錄簽署記者會，包含主持人韓瑩、宜蘭縣長候選人林國漳、沈伯洋及媒體提問。林國漳對宜蘭的規劃與當選後三個月成立協作平台的承諾，不全數歸屬沈伯洋；雙方提出的交通、產業、人才與合作機制均是選前規劃，非高鐵已通車或跨市政策已實施。 原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 2755,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-18T00:38:22.097708+00:00",
+    "inputSha256": "4485901d6a9d8c16b2b972fb451336432f41535e7ee586aa7a369a04eaa4e9ec",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "rawEngineOutputSha256": "49b1f8ab9f8cf1f9978ee2c21d320d2de84b963a5c222de7e4dbf2fb078fb2a7",
+    "uncertainRanges": [
+      {
+        "start": 1174.56,
+        "end": 1204.54,
+        "reason": "明顯不相干字幕／訂閱套語"
+      },
+      {
+        "start": 2645.14,
+        "end": 2648.22,
+        "reason": "低可靠解碼分數或壓縮率異常"
+      },
+      {
+        "start": 2649.9,
+        "end": 2651.54,
+        "reason": "低可靠解碼分數或壓縮率異常"
+      },
+      {
+        "start": 2652.74,
+        "end": 2654.54,
+        "reason": "低可靠解碼分數或壓縮率異常"
+      },
+      {
+        "start": 2655.96,
+        "end": 2657.7,
+        "reason": "低可靠解碼分數或壓縮率異常"
+      },
+      {
+        "start": 2658.08,
+        "end": 2659.14,
+        "reason": "低可靠解碼分數或壓縮率異常"
+      },
+      {
+        "start": 2660.62,
+        "end": 2662.4,
+        "reason": "低可靠解碼分數或壓縮率異常"
+      },
+      {
+        "start": 2662.4,
+        "end": 2663.06,
+        "reason": "低可靠解碼分數或壓縮率異常"
+      }
+    ],
+    "processingNotes": [
+      "AI另標註8個明顯不相干或低可靠解碼cue，原引擎輸出另留工作快取；未完整聆聽，標註數不代表準確率。"
+    ]
+  },
+  "publishedAt": "2026-11-17T10:26:50+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC8ROUUjHzEQm-ndb69CX8Ww",
+  "originalDescription": "#沈伯洋 #林國漳 #新北宜生活圈\n\n2026.11.17【完整公開】沈伯洋、林國漳簽署 新北宜生活圈合作備忘錄\n\n✨歡迎收看並訂閱TTVNews台視新聞YouTube頻道✨\n\n◎【台視新聞網】👉https://news.ttv.com.tw/\n◎訂閱【台視新聞】👉https://www.youtube.com/c/ttvnewsview\n◎訂閱【TTV LIVE台視直播】👉https://www.youtube.com/c/twlivenews\n◎按讚【台視新聞FB】👉https://www.facebook.com/ttvnews/\n◎追蹤【台視新聞IG】👉https://www.instagram.com/ttvnews_tw/",
+  "youtubeMetadata": {
+    "upload_date": "20261117",
+    "timestamp": 1794882410,
+    "release_timestamp": 1794879165
+  },
+  "sourceScopeNote": "台視2026/11/17「新北宜生活圈」合作備忘錄簽署記者會，包含主持人韓瑩、宜蘭縣長候選人林國漳、沈伯洋及媒體提問。林國漳對宜蘭的規劃與當選後三個月成立協作平台的承諾，不全數歸屬沈伯洋；雙方提出的交通、產業、人才與合作機制均是選前規劃，非高鐵已通車或跨市政策已實施。 原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+  "formatTags": [
+    "聯合記者會"
+  ],
+  "versionType": "joint-press-conference",
+  "broadcastAt": "2026-11-17T09:32:45+08:00",
+  "broadcastDate": "2026-11-17"
+}

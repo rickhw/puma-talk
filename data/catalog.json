@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-17T00:28:50.223088+00:00",
+  "updatedAt": "2026-11-18T00:46:49.835419+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,104 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "TMHMMzTQ324",
+      "title": "EP6｜沈伯洋是莎粉？訪問完沈伯洋，我的決定是…？｜feat.沈伯洋",
+      "displayTitle": "《莎晨報》EP6：愛莉莎莎訪問沈伯洋",
+      "channel": "莎晨報 Alisasa Podcast",
+      "uploadDate": "20261117",
+      "duration": 2535,
+      "url": "https://www.youtube.com/watch?v=TMHMMzTQ324",
+      "sourceUrl": "https://www.youtube.com/watch?v=TMHMMzTQ324",
+      "referenceUrl": "https://www.youtube.com/watch?v=TMHMMzTQ324",
+      "metadataFile": ".cache/publish-20261117/TMHMMzTQ324.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架：莎晨報EP6、新北宜生活圈記者會及民視法新社受訪新聞剪輯。",
+      "spokenLanguage": "zh",
+      "skipSubtitles": true,
+      "category": "政治與公共事務",
+      "description": "依原頻道影音整理，保留原始逐字稿與時間碼，AI正體中文顯示稿另存。",
+      "sourceScopeNote": "莎晨報Alisasa Podcast EP6原頻道本人專訪，2026/11/17公開。開場對過往政治立場、觀眾與邀訪動機的說明，以及對政策的追問與評語，屬主持人愛莉莎莎的發言；沈伯洋的回答另依上下文理解。都更、青年基金、市容、交通與防詐方案為受訪時構想，並非已實施成果。 原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+      "publishedAt": "2026-11-17T20:38:50+08:00",
+      "formatTags": [],
+      "status": "source-imported"
+    },
+    {
+      "id": "NAUU8AHGKic",
+      "title": "【完整公開】LIVE 沈伯洋、林國漳簽署 新北宜生活圈合作備忘錄",
+      "displayTitle": "沈伯洋、林國漳：新北宜生活圈合作與媒體問答",
+      "channel": "台視新聞 TTV NEWS",
+      "uploadDate": "20261117",
+      "duration": 2755,
+      "url": "https://www.youtube.com/watch?v=NAUU8AHGKic",
+      "sourceUrl": "https://www.youtube.com/watch?v=NAUU8AHGKic",
+      "referenceUrl": "https://www.youtube.com/watch?v=NAUU8AHGKic",
+      "metadataFile": ".cache/publish-20261117/NAUU8AHGKic.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架：莎晨報EP6、新北宜生活圈記者會及民視法新社受訪新聞剪輯。",
+      "spokenLanguage": "zh",
+      "skipSubtitles": true,
+      "category": "政治與公共事務",
+      "description": "依原頻道影音整理，保留原始逐字稿與時間碼，AI正體中文顯示稿另存。",
+      "audioLanguage": "zh-Hant",
+      "sourceScopeNote": "台視2026/11/17「新北宜生活圈」合作備忘錄簽署記者會，包含主持人韓瑩、宜蘭縣長候選人林國漳、沈伯洋及媒體提問。林國漳對宜蘭的規劃與當選後三個月成立協作平台的承諾，不全數歸屬沈伯洋；雙方提出的交通、產業、人才與合作機制均是選前規劃，非高鐵已通車或跨市政策已實施。 原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+      "publishedAt": "2026-11-17T10:26:50+08:00",
+      "formatTags": [
+        "聯合記者會"
+      ],
+      "status": "source-imported"
+    },
+    {
+      "id": "4R75pgAAYyc",
+      "title": "發燒新聞／法新社跨海來台直擊洋流　沈伯洋全英文接受專訪｜民視新聞",
+      "displayTitle": "法新社受訪新聞剪輯：沈伯洋談選戰與政策",
+      "channel": "民視新聞網 Formosa TV News network",
+      "uploadDate": "20261117",
+      "duration": 284,
+      "url": "https://www.youtube.com/watch?v=4R75pgAAYyc",
+      "sourceUrl": "https://www.youtube.com/watch?v=4R75pgAAYyc",
+      "referenceUrl": "https://www.youtube.com/watch?v=4R75pgAAYyc",
+      "metadataFile": ".cache/publish-20261117/4R75pgAAYyc.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架：莎晨報EP6、新北宜生活圈記者會及民視法新社受訪新聞剪輯。",
+      "spokenLanguage": "en",
+      "skipSubtitles": true,
+      "category": "政治與公共事務",
+      "description": "依原頻道影音整理，保留原始逐字稿與時間碼，AI正體中文顯示稿另存。",
+      "audioLanguage": "zh-Hant",
+      "sourceScopeNote": "民視新聞網整理的法新社受訪相關新聞剪輯，非已核實的法新社完整原專訪。前段含沈伯洋英文回答、支持者及學者中文意見，後段另接翡翠水庫等中文媒體聯訪回應；開頭預覽與後面談話有重複。支持者評價、學者推論及記者提問不全數歸屬沈伯洋，後接中文聯訪不表述為法新社原訪問的一部分。 原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。 片尾中文聯訪與本次收錄的新北宜生活圈記者會媒體問答部分重疊，按不同影片ID收錄，不代表另外一場受訪。",
+      "publishedAt": "2026-11-17T16:16:38+08:00",
+      "formatTags": [
+        "新聞剪輯"
+      ],
+      "status": "source-imported",
+      "spokenLanguages": [
+        "en",
+        "zh"
+      ],
+      "asrLanguageSegments": [
+        {
+          "start": 0,
+          "end": 20.2,
+          "language": "en"
+        },
+        {
+          "start": 20.2,
+          "end": 55,
+          "language": "zh"
+        },
+        {
+          "start": 55,
+          "end": 97,
+          "language": "en"
+        },
+        {
+          "start": 97,
+          "end": 283.981,
+          "language": "zh"
+        }
+      ]
+    },
     {
       "id": "MyuG0OA1XUs",
       "title": "走出暗黝森林──沈伯洋談閱讀、陪伴與文化｜ #文學新聞「讀書人」",

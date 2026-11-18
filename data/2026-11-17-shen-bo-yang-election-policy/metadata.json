@@ -1,0 +1,100 @@
+{
+  "id": "4R75pgAAYyc",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "發燒新聞／法新社跨海來台直擊洋流　沈伯洋全英文接受專訪｜民視新聞",
+  "channel": "民視新聞網 Formosa TV News network",
+  "date": "2026-11-17",
+  "sourceUrl": "https://www.youtube.com/watch?v=4R75pgAAYyc",
+  "metadataStatus": "imported",
+  "channelId": "UC2VmWn8dAqkzlQqvy02E1PA",
+  "title": "法新社受訪新聞剪輯：沈伯洋談選戰與政策",
+  "referenceUrl": "https://www.youtube.com/watch?v=4R75pgAAYyc",
+  "description": "民視新聞網整理的法新社受訪相關新聞剪輯，非已核實的法新社完整原專訪。前段含沈伯洋英文回答、支持者及學者中文意見，後段另接翡翠水庫等中文媒體聯訪回應；開頭預覽與後面談話有重複。支持者評價、學者推論及記者提問不全數歸屬沈伯洋，後接中文聯訪不表述為法新社原訪問的一部分。 原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。 片尾中文聯訪與本次收錄的新北宜生活圈記者會媒體問答部分重疊，按不同影片ID收錄，不代表另外一場受訪。",
+  "category": "政治與公共事務",
+  "duration": 284,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "en",
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "generatedAt": "2026-11-18T00:40:15.924738+00:00",
+    "inputSha256": "70c9dc38e366b77aa50761a5d73a77a32b7c5afd8610ef299de40a09930a2020",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "languageSegments": [
+      {
+        "start": 0,
+        "end": 20.2,
+        "language": "en",
+        "inputSha256": "012a33191db193e19b4d63463a317165fc7222bbc6acd9f6a095d4efbc0f8d47",
+        "rawEngineOutputSha256": "b0ecf0527398ed4a5bc4929f568ced75f97a8a3dce8a1f1c96b407a5b15c4ec6",
+        "annotations": []
+      },
+      {
+        "start": 20.2,
+        "end": 55,
+        "language": "zh",
+        "inputSha256": "20d07e2698119920c205bec80b3dd0f36ee97f528d77933493ea0650113a9226",
+        "rawEngineOutputSha256": "b22cba92680c5e1c3c29c375dd9aff5292bd8fab57ba903c857b23f99882e41d",
+        "annotations": [
+          {
+            "kind": "invalid-decoder-window",
+            "start": 30.0,
+            "end": 34.8,
+            "seek": 3000
+          }
+        ]
+      },
+      {
+        "start": 55,
+        "end": 97,
+        "language": "en",
+        "inputSha256": "2ae61581eb8af400dcf8eb68283173b2fd82b2a7d2d6d03a65c2e739f0208346",
+        "rawEngineOutputSha256": "66823da9f3a4114bca2fde16be08f1066cbdc37b4fa1370bf8a88839f0fe1fd0",
+        "annotations": []
+      },
+      {
+        "start": 97,
+        "end": 283.981,
+        "language": "zh",
+        "inputSha256": "9c2f159f9e10b0e174cf4a1cada660555f73003caa528fbb22e986c288feca32",
+        "rawEngineOutputSha256": "cd6413265c34c44c20f6224a347debfe7a5c073e1ee685cf1520aba11a2f8cc4",
+        "annotations": []
+      }
+    ],
+    "processingNotes": [
+      "原音音軌標記zh-Hant，實際包含沈伯洋英文受訪、支持者與學者中文意見，以及後接的中文媒體聯訪；按語言範圍分段辨識，保留影片原時間軸。",
+      "語言切換界點依中英文辨識結果及預覽圖對照定位，時間碼屬辨識估計；開頭預覽與後段受訪有重複，不計為不同受訪場次。"
+    ],
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb"
+  },
+  "publishedAt": "2026-11-17T16:16:38+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC2VmWn8dAqkzlQqvy02E1PA",
+  "originalDescription": "影音中心／張智傑報導\n \n台北市長選情膠著也受到外媒關注，法國最大通訊社「法新社」，日前專訪民進黨市長候選人沈伯洋，沈伯洋表示，自己一直相信能夠勝選，因為對手蔣萬安過去幾個月態度有點消極，另外他也提到自己只想專注在市政上的討論，法西社也訪問了沈柏洋的支持者，其中一位支持者表示自己也是因為他開始比較熱衷政治，政治大學選舉研究中心主任蕭怡靖表示，2026的選舉是有可能影響2028的總統大選，但依然存在許多變數，法新社也透露，他們有向蔣萬安團隊邀專訪，但他們拒絕受訪。\n\n#全民話燒 #法新社 #洋流 #沈伯洋 #蔣萬安\n\n成為這個頻道的會員並獲得福利：\nhttps://www.youtube.com/channel/UC2VmWn8dAqkzlQqvy02E1PA/join\n\n歡迎收看並訂閱【#民視新聞網】YouTube頻道，另外請記得開啟YouTube🔔小鈴鐺通知！！\n\n👇👇👇民視新聞人氣社群👇👇👇\n◉按讚訂閱《民視新聞FB》，給您最快速優質新聞\n➔https://www.facebook.com/ftvnews53/\n◯歡迎訂閱《民視新聞網》，即時追蹤最有深度新聞\n➔https://www.youtube.com/FTVCP \n◉歡迎訂閱《民視新聞直播》，隨時直播最真實新聞\n➔https://youtu.be/ylYJSBUgaMA\n◯歡迎訂閱《民視讚夯》，隨時follow最熱門最優質節目\n➔https://www.youtube.com/FTVNP \n\n👇👇👇民視新聞人氣連結👇👇👇\n🉐隨時LINE一下新聞不漏接✅ https://goo.gl/hze3Wv\n🉐超方便手機APP立刻載📱 https://goo.gl/UXPysp\n🉐隨時隨地看電視📺 https://goo.gl/fYB6on\n🉐關心台灣大小事📰 https://www.ftvnews.com.tw/\n🉐還沒追蹤ig就落伍了✨ https://goo.gl/eWnXSZ",
+  "youtubeMetadata": {
+    "upload_date": "20261117",
+    "timestamp": 1794903398,
+    "release_timestamp": null
+  },
+  "sourceScopeNote": "民視新聞網整理的法新社受訪相關新聞剪輯，非已核實的法新社完整原專訪。前段含沈伯洋英文回答、支持者及學者中文意見，後段另接翡翠水庫等中文媒體聯訪回應；開頭預覽與後面談話有重複。支持者評價、學者推論及記者提問不全數歸屬沈伯洋，後接中文聯訪不表述為法新社原訪問的一部分。 原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。 片尾中文聯訪與本次收錄的新北宜生活圈記者會媒體問答部分重疊，按不同影片ID收錄，不代表另外一場受訪。",
+  "formatTags": [
+    "新聞剪輯"
+  ],
+  "versionType": "news-compilation",
+  "relatedVideos": [
+    {
+      "videoId": "NAUU8AHGKic",
+      "relationship": "contains-excerpt-from-same-event"
+    }
+  ]
+}
