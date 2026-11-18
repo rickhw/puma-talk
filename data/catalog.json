@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-18T00:46:49.835419+00:00",
+  "updatedAt": "2026-11-18T08:17:58.675077+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,26 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "wCbekPzdDwo",
+      "title": "台北人不快樂？沈伯洋：這座城市缺的是「減壓」！│盧建彰 ft. 沈伯洋 台北市長候選人/立法委員",
+      "displayTitle": "《盧建彰喀創意》沈伯洋談城市減壓與日常生活",
+      "channel": "寶島聯播網",
+      "uploadDate": "20261117",
+      "duration": 2855,
+      "url": "https://www.youtube.com/watch?v=wCbekPzdDwo",
+      "sourceUrl": "https://www.youtube.com/watch?v=wCbekPzdDwo",
+      "referenceUrl": "https://www.youtube.com/watch?v=wCbekPzdDwo",
+      "metadataFile": ".cache/publish-wCbekPzdDwo/wCbekPzdDwo.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架；寶島聯播網原頻道《盧建彰喀創意》本人專訪。",
+      "spokenLanguage": "zh",
+      "category": "社會與生活",
+      "description": "依原頻道影音整理，原始ASR與AI正體中文顯示稿分開保留，請搭配原片閱讀。",
+      "sourceScopeNote": "寶島聯播網《盧建彰喀創意》原頻道專訪，2026/11/17公開，實際錄製日未獨立核實。內容包括主持人盧建彰與沈伯洋的生活對談、育兒及運動經驗，以及城市減壓、交通與長者生活的政策討論。主持人的提問、個人經驗與評語分開理解；受訪者提出的方案、統計與預期效益保留為其說法，不寫成已實施成果或本站獨立查核結論。原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。 主持人約36:02–36:31的書籍朗讀省略逐字文字，以時間標記保留前後對談。",
+      "publishedAt": "2026-11-17T17:00:11+08:00",
+      "status": "source-imported"
+    },
     {
       "id": "TMHMMzTQ324",
       "title": "EP6｜沈伯洋是莎粉？訪問完沈伯洋，我的決定是…？｜feat.沈伯洋",

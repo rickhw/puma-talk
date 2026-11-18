@@ -1,0 +1,57 @@
+{
+  "id": "wCbekPzdDwo",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "台北人不快樂？沈伯洋：這座城市缺的是「減壓」！│盧建彰 ft. 沈伯洋 台北市長候選人/立法委員",
+  "channel": "寶島聯播網",
+  "date": "2026-11-17",
+  "sourceUrl": "https://www.youtube.com/watch?v=wCbekPzdDwo",
+  "metadataStatus": "imported",
+  "channelId": "UCS5EoJjZ3vZzjoPCezowCdA",
+  "title": "《盧建彰喀創意》沈伯洋談城市減壓與日常生活",
+  "referenceUrl": "https://www.youtube.com/watch?v=wCbekPzdDwo",
+  "description": "寶島聯播網《盧建彰喀創意》原頻道專訪，2026/11/17公開，實際錄製日未獨立核實。內容包括主持人盧建彰與沈伯洋的生活對談、育兒及運動經驗，以及城市減壓、交通與長者生活的政策討論。主持人的提問、個人經驗與評語分開理解；受訪者提出的方案、統計與預期效益保留為其說法，不寫成已實施成果或本站獨立查核結論。原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。 主持人約36:02–36:31的書籍朗讀省略逐字文字，以時間標記保留前後對談。",
+  "category": "社會與生活",
+  "duration": 2855,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-18T08:11:19.494549+00:00",
+    "inputSha256": "a9bc520cb9328aed9ab80a58bbd17c94cc0552c099356616cd663d8b7e9c3a30",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "rawEngineOutputSha256": "6cbec2d26f1cba50fafb9327eca7d62cfa93d530b911a310497a4ebd192c6f99",
+    "uncertainRanges": [],
+    "processingNotes": [
+      "AI另標註0個明顯不相干或低可靠解碼cue，原引擎輸出留工作快取；未全篇聆聽，標註數不代表準確率。",
+      "主持人朗讀書籍區間以省略時間標記代替逐字文字；原引擎輸出留於忽略提交的本機快取，摘要不引用該段書籍原文。"
+    ],
+    "omittedRanges": [
+      {
+        "start": 2161.6,
+        "end": 2191.04,
+        "marker": "［書籍朗讀文字省略，請聽原片；前後對談另行保留］",
+        "reason": "主持人朗讀他人書籍，省略逐字文字並保留原片時間及前後對談。"
+      }
+    ]
+  },
+  "publishedAt": "2026-11-17T17:00:11+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UCS5EoJjZ3vZzjoPCezowCdA",
+  "originalDescription": "很多人認識沈伯洋，是立法院裡的立委、犯罪學學者 🛡️\n但很少人知道，他是五分埔柑仔店長大的台北囝仔，也是每天下班陪女兒大喊「3、2、1，Go Shoot！」的文青爸爸 👨‍👧✨\n\n今天來到《盧建彰喀創意》，我們不聊政治煙硝，聊聊生活、聊聊孩子，聊聊這座城市該有的呼吸節奏 🍃\n\n「台北人的運動，常常是一場狼狽的掙扎。」 💦\n\n👉 超過 70% 的台北人熱愛戶外運動，但夏天出門走 5 分鐘就滿頭大汗、跨個河橋牽車像在做重訓；想跑個步，卻因為下班沒地方盥洗，只能打消念頭回家躺平看 Netflix……\n更別說每天 97萬名 外縣市通勤族與奔波的業務，常常頂著大汗奔波，甚至得躲進旅宿梳化整齊才能見客戶 🚗💨\n\n沈伯洋看到的，不是華麗的大型地標，而是每個人日常裡最微小的痛點：\n\n🚿 運動驛站 ｜ 跑完步、騎完車直接盥洗更衣，省下往返 2 小時，轉身就能去獨立書店看書、喝杯咖啡、約朋友看場電影！\n🌳 綠蔭分流與電輔單車 ｜ 用行道樹自然隔開自行車與行人，推動跨橋電輔車補助，幫城市降溫、也幫你的脾氣降燥。\n💪 親子卡與長者阻力訓練 ｜ 每月給育兒家庭喘息額度，用「自尊卡」鼓勵長輩走入健身小霸練肌力，減少 8 年多不健康餘命的長照重擔。\n\n「做政策不是哪裡痛就貼OK繃，而是把大家的生活串成健康的生態系。」🌱\n\n這一切的核心，其實只有兩個字——減壓。\n減掉塞車的焦躁、減掉育兒與老去的孤單，把時間還給自己，把陪伴留給家人 ❤️\n\n🎧 完整節目精彩上線：\n每週鎖定《盧建彰喀創意》，一起在創意與日常裡，找到生活的平衡感。\n\n#盧建彰喀創意 #盧建彰 #沈伯洋 #台北生活 #城市生態學 #運動驛站 #減壓生活 #育兒日常 #單車生活 #終結孤單 #生活小確幸\n---------------------------\n📌訂閱/分享\n📍寶島聯播網Youtube▷ https://reurl.cc/K858gM\n📍鄧惠文-心事有人知▷ https://reurl.cc/VYgYkR\n📍賴芳玉聊法▷ https://www.youtube.com/@Bbd-Law\n📍徐佳馨-房市ok嗎▷ https://reurl.cc/VYgYkR\n📍梁惠雯-醫探究竟▷ https://www.youtube.com/@Bbd-medical\n📍鄭弘儀-寶島全世界▷ https://reurl.cc/Laga97\n📍汪潔民-財富汪得福▷ https://reurl.cc/QYgY8o",
+  "youtubeMetadata": {
+    "upload_date": "20261117",
+    "timestamp": 1794906011,
+    "release_timestamp": 1794906011,
+    "live_status": "not_live"
+  },
+  "sourceScopeNote": "寶島聯播網《盧建彰喀創意》原頻道專訪，2026/11/17公開，實際錄製日未獨立核實。內容包括主持人盧建彰與沈伯洋的生活對談、育兒及運動經驗，以及城市減壓、交通與長者生活的政策討論。主持人的提問、個人經驗與評語分開理解；受訪者提出的方案、統計與預期效益保留為其說法，不寫成已實施成果或本站獨立查核結論。原始ASR與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。 主持人約36:02–36:31的書籍朗讀省略逐字文字，以時間標記保留前後對談。",
+  "versionType": "full-interview"
+}

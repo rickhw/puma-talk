@@ -3,6 +3,10 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "wCbekPzdDwo",
+      "slug": "2026-11-17-taipei-city-pressure-relief"
+    },
+    {
       "id": "TMHMMzTQ324",
       "slug": "2026-11-17-shen-ber-yang-taipei-municipal-policy"
     },
@@ -617,11 +621,11 @@
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-18T00:45:34.083426+00:00"
+    "updatedAt": "2026-11-18T08:16:25.873358+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-18T00:49:29.714770+00:00"
+    "updatedAt": "2026-11-18T08:18:11.986230+00:00"
   },
   "statistics": {
     "version": 1,
@@ -629,14 +633,21 @@
     "completedAt": "2026-11-18T01:37:06.103394+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 64483617,
-      "likes": 1572937,
-      "comments": 160541,
-      "commentsAvailable": 152,
-      "videos": 152,
-      "viewsAvailable": 152,
-      "likesAvailable": 151,
-      "fresh": 152
+      "views": 64511238,
+      "likes": 1574112,
+      "comments": 160583,
+      "commentsAvailable": 153,
+      "videos": 153,
+      "viewsAvailable": 153,
+      "likesAvailable": 152,
+      "fresh": 153
+    },
+    "updateScope": {
+      "videoIds": [
+        "wCbekPzdDwo"
+      ],
+      "method": "imported-youtube-metadata",
+      "note": "僅新增本片統計，採實際取得時間；其餘影片保留遠端每日更新值及統計歷史。"
     }
   },
   "covers": {
