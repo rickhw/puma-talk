@@ -1,0 +1,55 @@
+{
+  "id": "8utlPWJFvJM",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "你們的問題沒有白問！因為我來了！｜你的市長沈伯洋",
+  "channel": "沈伯洋Puma",
+  "date": "2026-11-19",
+  "sourceUrl": "https://www.youtube.com/watch?v=8utlPWJFvJM",
+  "metadataStatus": "imported",
+  "channelId": "UC49EKUpNvS_fzdk5SKvipQg",
+  "title": "你們的問題沒有白問！因為我來了！｜沈伯洋政策問答直播",
+  "referenceUrl": "https://www.youtube.com/watch?v=8utlPWJFvJM",
+  "description": "沈伯洋Puma官方頻道2026/11/19政策問答直播原片，台灣時間20:20開始。延續「市長你給我聽好了」的市民提問回應，並介紹選前活動。市民問題、工作人員插話與本人回答分別理解；海外案例與政策效益保留為直播時的說法。中文原音辨識稿與AI正體中文顯示稿分開保存，未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 5472,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-20T02:23:45.208877+00:00",
+    "inputSha256": "c649d9aceb2362112c8e0033a65c994d7ef46d7b590fb99e3ff897a64caff29f",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "5 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。",
+      "另將1筆明顯不相干開場解碼改為辨識不清標記；其餘原始ASR與時間碼保留，未全篇人工聆聽。"
+    ],
+    "rawEngineOutputSha256": "6dba42734a5ecedd10f05622512a410a2c2915d51b1a56a60791b0de93ced4bb",
+    "uncertainRanges": [
+      {
+        "start": 60.0,
+        "end": 89.98,
+        "reason": "直播開始前明顯不相干的字幕志願者／訂閱套語解碼，不作為實際發言。"
+      }
+    ]
+  },
+  "versionType": "policy-qa-live",
+  "publishedAt": "2026-11-19T21:57:17+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC49EKUpNvS_fzdk5SKvipQg",
+  "originalDescription": "",
+  "youtubeMetadata": {
+    "upload_date": "20261119",
+    "timestamp": 1795096637,
+    "release_timestamp": 1795090822,
+    "live_status": "was_live"
+  },
+  "sourceScopeNote": "沈伯洋Puma官方頻道2026/11/19政策問答直播原片，台灣時間20:20開始。延續「市長你給我聽好了」的市民提問回應，並介紹選前活動。市民問題、工作人員插話與本人回答分別理解；海外案例與政策效益保留為直播時的說法。中文原音辨識稿與AI正體中文顯示稿分開保存，未完成全篇人工聆聽覆核。"
+}

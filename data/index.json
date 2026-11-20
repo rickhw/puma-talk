@@ -3,6 +3,14 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "ovbnrV4QszY",
+      "slug": "2026-11-19-taipei-urban-renewal-strategy"
+    },
+    {
+      "id": "8utlPWJFvJM",
+      "slug": "2026-11-19-shen-policy-live-qa"
+    },
+    {
       "id": "wCbekPzdDwo",
       "slug": "2026-11-17-taipei-city-pressure-relief"
     },
@@ -617,15 +625,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-18"
+    "updatedAt": "2026-11-20"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-18T08:16:25.873358+00:00"
+    "updatedAt": "2026-11-20T03:00:40.896497+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-18T08:18:11.986230+00:00"
+    "updatedAt": "2026-11-20T03:06:39.616151+00:00"
   },
   "statistics": {
     "version": 1,
@@ -633,14 +641,22 @@
     "completedAt": "2026-11-20T01:15:56.470154+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 65412614,
-      "likes": 1591022,
-      "comments": 163708,
-      "commentsAvailable": 153,
-      "videos": 153,
-      "viewsAvailable": 153,
-      "likesAvailable": 152,
-      "fresh": 153
+      "views": 66225358,
+      "likes": 1639113,
+      "comments": 164624,
+      "commentsAvailable": 155,
+      "videos": 155,
+      "viewsAvailable": 155,
+      "likesAvailable": 154,
+      "fresh": 155
+    },
+    "updateScope": {
+      "videoIds": [
+        "8utlPWJFvJM",
+        "ovbnrV4QszY"
+      ],
+      "method": "imported-youtube-metadata",
+      "note": "僅新增指定兩片統計，以實際取得時間記錄；其餘影片保留遠端每日統計值及歷史。"
     }
   },
   "covers": {
