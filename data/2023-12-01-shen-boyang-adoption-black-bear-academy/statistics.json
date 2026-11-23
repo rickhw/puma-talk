@@ -5,5 +5,7 @@
   "comments": 429,
   "fetchedAt": "2026-11-21T23:48:23.660545+00:00",
   "source": "youtube",
-  "status": "ok"
+  "status": "stale",
+  "lastError": "ERROR: [youtube] jSGuWCpbS90: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U",
+  "attemptedAt": "2026-11-23T00:15:20.332756+00:00"
 }
