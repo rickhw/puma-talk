@@ -1,11 +1,9 @@
 {
   "videoId": "5IH6YTRpCSE",
-  "views": 4052,
-  "likes": 371,
+  "views": 4082,
+  "likes": 372,
   "comments": 7,
-  "fetchedAt": "2026-11-21T23:48:24.792622+00:00",
+  "fetchedAt": "2026-11-24T04:17:59.516599+00:00",
   "source": "youtube",
-  "status": "stale",
-  "lastError": "ERROR: [youtube] 5IH6YTRpCSE: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U",
-  "attemptedAt": "2026-11-23T00:15:20.332756+00:00"
+  "status": "ok"
 }

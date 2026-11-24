@@ -1,11 +1,9 @@
 {
   "videoId": "k6Q9JMEIDv8",
-  "views": 149620,
-  "likes": 2505,
+  "views": 149738,
+  "likes": 2508,
   "comments": 442,
-  "fetchedAt": "2026-11-21T23:48:20.146245+00:00",
+  "fetchedAt": "2026-11-24T04:17:53.767011+00:00",
   "source": "youtube",
-  "status": "stale",
-  "lastError": "ERROR: [youtube] k6Q9JMEIDv8: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U",
-  "attemptedAt": "2026-11-23T00:15:20.332756+00:00"
+  "status": "ok"
 }

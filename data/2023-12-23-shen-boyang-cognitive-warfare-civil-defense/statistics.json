@@ -1,11 +1,9 @@
 {
   "videoId": "SNnnEN_cx6o",
-  "views": 83329,
-  "likes": 3415,
+  "views": 83556,
+  "likes": 3421,
   "comments": 303,
-  "fetchedAt": "2026-11-21T23:48:21.867207+00:00",
+  "fetchedAt": "2026-11-24T04:17:55.539105+00:00",
   "source": "youtube",
-  "status": "stale",
-  "lastError": "ERROR: [youtube] SNnnEN_cx6o: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U",
-  "attemptedAt": "2026-11-23T00:15:20.332756+00:00"
+  "status": "ok"
 }

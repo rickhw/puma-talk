@@ -1,11 +1,9 @@
 {
   "videoId": "XCBjCtCNcSQ",
-  "views": 562281,
-  "likes": 12162,
+  "views": 563816,
+  "likes": 12200,
   "comments": 1100,
-  "fetchedAt": "2026-11-21T23:48:25.718086+00:00",
+  "fetchedAt": "2026-11-24T04:17:59.798569+00:00",
   "source": "youtube",
-  "status": "stale",
-  "lastError": "ERROR: [youtube] XCBjCtCNcSQ: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U",
-  "attemptedAt": "2026-11-23T00:15:20.332756+00:00"
+  "status": "ok"
 }

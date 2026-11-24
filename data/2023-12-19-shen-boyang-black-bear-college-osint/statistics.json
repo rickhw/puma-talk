@@ -1,11 +1,9 @@
 {
   "videoId": "eiBJmdjTOwU",
-  "views": 1474147,
-  "likes": 30683,
-  "comments": 4600,
-  "fetchedAt": "2026-11-21T23:48:22.501405+00:00",
+  "views": 1485596,
+  "likes": 30831,
+  "comments": 4700,
+  "fetchedAt": "2026-11-24T04:17:57.015167+00:00",
   "source": "youtube",
-  "status": "stale",
-  "lastError": "ERROR: [youtube] eiBJmdjTOwU: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U",
-  "attemptedAt": "2026-11-23T00:15:20.332756+00:00"
+  "status": "ok"
 }
