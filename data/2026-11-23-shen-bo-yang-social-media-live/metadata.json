@@ -1,0 +1,48 @@
+{
+  "id": "T7usX7Lw_wQ",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "留言區野生的沈伯洋【我跟幕僚說我還想開直播】",
+  "channel": "沈伯洋Puma",
+  "date": "2026-11-23",
+  "sourceUrl": "https://www.youtube.com/watch?v=T7usX7Lw_wQ",
+  "metadataStatus": "imported",
+  "channelId": "UC49EKUpNvS_fzdk5SKvipQg",
+  "title": "留言區野生的沈伯洋【我跟幕僚說我還想開直播】",
+  "referenceUrl": "https://www.youtube.com/watch?v=T7usX7Lw_wQ",
+  "description": "沈伯洋Puma官方頻道2026/11/23互動直播原片，台灣時間20:01:36開始。以團隊挑選的社群留言回顧為主，穿插網友提問、工作人員插話、個人經驗及選前行程，非第三方主持的節目專訪。引述他人留言、玩笑與本人回應分開理解；社群平台、網路攻擊、政策及個人經歷的說法保留為直播當時的陳述，未視為本站獨立查核或已落實成果。可取得自動字幕為英文配音來源，改採標示zh-Hant原音音軌的本機中文ASR；原始辨識稿與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 4687,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-24T00:04:06.179771+00:00",
+    "inputSha256": "88a87c731cc7607a1d52f527e86bcda87135be28d4bb9e4f50e9a22e4cd43fe1",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "rawEngineOutputSha256": "bc03fe866ea1ae36e2441dcaf9346d6ffc6ef01a482a7677c43b20fbb1203b5e",
+    "processingNotes": [
+      "已核對原音格式標示；排除英文自動配音來源字幕，以中文原音進行ASR。",
+      "時間軸涵蓋開場測試至道別；機械檢查有21筆重疊或相鄰同文提示，未因此推定錯誤或擅自改動原始辨識文字，未完成全篇人工聆聽覆核。"
+    ]
+  },
+  "publishedAt": "2026-11-23T21:24:18+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC49EKUpNvS_fzdk5SKvipQg",
+  "originalDescription": "",
+  "youtubeMetadata": {
+    "upload_date": "20261123",
+    "timestamp": 1795440258,
+    "release_timestamp": 1795435296,
+    "live_status": "was_live"
+  },
+  "versionType": "social-media-live",
+  "sourceScopeNote": "沈伯洋Puma官方頻道2026/11/23互動直播原片，台灣時間20:01:36開始。以團隊挑選的社群留言回顧為主，穿插網友提問、工作人員插話、個人經驗及選前行程，非第三方主持的節目專訪。引述他人留言、玩笑與本人回應分開理解；社群平台、網路攻擊、政策及個人經歷的說法保留為直播當時的陳述，未視為本站獨立查核或已落實成果。可取得自動字幕為英文配音來源，改採標示zh-Hant原音音軌的本機中文ASR；原始辨識稿與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。"
+}

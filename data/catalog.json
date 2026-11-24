@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-20T03:07:22.918814+00:00",
+  "updatedAt": "2026-11-24T00:08:54.354975+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,28 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "T7usX7Lw_wQ",
+      "title": "留言區野生的沈伯洋【我跟幕僚說我還想開直播】",
+      "displayTitle": "留言區野生的沈伯洋【我跟幕僚說我還想開直播】",
+      "channel": "沈伯洋Puma",
+      "uploadDate": "20261123",
+      "duration": 4687,
+      "url": "https://www.youtube.com/watch?v=T7usX7Lw_wQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=T7usX7Lw_wQ",
+      "referenceUrl": "https://www.youtube.com/watch?v=T7usX7Lw_wQ",
+      "metadataFile": ".cache/publish-T7usX7Lw_wQ/T7usX7Lw_wQ.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架；已核對沈伯洋Puma官方頻道11/23晚間直播原片。",
+      "spokenLanguage": "zh",
+      "audioLanguage": "zh-Hant",
+      "skipSubtitles": true,
+      "category": "政治與公共事務",
+      "publishedAt": "2026-11-23T21:24:18+08:00",
+      "sourceScopeNote": "沈伯洋Puma官方頻道2026/11/23互動直播原片，台灣時間20:01:36開始。以團隊挑選的社群留言回顧為主，穿插網友提問、工作人員插話、個人經驗及選前行程，非第三方主持的節目專訪。引述他人留言、玩笑與本人回應分開理解；社群平台、網路攻擊、政策及個人經歷的說法保留為直播當時的陳述，未視為本站獨立查核或已落實成果。可取得自動字幕為英文配音來源，改採標示zh-Hant原音音軌的本機中文ASR；原始辨識稿與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+      "description": "沈伯洋Puma官方頻道2026/11/23互動直播原片，台灣時間20:01:36開始。以團隊挑選的社群留言回顧為主，穿插網友提問、工作人員插話、個人經驗及選前行程，非第三方主持的節目專訪。引述他人留言、玩笑與本人回應分開理解；社群平台、網路攻擊、政策及個人經歷的說法保留為直播當時的陳述，未視為本站獨立查核或已落實成果。可取得自動字幕為英文配音來源，改採標示zh-Hant原音音軌的本機中文ASR；原始辨識稿與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+      "status": "source-imported"
+    },
     {
       "id": "ovbnrV4QszY",
       "title": "【阿格力】你的市長沈伯洋來了！台北老宅延壽、無限都更、都市縫合有解？ft. 百工百業小水滴的政策盼望！",

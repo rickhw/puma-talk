@@ -3,6 +3,10 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "T7usX7Lw_wQ",
+      "slug": "2026-11-23-shen-bo-yang-social-media-live"
+    },
+    {
       "id": "ovbnrV4QszY",
       "slug": "2026-11-19-taipei-urban-renewal-strategy"
     },
@@ -625,15 +629,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-20"
+    "updatedAt": "2026-11-24"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-20T03:00:40.896497+00:00"
+    "updatedAt": "2026-11-24T00:06:18.678803+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-20T03:06:39.616151+00:00"
+    "updatedAt": "2026-11-24T00:09:23.774271+00:00"
   },
   "statistics": {
     "version": 1,
@@ -641,14 +645,21 @@
     "completedAt": "2026-11-23T00:23:15.724503+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 67205779,
-      "likes": 1653775,
-      "comments": 165591,
-      "commentsAvailable": 155,
-      "videos": 155,
-      "viewsAvailable": 155,
-      "likesAvailable": 154,
-      "fresh": 143
+      "views": 67994263,
+      "likes": 1721648,
+      "comments": 167291,
+      "commentsAvailable": 156,
+      "videos": 156,
+      "viewsAvailable": 156,
+      "likesAvailable": 155,
+      "fresh": 144
+    },
+    "updateScope": {
+      "videoIds": [
+        "T7usX7Lw_wQ"
+      ],
+      "method": "imported-youtube-metadata",
+      "note": "僅新增指定直播統計；既有影片保留遠端每日統計值、取得時間及歷史快照。"
     }
   },
   "covers": {
