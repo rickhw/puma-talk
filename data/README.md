@@ -38,6 +38,16 @@ data/2026-11-04-stress-relief-family-and-daily-life/
 
 ## 資料工具與產物
 
+### 英文報導索引
+
+`english-press.json` 是獨立於影片的閱讀索引，建置為 `/english-press/`。每筆包含固定 `id`、原刊日期 `publishedOn`、`publisher`、`type`、英文 `title`、本站中文標題 `titleZh`、短篇中文 `summary`、`topics`、HTTPS `url` 與來源核對時間 `checkedAt`。作者及通訊社刊載關係分別記在 `author`、`sourceNote`。核對原媒體或明確署名的通訊社刊載頁後，才記錄 `verification: "publisher-page"`；它表示來源頁已核對，不表示來源中的所有說法已獨立查核。
+
+新增時區分新聞、人物報導、專訪、評論與影音專訪，保留指控與受訪說法的歸屬。日期使用原刊載頁日期；不以本站收錄日取代。相同通訊社稿只留一筆，並註明原通訊社及刊載站。只保留短篇導讀與連結，不儲存整篇報導、付費全文或原文圖片。此索引不加入 `index.json.interviews`，也不影響影片、YouTube 統計或常用語計數。
+
+`assets/press.js` 共用來源驗證、篩選與 HTML 輸出。建置產生完整可閱讀的靜態頁與帶內容指紋的小型 JSON；瀏覽報導頁不需載入影片逐字稿資料。更新後執行 `npm test`、`npm run build`，並檢查搜尋、篩選、瀏覽器上一頁及桌面／手機導覽列。
+
+### 專訪共用讀寫層
+
 Python 的 `scripts/data_store.py` 與 Node.js 的 `scripts/data-store.mjs` 是共用讀寫層，建置與匯入工具直接讀寫上述目錄。工具內部的 `interviews.json`、`articles.json` 等名稱是邏輯集合，不再對應儲存庫中的集中檔案；自訂的外部 JSON 匯出路徑仍可使用。
 
 `dist/data/interviews*.json` 是建置時產生的瀏覽器資料，不提交 Git，也不是提出修正的位置。`dist/`、音訊、模型、下載快取與私人日誌均不提交。

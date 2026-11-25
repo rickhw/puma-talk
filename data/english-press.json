@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-25T02:32:51.767588+00:00",
+  "title": "英文報導",
+  "description": "整理以沈伯洋（Puma Shen）為主角或核心受訪者的英文新聞、人物報導、專訪與評論。",
+  "scopeNote": "首批選錄，並非完整清單。日期依原刊載頁；同一通訊社稿的不同轉載合併計算。中文標題與導讀為本站整理，完整內容及著作權屬原媒體。",
+  "reports": [
+    {
+      "id": "time-cognitive-warfare-2026",
+      "publishedOn": "2026-11-24",
+      "publisher": "TIME",
+      "type": "專訪",
+      "titleZh": "沈伯洋談城市韌性與認知作戰",
+      "title": "‘They Never Stop’: Taipei Mayoral Candidate Puma Shen on Fighting Chinese Cognitive Warfare",
+      "url": "https://time.com/article/2026/11/24/puma-shen-taipei-mayor-taiwan-china-interview/",
+      "summary": "TIME問答專訪涵蓋社區連結、資訊影響與跨國合作；回應保留為受訪者觀點。",
+      "topics": [
+        "城市與市政",
+        "資訊與認知作戰"
+      ],
+      "author": "Charlie Campbell",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "afp-taipei-race-2026",
+      "publishedOn": "2026-11-16",
+      "publisher": "AFP",
+      "type": "人物報導",
+      "titleZh": "法新社從選戰現場觀察沈伯洋",
+      "title": "China-critic Taiwan lawmaker in close race for Taipei mayor",
+      "url": "https://www.ucanews.com/news/china-critic-taiwan-lawmaker-in-close-race-for-taipei-mayor/116235",
+      "summary": "結合本人受訪、支持者及分析者說法，觀察競選風格與地方議題。文中民調及選情為報導當時資訊，並引述學者提醒地方選舉不能直接預測總統選舉。",
+      "topics": [
+        "城市與市政",
+        "人物與經歷"
+      ],
+      "author": "AFP, Taipei",
+      "sourceNote": "AFP稿，由UCA News刊載。",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "new-bloom-access-2026",
+      "publishedOn": "2026-11-13",
+      "publisher": "New Bloom",
+      "type": "評論",
+      "titleZh": "從公共資源的可及性檢視政見",
+      "title": "Making Hope Credible: Puma Shen and the Politics of Access in Taipei",
+      "url": "https://newbloommag.net/2026/11/13/puma-shen-politics-access/",
+      "summary": "作者選取住宅更新、青年文化支持與長者運動服務，分析政策能否減輕使用公共資源的負擔，也討論所有權與不平等的限制。這是作者評論，非政策成效的驗證。",
+      "topics": [
+        "城市與市政"
+      ],
+      "author": "Ming-Yeh T. Rawnsley",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "commonwealth-profile-2026",
+      "publishedOn": "2026-11-10",
+      "publisher": "CommonWealth",
+      "type": "專訪",
+      "titleZh": "從人物側寫到市政與形象的追問",
+      "title": "Challenging Taipei's Mayor, Puma Shen Bets Idealism Can Overcome His Combative Image",
+      "url": "https://english.cw.com.tw/article/article.action?id=5119",
+      "summary": "《天下》英文版結合人物側寫及問答，談陪伴、城市更新與從立法監督轉向治理的挑戰；並列友人及政治對手對其形象的不同評價，保留政見與評論的區別。",
+      "topics": [
+        "人物與經歷",
+        "城市與市政"
+      ],
+      "author": "Chun-chieh Yang",
+      "sourceNote": "《天下》英文版，原頁另提供中文版入口。",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "daily-penn-alumni-2026",
+      "publishedOn": "2026-11-09",
+      "publisher": "The Daily Pennsylvanian",
+      "type": "人物報導",
+      "titleZh": "賓大校報看兩位校友的台北市長選戰",
+      "title": "Two Penn alums are running to be Taipei’s next mayor",
+      "url": "https://www.thedp.com/article/2026/11/penn-carey-law-puma-shen-taipei-mayoral-election-china",
+      "summary": "從兩位候選人的賓大背景切入，整理沈伯洋書面回覆中對女性主義課程、研究轉向與公共服務的回顧。文章也交代記者向蔣萬安辦公室尋求回應，未將個人回憶當作校方評價。",
+      "topics": [
+        "人物與經歷"
+      ],
+      "author": "Riana Mahtani",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "reuters-democracy-2026",
+      "publishedOn": "2026-11-06",
+      "publisher": "Reuters",
+      "type": "專訪",
+      "titleZh": "選舉、雙城論壇與市政的路透專訪",
+      "title": "Taipei mayor election is a victory for democracy over China whoever wins, says candidate",
+      "url": "https://www.dzrh.com.ph/post/taipei-mayor-election-is-a-victory-for-democracy-over-china-whoever-wins-says-candidate",
+      "summary": "報導整理他對民主選舉、市政訴求及雙城論壇的看法；延續交流的說法附有無政治前提及騷擾等條件。文中也交代中方反應及採訪回應情況，不將受訪者的判斷當作記者結論。",
+      "topics": [
+        "城市與市政",
+        "兩岸與國際"
+      ],
+      "author": "Ben Blanchard and Angie Teo",
+      "sourceNote": "Reuters稿，由DZRH刊載；同稿其他轉載不另計一篇。",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "taiwan-news-civil-defense-2026",
+      "publishedOn": "2026-10-30",
+      "publisher": "Taiwan News",
+      "type": "新聞",
+      "titleZh": "當選後民防與任期的受訪說明",
+      "title": "Puma Shen lists civil defense as a priority if elected mayor of Taipei",
+      "url": "https://www.taiwannews.com.tw/news/6468978",
+      "summary": "依中央社及影音訪談整理，他將避難空間盤點、能源儲備與社區連結列為當選後民防方向，也談及做滿任期。這些是候選人的政策與任期表態，非已上路的施政成果。",
+      "topics": [
+        "城市與市政",
+        "民防與韌性"
+      ],
+      "author": "",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "taipei-times-digital-campaign-2026",
+      "publishedOn": "2026-10-30",
+      "publisher": "Taipei Times",
+      "type": "評論",
+      "titleZh": "作者觀察社群、遊戲化與線下動員",
+      "title": "The digitally democratic campaign of Puma Shen",
+      "url": "https://www.taipeitimes.com/News/editorials/archives/2026/10/30/2003866845",
+      "summary": "評論從社群互動、數位船員證與快閃活動，分析線上關注如何連到現場參與。聲量能否跨出同溫層是作者的判斷，文中流量數字也不等於實際選票或本站統計。",
+      "topics": [
+        "城市與市政",
+        "資訊與認知作戰"
+      ],
+      "author": "Hsu Chi-hsiang",
+      "sourceNote": "原刊Editorial & Opinion；英文翻譯署名Gilda Knox Streader。",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "focus-taiwan-fake-photo-2026",
+      "publishedOn": "2026-10-12",
+      "publisher": "Focus Taiwan",
+      "type": "新聞",
+      "titleZh": "假照片轉貼案的檢方處分報導",
+      "title": "Man who reposted fake photo of Puma Shen granted deferred prosecution",
+      "url": "https://focustaiwan.tw/society/202610120010",
+      "summary": "中央社英文報導引述檢方，說明轉貼偽造照片者獲兩年緩起訴及相關條件，並交代影像散布與偵辦時序。內容反映當時的偵查處分階段，緩起訴並非法院有罪判決。",
+      "topics": [
+        "資訊與認知作戰"
+      ],
+      "author": "",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "observer-profile-2026",
+      "publishedOn": "2026-09-20",
+      "publisher": "The Observer",
+      "type": "人物報導",
+      "titleZh": "競選現場與家庭遭威脅的側寫",
+      "title": "Under Beijing’s shadow Puma Shen is battling to be Taipei’s mayor – and stay alive",
+      "url": "https://observer.co.uk/news/international/article/under-beijings-shadow-puma-shen-is-battling-to-be-taipeis-mayor-and-stay-alive",
+      "summary": "記者從市場活動、維安及本人受訪切入，談政治參與與他所述的家庭威脅。報導也保留對現場陌生觀察者身分的不確定性，不將猜測改寫為已確認的監控身分。",
+      "topics": [
+        "人物與經歷",
+        "兩岸與國際"
+      ],
+      "author": "Danny Vincent",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "taiwan-news-grassroots-2026",
+      "publishedOn": "2026-05-14",
+      "publisher": "Taiwan News",
+      "type": "新聞",
+      "titleZh": "參選初期的社區論壇與基層路線",
+      "title": "DPP’s Puma Shen plans grassroots campaign for Taipei mayor race",
+      "url": "https://www.taiwannews.com.tw/news/6362309",
+      "summary": "整理廣播訪談及中央社資訊，介紹以社區論壇、小型聚會討論政見的競選規劃，也提到對雙城論壇效益的質疑。內容反映參選初期立場，後續說法應對照各篇發表日期。",
+      "topics": [
+        "城市與市政"
+      ],
+      "author": "",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "taipei-times-france-2026",
+      "publishedOn": "2026-02-16",
+      "publisher": "Taipei Times",
+      "type": "新聞",
+      "titleZh": "中國威脅背景下的法國行程",
+      "title": "Puma Shen goes to France despite threats from China",
+      "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/02/16/2003852414",
+      "summary": "依本人公開貼文與背景資料，報導他在中國威脅下仍前往法國的行程。文章回顧中國警方調查及中方媒體所述的追緝方式，閱讀時需區分當事人表態、媒體說法與正式程序。",
+      "topics": [
+        "兩岸與國際"
+      ],
+      "author": "Lin Che-yuan",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "taipei-times-doxxing-2026",
+      "publishedOn": "2026-01-04",
+      "publisher": "Taipei Times",
+      "type": "新聞",
+      "titleZh": "個資曝光事件與政府機關回應",
+      "title": "China accused of ‘doxxing’ Puma Shen",
+      "url": "https://www.taipeitimes.com/News/front/archives/2026/01/04/2003850005",
+      "summary": "報導台灣政府機關對他個資遭散布的指控，以及外交、數位治理機關要求平台處理的回應。主題為跨國施壓、平台責任與個人資料保護。",
+      "topics": [
+        "兩岸與國際",
+        "資訊與認知作戰"
+      ],
+      "author": "Lee I-chia",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "taipei-times-bundestag-2025",
+      "publishedOn": "2025-11-14",
+      "publisher": "Taipei Times",
+      "type": "新聞",
+      "titleZh": "德國國會聽證中的假訊息議題",
+      "title": "Puma Shen addresses German hearing",
+      "url": "https://www.taipeitimes.com/News/front/archives/2025/11/14/2003847176",
+      "summary": "報導他出席德國國會人權委員會聽證，談威權國家假訊息對台灣及歐洲的影響。文章區分國會邀請、現場發言與後續受訪，也交代中國調查的背景。",
+      "topics": [
+        "兩岸與國際",
+        "資訊與認知作戰"
+      ],
+      "author": "Staff writer, with CNA",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "taiwanplus-cyber-warfare-2023",
+      "publishedOn": "2023-02-16",
+      "publisher": "TaiwanPlus",
+      "type": "影音專訪",
+      "titleZh": "認知作戰與民間防衛的英文訪談",
+      "title": "China-Taiwan Cyber Warfare: Taiwan Builds Up Civilian Defense",
+      "url": "https://www.taiwanplus.com/news/taiwan-talks/taiwan-china-cross-strait-tensions/230216008/china-taiwan-cyber-warfare-taiwan-builds-up-civilian-defense",
+      "summary": "Taiwan Talks訪問沈伯洋，談資訊影響與民間防衛；同集另有瑞士軍方來賓。這是英文影音節目的介紹頁，各來賓的觀點與當時職銜分別理解。",
+      "topics": [
+        "民防與韌性",
+        "資訊與認知作戰"
+      ],
+      "author": "TaiwanPlus",
+      "sourceNote": "英文影音專訪，連結前往媒體節目頁。",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    },
+    {
+      "id": "new-bloom-disinformation-2020",
+      "publishedOn": "2020-01-06",
+      "publisher": "New Bloom",
+      "type": "專訪",
+      "titleZh": "從研究工作理解假訊息的傳播",
+      "title": "Fighting Fake News and Disinformation in Taiwan: An Interview with Puma Shen",
+      "url": "https://newbloommag.net/2020/01/06/puma-shen-interview/",
+      "summary": "2020年選前問答訪問當時仍在學界及研究組織工作的沈伯洋，談內容農場、社群平台與線下傳播。對傳播來源及資金的描述保留為其研究觀察，不直接套用為今日情況。",
+      "topics": [
+        "資訊與認知作戰",
+        "人物與經歷"
+      ],
+      "author": "Brian Hioe",
+      "sourceNote": "",
+      "language": "en",
+      "checkedAt": "2026-11-25T02:32:51.767588+00:00",
+      "verification": "publisher-page"
+    }
+  ]
+}

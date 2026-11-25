@@ -1,5 +1,6 @@
 import { categories, statusLabels, escapeHTML as esc, formatTime, filterInterviews, parseSubtitles, validateArchive, interviewPath, interviewSharePath, interviewShareText, articleSummaryHTML } from './core.js';
 import {collectionStatsHTML, videoStatsHTML, keywordCloudHTML, commonPhraseCloudHTML, rankingHTML, normalizeRanking, photoHTML, homeHeroHTML, fullRankingHTML, rankingOptions} from './insights.js';
+import {validatePress, filterPress, pressFilters, pressPageHTML, pressResultsHTML, pressPath} from './press.js';
 
 const icons = {
   arrow: '<path d="M5 12h14m-5-5 5 5-5 5"/>',
@@ -30,6 +31,8 @@ if (!Array.isArray(saved)) saved = [];
 let localTranscripts = readStorage(transcriptKey, {});
 if (!localTranscripts || typeof localTranscripts !== 'object' || Array.isArray(localTranscripts)) localTranscripts = {};
 let archive, items = [], toastTimer, filters, activeItem, visibleCue = 0, rankingSort = 'views';
+const isPressPage = document.querySelector('meta[name="site-page"]')?.content === 'english-press';
+let pressData;
 let player=null,playerReady=false,playerCreating=false,playerTime=0,playerGeneration=0,youtubeAPIPromise=null;
 const dateLabel = date => date.replaceAll('-', '.');
 const detailURL = id => interviewPath(items.find(item => item.id === id)) + (location.protocol === 'file:' ? 'index.html' : '');
@@ -217,6 +220,13 @@ function about() {
   main.innerHTML = `<article class="about-page wrap"><div class="eyebrow">A LITTLE MORE CONTEXT</div><h1>好好聽，<br>慢慢懂<span class="heading-dot">.</span></h1><p class="about-intro">理解一個人，需要比一段短影音<br>更長一點的時間。</p><div class="about-body"><section><h2>把零散的對話，留在同一個地方。</h2><p>PUMA TALKS 是一個民間整理計畫，收錄沈伯洋在 YouTube 上的專訪，以主題、標籤和逐字稿，讓你更容易找到完整對話。本網站不是沈伯洋、任何政黨或競選團隊的官方網站。</p><p>目前是雛形，共收錄 ${items.length} 支訪談影片、${items.filter(i => i.transcript.length).length} 份可讀字幕，尚未涵蓋所有訪談。初始清單參考公開專訪清單；每篇保留 YouTube 來源與原始標題，並標示是否已匯入原頻道中繼資料。分類是本站的閱讀索引。分段訪談會分別列出，收錄數量以影片為單位。</p></section><section><h2>用 AI 技術，讓對話更容易閱讀。</h2><p>我們使用 AI 技術校對逐字稿，統一以正體中文呈現。英文訪談提供中文譯稿，並為每篇挑選關鍵字、整理重點與總結。發言內容與語境以原始影片為準。</p><p>YouTube 觀看數與按讚數每日更新，首頁總數為已收錄影片的累計值；分段影片各自計算。</p></section><section><h2>來源與使用說明</h2><p>訪談影片、縮圖及字幕內容的著作權歸原創作者所有。本站的短篇說明為編輯整理，不代表受訪者逐字發言。公開完整逐字稿前，請先確認字幕的授權與使用範圍。</p><p>影片縮圖會向 YouTube 圖片服務載入；播放器在你點擊播放或時間碼後才向 YouTube 載入。${analyticsEnabled ? '本站已啟用 Google Analytics，以了解文章瀏覽情況。' : '本站目前未啟用分析追蹤。'}不需註冊帳號。收藏與匯入字幕僅使用瀏覽器本機儲存。</p><div class="about-links"><a href="https://vocus.cc/article/6ad8d562fd89780001e98adb" target="_blank" rel="noopener noreferrer">初始專訪清單來源 ${icon('upRight')}</a><a href="https://whoispuma.com/" target="_blank" rel="noopener noreferrer">參考計畫：認識沈伯洋 ${icon('upRight')}</a><a href="https://shen-post-wall.pages.dev/" target="_blank" rel="noopener noreferrer">參考計畫：沈伯洋親友見證牆 ${icon('upRight')}</a><a href="https://puma.taipei/" target="_blank" rel="noopener noreferrer">沈伯洋官方網站 ${icon('upRight')}</a></div></section></div><a href="./index.html#archive" class="button button-dark">回到對話裡 ${icon('arrow')}</a></article>`;
 }
 function route() {
+  if (isPressPage) {
+    if (!pressData) return;
+    activeItem=null;filters=null;
+    main.innerHTML=pressPageHTML(pressData,pressFilters(location.search),true);
+    document.title='英文報導｜PUMA TALKS';
+    updateNavigation('press');updateSaved();return;
+  }
   const params = new URLSearchParams(location.search);
   const articleId = document.querySelector('meta[name="interview-id"]')?.content;
   const fullRanking = document.querySelector('meta[name="ranking-mode"]')?.content;
@@ -244,8 +254,37 @@ function download(filename, content, type = 'text/plain;charset=utf-8') {
   const link = document.createElement('a'); link.href = url; link.download = filename; link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+function updatePressResults(push = false) {
+  const form=document.querySelector('[data-press-form]');
+  if (!form || !pressData) return;
+  const state=Object.fromEntries(new FormData(form));
+  const url=new URL(pressPath,document.baseURI);
+  for (const [key,value] of Object.entries(state)) if (value && !(key==='sort' && value==='newest')) url.searchParams.set(key,value);
+  history[push?'pushState':'replaceState'](null,'',url);
+  document.querySelector('#press-results').innerHTML=pressResultsHTML(filterPress(pressData.reports,state),pressData.reports.length);
+  document.querySelector('[data-press-active-topic]').innerHTML=state.topic?`主題：${esc(state.topic)} <button type="button" data-press-remove-topic>移除主題 ×</button>`:'';
+  document.querySelectorAll('.press-topic-links [data-press-topic]').forEach(link=>{
+    if(link.dataset.pressTopic===state.topic)link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');
+  });
+}
+document.addEventListener('submit',event=>{
+  if(event.target.matches('[data-press-form]')){event.preventDefault();updatePressResults();}
+});
 document.addEventListener('error', event => { if (event.target.matches?.('[data-thumbnail]')) event.target.style.display = 'none'; }, true);
 document.addEventListener('click', async event => {
+  if(isPressPage && pressData){
+    const topic=event.target.closest('[data-press-topic]');
+    if(topic && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey){
+      event.preventDefault();document.querySelector('[data-press-form] [name="topic"]').value=topic.dataset.pressTopic;updatePressResults(true);
+      document.querySelector('#press-results').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});return;
+    }
+    if(event.target.closest('[data-press-clear]')){
+      history.pushState(null,'',new URL(pressPath,document.baseURI));route();return;
+    }
+    if(event.target.closest('[data-press-remove-topic]')){
+      document.querySelector('[data-press-form] [name="topic"]').value='';updatePressResults(true);return;
+    }
+  }
   const ranking = event.target.closest('[data-ranking]');
   if(ranking && !activeItem && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
     event.preventDefault(); rankingSort=ranking.dataset.ranking;
@@ -305,10 +344,12 @@ document.addEventListener('click', async event => {
   }
 });
 document.addEventListener('input', event => {
+  if (isPressPage && event.target.closest('[data-press-form]') && event.target.name==='q') updatePressResults();
   if (event.target.id === 'archive-search') { filters.q = event.target.value; updateResults(); }
   if (event.target.id === 'transcript-search') renderCues(event.target.value);
 });
 document.addEventListener('change', async event => {
+  if (isPressPage && event.target.closest('[data-press-form]')) updatePressResults();
   if (event.target.id === 'sort-filter') { filters.sort = event.target.value; updateResults(); }
   if (event.target.id === 'subtitle-file') {
     const file = event.target.files[0]; if (!file || !activeItem) return;
@@ -324,7 +365,7 @@ document.addEventListener('change', async event => {
 });
 document.addEventListener('keydown', event => {
   if (event.key === '/' && !event.ctrlKey && !event.metaKey && !event.altKey && !event.target.matches('input,textarea,[contenteditable]')) {
-    const search = document.querySelector('#archive-search, #transcript-search:not(:disabled)');
+    const search = document.querySelector('#archive-search, #transcript-search:not(:disabled), [data-press-form] input[type="search"]:not(:disabled)');
     if (search) { event.preventDefault(); search.focus(); }
   }
 });
@@ -334,6 +375,12 @@ window.addEventListener('storage', event => {
 });
 document.querySelectorAll('[data-icon]').forEach(el => el.innerHTML = icon(el.dataset.icon));
 try {
+  if (isPressPage) {
+    updateNavigation('press');updateSaved();
+    const response=await fetch(document.querySelector('meta[name="press-data-url"]')?.content || './data/english-press.json');
+    if(!response.ok)throw new Error('英文報導讀取失敗');
+    pressData=validatePress(await response.json());route();
+  } else {
   const embedded = document.querySelector('#archive-data');
   if (embedded) archive = validateArchive(JSON.parse(embedded.textContent));
   else {
@@ -353,7 +400,9 @@ try {
   saved = saved.filter(id => items.some(item => item.id === id));
   route();
   if (['#archive','#keyword-cloud','#common-phrases'].includes(location.hash)) requestAnimationFrame(() => document.querySelector(location.hash)?.scrollIntoView());
+  }
 } catch (error) {
-  if (!main.hasAttribute('data-static-article')&&!main.hasAttribute('data-static-ranking')) main.innerHTML = `<section class="wrap empty-state"><h1>專訪資料暫時無法讀取。</h1><p>請重新整理頁面。若從檔案直接開啟，請改用本機預覽伺服器。</p><a class="button button-dark" href="./index.html">重新載入</a></section>`;
+  if (isPressPage) toast('篩選暫時無法載入；仍可閱讀報導與原文連結，或重新整理再試。');
+  if (!main.hasAttribute('data-static-article')&&!main.hasAttribute('data-static-ranking')&&!main.hasAttribute('data-static-press')) main.innerHTML = `<section class="wrap empty-state"><h1>專訪資料暫時無法讀取。</h1><p>請重新整理頁面。若從檔案直接開啟，請改用本機預覽伺服器。</p><a class="button button-dark" href="./index.html">重新載入</a></section>`;
   console.error(error);
 }

@@ -6,10 +6,12 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { validateArchive, mergeArticles, interviewPath, articleSummaryHTML, escapeHTML, transcriptFingerprintText, metadataFingerprintText, interviewShareText } from '../assets/core.js';
 import { mergeEnhancements, collectionStatsHTML, videoStatsHTML, rankingHTML, homeHeroHTML, fullRankingHTML, rankingOptions, rankingPath, rankingDescription } from '../assets/insights.js';
+import {validatePress, pressPageHTML, pressPath} from '../assets/press.js';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export async function build() {
   const directory=path.join(root,'data');
+  const press=validatePress(JSON.parse(await readFile(path.join(directory,'english-press.json'),'utf8')));
   const archive = validateArchive(await readCollection(directory,'interviews.json'));
   const phraseConfig=JSON.parse(await readFile(path.join(directory,'common-phrases.json'),'utf8'));
   const commonPhrases=buildCommonPhrases(archive.interviews,phraseConfig);
@@ -72,11 +74,12 @@ export async function build() {
   // Dependency-free bundle; archive data is shared across the home and article pages.
   const core = (await readFile(path.join(root, 'assets/core.js'), 'utf8')).replace(/^export /gm, '');
   const insights=(await readFile(path.join(root,'assets/insights.js'),'utf8')).replace(/^import .*;\n/gm,'').replace(/^export /gm,'');
+  const pressCode=(await readFile(path.join(root,'assets/press.js'),'utf8')).replace(/^import .*;\n/gm,'').replace(/^export /gm,'');
   const app = (await readFile(path.join(root, 'assets/app.js'), 'utf8')).replace(/^import .*;\n/gm, '');
-  await writeFile(path.join(out, 'assets/app.bundle.js'), `(async () => {\n${core}\n${insights}\nconst esc = escapeHTML;\n${app}\n})();\n`);
+  await writeFile(path.join(out, 'assets/app.bundle.js'), `(async () => {\n${core}\n${insights}\n${pressCode}\nconst esc = escapeHTML;\n${app}\n})();\n`);
   // HTML may revalidate before cached assets. Content addresses keep deployments consistent.
   const assetVersions = {};
-  for (const name of ['app.bundle.js','style.css','articles.css','insights.css']) {
+  for (const name of ['app.bundle.js','style.css','articles.css','insights.css','press.css']) {
     const content=await readFile(path.join(out,'assets',name));
     const extension=path.extname(name),stem=name.slice(0,-extension.length);
     const version=createHash('sha256').update(content).digest('hex').slice(0,12);
@@ -91,6 +94,12 @@ export async function build() {
   await writeFile(path.join(out,'data/interviews.json'),publicJSON);
   await writeFile(path.join(out,archiveURL),publicJSON);
   assetVersions['./data/interviews.json']=archiveURL;
+  const pressJSON=JSON.stringify(press);
+  const pressVersion=createHash('sha256').update(pressJSON).digest('hex').slice(0,12);
+  const pressURL=`./data/english-press.${pressVersion}.json`;
+  await writeFile(path.join(out,'data/english-press.json'),pressJSON);
+  await writeFile(path.join(out,pressURL),pressJSON);
+  assetVersions['./data/english-press.json']=pressURL;
 
   const jsonScript = value => JSON.stringify(value).replaceAll('<','\\u003c');
   const analyticsSource = await readFile(path.join(root, 'assets/analytics.js'), 'utf8');
@@ -117,6 +126,23 @@ export async function build() {
     .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1">${homeHeroHTML(data.interviews)}${collectionStatsHTML(data.interviews,data.statisticsUpdatedAt)}<div id="ranking-panel">${rankingHTML(data.interviews,'views',data.statisticsUpdatedAt)}</div><div class="loading-state">正在載入專訪…</div></main>`));
   const homeCanonical = config.siteUrl ? `<link rel="canonical" href="${escapeHTML(config.siteUrl)}">` : '';
   await writeFile(path.join(out, 'index.html'), html.replace('<meta charset="utf-8">', `<meta charset="utf-8">\n  ${homeCanonical}\n  ${socialHead(data.homeCover,'PUMA TALKS｜沈伯洋專訪資料庫','從一場對話，認識沈伯洋。專訪、摘要與正體中文逐字稿。',config.siteUrl,'website')}`));
+  {
+    const title='英文報導｜PUMA TALKS',description=press.description;
+    const canonical=config.siteUrl?new URL(pressPath,config.siteUrl).href:pressPath;
+    const metadata=`<base href="../">\n  <meta name="site-page" content="english-press">\n  <meta name="press-data-url" content="${pressURL}">\n  <link rel="canonical" href="${escapeHTML(canonical)}">\n  ${socialHead(data.homeCover,title,description,canonical,'website')}`;
+    const page=template.replace('<meta charset="utf-8">',`<meta charset="utf-8">\n  ${metadata}`)
+      .replace('href="#main"',`href="${pressPath}#main"`)
+      .replace(/<title>[^<]*<\/title>/,`<title>${escapeHTML(title)}</title>`)
+      .replace(/<meta name="description" content="[^"]*">/,`<meta name="description" content="${escapeHTML(description)}">`)
+      .replace(/<meta property="og:title" content="[^"]*">/,`<meta property="og:title" content="${escapeHTML(title)}">`)
+      .replace(/<meta property="og:description" content="[^"]*">/,`<meta property="og:description" content="${escapeHTML(description)}">`)
+      .replace('data-nav="press"','data-nav="press" aria-current="page"')
+      .replace(/<noscript><div class="noscript">[\s\S]*?<\/div><\/noscript>/,'<noscript><div class="noscript">原文連結可直接閱讀；搜尋與篩選需啟用 JavaScript。</div></noscript>')
+      .replace('<script type="module" src="./assets/app.js"></script>','<script defer src="./assets/app.bundle.js"></script>')
+      .replace('<main id="main" tabindex="-1"><div class="loading-state">正在打開專訪資料庫…</div></main>',`<main id="main" tabindex="-1" data-static-press="true">${pressPageHTML(press)}</main>`);
+    const directory=path.join(out,'english-press');
+    await mkdir(directory,{recursive:true});await writeFile(path.join(directory,'index.html'),withAnalytics(page));
+  }
   for (const [mode,label] of rankingOptions) {
     const title=label+'｜完整排名｜PUMA TALKS',description=rankingDescription(mode);
     const pagePath=rankingPath(mode),canonical=config.siteUrl?new URL(pagePath,config.siteUrl).href:pagePath;

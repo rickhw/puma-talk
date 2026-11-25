@@ -54,10 +54,20 @@ test('static output serves correctly without dependencies or a backend', async (
     const response = {status:0,headers:{},body:null,writeHead(status,headers){this.status=status;this.headers=headers;},end(body){this.body=body;}};
     await handleRequest({url,method},response); return response;
   }
-  for (const url of ['/', '/?v=YlEaWM3NAKs', '/?view=topics', '/assets/app.bundle.js', '/assets/style.css', '/data/interviews.json', '/examples/reader-demo.srt']) assert.equal((await request(url)).status,200,url);
+  for (const url of ['/', '/?v=YlEaWM3NAKs', '/?view=topics', '/english-press/', '/assets/app.bundle.js', '/assets/style.css', '/data/interviews.json', '/examples/reader-demo.srt']) assert.equal((await request(url)).status,200,url);
   const homeHTML=(await request('/')).body.toString();
   assert.ok(homeHTML.indexOf('data-nav="archive"')<homeHTML.indexOf('data-nav="car-sweep"'));
   assert.ok(homeHTML.indexOf('data-nav="car-sweep"')<homeHTML.indexOf('data-nav="topics"'));
+  assert.ok(homeHTML.includes('href="./english-press/" data-nav="press"'));
+  const pressHTML=String((await request('/english-press/')).body);
+  const pressSource=JSON.parse(await readFile(new URL('../data/english-press.json',import.meta.url),'utf8'));
+  assert.ok(pressHTML.includes('<base href="../">')&&pressHTML.includes('data-static-press="true"'));
+  assert.ok(pressHTML.includes('data-nav="press" aria-current="page"'));
+  assert.equal((pressHTML.match(/data-press-report=/g)||[]).length,pressSource.reports.length);
+  assert.ok(pressHTML.includes('rel="canonical" href="https://puma-talk.gtcafe.com/english-press/"'));
+  const pressURL=pressHTML.match(/name="press-data-url" content="([^"]+)"/)[1];
+  assert.deepEqual(JSON.parse(String((await request(new URL(pressURL,'https://example.test/').pathname)).body)),pressSource);
+  assert.equal((await request('/english-press')).headers.Location,'/english-press/');
   assert.match(homeHTML,/href="\.\/index\.html\?format=%E8%BB%8A%E6%8E%83#archive" data-nav="car-sweep">車掃與市政<\/a>/);
   assert.equal((await request('/assets/missing.js')).status,404);
   assert.equal((await request('/%E0%A4%A')).status,400);

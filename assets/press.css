@@ -1,0 +1,55 @@
+.press-page{padding-top:64px;padding-bottom:70px}
+.press-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:end;margin-bottom:38px}
+.press-hero h1{font-size:64px;letter-spacing:2px;margin:16px 0 18px}
+.press-intro{font-size:24px;line-height:1.8;color:var(--purple-deep)}
+.press-editor-note{border-left:5px solid var(--green);padding:8px 0 8px 26px;max-width:440px}
+.press-index-label{font:11px var(--mono);letter-spacing:1px;color:var(--purple-deep)}
+.press-editor-note>p{font-size:14px;line-height:1.95;margin-top:18px}
+.press-editor-note .press-coverage{font-size:12px;color:var(--muted);line-height:1.9;margin-top:19px}
+.press-topic-links{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 34px}
+.press-topic-links a{font-size:12px;border:1px solid var(--line);border-radius:6px;padding:9px 14px;display:flex;gap:18px;align-items:center}
+.press-topic-links a:hover,.press-topic-links a[aria-current]{background:var(--green);border-color:var(--green)}
+.press-controls{background:var(--lavender);border-radius:12px;padding:24px}
+.press-controls fieldset{border:0;padding:0;margin:0;min-width:0}
+.press-controls label>span{display:block;font-size:11px;color:var(--muted);margin-bottom:7px}
+.press-search{display:block}
+.press-search input{display:block;width:100%;border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:13px 14px;font-size:15px;color:var(--ink);min-width:0}
+.press-selects{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr auto;gap:15px;margin-top:18px;align-items:end}
+.press-selects label{min-width:0}
+.press-selects select{width:100%;max-width:100%;color:var(--ink);border:1px solid var(--line);background:var(--paper);border-radius:5px;padding:9px 28px 9px 10px;font-size:12px;min-height:40px}
+.press-reset{align-self:end;background:none;text-decoration:underline;text-underline-offset:4px;font-size:12px;padding:10px 0;color:var(--purple-deep)}
+.press-active-topic{font-size:12px;color:var(--purple-deep)}
+.press-active-topic:not(:empty){margin:20px 0 0}
+.press-active-topic button{background:none;color:var(--muted);font-size:11px;margin-left:12px;text-decoration:underline;text-underline-offset:3px}
+.press-result-count{font-size:12px;color:var(--muted);padding:24px 0 16px}
+.press-result-count strong{font-weight:600;color:var(--ink)}
+.press-list{display:grid;gap:20px}
+.press-report{border:1px solid var(--line);border-radius:12px;padding:25px 28px 28px;scroll-margin-top:24px;min-width:0}
+.press-report:target{border-color:var(--purple);box-shadow:0 0 0 2px var(--lavender)}
+.press-byline{display:flex;gap:15px;align-items:center;margin-bottom:23px;flex-wrap:wrap}
+.press-publisher{font:600 12px var(--mono);background:var(--lavender);color:var(--purple-deep);padding:6px 10px;border-radius:4px}
+.press-byline time{font:11px var(--mono);color:var(--muted)}
+.press-kind{font-size:11px;margin-left:auto;color:var(--muted)}
+.press-opinion{background:var(--green);border-radius:4px;padding:4px 8px;color:var(--purple-deep)}
+.press-reading-pair{display:grid;grid-template-columns:1fr 1fr;gap:42px;min-width:0}
+.press-headlines,.press-guide{min-width:0}
+.press-headlines h2{font-family:Georgia,'Times New Roman',serif;font-size:25px;line-height:1.4;font-weight:500;overflow-wrap:anywhere}
+.press-headlines h2 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.press-headlines h2 a>span{font-family:var(--body);font-size:20px;color:var(--purple)}
+.press-chinese-title{font-size:14px;color:var(--purple-deep);margin-top:15px;line-height:1.8}
+.press-author{font-size:11px;color:var(--muted);margin-top:12px}
+.press-guide-label{font:10px var(--mono);letter-spacing:1px;color:var(--muted);display:block;margin-bottom:9px}
+.press-guide>p{font-size:14px;line-height:1.95}
+.press-report-topics{display:flex;flex-wrap:wrap;gap:9px 14px;margin-top:16px}
+.press-report-topics a{font-size:11px;color:var(--purple);text-decoration:underline;text-underline-offset:4px}
+.press-guide .press-source-note{font-size:11px;color:var(--muted);margin-top:13px}
+.press-scope{max-width:790px;margin:50px 0 0;border-left:4px solid var(--lilac);padding-left:22px}
+.press-scope h2{font-size:17px;margin-bottom:12px}
+.press-scope p{font-size:12px;color:var(--muted);line-height:1.95;margin-bottom:10px}
+.press-scope>a{font-size:12px;color:var(--purple);display:inline-block;margin-top:12px}
+.press-empty{text-align:center;background:var(--lavender);padding:45px 20px;border-radius:10px}
+.press-empty h2{font-size:22px}.press-empty p{color:var(--muted);font-size:13px;margin:12px 0 22px}
+.press-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:1000px){.press-hero{gap:40px}.press-hero h1{font-size:55px}.press-selects{gap:10px}.press-reading-pair{gap:25px}.press-report{padding:22px}.press-headlines h2{font-size:23px}}
+@media(max-width:760px){.press-page{padding-top:35px;padding-bottom:45px}.press-hero{grid-template-columns:1fr;gap:25px;margin-bottom:25px}.press-hero h1{font-size:43px;margin:12px 0}.press-intro{font-size:20px}.press-editor-note{max-width:none;padding:2px 0 2px 18px}.press-editor-note>p{font-size:13px;margin-top:12px}.press-editor-note .press-coverage{margin-top:11px}.press-topic-links{gap:8px;margin-bottom:24px}.press-topic-links a{font-size:11px;padding:8px 10px;gap:10px}.press-controls{padding:18px}.press-selects{grid-template-columns:1fr 1fr;gap:13px 12px}.press-reset{grid-column:1/-1;justify-self:start;padding:4px 0}.press-search input{font-size:16px;padding:12px}.press-list{gap:16px}.press-report{padding:19px}.press-byline{gap:10px;margin-bottom:19px}.press-publisher{font-size:11px;max-width:100%;overflow-wrap:anywhere}.press-reading-pair{grid-template-columns:1fr;gap:20px}.press-headlines h2{font-size:24px;line-height:1.4}.press-chinese-title{font-size:14px;margin-top:12px}.press-guide{border-top:1px solid var(--line);padding-top:17px}.press-guide>p{font-size:14px}.press-scope{margin-top:35px}.press-kind{font-size:10px}}
+@media(max-width:360px){.main-nav{gap:10px;font-size:11px}.press-report{padding:17px}.press-headlines h2{font-size:22px}}
