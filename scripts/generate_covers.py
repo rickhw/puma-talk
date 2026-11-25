@@ -87,7 +87,12 @@ def main():
             title=item['title'].replace('#','')
             for index,line in enumerate(wrapped(title,fonts[48],602,5,draw)):
                 draw.text((54,174+index*66),line,font=fonts[48],fill=INK)
-            caption='音樂影片與作品資訊' if item.get('contentType')=='music' else '專訪重點與完整逐字稿'
+            if item.get('contentType')=='music':
+                caption='音樂影片與作品資訊'
+            elif item.get('transcriptProvenance',{}).get('coverage')=='selected-speech-ranges':
+                caption='聯訪重點與談話節錄'
+            else:
+                caption='專訪重點與完整逐字稿'
             draw.text((56,556),item['date']+'  /  '+caption,font=fonts[22],fill=PURPLE)
             panel=(710,118,1150,482);draw.rounded_rectangle(panel,radius=16,fill=PURPLE)
             with Image.open(BytesIO(content)) as source:

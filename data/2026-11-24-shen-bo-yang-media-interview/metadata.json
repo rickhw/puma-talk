@@ -1,0 +1,87 @@
+{
+  "id": "HSw5oOVLS6c",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "【完整公開】LIVE 沈伯洋 中正萬華車掃",
+  "channel": "台視新聞 TTV NEWS",
+  "date": "2026-11-24",
+  "sourceUrl": "https://www.youtube.com/watch?v=HSw5oOVLS6c",
+  "metadataStatus": "imported",
+  "channelId": "UC8ROUUjHzEQm-ndb69CX8Ww",
+  "title": "中正萬華車掃｜沈伯洋媒體聯訪與終點短講",
+  "referenceUrl": "https://www.youtube.com/watch?v=HSw5oOVLS6c",
+  "description": "台視新聞2026/11/24中正萬華車掃直播原片，完整影片約3小時4分，並非同等時長的專訪。本篇逐字稿與摘要聚焦04:55–15:28片頭媒體聯訪及2:56:19–2:57:17終點短講；候場、沿途廣播／歌曲／口號／零碎問候、儀式及片尾互動未逐句整理，省略處保留原片時間，可由原片連結觀看完整活動。記者問題與本人回答分開理解；對直播流量異常的解讀、選前活動規劃與個人回憶均屬其當時陳述，非本站獨立確認。完整原音已執行中文本機ASR，原引擎輸出另存；網站原稿及AI正體中文稿只保留上述談話範圍，未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 11030,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-25T00:33:45.608103+00:00",
+    "inputSha256": "29ed6c3292af4ea84194668812fadbaccc8c37f1e2a3aa41d9e1f2133a6d8ff9",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "13 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。",
+      "完整原音先執行ASR，再明確規劃網站稿範圍；未因模型上下文限制默默截斷談話。",
+      "僅保留正式聯訪與終點本人短講，selectedSpeechRanges與omittedRanges標示原片時間；不把車掃全程稱為完整專訪稿。",
+      "另標註0筆低可靠或不相干辨識；原引擎輸出另存並記錄hash，局部AI檢查不等於全篇人工覆核。"
+    ],
+    "rawEngineOutputSha256": "28c248f93a30f88f73a02a06375ccd62410e6e12a704eddaaf0c1130dcf138f4",
+    "coverage": "selected-speech-ranges",
+    "omittedRanges": [
+      {
+        "start": 0,
+        "end": 295.26,
+        "reason": "片頭候場、現場交談及收音測試，網站稿聚焦正式聯訪。",
+        "marker": "［候場與收音測試未逐句整理；媒體聯訪自04:55開始，請對照原片］"
+      },
+      {
+        "start": 927.7,
+        "end": 10578.9,
+        "reason": "聯訪結束後至終點本人短講前為車掃、背景歌曲、沿途問候與儀式，擴音混雜，網站不刊載雜訊或整段歌詞；不表示本段全無談話。",
+        "marker": "［音樂演出、車掃沿途廣播／口號／零碎互動及終點儀式未逐句整理；完整活動請觀看原片］"
+      },
+      {
+        "start": 10636.9,
+        "end": 11030.041,
+        "reason": "本人短講結束後的主持、合照、零碎互動及新聞台宣傳不列為聯訪逐字稿。",
+        "marker": "［候場與片尾合照、現場互動及新聞台宣傳未逐句整理，請對照原片］"
+      }
+    ],
+    "uncertainRanges": [],
+    "selectedSpeechRanges": [
+      {
+        "start": 295.26,
+        "end": 927.7
+      },
+      {
+        "start": 10578.9,
+        "end": 10636.9
+      }
+    ]
+  },
+  "sourceScopeNote": "台視新聞2026/11/24中正萬華車掃直播原片，完整影片約3小時4分，並非同等時長的專訪。本篇逐字稿與摘要聚焦04:55–15:28片頭媒體聯訪及2:56:19–2:57:17終點短講；候場、沿途廣播／歌曲／口號／零碎問候、儀式及片尾互動未逐句整理，省略處保留原片時間，可由原片連結觀看完整活動。記者問題與本人回答分開理解；對直播流量異常的解讀、選前活動規劃與個人回憶均屬其當時陳述，非本站獨立確認。完整原音已執行中文本機ASR，原引擎輸出另存；網站原稿及AI正體中文稿只保留上述談話範圍，未完成全篇人工聆聽覆核。",
+  "publishedAt": "2026-11-24T12:15:16+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC8ROUUjHzEQm-ndb69CX8Ww",
+  "originalDescription": "#沈伯洋 #車掃 #中正萬華\n\n2026.11.24【完整公開】民進黨台北市長候選人沈伯洋24日於中正萬華車掃。 \n\n✨歡迎收看並訂閱TTVNews台視新聞YouTube頻道✨\n\n◎【台視新聞網】👉https://news.ttv.com.tw/\n◎訂閱【台視新聞】👉https://www.youtube.com/c/ttvnewsview\n◎訂閱【TTV LIVE台視直播】👉https://www.youtube.com/c/twlivenews\n◎按讚【台視新聞FB】👉https://www.facebook.com/ttvnews/\n◎追蹤【台視新聞IG】👉https://www.instagram.com/ttvnews_tw/",
+  "youtubeMetadata": {
+    "upload_date": "20261124",
+    "timestamp": 1795493716,
+    "release_timestamp": 1795481675,
+    "live_status": "was_live"
+  },
+  "versionType": "press-interview-and-motorcade",
+  "liveStartedAt": "2026-11-24T08:54:35+08:00",
+  "formatTags": [
+    "車掃",
+    "媒體聯訪"
+  ]
+}

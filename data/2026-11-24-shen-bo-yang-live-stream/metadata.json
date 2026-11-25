@@ -1,0 +1,61 @@
+{
+  "id": "Cf91Wgs6BI8",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "🐧你的市長，你的小卡！🐧【我跟幕僚說我還想開直播】",
+  "channel": "沈伯洋Puma",
+  "date": "2026-11-24",
+  "sourceUrl": "https://www.youtube.com/watch?v=Cf91Wgs6BI8",
+  "metadataStatus": "imported",
+  "channelId": "UC49EKUpNvS_fzdk5SKvipQg",
+  "title": "你的市長，你的小卡！｜沈伯洋互動直播",
+  "referenceUrl": "https://www.youtube.com/watch?v=Cf91Wgs6BI8",
+  "description": "沈伯洋Puma官方頻道2026/11/24互動直播原片，包含小卡回顧、黃世杰連線談讀書方法、網友提問、工作人員插話與市政及日常話題，非第三方主持的單人專訪。卡片留言、來賓回答與本人回應分開理解；補助、個人經歷及政策相關說法保留為當時的陳述，未視為本站獨立查核或已實施成果。無可用原語言字幕，採完整中文原音本機ASR；開場約10分30秒候場與明顯不相干辨識以省略標記保留時間。原稿與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 5529,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-25T00:29:24.110391+00:00",
+    "inputSha256": "cd7849731e963bc6d70bcf06b5bbacce3ec7dfd88138251afc5e10e1f2e79169",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "3 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。",
+      "原音格式未標語言，已以公開畫面及中文辨識內容確認；沒有將英文自動配音字幕當作原話。",
+      "除明列候場與低可靠標記外，摘要讀取全部有效談話區塊，卡片引文與來賓發言不全數歸屬沈伯洋。",
+      "另標註0筆低可靠或不相干辨識；原引擎輸出另存並記錄hash，局部AI檢查不等於全篇人工覆核。"
+    ],
+    "rawEngineOutputSha256": "904b32bab6b1bebfa46a86dade9e327b49f9a827b7dc86f21ee74fe91f34772a",
+    "coverage": "full-transcript",
+    "omittedRanges": [
+      {
+        "start": 0,
+        "end": 630,
+        "reason": "正式試音與談話前的候場，ASR產生與本片無關的訂閱及字幕套語，不刊載虛構文字。",
+        "marker": "［候場與背景聲省略；本段ASR出現不相干字幕套語，請對照原片］"
+      }
+    ],
+    "uncertainRanges": []
+  },
+  "sourceScopeNote": "沈伯洋Puma官方頻道2026/11/24互動直播原片，包含小卡回顧、黃世杰連線談讀書方法、網友提問、工作人員插話與市政及日常話題，非第三方主持的單人專訪。卡片留言、來賓回答與本人回應分開理解；補助、個人經歷及政策相關說法保留為當時的陳述，未視為本站獨立查核或已實施成果。無可用原語言字幕，採完整中文原音本機ASR；開場約10分30秒候場與明顯不相干辨識以省略標記保留時間。原稿與AI正體中文顯示稿另存，未完成全篇人工聆聽覆核。",
+  "publishedAt": "2026-11-24T21:27:16+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC49EKUpNvS_fzdk5SKvipQg",
+  "originalDescription": "",
+  "youtubeMetadata": {
+    "upload_date": "20261124",
+    "timestamp": 1795526836,
+    "release_timestamp": 1795521116,
+    "live_status": "was_live"
+  },
+  "versionType": "cards-interactive-live",
+  "liveStartedAt": "2026-11-24T19:51:56+08:00"
+}

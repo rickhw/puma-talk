@@ -3,6 +3,22 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "kaJn8lh-SGU",
+      "slug": "2026-11-24-shen-bo-yang-gaming-cycling"
+    },
+    {
+      "id": "HSw5oOVLS6c",
+      "slug": "2026-11-24-shen-bo-yang-media-interview"
+    },
+    {
+      "id": "Cf91Wgs6BI8",
+      "slug": "2026-11-24-shen-bo-yang-live-stream"
+    },
+    {
+      "id": "-7KMvJskQPU",
+      "slug": "2026-11-24-shen-bo-yang-car-sweep"
+    },
+    {
       "id": "T7usX7Lw_wQ",
       "slug": "2026-11-23-shen-bo-yang-social-media-live"
     },
@@ -629,15 +645,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-24"
+    "updatedAt": "2026-11-25"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-24T00:06:18.678803+00:00"
+    "updatedAt": "2026-11-25T01:25:14.307475+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-24T00:09:23.774271+00:00"
+    "updatedAt": "2026-11-25T01:28:49.979002+00:00"
   },
   "statistics": {
     "version": 1,
@@ -645,14 +661,24 @@
     "completedAt": "2026-11-24T04:18:00.718273+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 68266275,
-      "likes": 1726074,
-      "comments": 167757,
-      "commentsAvailable": 156,
-      "videos": 156,
-      "viewsAvailable": 156,
-      "likesAvailable": 155,
-      "fresh": 156
+      "views": 69079203,
+      "likes": 1781142,
+      "comments": 168373,
+      "commentsAvailable": 160,
+      "videos": 160,
+      "viewsAvailable": 160,
+      "likesAvailable": 159,
+      "fresh": 160
+    },
+    "updateScope": {
+      "videoIds": [
+        "Cf91Wgs6BI8",
+        "HSw5oOVLS6c",
+        "-7KMvJskQPU",
+        "kaJn8lh-SGU"
+      ],
+      "method": "imported-youtube-metadata",
+      "note": "僅新增四部影片統計，取得時間依掃描時中繼資料epoch；既有156部保留遠端每日數字、時間與歷史快照。"
     }
   },
   "covers": {
