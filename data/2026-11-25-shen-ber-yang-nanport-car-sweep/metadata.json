@@ -1,0 +1,78 @@
+{
+  "id": "whvIurA_68Q",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "【完整公開】LIVE 沈伯洋 內湖南港車掃",
+  "channel": "台視新聞 TTV NEWS",
+  "date": "2026-11-25",
+  "sourceUrl": "https://www.youtube.com/watch?v=whvIurA_68Q",
+  "metadataStatus": "imported",
+  "channelId": "UC8ROUUjHzEQm-ndb69CX8Ww",
+  "title": "內湖南港車掃｜沈伯洋片頭媒體聯訪",
+  "referenceUrl": "https://www.youtube.com/watch?v=whvIurA_68Q",
+  "description": "台視新聞2026/11/25內湖南港車掃直播原片，完整影片2小時59分50秒，並非同等時長的專訪。本站逐字稿與摘要整理04:50–13:22片頭媒體聯訪；候場、沿途廣播／歌曲／口號／零碎問候及片尾未逐句整理，省略處保留原片時間，不表示該時段全無談話。記者提問與本人回答分開理解；研究補助與訴訟、流量排名及經費用途等說法保留為受訪當時陳述，未視為本站獨立查核。完整原音已執行中文本機ASR，原引擎輸出另存；網站原稿與AI正體中文稿僅涵蓋上述聯訪，未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 10790,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-26T04:50:28.473346+00:00",
+    "inputSha256": "f92ac84b9d48c5f087fe6abfe0a335d49e8413eb72f88b2dfb5a9d8e79f4ae91",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "rawEngineOutputSha256": "536a77b3a9d5074b1d9f2b4aaf8405f3d70962106cae4f71a997b74b76e97f71",
+    "coverage": "selected-speech-ranges",
+    "selectedSpeechRanges": [
+      {
+        "start": 290.0,
+        "end": 801.96
+      }
+    ],
+    "omittedRanges": [
+      {
+        "start": 0,
+        "end": 290.0,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途廣播／歌曲／口號／零碎互動或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整活動請觀看原片］"
+      },
+      {
+        "start": 801.96,
+        "end": 10790.021,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途廣播／歌曲／口號／零碎互動或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整活動請觀看原片］"
+      }
+    ],
+    "uncertainRanges": [],
+    "processingNotes": [
+      "完整原音先執行中文本機ASR，再依正式談話內容明列網站稿範圍；原引擎輸出另存並記錄SHA-256。",
+      "公開預覽及ASR語境用於定位談話；未完成全篇人工聆聽覆核，多人發言不全數歸屬沈伯洋。",
+      "網站稿另標註0筆低可靠或不相干辨識，不刊載辨識猜測或整段歌詞。"
+    ]
+  },
+  "sourceScopeNote": "台視新聞2026/11/25內湖南港車掃直播原片，完整影片2小時59分50秒，並非同等時長的專訪。本站逐字稿與摘要整理04:50–13:22片頭媒體聯訪；候場、沿途廣播／歌曲／口號／零碎問候及片尾未逐句整理，省略處保留原片時間，不表示該時段全無談話。記者提問與本人回答分開理解；研究補助與訴訟、流量排名及經費用途等說法保留為受訪當時陳述，未視為本站獨立查核。完整原音已執行中文本機ASR，原引擎輸出另存；網站原稿與AI正體中文稿僅涵蓋上述聯訪，未完成全篇人工聆聽覆核。",
+  "publishedAt": "2026-11-25T12:01:03+08:00",
+  "liveStartedAt": "2026-11-25T08:45:23+08:00",
+  "broadcastDate": "2026-11-25",
+  "broadcastAt": "2026-11-25T08:45:23+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC8ROUUjHzEQm-ndb69CX8Ww",
+  "originalDescription": "#沈伯洋 #內湖 #南港 #車掃\n\n2026.11.25【完整公開】民進黨台北市長候選人沈伯洋25日內湖南港車掃。✨歡迎收看並訂閱TTVNews台視新聞YouTube頻道✨\n\n◎【台視新聞網】👉https://news.ttv.com.tw/\n◎訂閱【台視新聞】👉https://www.youtube.com/c/ttvnewsview\n◎訂閱【TTV LIVE台視直播】👉https://www.youtube.com/c/twlivenews\n◎按讚【台視新聞FB】👉https://www.facebook.com/ttvnews/\n◎追蹤【台視新聞IG】👉https://www.instagram.com/ttvnews_tw/",
+  "youtubeMetadata": {
+    "upload_date": "20261125",
+    "timestamp": 1795579263,
+    "release_timestamp": 1795567523,
+    "live_status": "was_live"
+  },
+  "versionType": "press-interview-and-motorcade",
+  "formatTags": [
+    "車掃",
+    "媒體聯訪"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "mIm-0IK0iCE",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "直播／士北好舵手！台北拔頭籌　沈伯洋偕5議員掃街拜票｜20261125",
+  "channel": "鏡新聞",
+  "date": "2026-11-25",
+  "sourceUrl": "https://www.youtube.com/watch?v=mIm-0IK0iCE",
+  "metadataStatus": "imported",
+  "channelId": "UC4LjkybVKXCDlneVXlKAbmw",
+  "title": "士林北投晚間掃街｜沈伯洋與王世堅公開發言",
+  "referenceUrl": "https://www.youtube.com/watch?v=mIm-0IK0iCE",
+  "description": "鏡新聞2026/11/25士林北投晚間掃街原片，完整影片2小時34分48秒，包含徒步掃街、參拜、主持、來賓與本人發言，非棚內單人專訪。本站逐字稿與摘要整理2:04:07–2:08:05王世堅短講、2:10:15–2:23:40沈伯洋集中發言及2:30:30–2:31:34補充談話；其餘沿途問候、口號、儀式、贈禮、合照與片尾未逐句整理，省略處保留原片時間，不表示全無談話。王世堅的現場玩笑、主持人的助選話語及沈伯洋對市政、議會監督與任期的表態分開理解；政策、個人經驗及活動預告依當時情境整理，不寫成已實施成果或現行活動通知。完整原音先執行中文本機ASR，前段人群及擴音混雜、辨識雜訊多，網站只保留明列公開談話與AI正體中文顯示稿；未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 9288,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-26T04:58:41.957506+00:00",
+    "inputSha256": "e0bab8f297063dd5ada17eb4b2ad42b1a96193597d1e0984899124af0220c158",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "5 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。",
+      "完整原音先執行中文本機ASR，再依正式談話內容明列網站稿範圍；原引擎輸出另存並記錄SHA-256。",
+      "公開預覽及ASR語境用於定位談話；未完成全篇人工聆聽覆核，多人發言不全數歸屬沈伯洋。",
+      "網站稿另標註0筆低可靠或不相干辨識，不刊載辨識猜測或整段歌詞。"
+    ],
+    "rawEngineOutputSha256": "9c7a26325bcdfd34d1a48a5f93ecbe2a38e7ffb2a7083cf41030370749b3a5a6",
+    "coverage": "selected-speech-ranges",
+    "selectedSpeechRanges": [
+      {
+        "start": 7447.02,
+        "end": 7685.04
+      },
+      {
+        "start": 7815.36,
+        "end": 8619.56
+      },
+      {
+        "start": 9029.84,
+        "end": 9093.74
+      }
+    ],
+    "omittedRanges": [
+      {
+        "start": 0,
+        "end": 7447.02,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途廣播／歌曲／口號／零碎互動或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整活動請觀看原片］"
+      },
+      {
+        "start": 7685.04,
+        "end": 7815.36,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途廣播／歌曲／口號／零碎互動或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整活動請觀看原片］"
+      },
+      {
+        "start": 8619.56,
+        "end": 9029.84,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途廣播／歌曲／口號／零碎互動或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整活動請觀看原片］"
+      },
+      {
+        "start": 9093.74,
+        "end": 9288.361,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途廣播／歌曲／口號／零碎互動或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整活動請觀看原片］"
+      }
+    ],
+    "uncertainRanges": []
+  },
+  "sourceScopeNote": "鏡新聞2026/11/25士林北投晚間掃街原片，完整影片2小時34分48秒，包含徒步掃街、參拜、主持、來賓與本人發言，非棚內單人專訪。本站逐字稿與摘要整理2:04:07–2:08:05王世堅短講、2:10:15–2:23:40沈伯洋集中發言及2:30:30–2:31:34補充談話；其餘沿途問候、口號、儀式、贈禮、合照與片尾未逐句整理，省略處保留原片時間，不表示全無談話。王世堅的現場玩笑、主持人的助選話語及沈伯洋對市政、議會監督與任期的表態分開理解；政策、個人經驗及活動預告依當時情境整理，不寫成已實施成果或現行活動通知。完整原音先執行中文本機ASR，前段人群及擴音混雜、辨識雜訊多，網站只保留明列公開談話與AI正體中文顯示稿；未完成全篇人工聆聽覆核。",
+  "publishedAt": "2026-11-25T22:51:33+08:00",
+  "liveStartedAt": "2026-11-25T18:19:00+08:00",
+  "broadcastDate": "2026-11-25",
+  "broadcastAt": "2026-11-25T18:19:00+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC4LjkybVKXCDlneVXlKAbmw",
+  "originalDescription": "#沈伯洋 #掃街拜票 #台北選舉\n\n（鏡新聞已上架86台，若無法收看，請洽詢當地系統台）\n--\n鏡電視推出個人廣告囉！\n讓你也能成為廣告主Show Yourself👉https://mnews.oen.tw/\n--\n《鏡好買》電商平台全新上線🔥\n鏡好買是鏡電視全新推出的官方選物平台，精選日常生活中真正好用、安心、有品質的商品，從美食、生活用品到居家好物，幫你把關品質好生活❤️\n現在加入就送購物優惠券👉 https://lihi.cc/keGMC\n--\n加入頻道會員支持鏡新聞🩷：\nhttps://www.youtube.com/channel/UC4LjkybVKXCDlneVXlKAbmw/join\n--\n鏡好買MirrorLife👉https://lihi.cc/keGM\n鏡新聞官方網站👉https://www.mnews.tw/\n鏡新聞Facebook👉https://www.facebook.com/mnewstw/\n鏡新聞Instagram👉https://www.instagram.com/mnewstw/\n鏡新聞X👉 https://twitter.com/mnews_tw\n鏡新聞Threads👉https://www.threads.net/@mnewstw\n鏡新聞Line帳號👉https://lin.ee/4XsO8xi\n鏡新聞APP iOS👉https://reurl.cc/kqyqML\n鏡新聞APP Android👉https://reurl.cc/Ay2y63\n鏡電視綜合台YouTube👉http://pse.is/59enw2\n鏡電視直播台YouTube👉https://pse.is/4w3gts\n有話鏡來講YouTube👉https://reurl.cc/A4DjQj\n少年新聞週記YouTube👉https://reurl.cc/K4DeN9",
+  "youtubeMetadata": {
+    "upload_date": "20261125",
+    "timestamp": 1795618293,
+    "release_timestamp": 1795601940,
+    "live_status": "was_live"
+  },
+  "versionType": "walking-campaign-and-public-speeches",
+  "formatTags": [
+    "掃街",
+    "公開活動"
+  ]
+}

@@ -23,7 +23,7 @@ test('search includes transcript text and intersects category, tag and saved fil
   assert.equal(filterInterviews([item], {q:'性別 不存在'}).length, 0);
   assert.equal(filterInterviews([item], {category:item.category,tag:item.tags[0],saved:true},[item.id]).length,1);
   assert.equal(filterInterviews([item], {status:'available'}).length,1);
-  const sweep={...item,formatTags:['車掃']},mentioned={...item,tags:['車掃']};
+  const sweep={...item,formatTags:['車掃']},mentioned={...item,formatTags:[],tags:['車掃']};
   assert.equal(filterInterviews([sweep,mentioned],{format:'車掃'}).length,1);
   assert.equal(filterInterviews([sweep],{format:'車掃',category:item.category,saved:true},[item.id]).length,1);
   assert.equal(filterInterviews([item], {status:'pending'}).length,0);

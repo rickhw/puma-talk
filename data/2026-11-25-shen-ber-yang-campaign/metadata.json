@@ -1,0 +1,109 @@
+{
+  "id": "v3UrcTO_irI",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "【完整公開】LIVE 沈伯洋 松山信義車掃",
+  "channel": "台視新聞 TTV NEWS",
+  "date": "2026-11-25",
+  "sourceUrl": "https://www.youtube.com/watch?v=v3UrcTO_irI",
+  "metadataStatus": "imported",
+  "channelId": "UC8ROUUjHzEQm-ndb69CX8Ww",
+  "title": "松山信義車掃｜沈伯洋媒體聯訪與終點短講",
+  "referenceUrl": "https://www.youtube.com/watch?v=v3UrcTO_irI",
+  "description": "台視新聞2026/11/25松山信義車掃直播原片，完整影片2小時35分20秒。本站整理00:31–01:54、03:05–12:34、14:26–19:07的媒體問答與中文現場發言，以及2:31:02–2:32:18終點短講；01:54–03:05阿嬤越南語發言未提供可核實轉錄或譯稿，保留時間註記，不把中文ASR雜訊當成原話。其餘候場、收禮互動、沿途廣播／歌曲／口號及片尾未逐句整理，完整活動可觀看原片。本人、阿嬤與記者發言分開理解；兼職、研究補助、境外資訊操作與市政構想依當時陳述整理，並非本站法律判定、獨立查核或已實施成果。市民之夜等預告屬當時資訊，非現行活動通知。完整原音先執行中文本機ASR，網站原稿與AI正體中文稿只保留明列範圍，未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 9320,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-26T04:52:36.672896+00:00",
+    "inputSha256": "9e83395b7e35d409fffe4a710894a7db296ea7df2467a8e22ac4a4426e5fc7ca",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "1 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。",
+      "完整原音先執行中文本機ASR，再依正式談話內容明列網站稿範圍；原引擎輸出另存並記錄SHA-256。",
+      "公開預覽及ASR語境用於定位談話；未完成全篇人工聆聽覆核，多人發言不全數歸屬沈伯洋。",
+      "網站稿另標註0筆低可靠或不相干辨識，不刊載辨識猜測或整段歌詞。"
+    ],
+    "rawEngineOutputSha256": "859327a15656cf48f7d9317eb23ef66663a95612e7b6d1f664441ab170785c8f",
+    "coverage": "selected-speech-ranges",
+    "selectedSpeechRanges": [
+      {
+        "start": 31.0,
+        "end": 113.78
+      },
+      {
+        "start": 185.1,
+        "end": 753.74
+      },
+      {
+        "start": 865.64,
+        "end": 1147.04
+      },
+      {
+        "start": 9062.26,
+        "end": 9137.72
+      }
+    ],
+    "omittedRanges": [
+      {
+        "start": 0,
+        "end": 31.0,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途廣播／歌曲／口號／零碎互動或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整活動請觀看原片］"
+      },
+      {
+        "start": 113.78,
+        "end": 185.1,
+        "reason": "外婆以越南語發言，中文ASR無法可靠還原；本篇未另提供可核實的越南語轉錄或譯稿，不將錯誤中文辨識當成原話。",
+        "marker": "［本段辨識語言為越南語，未提供可核實轉錄／翻譯；請對照原片］"
+      },
+      {
+        "start": 753.74,
+        "end": 865.64,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途廣播／歌曲／口號／零碎互動或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整活動請觀看原片］"
+      },
+      {
+        "start": 1147.04,
+        "end": 9062.26,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途廣播／歌曲／口號／零碎互動或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整活動請觀看原片］"
+      },
+      {
+        "start": 9137.72,
+        "end": 9320.021,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途廣播／歌曲／口號／零碎互動或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整活動請觀看原片］"
+      }
+    ],
+    "uncertainRanges": []
+  },
+  "sourceScopeNote": "台視新聞2026/11/25松山信義車掃直播原片，完整影片2小時35分20秒。本站整理00:31–01:54、03:05–12:34、14:26–19:07的媒體問答與中文現場發言，以及2:31:02–2:32:18終點短講；01:54–03:05阿嬤越南語發言未提供可核實轉錄或譯稿，保留時間註記，不把中文ASR雜訊當成原話。其餘候場、收禮互動、沿途廣播／歌曲／口號及片尾未逐句整理，完整活動可觀看原片。本人、阿嬤與記者發言分開理解；兼職、研究補助、境外資訊操作與市政構想依當時陳述整理，並非本站法律判定、獨立查核或已實施成果。市民之夜等預告屬當時資訊，非現行活動通知。完整原音先執行中文本機ASR，網站原稿與AI正體中文稿只保留明列範圍，未完成全篇人工聆聽覆核。",
+  "publishedAt": "2026-11-25T16:30:40+08:00",
+  "liveStartedAt": "2026-11-25T13:48:46+08:00",
+  "broadcastDate": "2026-11-25",
+  "broadcastAt": "2026-11-25T13:48:46+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC8ROUUjHzEQm-ndb69CX8Ww",
+  "originalDescription": "#沈伯洋 #松山信義 #車掃\n\n2026.11.25【完整公開】民進黨台北市長候選人沈伯洋25日松山信義車掃。✨歡迎收看並訂閱TTVNews台視新聞YouTube頻道✨\n\n◎【台視新聞網】👉https://news.ttv.com.tw/\n◎訂閱【台視新聞】👉https://www.youtube.com/c/ttvnewsview\n◎訂閱【TTV LIVE台視直播】👉https://www.youtube.com/c/twlivenews\n◎按讚【台視新聞FB】👉https://www.facebook.com/ttvnews/\n◎追蹤【台視新聞IG】👉https://www.instagram.com/ttvnews_tw/",
+  "youtubeMetadata": {
+    "upload_date": "20261125",
+    "timestamp": 1795595440,
+    "release_timestamp": 1795585726,
+    "live_status": "was_live"
+  },
+  "versionType": "press-interview-and-motorcade",
+  "formatTags": [
+    "車掃",
+    "媒體聯訪"
+  ]
+}

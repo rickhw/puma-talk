@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T01:17:16.022793+00:00",
+  "updatedAt": "2026-11-26T05:16:58.295442+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,78 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "mIm-0IK0iCE",
+      "title": "直播／士北好舵手！台北拔頭籌　沈伯洋偕5議員掃街拜票｜20261125",
+      "displayTitle": "士林北投晚間掃街｜沈伯洋與王世堅公開發言",
+      "channel": "鏡新聞",
+      "channelId": "UC4LjkybVKXCDlneVXlKAbmw",
+      "uploadDate": "20261125",
+      "publishedAt": "2026-11-25T22:51:33+08:00",
+      "duration": 9288,
+      "url": "https://www.youtube.com/watch?v=mIm-0IK0iCE",
+      "sourceUrl": "https://www.youtube.com/watch?v=mIm-0IK0iCE",
+      "referenceUrl": "https://www.youtube.com/watch?v=mIm-0IK0iCE",
+      "metadataFile": ".cache/publish-20261125-three/mIm-0IK0iCE.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架2026/11/25掃描的三部原片；按影片ID計數，車掃與多人掃街活動分別標示談話節錄範圍。",
+      "spokenLanguage": "zh",
+      "category": "政治與公共事務",
+      "formatTags": [
+        "掃街",
+        "公開活動"
+      ],
+      "sourceScopeNote": "鏡新聞2026/11/25士林北投晚間掃街原片，完整影片2小時34分48秒，包含徒步掃街、參拜、主持、來賓與本人發言，非棚內單人專訪。本站逐字稿與摘要整理2:04:07–2:08:05王世堅短講、2:10:15–2:23:40沈伯洋集中發言及2:30:30–2:31:34補充談話；其餘沿途問候、口號、儀式、贈禮、合照與片尾未逐句整理，省略處保留原片時間，不表示全無談話。王世堅的現場玩笑、主持人的助選話語及沈伯洋對市政、議會監督與任期的表態分開理解；政策、個人經驗及活動預告依當時情境整理，不寫成已實施成果或現行活動通知。完整原音先執行中文本機ASR，前段人群及擴音混雜、辨識雜訊多，網站只保留明列公開談話與AI正體中文顯示稿；未完成全篇人工聆聽覆核。",
+      "status": "source-imported"
+    },
+    {
+      "id": "v3UrcTO_irI",
+      "title": "【完整公開】LIVE 沈伯洋 松山信義車掃",
+      "displayTitle": "松山信義車掃｜沈伯洋媒體聯訪與終點短講",
+      "channel": "台視新聞 TTV NEWS",
+      "channelId": "UC8ROUUjHzEQm-ndb69CX8Ww",
+      "uploadDate": "20261125",
+      "publishedAt": "2026-11-25T16:30:40+08:00",
+      "duration": 9320,
+      "url": "https://www.youtube.com/watch?v=v3UrcTO_irI",
+      "sourceUrl": "https://www.youtube.com/watch?v=v3UrcTO_irI",
+      "referenceUrl": "https://www.youtube.com/watch?v=v3UrcTO_irI",
+      "metadataFile": ".cache/publish-20261125-three/v3UrcTO_irI.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架2026/11/25掃描的三部原片；按影片ID計數，車掃與多人掃街活動分別標示談話節錄範圍。",
+      "spokenLanguage": "zh",
+      "category": "政治與公共事務",
+      "formatTags": [
+        "車掃",
+        "媒體聯訪"
+      ],
+      "sourceScopeNote": "台視新聞2026/11/25松山信義車掃直播原片，完整影片2小時35分20秒。本站整理00:31–01:54、03:05–12:34、14:26–19:07的媒體問答與中文現場發言，以及2:31:02–2:32:18終點短講；01:54–03:05阿嬤越南語發言未提供可核實轉錄或譯稿，保留時間註記，不把中文ASR雜訊當成原話。其餘候場、收禮互動、沿途廣播／歌曲／口號及片尾未逐句整理，完整活動可觀看原片。本人、阿嬤與記者發言分開理解；兼職、研究補助、境外資訊操作與市政構想依當時陳述整理，並非本站法律判定、獨立查核或已實施成果。市民之夜等預告屬當時資訊，非現行活動通知。完整原音先執行中文本機ASR，網站原稿與AI正體中文稿只保留明列範圍，未完成全篇人工聆聽覆核。",
+      "status": "source-imported"
+    },
+    {
+      "id": "whvIurA_68Q",
+      "title": "【完整公開】LIVE 沈伯洋 內湖南港車掃",
+      "displayTitle": "內湖南港車掃｜沈伯洋片頭媒體聯訪",
+      "channel": "台視新聞 TTV NEWS",
+      "channelId": "UC8ROUUjHzEQm-ndb69CX8Ww",
+      "uploadDate": "20261125",
+      "publishedAt": "2026-11-25T12:01:03+08:00",
+      "duration": 10790,
+      "url": "https://www.youtube.com/watch?v=whvIurA_68Q",
+      "sourceUrl": "https://www.youtube.com/watch?v=whvIurA_68Q",
+      "referenceUrl": "https://www.youtube.com/watch?v=whvIurA_68Q",
+      "metadataFile": ".cache/publish-20261125-three/whvIurA_68Q.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架2026/11/25掃描的三部原片；按影片ID計數，車掃與多人掃街活動分別標示談話節錄範圍。",
+      "spokenLanguage": "zh",
+      "category": "政治與公共事務",
+      "formatTags": [
+        "車掃",
+        "媒體聯訪"
+      ],
+      "sourceScopeNote": "台視新聞2026/11/25內湖南港車掃直播原片，完整影片2小時59分50秒，並非同等時長的專訪。本站逐字稿與摘要整理04:50–13:22片頭媒體聯訪；候場、沿途廣播／歌曲／口號／零碎問候及片尾未逐句整理，省略處保留原片時間，不表示該時段全無談話。記者提問與本人回答分開理解；研究補助與訴訟、流量排名及經費用途等說法保留為受訪當時陳述，未視為本站獨立查核。完整原音已執行中文本機ASR，原引擎輸出另存；網站原稿與AI正體中文稿僅涵蓋上述聯訪，未完成全篇人工聆聽覆核。",
+      "status": "source-imported"
+    },
     {
       "id": "Cf91Wgs6BI8",
       "title": "🐧你的市長，你的小卡！🐧【我跟幕僚說我還想開直播】",

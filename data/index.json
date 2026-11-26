@@ -3,6 +3,18 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "whvIurA_68Q",
+      "slug": "2026-11-25-shen-ber-yang-nanport-car-sweep"
+    },
+    {
+      "id": "v3UrcTO_irI",
+      "slug": "2026-11-25-shen-ber-yang-campaign"
+    },
+    {
+      "id": "mIm-0IK0iCE",
+      "slug": "2026-11-25-shilin-beitou-campaign-visit"
+    },
+    {
       "id": "kaJn8lh-SGU",
       "slug": "2026-11-24-shen-bo-yang-gaming-cycling"
     },
@@ -645,15 +657,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-25"
+    "updatedAt": "2026-11-26"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-25T01:25:14.307475+00:00"
+    "updatedAt": "2026-11-26T05:19:29.775901+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-25T01:28:49.979002+00:00"
+    "updatedAt": "2026-11-26T05:22:03.558822+00:00"
   },
   "statistics": {
     "version": 1,
@@ -661,14 +673,23 @@
     "completedAt": "2026-11-26T02:12:00.296125+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 69569250,
-      "likes": 1786406,
-      "comments": 168806,
-      "commentsAvailable": 159,
-      "videos": 160,
-      "viewsAvailable": 159,
-      "likesAvailable": 158,
-      "fresh": 160
+      "views": 69618873,
+      "likes": 1787179,
+      "comments": 168822,
+      "commentsAvailable": 162,
+      "videos": 163,
+      "viewsAvailable": 162,
+      "likesAvailable": 161,
+      "fresh": 163
+    },
+    "updateScope": {
+      "videoIds": [
+        "whvIurA_68Q",
+        "v3UrcTO_irI",
+        "mIm-0IK0iCE"
+      ],
+      "method": "imported-youtube-metadata",
+      "note": "僅新增三部影片統計，取得時間依中繼資料epoch；既有160部保留遠端每日數字、時間與歷史快照。"
     }
   },
   "covers": {
