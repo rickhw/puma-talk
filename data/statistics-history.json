@@ -274,6 +274,18 @@
       "likesAvailable": 158,
       "fresh": 160,
       "recordedAt": "2026-11-26T02:12:00.296125+00:00"
+    },
+    {
+      "date": "2026-11-27",
+      "views": 72057320,
+      "likes": 2031298,
+      "comments": 174547,
+      "commentsAvailable": 167,
+      "videos": 167,
+      "viewsAvailable": 167,
+      "likesAvailable": 166,
+      "fresh": 167,
+      "recordedAt": "2026-11-27T02:10:28.638307+00:00"
     }
   ]
 }

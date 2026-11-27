@@ -685,28 +685,18 @@
   },
   "statistics": {
     "version": 1,
-    "attemptedAt": "2026-11-26T02:10:40.868060+00:00",
-    "completedAt": "2026-11-26T02:12:00.296125+00:00",
+    "attemptedAt": "2026-11-27T02:09:13.586345+00:00",
+    "completedAt": "2026-11-27T02:10:28.638307+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 71762722,
-      "likes": 2024758,
-      "comments": 173930,
-      "commentsAvailable": 166,
+      "views": 72057320,
+      "likes": 2031298,
+      "comments": 174547,
+      "commentsAvailable": 167,
       "videos": 167,
-      "viewsAvailable": 166,
-      "likesAvailable": 165,
+      "viewsAvailable": 167,
+      "likesAvailable": 166,
       "fresh": 167
-    },
-    "updateScope": {
-      "videoIds": [
-        "AxVFI_ylxKg",
-        "rCZVCviXdAc",
-        "Dez8NeXBAq8",
-        "ahfHpU9mexE"
-      ],
-      "method": "imported-youtube-metadata",
-      "note": "僅新增四部影片統計，取得時間依中繼資料epoch；既有163部保留遠端每日數字、時間與歷史快照。"
     }
   },
   "covers": {
