@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-26T05:16:58.295442+00:00",
+  "updatedAt": "2026-11-27T01:12:19.002267+00:00",
   "priorityYear": 2026,
   "sources": [
     "https://vocus.cc/article/6ad8d562fd89780001e98adb",
@@ -9,6 +9,102 @@
   ],
   "note": "候選影片數不等於專訪場次；分段影片可能屬於同一場訪談。原有日期以原頻道 upload_date 為準；11/04 新增兩支依 timestamp 換算台灣發布日期，另保留 youtubeUploadDate。",
   "candidates": [
+    {
+      "id": "ahfHpU9mexE",
+      "title": "「講下去，台北才會更好」｜你的市長 台北靠3 沈伯洋",
+      "displayTitle": "《講下去，台北才會更好》官方形象短片",
+      "channel": "沈伯洋Puma",
+      "channelId": "UC49EKUpNvS_fzdk5SKvipQg",
+      "uploadDate": "20261126",
+      "publishedAt": "2026-11-26T19:30:38+08:00",
+      "duration": 330,
+      "url": "https://www.youtube.com/watch?v=ahfHpU9mexE",
+      "sourceUrl": "https://www.youtube.com/watch?v=ahfHpU9mexE",
+      "referenceUrl": "https://www.youtube.com/watch?v=ahfHpU9mexE",
+      "metadataFile": ".cache/publish-20261126-four/ahfHpU9mexE.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架2026/11/26掃描的四部影片；對談、車掃與官方形象短片分開標示來源與範圍。",
+      "spokenLanguage": "zh",
+      "category": "政治與公共事務",
+      "formatTags": [
+        "形象短片"
+      ],
+      "sourceScopeNote": "沈伯洋官方頻道2026/11/26發布的5分30秒競選形象短片，並非現場專訪；原頻道製作資訊列吳念真聲音演出、小麻糬特別獻聲。影片串接旁白、沈伯洋及市民等不同人聲，不能將全部內容歸屬本人。本篇整理旁白與清晰談話節錄，快速剪輯、歌曲與收音不清部分另標時間；宣傳敘事、人物描述及政策方向保留為影片說法。原音已執行中文本機ASR，原始輸出另存，網站提供AI正體中文顯示稿；未完成全篇人工聆聽覆核。",
+      "status": "source-imported",
+      "contentType": "campaign-film"
+    },
+    {
+      "id": "Dez8NeXBAq8",
+      "title": "【完整公開】LIVE 沈伯洋 士林北投車掃",
+      "displayTitle": "士林北投車掃｜吳思瑤、沈伯洋聯訪與終點短講",
+      "channel": "台視新聞 TTV NEWS",
+      "channelId": "UC8ROUUjHzEQm-ndb69CX8Ww",
+      "uploadDate": "20261126",
+      "publishedAt": "2026-11-26T17:53:55+08:00",
+      "duration": 13690,
+      "url": "https://www.youtube.com/watch?v=Dez8NeXBAq8",
+      "sourceUrl": "https://www.youtube.com/watch?v=Dez8NeXBAq8",
+      "referenceUrl": "https://www.youtube.com/watch?v=Dez8NeXBAq8",
+      "metadataFile": ".cache/publish-20261126-four/Dez8NeXBAq8.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架2026/11/26掃描的四部影片；對談、車掃與官方形象短片分開標示來源與範圍。",
+      "spokenLanguage": "zh",
+      "category": "政治與公共事務",
+      "formatTags": [
+        "車掃",
+        "媒體聯訪"
+      ],
+      "sourceScopeNote": "台視新聞2026/11/26士林北投車掃原片，全長3小時48分10秒。本站整理00:00–07:59吳思瑤受訪、10:10–18:31沈伯洋聯訪，以及3:44:27–3:45:41沈伯洋終點短講，片頭已在訪問中；兩人的回顧、評論與決策說明分開理解。其餘候場、沿途廣播／歌曲／口號及片尾未逐句整理，省略處保留原片時間。活動預告、場地爭議與法律相關回應均屬受訪當時說法，非本站個案判定。完整原音先執行中文本機ASR，網站保留明列談話與AI正體中文稿；未完成全篇人工聆聽覆核。",
+      "status": "source-imported"
+    },
+    {
+      "id": "rCZVCviXdAc",
+      "title": "【完整公開】LIVE 沈伯洋 中山大同車掃",
+      "displayTitle": "中山大同車掃｜沈伯洋媒體聯訪與終點短講",
+      "channel": "台視新聞 TTV NEWS",
+      "channelId": "UC8ROUUjHzEQm-ndb69CX8Ww",
+      "uploadDate": "20261126",
+      "publishedAt": "2026-11-26T12:50:21+08:00",
+      "duration": 13750,
+      "url": "https://www.youtube.com/watch?v=rCZVCviXdAc",
+      "sourceUrl": "https://www.youtube.com/watch?v=rCZVCviXdAc",
+      "referenceUrl": "https://www.youtube.com/watch?v=rCZVCviXdAc",
+      "metadataFile": ".cache/publish-20261126-four/rCZVCviXdAc.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架2026/11/26掃描的四部影片；對談、車掃與官方形象短片分開標示來源與範圍。",
+      "spokenLanguage": "zh",
+      "category": "政治與公共事務",
+      "formatTags": [
+        "車掃",
+        "媒體聯訪"
+      ],
+      "sourceScopeNote": "台視新聞2026/11/26中山大同車掃原片，全長3小時49分10秒。片頭已在受訪中，本站整理00:00–12:27媒體聯訪及3:13:54–3:14:58終點短講；沿途廣播、歌曲、零碎互動與後段新聞台畫面未逐句整理，省略處保留原片時間。場地、交通、研究補助與訴訟等內容依當時問答整理，不將記者轉述或本人判讀視為本站獨立查核。完整原音先執行中文本機ASR，網站保留明列談話與AI正體中文稿；未完成全篇人工聆聽覆核。",
+      "status": "source-imported"
+    },
+    {
+      "id": "AxVFI_ylxKg",
+      "title": "實。－關於民主的運動－【我跟幕僚說我還想開直播】",
+      "displayTitle": "沈伯洋與蔡英文對談｜實。關於民主的運動",
+      "channel": "沈伯洋Puma",
+      "channelId": "UC49EKUpNvS_fzdk5SKvipQg",
+      "uploadDate": "20261126",
+      "publishedAt": "2026-11-26T21:03:51+08:00",
+      "duration": 3129,
+      "url": "https://www.youtube.com/watch?v=AxVFI_ylxKg",
+      "sourceUrl": "https://www.youtube.com/watch?v=AxVFI_ylxKg",
+      "referenceUrl": "https://www.youtube.com/watch?v=AxVFI_ylxKg",
+      "metadataFile": ".cache/publish-20261126-four/AxVFI_ylxKg.info.json",
+      "decision": "include",
+      "reason": "使用者指定上架2026/11/26掃描的四部影片；對談、車掃與官方形象短片分開標示來源與範圍。",
+      "spokenLanguage": "zh",
+      "category": "政治與公共事務",
+      "formatTags": [
+        "對談",
+        "互動直播"
+      ],
+      "sourceScopeNote": "沈伯洋官方頻道2026/11/26與蔡英文對談原片，全長52分09秒。本站整理00:23–04:41及10:23–52:07的現場談話；片頭測試與04:41–10:23插播形象片另作時間標記，該片另以《講下去，台北才會更好》收錄，旁白不歸屬現場兩人。照片、玩笑、回憶與對童年的留言分別理解；活動預告屬當時安排，人物評語及直播排名為現場說法。原語言字幕不可用，採中文本機ASR與AI正體中文顯示稿，保留原始引擎輸出；未完成全篇人工聆聽覆核。",
+      "status": "source-imported"
+    },
     {
       "id": "mIm-0IK0iCE",
       "title": "直播／士北好舵手！台北拔頭籌　沈伯洋偕5議員掃街拜票｜20261125",

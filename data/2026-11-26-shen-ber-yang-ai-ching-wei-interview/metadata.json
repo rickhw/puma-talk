@@ -1,0 +1,88 @@
+{
+  "id": "AxVFI_ylxKg",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "實。－關於民主的運動－【我跟幕僚說我還想開直播】",
+  "channel": "沈伯洋Puma",
+  "date": "2026-11-26",
+  "sourceUrl": "https://www.youtube.com/watch?v=AxVFI_ylxKg",
+  "metadataStatus": "imported",
+  "channelId": "UC49EKUpNvS_fzdk5SKvipQg",
+  "title": "沈伯洋與蔡英文對談｜實。關於民主的運動",
+  "referenceUrl": "https://www.youtube.com/watch?v=AxVFI_ylxKg",
+  "description": "沈伯洋官方頻道2026/11/26與蔡英文對談原片，全長52分09秒。本站整理00:23–04:41及10:23–52:07的現場談話；片頭測試與04:41–10:23插播形象片另作時間標記，該片另以《講下去，台北才會更好》收錄，旁白不歸屬現場兩人。照片、玩笑、回憶與對童年的留言分別理解；活動預告屬當時安排，人物評語及直播排名為現場說法。原語言字幕不可用，採中文本機ASR與AI正體中文顯示稿，保留原始引擎輸出；未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 3129,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-27T00:32:42.210609+00:00",
+    "inputSha256": "951b15276796b58f480424ba0a2647f5606f04b974d0206370f07270152562bb",
+    "audioSelector": "bestaudio[language^=zh]",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "rawEngineOutputSha256": "81e04cb7543c186f61e30497ae18d3d1e80859f82fb374517cd0d113624d49c9",
+    "coverage": "selected-speech-ranges",
+    "selectedSpeechRanges": [
+      {
+        "start": 22.52,
+        "end": 281.38
+      },
+      {
+        "start": 623.3,
+        "end": 3126.94
+      }
+    ],
+    "omittedRanges": [
+      {
+        "start": 0,
+        "end": 22.52,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途活動／歌曲／口號或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整內容請觀看原片］"
+      },
+      {
+        "start": 281.38,
+        "end": 623.3,
+        "reason": "直播插播官方形象短片，與當場對談區分；本次另以獨立影片ID收錄該短片，避免將旁白及片中其他人聲當作兩人對談。",
+        "marker": "［音樂演出與插播形象短片省略；《講下去，台北才會更好》另以原片條目整理，本段非當場對談］"
+      },
+      {
+        "start": 3126.94,
+        "end": 3129.041,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途活動／歌曲／口號或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整內容請觀看原片］"
+      }
+    ],
+    "uncertainRanges": [],
+    "processingNotes": [
+      "完整原音先執行中文本機ASR，再依正式談話內容明列網站稿範圍；原引擎輸出另存並記錄SHA-256。",
+      "公開預覽及ASR語境用於定位談話；未完成全篇人工聆聽覆核，多人發言不全數歸屬沈伯洋。",
+      "網站稿另標註0筆低可靠或不相干辨識，不刊載辨識猜測或整段歌詞。"
+    ]
+  },
+  "sourceScopeNote": "沈伯洋官方頻道2026/11/26與蔡英文對談原片，全長52分09秒。本站整理00:23–04:41及10:23–52:07的現場談話；片頭測試與04:41–10:23插播形象片另作時間標記，該片另以《講下去，台北才會更好》收錄，旁白不歸屬現場兩人。照片、玩笑、回憶與對童年的留言分別理解；活動預告屬當時安排，人物評語及直播排名為現場說法。原語言字幕不可用，採中文本機ASR與AI正體中文顯示稿，保留原始引擎輸出；未完成全篇人工聆聽覆核。",
+  "publishedAt": "2026-11-26T21:03:51+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC49EKUpNvS_fzdk5SKvipQg",
+  "originalDescription": "",
+  "youtubeMetadata": {
+    "upload_date": "20261126",
+    "timestamp": 1795698231,
+    "release_timestamp": 1795694680,
+    "live_status": "was_live"
+  },
+  "versionType": "tsai-shen-conversation-live",
+  "formatTags": [
+    "對談",
+    "互動直播"
+  ],
+  "liveStartedAt": "2026-11-26T20:04:40+08:00",
+  "broadcastDate": "2026-11-26",
+  "broadcastAt": "2026-11-26T20:04:40+08:00"
+}

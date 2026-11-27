@@ -3,6 +3,22 @@
   "format": "per-interview-v1",
   "interviews": [
     {
+      "id": "rCZVCviXdAc",
+      "slug": "2026-11-26-shen-bo-yang-traffic-stage"
+    },
+    {
+      "id": "ahfHpU9mexE",
+      "slug": "2026-11-26-taipei-civic-dialogue"
+    },
+    {
+      "id": "Dez8NeXBAq8",
+      "slug": "2026-11-26-shilin-beitou-car-sweep"
+    },
+    {
+      "id": "AxVFI_ylxKg",
+      "slug": "2026-11-26-shen-ber-yang-ai-ching-wei-interview"
+    },
+    {
       "id": "whvIurA_68Q",
       "slug": "2026-11-25-shen-ber-yang-nanport-car-sweep"
     },
@@ -657,15 +673,15 @@
   ],
   "archive": {
     "version": 1,
-    "updatedAt": "2026-11-26"
+    "updatedAt": "2026-11-27"
   },
   "articles": {
     "version": 1,
-    "updatedAt": "2026-11-26T05:19:29.775901+00:00"
+    "updatedAt": "2026-11-27T01:17:39.845036+00:00"
   },
   "editorial": {
     "version": 1,
-    "updatedAt": "2026-11-26T05:22:03.558822+00:00"
+    "updatedAt": "2026-11-27T01:26:07.206677+00:00"
   },
   "statistics": {
     "version": 1,
@@ -673,23 +689,24 @@
     "completedAt": "2026-11-26T02:12:00.296125+00:00",
     "timezone": "Asia/Taipei",
     "totals": {
-      "views": 69618873,
-      "likes": 1787179,
-      "comments": 168822,
-      "commentsAvailable": 162,
-      "videos": 163,
-      "viewsAvailable": 162,
-      "likesAvailable": 161,
-      "fresh": 163
+      "views": 71762722,
+      "likes": 2024758,
+      "comments": 173930,
+      "commentsAvailable": 166,
+      "videos": 167,
+      "viewsAvailable": 166,
+      "likesAvailable": 165,
+      "fresh": 167
     },
     "updateScope": {
       "videoIds": [
-        "whvIurA_68Q",
-        "v3UrcTO_irI",
-        "mIm-0IK0iCE"
+        "AxVFI_ylxKg",
+        "rCZVCviXdAc",
+        "Dez8NeXBAq8",
+        "ahfHpU9mexE"
       ],
       "method": "imported-youtube-metadata",
-      "note": "僅新增三部影片統計，取得時間依中繼資料epoch；既有160部保留遠端每日數字、時間與歷史快照。"
+      "note": "僅新增四部影片統計，取得時間依中繼資料epoch；既有163部保留遠端每日數字、時間與歷史快照。"
     }
   },
   "covers": {

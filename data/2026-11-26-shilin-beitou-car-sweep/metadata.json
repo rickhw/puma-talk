@@ -1,0 +1,93 @@
+{
+  "id": "Dez8NeXBAq8",
+  "tags": [],
+  "transcriptStatus": "auto",
+  "originalTitle": "【完整公開】LIVE 沈伯洋 士林北投車掃",
+  "channel": "台視新聞 TTV NEWS",
+  "date": "2026-11-26",
+  "sourceUrl": "https://www.youtube.com/watch?v=Dez8NeXBAq8",
+  "metadataStatus": "imported",
+  "channelId": "UC8ROUUjHzEQm-ndb69CX8Ww",
+  "title": "士林北投車掃｜吳思瑤、沈伯洋聯訪與終點短講",
+  "referenceUrl": "https://www.youtube.com/watch?v=Dez8NeXBAq8",
+  "description": "台視新聞2026/11/26士林北投車掃原片，全長3小時48分10秒。本站整理00:00–07:59吳思瑤受訪、10:10–18:31沈伯洋聯訪，以及3:44:27–3:45:41沈伯洋終點短講，片頭已在訪問中；兩人的回顧、評論與決策說明分開理解。其餘候場、沿途廣播／歌曲／口號及片尾未逐句整理，省略處保留原片時間。活動預告、場地爭議與法律相關回應均屬受訪當時說法，非本站個案判定。完整原音先執行中文本機ASR，網站保留明列談話與AI正體中文稿；未完成全篇人工聆聽覆核。",
+  "category": "政治與公共事務",
+  "duration": 13690,
+  "transcriptSource": "local-asr",
+  "transcriptProvenance": {
+    "kind": "asr-local",
+    "engine": "mlx",
+    "engineVersion": "0.4.3",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "zh",
+    "generatedAt": "2026-11-27T00:41:42.129819+00:00",
+    "inputSha256": "d41dc164de6ebb096e71ee5e4d678686548bbbf67533c6c75cfbaba921ca0ba5",
+    "audioSelector": "bestaudio",
+    "decodingOptions": {
+      "task": "transcribe",
+      "condition_on_previous_text": false
+    },
+    "modelRevision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "processingNotes": [
+      "34 筆時間碼或靜音辨識異常已標為待人工確認；詳見本機 normalization.json，原引擎輸出保留。",
+      "完整原音先執行中文本機ASR，再依正式談話內容明列網站稿範圍；原引擎輸出另存並記錄SHA-256。",
+      "公開預覽及ASR語境用於定位談話；未完成全篇人工聆聽覆核，多人發言不全數歸屬沈伯洋。",
+      "網站稿另標註0筆低可靠或不相干辨識，不刊載辨識猜測或整段歌詞。"
+    ],
+    "rawEngineOutputSha256": "a2ea1f0d22a6d9d4a54ec0a7ec064695f7f3263f7d8347951d1c22763425bd3b",
+    "coverage": "selected-speech-ranges",
+    "selectedSpeechRanges": [
+      {
+        "start": 0,
+        "end": 479.64
+      },
+      {
+        "start": 610.34,
+        "end": 1111.34
+      },
+      {
+        "start": 13466.64,
+        "end": 13541.16
+      }
+    ],
+    "omittedRanges": [
+      {
+        "start": 479.64,
+        "end": 610.34,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途活動／歌曲／口號或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整內容請觀看原片］"
+      },
+      {
+        "start": 1111.34,
+        "end": 13466.64,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途活動／歌曲／口號或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整內容請觀看原片］"
+      },
+      {
+        "start": 13541.16,
+        "end": 13690.041,
+        "reason": "網站稿聚焦正式聯訪或集中公開談話；省略其餘候場、沿途活動、背景歌曲、口號與片尾，不表示該時段全無談話。",
+        "marker": "［候場、沿途活動／歌曲／口號或片尾畫面未逐句整理；本篇僅整理明列談話範圍，完整內容請觀看原片］"
+      }
+    ],
+    "uncertainRanges": []
+  },
+  "sourceScopeNote": "台視新聞2026/11/26士林北投車掃原片，全長3小時48分10秒。本站整理00:00–07:59吳思瑤受訪、10:10–18:31沈伯洋聯訪，以及3:44:27–3:45:41沈伯洋終點短講，片頭已在訪問中；兩人的回顧、評論與決策說明分開理解。其餘候場、沿途廣播／歌曲／口號及片尾未逐句整理，省略處保留原片時間。活動預告、場地爭議與法律相關回應均屬受訪當時說法，非本站個案判定。完整原音先執行中文本機ASR，網站保留明列談話與AI正體中文稿；未完成全篇人工聆聽覆核。",
+  "publishedAt": "2026-11-26T17:53:55+08:00",
+  "channelUrl": "https://www.youtube.com/channel/UC8ROUUjHzEQm-ndb69CX8Ww",
+  "originalDescription": "#沈伯洋 #士林北投 #車掃\n\n2026.11.26【完整公開】民進黨台北市長候選人沈伯洋26日士林.北投車掃。✨歡迎收看並訂閱TTVNews台視新聞YouTube頻道✨\n\n◎【台視新聞網】👉https://news.ttv.com.tw/\n◎訂閱【台視新聞】👉https://www.youtube.com/c/ttvnewsview\n◎訂閱【TTV LIVE台視直播】👉https://www.youtube.com/c/twlivenews\n◎按讚【台視新聞FB】👉https://www.facebook.com/ttvnews/\n◎追蹤【台視新聞IG】👉https://www.instagram.com/ttvnews_tw/",
+  "youtubeMetadata": {
+    "upload_date": "20261126",
+    "timestamp": 1795686835,
+    "release_timestamp": 1795672529,
+    "live_status": "was_live"
+  },
+  "versionType": "press-interviews-and-motorcade",
+  "formatTags": [
+    "車掃",
+    "媒體聯訪"
+  ],
+  "liveStartedAt": "2026-11-26T13:55:29+08:00",
+  "broadcastDate": "2026-11-26",
+  "broadcastAt": "2026-11-26T13:55:29+08:00"
+}

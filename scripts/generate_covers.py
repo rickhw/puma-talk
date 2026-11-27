@@ -89,6 +89,8 @@ def main():
                 draw.text((54,174+index*66),line,font=fonts[48],fill=INK)
             if item.get('contentType')=='music':
                 caption='音樂影片與作品資訊'
+            elif item.get('contentType')=='campaign-film':
+                caption='影片重點與旁白節錄'
             elif item.get('transcriptProvenance',{}).get('coverage')=='selected-speech-ranges':
                 caption='聯訪重點與談話節錄'
             else:
